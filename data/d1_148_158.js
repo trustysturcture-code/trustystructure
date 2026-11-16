@@ -44,7 +44,7 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<text x="250" y="320" class="r">대상: 2층↑ 또는 200㎡↑</text>' +
     '<line x1="60" y1="163" x2="52" y2="76" class="ld"/><circle cx="52" cy="76" r="2" class="dotf"/><text x="56" y="80" class="b">브레이스·전단벽</text>' +
     '<line x1="184" y1="243" x2="150" y2="100" class="ld"/><circle cx="150" cy="100" r="2" class="dotf"/><text x="154" y="104" class="bl">적층고무(LRB)</text>' +
-    '<line x1="210" y1="156" x2="236" y2="58" class="ld"/><circle cx="236" cy="58" r="2" class="dotf"/><text x="240" y="62" class="bl">장주기화(절연)</text>' +
+    '<line x1="210" y1="156" x2="196" y2="60" class="ld"/><circle cx="196" cy="60" r="2" class="dotf"/><text x="192" y="64" text-anchor="end" class="bl">장주기화(절연)</text>' +
     '<line x1="274" y1="200" x2="300" y2="72" class="ld"/><circle cx="300" cy="72" r="2" class="dotf"/><text x="296" y="76" text-anchor="end" class="r">이격거리(E/J)</text>' +
     '<line x1="352" y1="106" x2="330" y2="36" class="ld"/><circle cx="330" cy="36" r="2" class="dotf"/><text x="326" y="40" text-anchor="end" class="bl">TMD(동조질량)</text>' +
     '<text x="450" y="24" class="b">[가속도 응답스펙트럼]</text>' +
@@ -123,7 +123,7 @@ window.D1 = Object.assign(window.D1 || {}, {
   svg: '<svg viewBox="0 0 640 350" xmlns="http://www.w3.org/2000/svg">' +
     '<rect x="20" y="18" width="410" height="30" class="bx2"/>' +
     '<text x="225" y="38" text-anchor="middle" class="b">Ceq = C + Mn/6 + (Cr+Mo+V)/5 + (Ni+Cu)/15</text>' +
-    '<rect x="120" y="225" width="55" height="25" fill="none" class="bx dash"/>' +
+    '<rect x="54" y="225" width="121" height="25" fill="none" class="bx dash"/>' +
     '<rect x="175" y="160" width="135" height="45" class="bx2"/>' +
     '<rect x="310" y="92" width="110" height="68" class="bx3"/>' +
     '<line x1="50" y1="250" x2="50" y2="62" class="ar"/>' +
@@ -139,16 +139,16 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<text x="310" y="264" text-anchor="middle" class="s">0.60</text>' +
     '<text x="242" y="186" text-anchor="middle" class="r">100~200℃</text>' +
     '<text x="365" y="130" text-anchor="middle" class="r">200~350℃</text>' +
-    '<text x="147" y="242" text-anchor="middle" class="s">임의</text>' +
-    '<text x="85" y="240" text-anchor="middle" class="s">불필요</text>' +
+    '<text x="112" y="242" text-anchor="middle" class="s">임의온도</text>' +
+    '<text x="238" y="264" text-anchor="middle" class="s">0.52</text><line x1="238" y1="250" x2="238" y2="255" class="ln2"/>' +
     '<text x="85" y="282" text-anchor="middle" class="s">우수</text>' +
     '<text x="147" y="282" text-anchor="middle" class="s">양호</text>' +
-    '<text x="242" y="282" text-anchor="middle" class="s">보통</text>' +
+    '<text x="206" y="282" text-anchor="middle" class="s">보통</text>' +
     '<text x="365" y="282" text-anchor="middle" class="s">불량</text>' +
     '<line x1="164" y1="92" x2="190" y2="80" class="ld"/><circle cx="190" cy="80" r="2" class="dotf"/><text x="194" y="84" class="r">0.44% 이하 용접 적합</text>' +
     '<line x1="400" y1="92" x2="410" y2="66" class="ld"/><circle cx="410" cy="66" r="2" class="dotf"/><text x="406" y="70" text-anchor="end" class="r">예열·후열 필수</text>' +
     '<line x1="242" y1="205" x2="230" y2="226" class="ld"/><circle cx="230" cy="226" r="2" class="dotf"/><text x="234" y="230" class="s">저온균열 감수성↑</text>' +
-    '<line x1="100" y1="246" x2="70" y2="140" class="ld"/><circle cx="70" cy="140" r="2" class="dotf"/><text x="74" y="144" class="s">Ceq 0.40↓ 불필요</text>' +
+    '<line x1="90" y1="232" x2="70" y2="140" class="ld"/><circle cx="70" cy="140" r="2" class="dotf"/><text x="74" y="144" class="s">0.45 미만 임의</text>' +
     '<text x="24" y="304" class="r">SN355B(t≤40mm) Ceq 0.44% 이하</text>' +
     '<text x="24" y="322" class="b">Ceq↑ → HAZ 경화·저온균열↑ → 예열</text>' +
     '<text x="24" y="340" class="s">SN강식: C+Mn/6+Si/24+Ni/40+Cr/5+Mo/4+V/14</text>' +
@@ -342,9 +342,9 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<line x1="80" y1="318" x2="330" y2="318" class="ar"/>' +
     '<text x="205" y="336" text-anchor="middle" class="s">선입선출(FIFO) · 시공 직전 필요량만 개봉</text>' +
     '<text x="450" y="24" class="b">[볼트 세트·볼트 길이]</text>' +
-    '<line x1="516" y1="44" x2="600" y2="44" class="ln2"/>' +
-    '<line x1="516" y1="40" x2="516" y2="48" class="ln2"/>' +
-    '<line x1="600" y1="40" x2="600" y2="48" class="ln2"/>' +
+    '<line x1="516" y1="48" x2="600" y2="48" class="ln2"/>' +
+    '<line x1="516" y1="44" x2="516" y2="52" class="ln2"/>' +
+    '<line x1="600" y1="44" x2="600" y2="52" class="ln2"/>' +
     '<text x="558" y="38" text-anchor="middle" class="s">볼트 길이 = 조임길이 + 여유</text>' +
     '<rect x="520" y="56" width="14" height="48" class="bx2"/>' +
     '<rect x="534" y="56" width="14" height="48" class="bx2"/>' +
@@ -433,7 +433,7 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<line x1="50" y1="200" x2="50" y2="30" class="ar"/>' +
     '<line x1="50" y1="200" x2="424" y2="200" class="ar"/>' +
     '<text x="54" y="40" class="s">축력 N</text>' +
-    '<text x="428" y="196" text-anchor="end" class="s">T(토크)</text>' +
+    '<text x="432" y="188" text-anchor="end" class="s">T(토크)</text>' +
     '<line x1="50" y1="90" x2="420" y2="90" class="ln2 dash"/>' +
     '<text x="56" y="84" class="r">표준볼트장력(설계×1.1)</text>' +
     '<line x1="50" y1="200" x2="290" y2="50" class="ln"/>' +
@@ -444,7 +444,7 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<line x1="380" y1="90" x2="380" y2="200" class="ln2 dash"/>' +
     '<text x="226" y="214" text-anchor="middle" class="s">T1</text>' +
     '<text x="380" y="214" text-anchor="middle" class="s">T2</text>' +
-    '<text x="56" y="128" class="s">1차 조임(60~80%)</text>' +
+    '<text x="56" y="128" class="s">1차 조임(약 60%)</text>' +
     '<text x="303" y="170" text-anchor="middle" class="b">T = k · d · N</text>' +
     '<text x="303" y="188" text-anchor="middle" class="s">k 토크계수 · d 호칭경 · N 축력</text>' +
     '<line x1="290" y1="50" x2="310" y2="40" class="ld"/><circle cx="310" cy="40" r="2" class="dotf"/><text x="314" y="44" class="s">k 小(A종 0.110~0.150)</text>' +
@@ -493,8 +493,8 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<line x1="354" y1="90" x2="366" y2="90" class="ln2"/>' +
     '<line x1="354" y1="130" x2="366" y2="130" class="ln2"/>' +
     '<line x1="354" y1="170" x2="366" y2="170" class="ln2"/>' +
-    '<text x="368" y="114" class="r">100mm</text>' +
-    '<text x="368" y="154" class="r">100mm</text>' +
+    '<text x="368" y="114" class="r s">100mm</text>' +
+    '<text x="368" y="154" class="r s">100mm</text>' +
     '<line x1="300" y1="80" x2="340" y2="80" class="ln2"/>' +
     '<line x1="340" y1="76" x2="340" y2="90" class="ln2"/>' +
     '<circle cx="205" cy="100" r="4" class="bx3"/>' +
@@ -537,7 +537,7 @@ window.D1 = Object.assign(window.D1 || {}, {
 },
 158: {
   tag: '공법·검사·관리',
-  def: '화재 시 강재 온도상승을 막는 [[내화피복]]([[뿜칠공법]]·[[미장공법]]·보드·[[내화도료]])의 [[두께·비중]]을 시공 중 {{5㎡당 1개소}}, 시공 후 [[1,500㎡마다]] 부위별로 확인하는 검사',
+  def: '화재 시 강재 온도상승을 막는 [[내화피복]]([[뿜칠공법]]·[[미장공법]]·보드·[[내화도료]])의 [[두께·비중]]을 시공 중 {{5㎡당 1개소}}, 시공 후 [[1,500㎡마다]](건축 500㎡) 부위별로 확인하는 검사',
   wwh: ['강재 내화보호', '600℃ 강도 1/2 대비', '두께·비중 검사'],
   figT: '내화피복 공법(습식·건식) 및 뿜칠 시공·검사',
   svg: '<svg viewBox="0 0 640 370" xmlns="http://www.w3.org/2000/svg">' +
@@ -569,9 +569,9 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<text x="400" y="174" text-anchor="middle" class="r">600℃</text>' +
     '<text x="24" y="284" class="b">[공법별 검사 기준]</text>' +
     '<text x="24" y="304" class="k3">③ 시공 중 5㎡당 1개소 두께 확인(핀)</text>' +
-    '<text x="24" y="324" class="k3">③ 시공 후 코어 두께·비중, 1,500㎡마다 5개소</text>' +
+    '<text x="24" y="324" class="k3">③ 시공 후 코어 두께·비중, 1,500㎡(건축 500㎡)마다 5개소</text>' +
     '<text x="24" y="344" class="k3">③ 조적·붙임 3개소 / 내화도료 습도 85%↓·풍속 5m/s↓</text>' +
-    '<text x="24" y="362" class="s">※ 연면적 1,500㎡ 미만: 2회 이상 측정</text>' +
+    '<text x="24" y="362" class="s">※ 로트 KCS 14 1,500㎡ / KCS 41 500㎡, 연면적 미만 시 2회 이상</text>' +
     '<text x="450" y="24" class="b">[뿜칠 시공·검사]</text>' +
     '<rect x="596" y="36" width="12" height="120" class="bx2"/>' +
     '<rect x="584" y="36" width="12" height="120" class="bx3"/>' +
@@ -583,11 +583,11 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<rect x="584" y="130" width="12" height="10" class="rf"/>' +
     '<line x1="570" y1="110" x2="552" y2="112" class="ld"/><circle cx="552" cy="112" r="2" class="dotf"/><text x="548" y="116" text-anchor="end" class="r">핀 측정(시공 중)</text>' +
     '<line x1="584" y1="135" x2="552" y2="138" class="ld"/><circle cx="552" cy="138" r="2" class="dotf"/><text x="548" y="142" text-anchor="end" class="r">코어 채취(시공 후)</text>' +
-    '<text x="456" y="170" class="s">외기 5℃ 이하 작업 중지</text>' +
+    '<text x="456" y="170" class="s">기온 4℃ 이상 시공</text>' +
     '<text x="446" y="194" class="k4">④ 바탕 녹·유분 제거</text><text x="446" y="214" class="k4">④ 불합격 → 덧뿜칠·재시공</text><text x="446" y="234" class="k4">④ 설비공사 탈락부 보수</text><text x="446" y="254" class="k4">④ 양생 중 진동·충격 방지</text><text x="446" y="278" class="k5">⑤ 초음파 두께 전수측정</text><text x="446" y="298" class="k5">⑤ 공장 선시공 내화도료</text><text x="446" y="318" class="k5">⑤ BIM 내화시간 연계 검측</text>' +
     '</svg>',
   subs: [
-    { h: '공법별 검사 기준', pts: ['시공 중 {{5㎡당 1개소}} 두께 확인(핀)', '시공 후 [[코어 채취]] [[두께·비중]] — [[1,500㎡마다]] {{5개소}}', '조적·붙임 {{3개소}} / [[내화도료]] 습도 {{85%}}↓·풍속 {{5m/s}}↓'] },
+    { h: '공법별 검사 기준', pts: ['시공 중 {{5㎡당 1개소}} 두께 확인(핀)', '시공 후 [[코어 채취]] [[두께·비중]] — [[1,500㎡마다]](건축 {{500㎡}}) {{5개소}}', '조적·붙임 {{3개소}} / [[내화도료]] 습도 {{85%}}↓·풍속 {{5m/s}}↓'] },
     { h: '현장관리 시 유의사항', pts: ['바탕 녹·유분·먼지 제거', '불합격 시 [[덧뿜칠]]·재시공', '설비·전기공사 탈락부 보수', '양생 중 진동·충격·우수 방지'] },
     { h: '개선방안', pts: ['초음파·전자식 두께 비파괴 전수측정', '공장 선시공 내화도료(Shop Coating)', 'BIM 부재별 내화시간·두께 연계 검측'] }
   ],

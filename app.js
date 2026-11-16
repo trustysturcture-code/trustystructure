@@ -24,7 +24,7 @@
       const ww = w.www || { what: w.wwh[0], why: w.wwh[1], how: w.wwh[2] };
       out.push({ no, cat: w.cat, type: '용어', title: w.title, key: w.key || [], www: ww,
         // 디테일 답안(det.secs)이 있으면 사용, fig: 'MAIN' 은 요약 도해(svg)로 치환
-        secs: w.det && w.det.secs ? w.det.secs.map(u => u.fig ? Object.assign({}, u, { fig: arr(u.fig).map(f => f === 'MAIN' ? { svg: w.svg, cap: '[도해] ' + (w.figT || '') } : f) }) : u)
+        secs: w.det && w.det.secs ? w.det.secs.map(u => u.fig ? Object.assign({}, u, { fig: (Array.isArray(u.fig) ? u.fig : [u.fig]).map(f => f === 'MAIN' ? { svg: w.svg, cap: '[도해] ' + (w.figT || '') } : f) }) : u)
           : [{ h: '정의', def: w.def }, { h: w.figT || '원리 및 도해', fig: { svg: w.svg, cap: '[도해] ' + (w.figT || '') } }]
             .concat((w.subs || []).map(u => ({ h: u.h, ul: u.pts }))),
         effect: w.effect || w.msg, mnemo: w.mnemo, src: w.src, img: [] });
@@ -70,7 +70,7 @@
   };
   let srs = LS.get('amg_srs', {});
   let exam = LS.get('amg_exam', {});
-  let state = { tab: LS.get('amg_tab', 'read'), cur: LS.get('amg_cur', Q[0] ? Q[0].no : 0), cat: '전체', q: '', czLv: 1 };
+  let state = { tab: LS.get('amg_tab', 'simple'), cur: LS.get('amg_cur', Q[0] ? Q[0].no : 0), cat: '전체', q: '', czLv: 1 };
   if (!Q.find(x => x.no === state.cur) && Q[0]) state.cur = Q[0].no;
 
   // shared svg defs (arrow marker)
@@ -261,7 +261,9 @@
       penBtn('k', '● 검정') + penBtn('r', '<span style="color:#c0392b">●</span> 빨강') + penBtn('b', '<span style="color:#1f5fa8">●</span> 파랑') +
       penBtn('w', '굵기') + penBtn('e', '⌫ 지우개') + penBtn('u', '↶ 되돌리기') + penBtn('c', '🗑 전체 지우기') +
       penBtn('o', '모범답안 겹쳐보기') + penBtn('g', PEN.bg === 'sheet' ? '배경: 답안지' : '배경: 백지') +
-      '<span class="kbd-hint">펜으로 쓰기 · 손가락으로 스크롤 · 펜 지우개 지원 · 자동 저장</span></div>' + emptySheet(x) + navBtns();
+      penBtn('t', penTimer ? '⏹ 시험 종료' : '⏱ 10분 실전') + penBtn('s', '✅ 채점') +
+      '<span class="pentime" id="penTime">' + (penTimer ? '' : '') + '</span>' +
+      '<span class="kbd-hint">펜으로 쓰기 · 손가락으로 스크롤 · 펜 지우개 지원 · 자동 저장</span></div><div id="penGrade"></div>' + emptySheet(x) + navBtns();
     fitAns(main); zoomAns(); refreshPenBar(); setupPen(x);
   }
   let penStrokes = [], penRedraw = null;
@@ -302,7 +304,37 @@
     cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
     cv.addEventListener('contextmenu', e => e.preventDefault());
   }
+  // ---------- 필기 실전: 10분 타이머 → 대제목·핵심단어 자기채점 → 시험기록(취약문항)에 반영 ----------
+  let penTimer = null, penEnd = 0, penTimerNo = null;
+  function penTick() {
+    const el = document.getElementById('penTime'); const left = Math.max(0, penEnd - Date.now());
+    if (el) { const m = Math.floor(left / 60000), sec = Math.floor(left / 1000) % 60; el.textContent = '⏱ ' + m + ':' + String(sec).padStart(2, '0'); el.classList.toggle('warn', left < 120000); }
+    if (left <= 0) { clearInterval(penTimer); penTimer = null; if (state.tab === 'pen') { penView(); penGrade(); } }
+  }
+  function penGrade() {
+    const x = cur(); if (!x) return; const box = document.getElementById('penGrade'); if (!box) return;
+    if (box.innerHTML) { box.innerHTML = ''; return; }
+    const d = (window.D1 || {})[x.no] || {};
+    const heads = arr(x.secs).map(u => u.h).filter(Boolean);
+    const items = [].concat(heads.map(h => ['대제목', h]), arr(x.key).map(k => ['핵심단어', k]), d.wwh ? [['WWH', 'What·Why·How 3요소']] : [], [['도해', '도해 1개 이상 + 지시선']]);
+    box.innerHTML = '<div class="panel pgrade"><h3 style="margin:0 0 6px">✅ 자기채점 — 쓴 답안에 들어간 항목을 체크하세요 (모범답안 겹쳐보기로 비교)</h3><div class="pgl">' +
+      items.map((it, i) => '<label><input type="checkbox" data-pg="' + i + '"> <small>' + it[0] + '</small> ' + esc(plain(it[1])) + '</label>').join('') +
+      '</div><p style="margin:8px 0 0"><b id="pgScore">0점</b> <button class="btn p" id="pgSave">기록 저장</button> <span class="kbd-hint">80점 이상 = 합격권 · 저장하면 진도/취약문항에 반영</span></p></div>';
+    const upd = () => { const c = box.querySelectorAll('[data-pg]'), n = [...c].filter(i => i.checked).length; box.querySelector('#pgScore').textContent = Math.round(n / c.length * 100) + '점 (' + n + '/' + c.length + ')'; };
+    box.addEventListener('change', upd);
+    box.querySelector('#pgSave').addEventListener('click', () => {
+      const c = box.querySelectorAll('[data-pg]'), sc = Math.round([...c].filter(i => i.checked).length / c.length * 100);
+      const e = exam[x.no] || { best: 0, n: 0 }; e.last = sc; e.best = Math.max(e.best || 0, sc); e.n = (e.n || 0) + 1; e.pen = (e.pen || 0) + 1; e.at = Date.now(); exam[x.no] = e; LS.set('amg_exam', exam);
+      box.innerHTML = '<div class="panel">저장됨: ' + sc + '점 (최고 ' + e.best + '점). ' + (sc >= 80 ? '합격권입니다 👍' : '부족한 대제목·핵심단어를 모범답안으로 다시 확인하세요.') + '</div>';
+      renderList();
+    });
+  }
   function penAction(a) {
+    if (a === 't') {
+      if (penTimer) { clearInterval(penTimer); penTimer = null; penView(); return penGrade(); }
+      penEnd = Date.now() + 10 * 60000; penTimerNo = state.cur; PEN.over = false; penView(); penTimer = setInterval(penTick, 1000); return penTick();
+    }
+    if (a === 's') return penGrade();
     if (a === 'k' || a === 'r' || a === 'b') { PEN.tool = 'pen'; PEN.color = { k: '#111111', r: '#c0392b', b: '#1f5fa8' }[a]; }
     else if (a === 'e') PEN.tool = PEN.tool === 'erase' ? 'pen' : 'erase';
     else if (a === 'w') { PEN.size = (PEN.size + 1) % 3; LS.set('amg_pensize', PEN.size); }
@@ -341,6 +373,36 @@
       ${x.mnemo ? `<div class="mnemo"><b>암기코드 ▶</b> ${fmt(x.mnemo, 'read')}</div>` : ''}
       ${d.rel ? `<div class="src">연관용어: ${arr(d.rel).map(esc).join(' · ')}</div>` : ''}</div></article>`;
   }
+  // ---------- 📄 요약 카드: 한 줄 정의 + 따라 그리기 쉬운 그림 + 흐름 + 대제목 3개 + 암기코드 ----------
+  function spOf(x) {
+    const S = window.SP || { w: {}, d: {} };
+    if (SET === 'dw') return (x.ref && S.w && S.w[x.ref]) || (S.d && S.d[x.no]) || null;
+    return (S.w && S.w[x.no]) || null;
+  }
+  function simpleCard(x) {
+    const sp = spOf(x), d = (window.D1 || {})[x.no] || {};
+    const one = sp ? sp.one : (d.def || (arr(x.secs).find(u => u.def) || {}).def || '');
+    const svg = sp ? sp.svg : d.svg;
+    const flow = sp ? sp.flow : ((arr(x.secs).find(u => u.flow) || {}).flow || []);
+    const heads = sp ? sp.heads : arr(d.subs).map(u => ({ h: u.h, k: arr(u.pts).slice(0, 3) }));
+    const code = sp ? sp.code : x.mnemo;
+    return '<article class="spv' + (sp ? '' : ' auto') + '">' +
+      '<div class="sphead"><span class="spno">' + x.no + '</span><h2>' + esc(x.title) + '</h2></div>' +
+      '<p class="one">' + fmt(one, 'read') + '</p>' +
+      (svg ? '<div class="spfig">' + svg + '</div>' : '') +
+      (flow && flow.length ? '<div class="spflow">' + flow.map(f => '<span>' + fmt(f, 'read') + '</span>').join('<i>→</i>') + '</div>' : '') +
+      '<div class="spheads">' + heads.map((u, i) => '<div class="k' + (i + 3) + '"><b>' + (i + 3) + '. ' + esc(u.h) + '</b><ul>' + arr(u.k).map(k => '<li>' + fmt(k, 'read') + '</li>').join('') + '</ul></div>').join('') + '</div>' +
+      (code ? '<div class="spcode">💡 ' + fmt(code, 'read') + '</div>' : '') +
+      '<div class="spmore"><button class="btn" data-gotab="read">📚 디테일 답안 보기</button><button class="btn" data-gotab="pen">✍ 이 문항 써보기</button></div>' +
+      '</article>';
+  }
+  function simpleView() { const x = cur(); if (!x) return; main.innerHTML = simpleCard(x) + navBtns(); }
+  // ---------- ⋯ 더보기: 나머지 학습 도구 ----------
+  function moreView() {
+    const T = [['d1', '🖼 디테일원', '책 양식 도해 답안 (정의·WWH·그림·연관용어)'], ['ans', '📝 답안지', '실제 답안지(22행) 크기 요약'], ['cloze', '🧠 빈칸암기', '핵심단어·수치 가리고 떠올리기'],
+      ['exam', '⏱ 모의시험(타자)', '10분 타이머 + 키워드 채점'], ['sum', '📋 요약표', '전 문항 한 장 요약'], ['rule', '📐 작성원칙', '답안 기본 틀'], ['lib', '📂 자료실', '원본 PDF (PC 전용)']];
+    main.innerHTML = '<div class="panel"><h2>⋯ 더보기</h2><div class="moregrid">' + T.filter(t => !(t[0] === 'lib' && (ONLINE || WEB))).map(t => '<button class="morebtn" data-gotab="' + t[0] + '"><b>' + t[1] + '</b><span>' + t[2] + '</span></button>').join('') + '</div></div>';
+  }
   function navBtns() {
     const list = filtered(); const i = list.findIndex(x => x.no === state.cur);
     const p = list[i - 1], n = list[i + 1];
@@ -355,7 +417,7 @@
     read() {
       const x = cur(); if (!x) return main.innerHTML = '<div class="panel">데이터가 없습니다.</div>';
       const bar = `<div class="cz-bar"><b>합격답안</b><button class="btn ${readMode === 'sum' ? 'p' : ''}" data-rm="sum">📄 요약</button><button class="btn ${readMode === 'det' ? 'p' : ''}" data-rm="det">📚 디테일</button><span style="flex:1"></span><span class="kbd-hint">Space 다음 · Shift+Space 이전</span></div>`;
-      main.innerHTML = bar + (readMode === 'sum' ? sumCard(x) : sheet(x, 'read')) + navBtns();
+      main.innerHTML = sheet(x, 'read') + navBtns();
     },
     cloze() {
       const x = cur(); if (!x) return;
@@ -370,6 +432,8 @@
     d1() { d1View(); },
     ans() { ansView(); },
     pen() { penView(); },
+    simple() { simpleView(); },
+    more() { moreView(); },
     card() { cardView(); },
     exam() { examView(); },
     stat() { statView(); },
@@ -466,11 +530,34 @@
   }
 
   // ---------- stats ----------
+  // ---------- 🏠 오늘의 학습: 시험일 D-day·하루 분량·복습 대상·취약 문항 ----------
+  function todayPanel() {
+    const now = Date.now(), DAYMS = 864e5;
+    const examDate = LS.get('amg_examdate', '');
+    const dday = examDate ? Math.ceil((new Date(examDate + 'T09:00:00').getTime() - now) / DAYMS) : null;
+    const due = Q.filter(x => srs[x.no] && srs[x.no].due <= now);
+    const fresh = Q.filter(x => !srs[x.no]);
+    const weak = Q.filter(x => exam[x.no] && exam[x.no].best < 80).sort((a, b) => exam[a.no].best - exam[b.no].best);
+    const never = Q.filter(x => !exam[x.no]);
+    const notLong = Q.filter(x => lvOf(x.no) < 4).length;
+    const perDay = dday && dday > 0 ? Math.ceil(notLong / dday) : null;
+    const newToday = Math.min(fresh.length, perDay || 15);
+    const chip = x => '<button class="btn" data-pentry="' + x.no + '">' + x.no + ' ' + esc(x.title).slice(0, 16) + (exam[x.no] ? ' · ' + exam[x.no].best + '점' : '') + '</button>';
+    const pick = weak.slice(0, 6).concat(never.slice(0, Math.max(0, 6 - weak.length)));
+    return '<div class="panel today"><h2>🏠 오늘의 학습 <small>' + esc(SETS[SET]) + '</small></h2>' +
+      '<div class="kpi"><div><b>' + (dday === null ? '—' : (dday > 0 ? 'D-' + dday : dday === 0 ? 'D-DAY' : '종료')) + '</b><span>시험일 <input type="date" id="examDate" value="' + esc(examDate) + '"></span></div>' +
+      '<div><b>' + due.length + '</b><span>오늘 복습 카드</span></div><div><b>' + newToday + '</b><span>오늘 새로 외울 문항' + (perDay ? ' (하루 ' + perDay + ')' : '') + '</span></div>' +
+      '<div><b>' + weak.length + '</b><span>취약 문항(80점 미만)</span></div></div>' +
+      '<ol class="routine"><li><b>카드 복습</b> ' + due.length + '개 <button class="btn p" data-gotab="card">🃏 시작</button></li>' +
+      '<li><b>새 문항 ' + newToday + '개</b> — 요약 → 디테일원 그림 → 빈칸① <button class="btn" data-gotab="d1">🖼 디테일원</button></li>' +
+      '<li><b>필기 실전 3문항</b> (10분씩, 쓰고 자기채점) — 취약·미응시 우선:<div class="chips2">' + (pick.map(chip).join('') || '<span class="kbd-hint">모든 문항 80점 이상 👍</span>') + '</div></li>' +
+      '<li><b>마무리</b> 요약표 훑기 5분 <button class="btn" data-gotab="sum">📋 요약표</button></li></ol></div>';
+  }
   function statView() {
     const tot = Q.length, by = [0, 0, 0, 0, 0, 0]; Q.forEach(x => by[lvOf(x.no)]++);
     const due = Q.filter(x => !srs[x.no] || srs[x.no].due <= Date.now()).length;
     const ex80 = Object.values(exam).filter(e => e.best >= 80).length;
-    main.innerHTML = `<div class="panel"><h2>📊 암기 진도</h2>
+    main.innerHTML = todayPanel() + `<div class="panel"><h2>📊 암기 진도</h2>
       <div class="kpi"><div><b>${tot}</b><span>전체 문항</span></div><div><b>${by[4] + by[5]}</b><span>장기기억(4~5단계)</span></div><div><b>${due}</b><span>오늘 복습 대상</span></div><div><b>${ex80}</b><span>모의시험 80% 이상</span></div></div>
       <div class="legend"><span><i style="background:var(--line)"></i>미학습</span><span><i class="lv1"></i>1 모름</span><span><i class="lv2"></i>2</span><span><i class="lv3"></i>3</span><span><i class="lv4"></i>4</span><span><i class="lv5"></i>5 완성</span></div>
       <div class="grid">${Q.map(x => `<div class="lv${lvOf(x.no)}" data-open="${x.no}" title="${esc(x.title)}">${x.no}</div>`).join('')}</div>
@@ -496,11 +583,12 @@
   function show(tab) {
     if ((ONLINE || WEB) && tab === 'lib') tab = 'read';
     state.tab = tab; LS.set('amg_tab', tab);
-    document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+    const vis = [...document.querySelectorAll('#tabs button')].some(b => b.dataset.tab === tab);
+    document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === tab || (!vis && b.dataset.tab === 'more')));
     (views[tab] || views.read)(); window.scrollTo(0, 0);
   }
   let lastOpenT = 0;
-  function open(no) { const now = Date.now(); if (now - lastOpenT < 220) return; lastOpenT = now; state.cur = +no; LS.set('amg_cur', state.cur); renderList(); $('#side').classList.remove('show'); show(['cloze', 'read', 'd1', 'ans', 'pen'].includes(state.tab) ? state.tab : 'read'); }
+  function open(no) { const now = Date.now(); if (now - lastOpenT < 220) return; lastOpenT = now; state.cur = +no; LS.set('amg_cur', state.cur); renderList(); $('#side').classList.remove('show'); show(['cloze', 'read', 'd1', 'ans', 'pen', 'simple'].includes(state.tab) ? state.tab : 'read'); }
 
   let lastTapEl = null, lastTapT = 0;
   document.addEventListener('click', e => {
@@ -510,6 +598,8 @@
     if (tapEl) { const now = Date.now(); if (tapEl === lastTapEl && now - lastTapT < 350) { e.preventDefault(); return; } lastTapEl = tapEl; lastTapT = now; }
     if (t.closest('.viewer')) return;
     if (t.dataset && t.dataset.pen) return penAction(t.dataset.pen);
+    if (t.dataset && t.dataset.gotab) return show(t.dataset.gotab);
+    if (t.dataset && t.dataset.pentry) { state.cur = +t.dataset.pentry; LS.set('amg_cur', state.cur); renderList(); return show('pen'); }
     const fsv = t.closest('figure svg, .svgw svg, .asheet .sv svg, .sumv svg');
     if (fsv && !t.closest('.hide') && !t.closest('.penpage')) { const fg = t.closest('figure'); const cap = fg && fg.querySelector('figcaption'); return openViewer(fsv, cap ? cap.textContent : ((document.querySelector('.d1 .figt, .al.h b') || {}).textContent || '')); }
     const tb = t.closest('#tabs button'); if (tb) return show(tb.dataset.tab);
@@ -546,12 +636,13 @@
   });
   document.addEventListener('change', e => {
     if (e.target.name === 'lv') { state.czLv = +e.target.value; views.cloze(); }
+    if (e.target.id === 'examDate') { LS.set('amg_examdate', e.target.value); statView(); }
     if (e.target.closest && e.target.closest('#chk')) score();
   });
   document.addEventListener('keydown', e => {
     if (e.target.matches && e.target.matches('input,textarea,select')) return;
     if (state.tab === 'card') { if (e.code === 'Space') { e.preventDefault(); if (!cardFlip) { cardFlip = true; cardView(); } } if (cardFlip && ['1', '2', '3'].includes(e.key)) rate(+e.key); }
-    if (['read', 'cloze', 'd1', 'ans', 'pen'].includes(state.tab) && !printMode) {
+    if (['read', 'cloze', 'd1', 'ans', 'pen', 'simple'].includes(state.tab) && !printMode) {
       const list = filtered(), i = list.findIndex(x => x.no === state.cur);
       // Space = 다음 문항, Shift+Space = 이전 문항 (빠른 넘김)
       if (e.code === 'Space' && !e.ctrlKey && !e.altKey && !e.metaKey) {
@@ -567,7 +658,7 @@
   let tx0 = null, ty0 = 0;
   main.addEventListener('touchstart', e => { const t = e.touches[0]; if (e.touches.length > 1 || t.touchType === 'stylus' || e.target.closest('.penpage,.viewer,table,.vbody')) { tx0 = null; return; } tx0 = t.clientX; ty0 = t.clientY; }, { passive: true });
   main.addEventListener('touchend', e => {
-    if (tx0 === null || !['read', 'cloze', 'd1', 'ans'].includes(state.tab) || printMode) return;
+    if (tx0 === null || !['read', 'cloze', 'd1', 'ans', 'simple'].includes(state.tab) || printMode) return;
     const t = e.changedTouches[0], dx = t.clientX - tx0, dy = t.clientY - ty0; tx0 = null;
     if (Math.abs(dx) < 110 || Math.abs(dx) < Math.abs(dy) * 2.5) return; // 스와이프는 크게·수평으로만 (오작동 방지)
     for (let el = e.target; el && el !== main; el = el.parentElement) if (el.scrollWidth > el.clientWidth + 2 && getComputedStyle(el).overflowX !== 'visible') return;

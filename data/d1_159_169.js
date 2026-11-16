@@ -190,7 +190,7 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<text x="220" y="44" text-anchor="middle" class="b">2면: Bond Breaker</text>' +
     '<text x="355" y="44" text-anchor="middle" class="b">2면: Back up재</text>' +
     '<line x1="340" y1="180" x2="370" y2="180" class="ln2"/><line x1="340" y1="175" x2="340" y2="185" class="ln2"/><line x1="370" y1="175" x2="370" y2="185" class="ln2"/><text x="355" y="196" text-anchor="middle" class="r">W</text>' +
-    '<line x1="420" y1="60" x2="420" y2="90" class="ln2"/><line x1="415" y1="60" x2="425" y2="60" class="ln2"/><line x1="415" y1="90" x2="425" y2="90" class="ln2"/><text x="424" y="80" class="r">D</text>' +
+    '<line x1="420" y1="60" x2="420" y2="90" class="ln2"/><line x1="415" y1="60" x2="425" y2="60" class="ln2"/><line x1="415" y1="90" x2="425" y2="90" class="ln2"/><text x="424" y="91" class="r">D</text>' +
     '<line x1="85" y1="100" x2="60" y2="200" class="ld"/><circle cx="60" cy="200" r="2" class="dotf"/><text x="64" y="204" class="r">바닥 구속 → 파단</text>' +
     '<line x1="40" y1="120" x2="30" y2="236" class="ld"/><circle cx="30" cy="236" r="2" class="dotf"/><text x="34" y="240" class="s">응력 집중 → 파괴</text>' +
     '<line x1="225" y1="78" x2="150" y2="186" class="ld"/><circle cx="150" cy="186" r="2" class="dotf"/><text x="154" y="190" class="s">실링재 두께 균일</text>' +
@@ -275,7 +275,7 @@ window.D1 = Object.assign(window.D1 || {}, {
     '<line x1="296" y1="112" x2="340" y2="112" class="rd"/><line x1="296" y1="116" x2="420" y2="116" class="ln2 dash"/>' +
     '<line x1="300" y1="60" x2="300" y2="112" class="ln2"/><line x1="280" y1="60" x2="280" y2="260" class="ln2"/>' +
     '<text x="344" y="64" class="b">Ti = 25℃</text>' +
-    '<text x="296" y="90" text-anchor="end" class="s">Ti − Ts</text>' +
+    '<text x="276" y="90" text-anchor="end" class="s">Ti − Ts</text>' +
     '<text x="276" y="220" text-anchor="end" class="s">Ti − To</text>' +
     '<text x="276" y="116" text-anchor="end" class="r">Ts ≥ 14.6℃</text>' +
     '<text x="344" y="134" class="bl">노점 13.9℃</text>' +

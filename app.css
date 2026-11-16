@@ -376,3 +376,45 @@ html.eink svg .ln{stroke-width:2.1}
 .penpage.over .asheet{opacity:.32}
 .penpage.blank{background:#fff}
 #penc{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;-webkit-user-select:none;user-select:none}
+
+/* ===== 필기 실전·자기채점 / 오늘의 학습 ===== */
+.pentime{font-weight:900;font-size:16px;font-variant-numeric:tabular-nums;padding:0 6px}
+.pentime.warn{color:var(--red)}
+.pgrade .pgl{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 12px;font-size:14px}
+.pgrade label{display:flex;gap:6px;align-items:flex-start;padding:3px 0;cursor:pointer}
+.pgrade input{width:20px;height:20px;flex:0 0 auto}
+.pgrade small{color:var(--mute);font-weight:800;flex:0 0 auto}
+.today h2 small{font-size:13px;color:var(--mute);font-weight:700}
+.today .kpi input{font:inherit;font-size:12px;margin-top:4px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);padding:1px 4px}
+.routine{margin:10px 0 0;padding-left:22px;display:grid;gap:8px;font-size:14.5px}
+.routine .btn{margin-left:6px;padding:4px 10px}
+.chips2{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips2 .btn{margin:0;font-size:12.5px}
+
+/* ===== 📄 요약 카드 (한눈에·따라 그리기) ===== */
+.spv{max-width:780px;margin:0 auto 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.sphead{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.sphead h2{margin:0;font-size:21px;line-height:1.35;text-wrap:balance}
+.spno{flex:0 0 auto;background:var(--ink);color:var(--paper);border-radius:8px;padding:2px 9px;font-weight:800;font-size:14px}
+.spv .one{font-size:17px;line-height:1.65;margin:6px 0 10px;padding:10px 14px;border-left:4px solid var(--blue);background:var(--blue-bg);border-radius:0 10px 10px 0}
+.spfig{border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--paper);cursor:zoom-in}
+.spfig svg{width:100%;height:auto;display:block}
+.spv svg text{font-size:15px;font-weight:600}
+.spv svg text.t{font-size:17px;font-weight:800}
+.spv svg text.s2{font-size:13px;font-weight:600}
+.spv svg .ln,.spv svg .bx,.spv svg .bx2,.spv svg .soil{stroke-width:2}
+.spflow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0}
+.spflow span{border:2px solid var(--ink);border-radius:999px;padding:3px 12px;font-weight:800;font-size:14.5px}
+.spflow i{font-style:normal;font-weight:900}
+.spheads{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.spheads>div{border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.spheads b{font-size:15.5px}
+.spheads .k3 b{color:var(--blue)} .spheads .k4 b{color:var(--red)} .spheads .k5 b{color:var(--green)}
+.spheads ul{margin:6px 0 0;padding-left:18px;font-size:15px;line-height:1.6}
+.spcode{margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--purple-bg);font-weight:700;font-size:15px}
+.spmore{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.spv.auto .spfig{opacity:.95}
+.moregrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.morebtn{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit}
+.morebtn b{font-size:16px}.morebtn span{font-size:13px;color:var(--mute)}
+@media (max-width:860px){.spheads{grid-template-columns:1fr}.sphead h2{font-size:19px}.spv{padding:14px}}

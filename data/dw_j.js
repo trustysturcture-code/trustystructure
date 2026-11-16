@@ -1,4 +1,4 @@
-// 디테일원 용어250 그룹 j (208~226) — 생성: gen_dw_j.js
+// 디테일원 용어250 그룹 j (208~226) — 생성: gen_dw_j.js · 검토·det 보완: patch_dw_j.js
 window.DW = Object.assign(window.DW || {}, {
 208: {
   title: 'PMIS(Project Management Information System)',
@@ -14,7 +14,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '흩어진 사업정보를 하나의 DB로 — 실시간 공유로 의사결정 속도와 정확도 향상',
   mnemo: '웹디비 공원품안문 (Web DB + 공정·원가·품질·안전·문서)',
   rel: ['WBS', 'EVMS', 'CALS·CITIS', 'BIM', 'CIC'],
-  src: '근거: 마법지 정보관리(정보관리 System: Expert System, GIS, Data Mining, PMIS) / 마법지 공사관리 7.정보관리(CIC·CALS·CITIS·WBS·PMIS·RFID·BIM) / 일반 사업관리 지침'
+  src: '근거: 마법지 정보관리(정보관리 System: Expert System, GIS, Data Mining, PMIS) / 마법지 공사관리 7.정보관리(CIC·CALS·CITIS·WBS·PMIS·RFID·BIM) / 일반 사업관리 지침',
+  det: { secs: [
+    { h: '정의', def: '건설사업의 기획·설계·시공·유지관리 전 단계에서 발생하는 공정·원가·품질·안전·문서 정보를 [[WBS·CBS]] 코드로 분류하여 [[Web 기반 통합 DB]]에 축적하고, 발주자·설계자·시공자·감리자가 [[실시간 공유]]하여 신속한 의사결정을 지원하는 [[사업관리 정보시스템]]' },
+    { h: 'PMIS 구성 및 정보흐름', fig: 'MAIN', flow: ['정보분류체계(WBS·CBS) 구축', '참여주체·권한 설정', '일보·기성·검측 Data 입력', 'DB 통합·EVMS 분석', '보고·의사결정', '준공 후 유지관리 이관'] },
+    { h: '구성 모듈 및 기능', tbl: { head: ['모듈', '주요 기능', '연계 기법'], rows: [['공정관리', 'Network 공정표·진도율·지연 분석', '[[WBS]] · EVMS(SPI)'], ['원가관리', '실행예산·기성·변경금액 관리', 'CBS · EVMS(CPI)'], ['품질관리', '검측요청·시험성과·부적합(NCR) 관리', 'ITP · 체크리스트'], ['안전관리', '위험성평가·TBM·사고 보고', 'IoT 센서·CCTV'], ['문서관리', '도면·공문·설계변경 [[전자결재]]', '버전관리·BIM'], ['자재·조달', '발주·입고·재고 추적', 'RFID · SCM']] } },
+    { h: '도입효과 및 문제점', tbl: { head: ['구분', '도입효과', '문제점'], rows: [['정보', '단일 DB → 중복입력·누락 방지', '입력 지연 시 정보 신뢰성 저하'], ['의사결정', 'EVMS 기반 조기 경보·신속 결정', '현장 입력부담(이중업무)'], ['협업', '참여주체 실시간 공유', '사업별 시스템 상이 → 호환성 부족'], ['보안', '이력 추적·책임 명확화', '정보 유출·접근권한 관리 필요']] } },
+    { h: '운영 시 유의사항', ul: ['[전] 사업 특성에 맞는 [[WBS·CBS 코드체계]] 표준화, 참여주체별 권한·결재선 사전 정의', '[전] 기존 ERP·BIM·전자조달 시스템과 Interface 확인', '[중] 일보·기성·검측 Data의 [[적시성·정확성]] 확보 — 입력 책임자 지정, 마감일 관리', '[중] EVMS 지표(SPI·CPI) 정기 분석 → 공정·원가 편차 원인 Feedback', '[후] 준공도서·시험성과·하자이력 → 유지관리(FM) DB로 이관', '보안: 접근권한 등급화, 로그 관리, 백업'] },
+    { h: '개선방안', ul: ['BIM(4D·5D)·모바일·드론 영상과 연계 → 현장 입력 자동화', 'IoT 센서·RFID Data 자동 수집으로 입력부담 경감', 'AI·빅데이터 분석으로 공기·원가 Risk 예측', '발주기관 PMIS 표준화·Cloud 공동 활용'] }
+  ] }
 },
 209: {
   title: 'BIM(Building Information Modelling)',
@@ -30,7 +38,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '정보를 입힌 3D 모델 하나로 설계·시공·유지관리 전 과정을 연결',
   mnemo: '객파생 IFC LOD (객체·파라메트릭·생애주기)',
   rel: ['BIM LOD', '개방형 BIM과 IFC', 'BIM Library', 'Digital Twin', 'PMIS'],
-  src: '근거: 합격답안 디테일용어300 201-300 p042(241 BIM: GSA·NIBS 정의, 적용절차, 단계별 효과) / 마법지 정보관리 기술(BIM) / 국토부 건설산업 BIM 기본지침'
+  src: '근거: 합격답안 디테일용어300 201-300 p042(241 BIM: GSA·NIBS 정의, 적용절차, 단계별 효과) / 마법지 정보관리 기술(BIM) / 국토부 건설산업 BIM 기본지침',
+  det: { secs: [
+    { h: '정의', def: '[[객체기반]]의 [[파라메트릭 3D 모델]]에 형상과 속성정보를 담아, 건물 [[생애주기]] 동안 생성되는 정보를 [[IFC]] 등 개방형 표준으로 교환·관리하는 정보모델링 과정(GSA) — 이해관계자 협업·의사결정의 기반' },
+    { h: 'BIM 원리(nD) 및 적용절차', fig: 'MAIN', flow: ['BIM 수행계획서(BEP) 수립', '데이터 작성(LOD 설정)', '간섭검토·물량산출', '4D 공정·5D 원가 시뮬레이션', '성과품 납품(IFC·원본)', '성과품 관리·FM 활용'] },
+    { h: '단계별 활용 및 효과', tbl: { head: ['단계', 'BIM 활용', '효과'], rows: [['기획', '매스·대안 검토, 에너지 분석', '최적 대안 선정'], ['설계', '3D 설계·[[간섭검토]]·물량 자동산출', '설계오류·재설계 감소'], ['시공', '[[4D·5D]] 시뮬레이션, Shop Dwg, 시공성 검토', '재시공·공기·원가 절감'], ['유지관리', '자산정보·FM 연계, Digital Twin', '생애주기 비용(LCC) 절감']] } },
+    { h: '관련 기준', tbl: { head: ['항목', '내용', '근거'], rows: [['정보수준', '[[LOD]] 100~500 단계별 상세수준', 'AIA E202 / BIM 지침'], ['교환표준', '[[IFC]](ISO 16739) 개방형 교환', 'buildingSMART'], ['수행지침', 'BIM 수행계획서·성과품 작성기준', '국토부 건설산업 BIM 기본지침(2020) · 시행지침'], ['도입 목표', '2030 건설 전 과정 BIM 전면 도입', '국토부 BIM 시행 로드맵 — 단계별 대상 확인 필요']] } },
+    { h: '적용 시 유의사항', ul: ['[전] 발주자 요구사항(EIR)·[[BIM 수행계획서]]로 LOD·성과품·책임 범위 확정', '[전] 공통 좌표·분류체계·Library 표준 설정', '[중] 설계변경을 모델에 즉시 반영 → 도면·물량 일치성 유지', '[중] 정기 간섭검토 회의, 이슈 추적관리(BCF)', '[후] [[IFC]] 호환성 검증 후 납품, FM 속성정보 누락 확인', '초기 S/W·H/W 투자 및 전문인력 확보'] },
+    { h: '활성화 방안', ul: ['BIM 기반 인허가·적산·공정 연계 제도화', 'FM·Digital Twin 연계로 유지관리 활용 확대', '표준 Library·객체 분류체계 공유', '중소업체 교육·S/W 지원'] }
+  ] }
 },
 210: {
   title: 'Smart Construction 요소기술/4차산업혁명',
@@ -46,7 +62,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '디지털화·자동화·지능화·제조업화로 사람의 한계를 넘는 건설 생산체계',
   mnemo: '디자지제 (디지털·자동·지능·제조업화)',
   rel: ['BIM', 'Drone', 'OSC·모듈러', 'IoT 스마트 안전관리', 'Digital Twin'],
-  src: '근거: 합격답안 디테일용어300 201-300 p046(245 Smart Construction: 디지털화·자동화·지능화·제조업화, 단계별 Process) / 마법지 Smart Construction 표 / 국토부 스마트 건설기술 로드맵'
+  src: '근거: 합격답안 디테일용어300 201-300 p046(245 Smart Construction: 디지털화·자동화·지능화·제조업화, 단계별 Process) / 마법지 Smart Construction 표 / 국토부 스마트 건설기술 로드맵',
+  det: { secs: [
+    { h: '정의', def: '건설 전 과정에 [[BIM·드론·IoT·빅데이터·AI·로봇]] 등 [[4차산업혁명]] 첨단기술을 융합하여 [[디지털화·자동화·지능화·제조업화]]로 인력 의존의 한계를 극복하고 생산성·안전성·품질을 높이는 [[스마트 건설기술]]' },
+    { h: '핵심 요소기술 및 단계별 Process', fig: 'MAIN', flow: ['설계: 드론·LiDAR 측량, BIM 간섭검토', '토공: RTK-GPS MG·MC 장비', '골조·마감: OSC·건설로봇·3D 프린팅', '안전: IoT 센서·CCTV·스마트 안전장비', '유지관리: Digital Twin·센서 계측'] },
+    { h: '단계별 요소기술', tbl: { head: ['단계', '요소기술', '효과'], rows: [['설계', '[[BIM]]·드론 측량·VR/AR 검토', '설계오류·측량시간 감소'], ['시공', '[[Machine Guidance·Control]]·건설로봇·OSC', '생산성·정밀도 향상'], ['안전', '[[IoT]] 위치·가스·붕괴 센서, 웨어러블', '위험 실시간 감지·경보'], ['관리', '빅데이터·[[AI]] 공정·품질 예측', '의사결정 고도화'], ['유지관리', '[[Digital Twin]]·센서 모니터링', '예방적 유지관리']] } },
+    { h: '추진 정책·기준', tbl: { head: ['항목', '내용', '근거'], rows: [['로드맵', '2030 건설 자동화 목표(디지털화·자동화)', '국토부 스마트 건설기술 로드맵(2018)'], ['활성화방안', 'S-Construction 2.0(디지털화·자동화·OSC)', '국토부 스마트건설 활성화 방안(2022)'], ['안전', '스마트 안전장비 활용·지원', '건설기술진흥법·산업안전보건관리비 계상기준 — 세부 확인 필요']] } },
+    { h: '도입 시 문제점 및 유의사항', ul: ['초기 장비·S/W [[투자비 과다]] → 중소 현장 적용 한계', '기술 표준·품질기준·적산기준 등 [[제도 미비]]', '[[전문인력]] 부족, 기존 인력 재교육 필요', '데이터 호환성·보안 확보, 장비 오작동 대비 수동 백업 절차 수립', '현장 환경(분진·통신음영)에 따른 센서·통신 신뢰성 검증'] },
+    { h: '활성화 방안', ul: ['OSC·모듈러 확대로 제조업화 기반 구축', '스마트 기술 적용 시 공사비 반영·가점 등 인센티브', 'IoT 실시간 모니터링 기반 환경·안전관리 의무화 확대', '산·학·연 실증 Test-bed 및 표준 Platform 구축'] }
+  ] }
 },
 211: {
   title: 'RFID(무선인식기술)',
@@ -62,7 +86,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '보지 않고 읽는다 — 무선 Tag로 자재·인력·장비를 실시간 추적',
   mnemo: '칩태리안 (칩·Tag·Reader·Antenna)',
   rel: ['SCM', 'JIT', 'BIM', 'IoT 스마트 안전관리', 'PMIS'],
-  src: '근거: 합격답안 디테일용어300 201-300 p047(246 RFID: 정의, 동작원리, Active·Passive, 활용) / 마법지 정보관리 기술(RFID) / 주파수대역: 일반 RFID 표준(UHF 860~960MHz, HF 13.56MHz)'
+  src: '근거: 합격답안 디테일용어300 201-300 p047(246 RFID: 정의, 동작원리, Active·Passive, 활용) / 마법지 정보관리 기술(RFID) / 주파수대역: 일반 RFID 표준(UHF 860~960MHz, HF 13.56MHz)',
+  det: { secs: [
+    { h: '정의', def: '[[반도체 칩]]이 내장된 [[Tag]]에 저장된 Data를 [[Antenna]]와 [[Reader]]가 [[무선주파수(RF)]]로 [[비접촉·원거리]] 인식하고, Host DB와 연동하여 자재·장비·인력 정보를 실시간 관리하는 무선인식 시스템' },
+    { h: 'RFID 종류 및 동작원리', fig: 'MAIN', flow: ['Tag 부착(자재·부재·안전모)', 'Reader 전파 송신', 'Tag 응답(ID·Data)', 'Reader 인식·Middleware', 'Host DB·PMIS 연동', '실시간 추적·이력관리'] },
+    { h: 'Active형 vs Passive형', tbl: { head: ['구분', 'Active형', 'Passive형'], rows: [['전원', '배터리 내장', '무전원(Reader 전파로 구동)'], ['인식거리', '수십 m 이상 장거리', '수 cm ~ 수 m'], ['가격·수명', '고가·배터리 수명 제한', '저가·반영구'], ['적용', '장비·인력 위치 추적', '자재·PC 부재·레미콘 관리']] } },
+    { h: '주파수 대역 및 Bar Code 비교', tbl: { head: ['구분', '내용', '비고'], rows: [['LF', '125kHz 내외', '근거리·출입통제'], ['HF', '{{13.56MHz}}', '교통카드·근거리'], ['UHF', '{{860~960MHz}}(국내 917~923.5MHz)', '물류·자재 원거리 인식'], ['Bar Code 대비', '비접촉·다수 동시 인식·Data 수정 가능', 'Bar Code: 가시선 필요·1건씩']] } },
+    { h: '적용 시 유의사항', ul: ['[전] 인식거리·환경 고려 [[주파수·Tag 형식]] 선정', '[전] 금속·수분(콘크리트 매립) [[전파 간섭]] → 금속 대응형 Tag·차폐 검토', '[중] Tag [[부착위치·내구성]] 확보(타설·양중 중 파손 방지)', '[중] Reader 설치 위치(Gate·양중구) 및 인식률 점검', '[후] 이력 Data의 FM·하자관리 활용, 개인정보(근로자 위치) 보호'] },
+    { h: '활용분야 및 개선방안', ul: ['레미콘 출하·도착 시간 관리(운반시간 한도 관리)', 'PC·커튼월 부재 생산–운반–설치 추적, 양중 순서 관리', '근로자 출입·위험구역 접근 경보, 장비 위치관리', 'BIM·IoT·PMIS 연계 → 자동 기성·자재 실적 집계'] }
+  ] }
 },
 212: {
   title: 'SCM(Supply Chain Management)',
@@ -78,7 +110,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '필요한 자재를 필요한 때 필요한 양만 — 공급망 전체를 하나로 관리',
   mnemo: '공공물현 정물 JIT (공급자·공장·물류·현장 / 정보·물류)',
   rel: ['JIT', 'Lean Construction', 'RFID', 'BOM', 'PMIS'],
-  src: '근거: 마법지 생산·조달관리(B.O.M, Just In Time, Lean 건설) / 마법지 공사관리 (6)생산조달(Just in time, S.C.M) / 일반 SCM 이론'
+  src: '근거: 마법지 생산·조달관리(B.O.M, Just In Time, Lean 건설) / 마법지 공사관리 (6)생산조달(Just in time, S.C.M) / 일반 SCM 이론',
+  det: { secs: [
+    { h: '정의', def: '자재·부품의 [[공급자–제작공장–물류–현장]]으로 이어지는 [[공급망]] 전체의 [[정보흐름·물류흐름]]을 통합·공유하여 [[JIT]] 조달로 재고·대기·지연을 최소화하는 공급망 관리기법' },
+    { h: 'SCM 공급망 흐름 및 재고 비교', fig: 'MAIN', flow: ['수요·공정계획 수립', '발주·설계정보 공유', '공장 제작(PC·CW·철근)', '적시 운반(JIT)', '현장 양중·설치', '실적 Feedback'] },
+    { h: '기존 조달 vs SCM', tbl: { head: ['구분', '기존 조달', 'SCM'], rows: [['관리 범위', '현장·개별 업체 단위', '공급망 전체 통합'], ['정보', '단절·지연', '실시간 공유(PMIS·RFID)'], ['재고', '대량 반입·[[재고↑]]', '소량·다빈도, [[재고 최소화]]'], ['관계', '단기 거래·가격 경쟁', '[[파트너링]]·장기 협력']] } },
+    { h: '구성요소', tbl: { head: ['요소', '내용'], rows: [['계획', '공정 연계 자재 수요예측, BOM 작성'], ['조달', '협력사 선정·발주, 생산계획 공유'], ['물류', '운반·야적·양중 Cycle, [[JIT]] 반입'], ['정보', 'RFID·Bar Code 추적, PMIS 공유']] } },
+    { h: '도입 시 문제점 및 유의사항', ul: ['협력사 [[정보공유 기피·불신]] → 계약에 정보공유 조건 명시', '현장 [[야적·양중 제약]] → 반입 시간대·양중계획과 연동', '[[설계변경]] 시 공장 제작분 손실·공급 차질 → 변경 동결시점 관리', 'JIT 과도 적용 시 교통·기상 변수로 공정 중단 위험 → 안전재고 설정'] },
+    { h: '개선방안', ul: ['RFID·BIM 연계 실시간 추적, 자동 입고·기성', '부재 표준화·모듈화(OSC)로 공급망 단순화', 'Lean Construction(Pull 방식)과 결합', '주요 협력사 장기 파트너링·성과공유'] }
+  ] }
 },
 213: {
   title: '녹색건축 인증제(친환경건축물)',
@@ -89,28 +129,44 @@ window.DW = Object.assign(window.DW || {}, {
   def: '[[지속가능한 개발]]을 목표로 [[LCC]] 관점에서 건축물이 환경에 미치는 요소를 [[7개 분야]]로 평가하여 [[환경성능]]을 인증하는 제도(녹색건축물 조성 지원법)',
   wwh: ['환경성능 인증', '친환경 건축 확산', '7개 분야 평가'],
   figT: '녹색건축 인증 평가분야·등급 및 인증절차',
-  svg: '<svg viewBox="0 0 640 310" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="190" height="150" class="bx"/><text x="115" y="48" text-anchor="middle" class="b">[7개 평가분야]</text><text x="32" y="66" class="s">· 토지이용 및 교통</text><text x="32" y="82" class="s">· 에너지 및 환경오염</text><text x="32" y="98" class="s">· 재료 및 자원</text><text x="32" y="114" class="s">· 물순환 관리</text><text x="32" y="130" class="s">· 유지관리</text><text x="32" y="146" class="s">· 생태환경</text><text x="32" y="162" class="s">· 실내환경 (+혁신설계)</text><rect x="240" y="52" width="180" height="22" class="bx3"/><text x="330" y="67" text-anchor="middle" class="s">최우수(그린1)</text><rect x="240" y="78" width="150" height="22" class="bx2"/><text x="315" y="93" text-anchor="middle" class="s">우수(그린2)</text><rect x="240" y="104" width="120" height="22" class="bx2"/><text x="300" y="119" text-anchor="middle" class="s">우량(그린3)</text><rect x="240" y="130" width="90" height="22" class="bx"/><text x="285" y="145" text-anchor="middle" class="s">일반(그린4)</text><line x1="300" y1="152" x2="250" y2="174" class="ld"/><circle cx="250" cy="174" r="2" class="dotf"/><text x="255" y="178" class="r">공공 3,000㎡↑ 우수 이상 의무</text><rect x="20" y="214" width="90" height="30" class="bx"/><text x="65" y="233" text-anchor="middle" class="b">건축주</text><rect x="150" y="214" width="120" height="30" class="bx2"/><text x="210" y="233" text-anchor="middle" class="b">인증기관 심사단</text><rect x="310" y="214" width="110" height="30" class="bx"/><text x="365" y="233" text-anchor="middle" class="b">인증심의위원회</text><line x1="110" y1="224" x2="148" y2="224" class="ar"/><text x="129" y="210" text-anchor="middle" class="s">신청</text><line x1="148" y1="236" x2="112" y2="236" class="ar"/><text x="129" y="256" text-anchor="middle" class="s">인증</text><line x1="270" y1="224" x2="308" y2="224" class="ar"/><text x="289" y="210" text-anchor="middle" class="s">심의요청</text><line x1="308" y1="236" x2="272" y2="236" class="ar"/><text x="289" y="256" text-anchor="middle" class="s">결과통보</text><line x1="210" y1="244" x2="210" y2="270" class="ar"/><rect x="160" y="270" width="100" height="26" class="bx3"/><text x="210" y="287" text-anchor="middle" class="b">운영기관</text><line x1="65" y1="244" x2="40" y2="290" class="ld"/><circle cx="40" cy="290" r="2" class="dotf"/><text x="45" y="294" class="s">인증 유효기간 5년</text><line x1="310" y1="244" x2="330" y2="296" class="ld"/><circle cx="330" cy="296" r="2" class="dotf"/><text x="335" y="300" class="s">심의·현장실사</text><line x1="210" y1="36" x2="440" y2="52" class="ld"/><circle cx="440" cy="52" r="2" class="dotf"/><text x="446" y="56" class="k3">③ 7개 분야 평가</text><line x1="420" y1="63" x2="440" y2="72" class="ld"/><circle cx="440" cy="72" r="2" class="dotf"/><text x="446" y="76" class="k3">③ 최우수~일반 4등급</text><line x1="420" y1="174" x2="440" y2="92" class="ld"/><circle cx="440" cy="92" r="2" class="dotf"/><text x="446" y="96" class="k3">③ 공공 3,000㎡↑ 의무</text><line x1="420" y1="229" x2="440" y2="122" class="ld"/><circle cx="440" cy="122" r="2" class="dotf"/><text x="446" y="126" class="k4">④ 예비인증 → 본인증</text><text x="446" y="146" class="k4">④ 본인증 유효 5년</text><text x="446" y="166" class="k4">④ 설계·시공 변경 시 재검토</text><line x1="420" y1="244" x2="440" y2="192" class="ld"/><circle cx="440" cy="192" r="2" class="dotf"/><text x="446" y="196" class="k5">⑤ 인센티브(기준완화)</text><text x="446" y="216" class="k5">⑤ ZEB·LCA 연계 강화</text></svg>',
+  svg: '<svg viewBox="0 0 640 310" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="190" height="150" class="bx"/><text x="115" y="48" text-anchor="middle" class="b">[7개 평가분야]</text><text x="32" y="66" class="s">· 토지이용 및 교통</text><text x="32" y="82" class="s">· 에너지 및 환경오염</text><text x="32" y="98" class="s">· 재료 및 자원</text><text x="32" y="114" class="s">· 물순환 관리</text><text x="32" y="130" class="s">· 유지관리</text><text x="32" y="146" class="s">· 생태환경</text><text x="32" y="162" class="s">· 실내환경 (+혁신설계)</text><rect x="240" y="52" width="180" height="22" class="bx3"/><text x="330" y="67" text-anchor="middle" class="s">최우수(그린1)</text><rect x="240" y="78" width="150" height="22" class="bx2"/><text x="315" y="93" text-anchor="middle" class="s">우수(그린2)</text><rect x="240" y="104" width="120" height="22" class="bx2"/><text x="300" y="119" text-anchor="middle" class="s">우량(그린3)</text><rect x="240" y="130" width="90" height="22" class="bx"/><text x="285" y="145" text-anchor="middle" class="s">일반(그린4)</text><line x1="300" y1="152" x2="250" y2="174" class="ld"/><circle cx="250" cy="174" r="2" class="dotf"/><text x="255" y="178" class="r">공공 3,000㎡↑ 인증 의무(우수↑)</text><rect x="20" y="214" width="90" height="30" class="bx"/><text x="65" y="233" text-anchor="middle" class="b">건축주</text><rect x="150" y="214" width="120" height="30" class="bx2"/><text x="210" y="233" text-anchor="middle" class="b">인증기관 심사단</text><rect x="310" y="214" width="110" height="30" class="bx"/><text x="365" y="233" text-anchor="middle" class="b">인증심의위원회</text><line x1="110" y1="224" x2="148" y2="224" class="ar"/><text x="129" y="210" text-anchor="middle" class="s">신청</text><line x1="148" y1="236" x2="112" y2="236" class="ar"/><text x="129" y="256" text-anchor="middle" class="s">인증</text><line x1="270" y1="224" x2="308" y2="224" class="ar"/><text x="289" y="210" text-anchor="middle" class="s">심의요청</text><line x1="308" y1="236" x2="272" y2="236" class="ar"/><text x="289" y="256" text-anchor="middle" class="s">결과통보</text><line x1="210" y1="244" x2="210" y2="270" class="ar"/><rect x="160" y="270" width="100" height="26" class="bx3"/><text x="210" y="287" text-anchor="middle" class="b">운영기관</text><line x1="65" y1="244" x2="40" y2="290" class="ld"/><circle cx="40" cy="290" r="2" class="dotf"/><text x="45" y="294" class="s">인증 유효기간 5년</text><line x1="310" y1="244" x2="330" y2="296" class="ld"/><circle cx="330" cy="296" r="2" class="dotf"/><text x="335" y="300" class="s">심의·현장실사</text><line x1="210" y1="36" x2="440" y2="52" class="ld"/><circle cx="440" cy="52" r="2" class="dotf"/><text x="446" y="56" class="k3">③ 7개 분야 평가</text><line x1="420" y1="63" x2="440" y2="72" class="ld"/><circle cx="440" cy="72" r="2" class="dotf"/><text x="446" y="76" class="k3">③ 최우수~일반 4등급</text><line x1="420" y1="174" x2="440" y2="92" class="ld"/><circle cx="440" cy="92" r="2" class="dotf"/><text x="446" y="96" class="k3">③ 공공 3,000㎡↑ 의무</text><line x1="420" y1="229" x2="440" y2="122" class="ld"/><circle cx="440" cy="122" r="2" class="dotf"/><text x="446" y="126" class="k4">④ 예비인증 → 본인증</text><text x="446" y="146" class="k4">④ 본인증 유효 5년</text><text x="446" y="166" class="k4">④ 설계·시공 변경 시 재검토</text><line x1="420" y1="244" x2="440" y2="192" class="ld"/><circle cx="440" cy="192" r="2" class="dotf"/><text x="446" y="196" class="k5">⑤ 인센티브(기준완화)</text><text x="446" y="216" class="k5">⑤ ZEB·LCA 연계 강화</text></svg>',
   subs: [{ h: '평가분야·등급', pts: ['[[7개 분야]] 평가', '최우수~일반 [[4등급]]', '공공 {{3,000㎡}}↑ 의무'] }, { h: '인증 절차·유의사항', pts: ['예비인증 → 본인증', '본인증 유효 {{5년}}', '설계·시공 변경 시 재검토'] }, { h: '활성화 방안', pts: ['인센티브(기준완화)', 'ZEB·LCA 연계 강화'] }],
   msg: '7개 분야를 생애주기로 평가 — 환경성능을 등급으로 보증하는 제도',
   mnemo: '토에재물 유생실 (7개 분야)',
   rel: ['Zero Energy Building', '에너지효율등급', 'LCA', '공동주택성능등급', 'EPI'],
-  src: '근거: 합격답안 디테일용어300 201-300 p050(249 녹색건축 인증: 정의, 인증절차, 의무대상 3,000㎡, 유효기간) / 마법지 절약설계(녹색인증제) / 녹색건축물 조성 지원법·녹색건축 인증기준 — 의무 등급(우수 이상) 확인 필요'
+  src: '근거: 합격답안 디테일용어300 201-300 p050(249 녹색건축 인증: 정의, 인증절차, 의무대상 공공 3,000㎡, 인센티브 표, 유효기간 본인증 5년·연장) / 녹색건축물 조성 지원법 제16조·시행령 제11조의3(공공 소유·관리 연면적 3,000㎡ 이상 신축·재축·증축 인증 의무) / 녹색건축 인증기준 제7조(공공업무시설 등 우수 등급 이상) / 마법지 절약설계(녹색인증제) — 등급 점수·인센티브 비율은 현행 고시 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '[[지속가능한 개발]] 실현을 목표로 [[LCC]](전 생애주기) 관점에서 건축물이 환경에 미치는 요소를 [[7개 분야]]로 평가하여 [[환경성능]]을 인증하는 제도(녹색건축물 조성 지원법 제16조) — 친환경 건축물: 자연과 공생하도록 설계되어 환경오염부하를 최소화한 건축물' },
+    { h: '평가분야·등급 및 인증절차', fig: 'MAIN', flow: ['건축주 인증 신청', '인증기관 심사단 평가(서류·현장실사)', '인증심의위원회 심의', '예비인증(설계단계)', '본인증(사용승인 후)', '운영기관 보고·유효기간 관리'] },
+    { h: '평가분야 및 등급', tbl: { head: ['구분', '내용', '비고'], rows: [['평가분야', '토지이용·교통 / 에너지·환경오염 / 재료·자원 / 물순환 / 유지관리 / 생태환경 / 실내환경', '[[7개 분야]] + 혁신적 설계(가산)'], ['등급', '최우수(그린1) · 우수(그린2) · 우량(그린3) · 일반(그린4)', '[[4등급]]'], ['점수', '80점 · 70점 · 60점 · 50점 이상(신축 기준)', '현행 인증기준 확인 필요']] } },
+    { h: '의무대상·유효기간·인센티브', tbl: { head: ['항목', '기준', '근거'], rows: [['의무대상', '공공 소유·관리 건축물 연면적 {{3,000㎡ 이상}} 신축·재축·증축', '시행령 제11조의3'], ['의무등급', '공공업무시설 등 [[우수(그린2) 이상]]', '녹색건축 인증기준 제7조'], ['유효기간', '예비인증: 사용승인까지 / 본인증: {{5년}}', '합격답안 p050'], ['연장', '만료 전 {{180일}} 이내 신청 → 5년 연장', '합격답안 p050'], ['인센티브', '용적률·높이 등 건축기준 완화(최우수 6%·우수 3%), 취득세·재산세 감면', '에너지효율·ZEB와 중복 가산 — 확인 필요']] } },
+    { h: '인증 절차상 유의사항', ul: ['[설계] 계획 초기부터 평가항목 반영, [[예비인증]] 취득 후 설계·시공 변경 시 등급 영향 검토', '[시공] 친환경 자재 증빙(EPD·저탄소·재활용), 실내공기질·우수 재이용 시설 시공 확인', '[준공] 사용승인 후 [[본인증]] 신청, 현장실사 대비 시공도서·사진 정리', '[운영] 인증 유효기간 관리, 운영단계 에너지·물 사용량 Monitoring'] },
+    { h: '문제점 및 활성화 방안', ul: ['설계단계 점수 위주 → 운영성능 검증 미흡: 사후 Monitoring·재인증 강화', '인센티브 대비 인증비용·절차 부담 → 절차 간소화·지원 확대', 'ZEB·LCA(전과정평가)·EPD 연계로 탄소중립 대응 강화', '민간 자율 인증 확대를 위한 금융·세제 지원'] }
+  ] }
 },
 214: {
   title: 'Zero Energy Building, 제로에너지 건축물 인증제도',
   cat: '스마트건설·친환경',
-  key: ['패시브', '액티브', '에너지자립률', '신재생에너지', '1~5등급', '에너지효율 1++', 'BEMS', '공공 500㎡'],
-  www: { what: '[[패시브]]로 에너지 요구량을 최소화하고 [[액티브]]로 신재생에너지를 생산하여 [[에너지자립률]]을 높인 건축물을 인증하는 제도', why: '건물부문 에너지 소비·온실가스 배출 저감, 탄소중립 달성 및 운영비 절감', how: '고단열·고기밀·열교차단(패시브) → 태양광·지열 생산(액티브) → 효율등급 1++ 취득·BEMS 설치 → 자립률 산정 → ZEB 등급 인증' },
+  key: ['패시브', '액티브', '에너지자립률 20%↑', '신재생에너지', '1~5등급', 'BEMS·원격검침', '공공 1,000㎡ 4등급', '민간 1,000㎡·30세대 5등급'],
+  www: { what: '[[패시브]]로 에너지 요구량을 최소화하고 [[액티브]]로 신재생에너지를 생산하여 [[에너지자립률]]을 높인 건축물을 인증하는 제도', why: '건물부문 에너지 소비·온실가스 배출 저감, 탄소중립 달성 및 운영비 절감', how: '고단열·고기밀·열교차단(패시브) → 태양광·지열 생산(액티브) → 1차에너지소요량 저감·BEMS(원격검침) 설치 → 자립률 산정 → ZEB 등급 인증' },
   tag: '제도·에너지·인증',
   def: '단열·기밀 등 [[패시브]] 기술로 에너지 부하를 최소화하고 태양광·지열 등 [[액티브]] 기술로 신재생에너지를 생산하여 [[에너지자립률]] {{20% 이상}}을 등급(1~5등급)으로 인증받는 건축물',
   wwh: ['패시브+액티브', '탄소·에너지 저감', '자립률 등급 인증'],
   figT: '제로에너지 건축물 구성원리(Passive+Active) 및 자립률',
-  svg: '<svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="45" r="12" class="bx3"/><line x1="40" y1="25" x2="40" y2="18" class="ln2"/><line x1="60" y1="45" x2="67" y2="45" class="ln2"/><line x1="55" y1="30" x2="60" y2="25" class="ln2"/><line x1="56" y1="58" x2="120" y2="86" class="ar"/><rect x="50" y="130" width="200" height="130" class="bx"/><path d="M40,130 L150,70 L260,130 Z" class="bx2"/><polyline points="160,82 246,129" class="bl"/><rect x="80" y="170" width="40" height="40" class="bx3"/><rect x="180" y="200" width="50" height="24" class="bx3"/><text x="205" y="216" text-anchor="middle" class="s">HRV</text><text x="150" y="248" text-anchor="middle" class="s">고단열 벽체·지붕·바닥</text><rect x="20" y="260" width="280" height="40" class="soil"/><line x1="20" y1="260" x2="300" y2="260" class="ln"/><path d="M268,240 l0,52 l10,0 l0,-52" class="ln"/><rect x="310" y="150" width="115" height="28" class="bx"/><text x="367.5" y="168" text-anchor="middle" class="s">Passive(요구량↓)</text><text x="367" y="193" text-anchor="middle" class="b">+</text><rect x="310" y="198" width="115" height="28" class="bx2"/><text x="367.5" y="216" text-anchor="middle" class="s">Active(생산↑)</text><text x="367" y="242" text-anchor="middle" class="b">=</text><rect x="310" y="248" width="115" height="28" class="bx3"/><text x="367.5" y="266" text-anchor="middle" class="b">ZEB 자립률↑</text><line x1="205" y1="104" x2="230" y2="62" class="ld"/><circle cx="230" cy="62" r="2" class="dotf"/><text x="235" y="66" class="bl">BIPV·태양광</text><line x1="120" y1="180" x2="150" y2="150" class="ld"/><circle cx="150" cy="150" r="2" class="dotf"/><text x="155" y="154" class="s">고기밀 창호</text><line x1="278" y1="280" x2="305" y2="298" class="ld"/><circle cx="305" cy="298" r="2" class="dotf"/><text x="310" y="302" class="s">지열 히트펌프</text><line x1="32" y1="48" x2="28" y2="70" class="ld"/><circle cx="28" cy="70" r="2" class="dotf"/><text x="33" y="74" class="s">일사</text><text x="20" y="320" class="r">에너지자립률(%) = 1차에너지 생산량 ÷ 소비량 × 100</text><line x1="425" y1="262" x2="440" y2="52" class="ld"/><circle cx="440" cy="52" r="2" class="dotf"/><text x="446" y="56" class="k3">③ 자립률 20%↑ 1~5등급</text><text x="446" y="76" class="k3">③ 공공 500㎡↑ 의무</text><text x="446" y="96" class="k3">③ 민간 1,000㎡↑·30세대↑</text><line x1="425" y1="164" x2="440" y2="122" class="ld"/><circle cx="440" cy="122" r="2" class="dotf"/><text x="446" y="126" class="k4">④ 에너지효율 1++ 이상</text><line x1="425" y1="270" x2="440" y2="142" class="ld"/><circle cx="440" cy="142" r="2" class="dotf"/><text x="446" y="146" class="k4">④ BEMS·원격검침 설치</text><text x="446" y="166" class="k4">④ 기밀·열교 시공관리</text><line x1="425" y1="212" x2="440" y2="192" class="ld"/><circle cx="440" cy="192" r="2" class="dotf"/><text x="446" y="196" class="k5">⑤ BIPV·지열 확대</text><text x="446" y="216" class="k5">⑤ 인센티브·세제 지원</text></svg>',
-  subs: [{ h: '인증등급·대상', pts: ['자립률 {{20%}}↑ 1~5등급', '공공 {{500㎡}}↑ 의무', '민간 {{1,000㎡}}↑·{{30세대}}↑'] }, { h: '인증요건·유의사항', pts: ['에너지효율 [[1++]] 이상', 'BEMS·원격검침 설치', '기밀·열교 시공관리'] }, { h: '활성화 방안', pts: ['BIPV·지열 확대', '인센티브·세제 지원'] }],
+  svg: '<svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="45" r="12" class="bx3"/><line x1="40" y1="25" x2="40" y2="18" class="ln2"/><line x1="60" y1="45" x2="67" y2="45" class="ln2"/><line x1="55" y1="30" x2="60" y2="25" class="ln2"/><line x1="56" y1="58" x2="120" y2="86" class="ar"/><rect x="50" y="130" width="200" height="130" class="bx"/><path d="M40,130 L150,70 L260,130 Z" class="bx2"/><polyline points="160,82 246,129" class="bl"/><rect x="80" y="170" width="40" height="40" class="bx3"/><rect x="180" y="200" width="50" height="24" class="bx3"/><text x="205" y="216" text-anchor="middle" class="s">HRV</text><text x="150" y="248" text-anchor="middle" class="s">고단열 벽체·지붕·바닥</text><rect x="20" y="260" width="280" height="40" class="soil"/><line x1="20" y1="260" x2="300" y2="260" class="ln"/><path d="M268,240 l0,52 l10,0 l0,-52" class="ln"/><rect x="310" y="150" width="115" height="28" class="bx"/><text x="367.5" y="168" text-anchor="middle" class="s">Passive(요구량↓)</text><text x="367" y="193" text-anchor="middle" class="b">+</text><rect x="310" y="198" width="115" height="28" class="bx2"/><text x="367.5" y="216" text-anchor="middle" class="s">Active(생산↑)</text><text x="367" y="242" text-anchor="middle" class="b">=</text><rect x="310" y="248" width="115" height="28" class="bx3"/><text x="367.5" y="266" text-anchor="middle" class="b">ZEB 자립률↑</text><line x1="205" y1="104" x2="230" y2="62" class="ld"/><circle cx="230" cy="62" r="2" class="dotf"/><text x="235" y="66" class="bl">BIPV·태양광</text><line x1="120" y1="180" x2="150" y2="150" class="ld"/><circle cx="150" cy="150" r="2" class="dotf"/><text x="155" y="154" class="s">고기밀 창호</text><line x1="278" y1="280" x2="305" y2="298" class="ld"/><circle cx="305" cy="298" r="2" class="dotf"/><text x="310" y="302" class="s">지열 히트펌프</text><line x1="32" y1="48" x2="28" y2="70" class="ld"/><circle cx="28" cy="70" r="2" class="dotf"/><text x="33" y="74" class="s">일사</text><text x="20" y="320" class="r">에너지자립률(%) = 1차에너지 생산량 ÷ 소비량 × 100</text><line x1="425" y1="262" x2="440" y2="52" class="ld"/><circle cx="440" cy="52" r="2" class="dotf"/><text x="446" y="56" class="k3">③ 자립률 20%↑ 1~5등급</text><text x="446" y="76" class="k3">③ 공공 1,000㎡↑ 4등급(2025)</text><text x="446" y="96" class="k3">③ 공공500㎡·민간1,000㎡ 5등급</text><line x1="425" y1="164" x2="440" y2="122" class="ld"/><circle cx="440" cy="122" r="2" class="dotf"/><text x="446" y="126" class="k4">④ 2025 효율등급→ZEB 통합</text><line x1="425" y1="270" x2="440" y2="142" class="ld"/><circle cx="440" cy="142" r="2" class="dotf"/><text x="446" y="146" class="k4">④ BEMS·원격검침 설치</text><text x="446" y="166" class="k4">④ 기밀·열교 시공관리</text><line x1="425" y1="212" x2="440" y2="192" class="ld"/><circle cx="440" cy="192" r="2" class="dotf"/><text x="446" y="196" class="k5">⑤ BIPV·지열 확대</text><text x="446" y="216" class="k5">⑤ 인센티브·세제 지원</text></svg>',
+  subs: [{ h: '인증등급·의무대상', pts: ['자립률 {{20%}}↑ 1~5등급', '공공 {{1,000㎡}}↑ {{4등급}}(2025)', '공공 {{500㎡}}·민간 {{1,000㎡}}↑ {{5등급}}'] }, { h: '인증요건·유의사항', pts: ['2025 효율등급 → ZEB 인증 통합', 'BEMS·원격검침 설치', '기밀·열교 시공관리'] }, { h: '활성화 방안', pts: ['BIPV·지열 확대', '인센티브·세제 지원'] }],
   msg: '덜 쓰고(Passive) 스스로 만든다(Active) — 에너지자립률로 등급화',
-  mnemo: '패액자 1++ BEMS (패시브·액티브·자립률)',
+  mnemo: '패액자 BEMS 공1천4·민1천5 (패시브·액티브·자립률 / 공공1,000㎡ 4등급·민간1,000㎡ 5등급)',
   rel: ['녹색건축 인증제', 'BIPV', 'EPI 에너지성능지표', 'Zero Emission', '이중외피'],
-  src: '근거: 합격답안 디테일용어300 201-300 p051(250 ZEB: 패시브+액티브, 등급별 자립률 1등급 100%↑~5등급 20~40%) / 마법지 ZEB(민간 1,000㎡↑, 공공 500㎡↑, 공공 공동주택 30세대↑) / 건축물 에너지효율등급 및 ZEB 인증 규칙 — 의무화 시기·민간 30세대 적용범위 확인 필요'
+  src: '근거: 합격답안 디테일용어300 201-300 p051(250 ZEB: 패시브+액티브, 인증체계 통합, 공공 1,000㎡ 4등급↑·민간 1,000㎡ 5등급↑, 등급별 자립률 1등급 100%↑~5등급 20~40%) / 녹색건축물 조성 지원법 제17조·시행령(2024.12 개정: 공공 1,000㎡↑ 4등급 2025.1.1 시행) / 2025.1.1 건축물 에너지효율등급 인증 폐지·ZEB 인증 통합 / 민간 1,000㎡↑·30세대↑ 공동주택 5등급 의무(2025, 시행일 보도 상이) — 시행일·+등급(자립률 120%↑) 신설은 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '단열·기밀·열교차단 등 [[패시브]] 기술로 에너지 요구량을 최소화하고 태양광·지열 등 [[액티브]] 기술로 [[신재생에너지]]를 생산하여 [[에너지자립률]] {{20% 이상}}을 확보한 건축물을 자립률에 따라 1~5등급으로 인증하는 제도(녹색건축물 조성 지원법 제17조)' },
+    { h: 'ZEB 구성원리(Passive + Active)', fig: 'MAIN', flow: ['패시브: 고단열·고기밀·열교차단·외부차양', '액티브: 고효율 설비·HRV·LED', '신재생: 태양광(BIPV)·지열·연료전지', 'BEMS·원격검침 설치', '자립률 산정', 'ZEB 등급 인증'] },
+    { h: '인증등급(에너지자립률)', fig: { svg: '<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg"><line x1="50" y1="40" x2="50" y2="260" class="ln"/><line x1="50" y1="260" x2="420" y2="260" class="ln"/><text x="56" y="34" class="s">에너지자립률(%)</text><rect x="70" y="230" width="45" height="30" class="bx2"/><text x="92.5" y="246" text-anchor="middle" class="s">20~40%</text><text x="92.5" y="278" text-anchor="middle" class="b">5등급</text><rect x="135" y="200" width="45" height="60" class="bx2"/><text x="157.5" y="216" text-anchor="middle" class="s">40~60%</text><text x="157.5" y="278" text-anchor="middle" class="b">4등급</text><rect x="200" y="170" width="45" height="90" class="bx"/><text x="222.5" y="186" text-anchor="middle" class="s">60~80%</text><text x="222.5" y="278" text-anchor="middle" class="b">3등급</text><rect x="265" y="140" width="45" height="120" class="bx"/><text x="287.5" y="156" text-anchor="middle" class="s">80~100%</text><text x="287.5" y="278" text-anchor="middle" class="b">2등급</text><rect x="330" y="110" width="45" height="150" class="bx3"/><text x="352.5" y="126" text-anchor="middle" class="s">100%↑</text><text x="352.5" y="278" text-anchor="middle" class="b">1등급</text><line x1="50" y1="230" x2="420" y2="230" class="rd dash"/><text x="426" y="234" class="r">최소 자립률 20%</text><line x1="50" y1="110" x2="420" y2="110" class="ln2 dash"/><text x="426" y="114" class="s">100% = 생산 ≥ 소비</text><line x1="92" y1="230" x2="60" y2="62" class="ld"/><circle cx="60" cy="62" r="2" class="dotf"/><text x="65" y="66" class="s">5등급: 공공 500㎡·민간 1,000㎡ 의무</text><line x1="157" y1="200" x2="150" y2="88" class="ld"/><circle cx="150" cy="88" r="2" class="dotf"/><text x="155" y="92" class="s">4등급: 공공 1,000㎡↑ (2025~)</text><line x1="352" y1="110" x2="360" y2="44" class="ld"/><circle cx="360" cy="44" r="2" class="dotf"/><text x="365" y="48" class="s">1등급: Net Zero 수준</text><line x1="375" y1="200" x2="430" y2="190" class="ld"/><circle cx="430" cy="190" r="2" class="dotf"/><text x="435" y="194" class="s">자립률 = 생산량 ÷ 소요량</text><text x="20" y="296" class="s">※ 2025.1.1 효율등급 인증 → ZEB 인증 통합 · +등급(자립률 120%↑) 신설 — 확인 필요</text></svg>', cap: '[상세] 등급별 에너지자립률 하한과 의무등급' }, tbl: { head: ['등급', '에너지자립률', '비고'], rows: [['1등급', '{{100% 이상}}', 'Net Zero'], ['2등급', '80% 이상 ~ 100% 미만', ''], ['3등급', '60% 이상 ~ 80% 미만', ''], ['4등급', '40% 이상 ~ 60% 미만', '공공 1,000㎡↑ 의무'], ['5등급', '{{20% 이상}} ~ 40% 미만', '의무 최저등급']] } },
+    { h: '의무대상 및 인증요건', tbl: { head: ['구분', '기준', '시기·근거'], rows: [['공공', '연면적 1,000㎡ 이상 → 5등급', '2020'], ['공공', '연면적 {{500㎡ 이상}}·공공 공동주택 30세대 이상 → 5등급', '2023'], ['공공', '연면적 {{1,000㎡ 이상}} → [[4등급 이상]]', '2025.1.1(시행령 2024.12 개정)'], ['민간', '연면적 {{1,000㎡ 이상}}·공동주택 {{30세대 이상}} → [[5등급]] 수준', '2025(시행일 확인 필요)'], ['확대', '민간 500㎡ 이상 확대 예정', '2030 로드맵'], ['인증요건', '에너지자립률 20%↑ + [[BEMS 또는 원격검침 전자식 계량기]] 설치 (구 기준: 효율등급 1++ 이상)', '2025.1.1 효율등급 인증 → ZEB 인증 통합']] } },
+    { h: '시공 시 유의사항', ul: ['[전] 설계단계 에너지 시뮬레이션으로 목표 등급·자립률 확보 여부 검토', '[중] 단열재 연속시공·[[열교 차단]](발코니·슬래브 단부), 창호 주위 [[기밀테이프]] 시공', '[중] 기밀성능 시험(Blower Door) 및 열화상 점검으로 누기·결로부 보수', '[중] 태양광 모듈 음영·방향 확인, 인버터·계통연계 시공 품질', '[후] BEMS 운영 데이터로 실사용 성능 검증, 설비 Commissioning'] },
+    { h: '문제점 및 활성화 방안', ul: ['초기 공사비 증가 → 용적률 완화·세제·금융 인센티브', '도심 고층건물 신재생 설치면적 한계 → BIPV·지열·외부 신재생(인정) 확대', '설계 성능과 운영 성능 괴리 → 운영단계 사후 평가 도입', 'OSC·고성능 창호·단열재 표준화로 비용 절감'] }
+  ] }
 },
 215: {
   title: '공동주택성능등급의 표시',
@@ -126,7 +182,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '집을 사기 전에 성능을 별로 본다 — 5개 분야 등급의 의무 공개',
   mnemo: '소구환생화 (소음·구조·환경·생활환경·화재소방)',
   rel: ['녹색건축 인증제', '층간소음 사후확인제', '장수명 주택 인증', '바닥충격음', 'ZEB'],
-  src: '근거: 합격답안 디테일용어300 201-300 p052(251 공동주택성능등급: 5개 분야·세부항목, 절차, 500세대 이상) / 주택법 제39조 / 마법지 절약설계(주택성능등급)'
+  src: '근거: 합격답안 디테일용어300 201-300 p052(251 공동주택성능등급: 5개 분야·세부항목, 절차, 500세대 이상) / 주택법 제39조 / 마법지 절약설계(주택성능등급)',
+  det: { secs: [
+    { h: '정의', def: '[[500세대 이상]] 공동주택을 공급하는 사업주체가 [[녹색건축 인증]] 시 소음·구조·환경·생활환경·화재소방 [[5개 분야]] 주택성능을 평가·등급화하여 [[입주자 모집공고]]에 표시하도록 한 법적 의무제도(주택법 제39조) — 소비자의 알 권리 보장, 고품질 주택 유도' },
+    { h: '평가분야 및 인증·표시 절차', fig: 'MAIN', flow: ['사업주체 인증기관 신청·접수', '5개 분야 성능 평가', '1~4등급 부여(★ 개수)', '입주자 모집공고에 표시', '시공 중 성능 확보·검증'] },
+    { h: '평가분야 및 세부항목', tbl: { head: ['분야', '세부 성능항목'], rows: [['[[소음]]', '층간소음(경량·중량충격음), 세대 간 경계벽 차음, 교통소음, 화장실 급배수 소음'], ['[[구조]]', '가변성, 수리 용이성, 내구성'], ['[[환경]]', '조경, 실내공기질, 에너지 절약'], ['[[생활환경]]', '커뮤니티 시설, 교통약자 배려, 방범 안전'], ['[[화재·소방]]', '화재·소방 설비, 피난 안전, 내화성능']] } },
+    { h: '의무대상 및 기준', tbl: { head: ['항목', '기준', '근거'], rows: [['의무대상', '{{500세대 이상}} 공동주택', '주택법 제39조·시행령'], ['표시', '입주자 모집공고에 성능등급 명시', '주택법 제39조'], ['등급', '1등급(★★★★) ~ 4등급(★)', '녹색건축 인증기준(주택성능분야)'], ['인증기관', 'LH·건설기술연구원 등 국토부 지정기관', '합격답안 p052']] } },
+    { h: '시공 시 유의사항', ul: ['[설계] 목표 등급별 바닥구조·완충재·경계벽 사양 확정', '[시공] 바닥 완충재 들뜸·측면 완충재 누락 방지 → 바닥충격음 성능 확보', '[시공] 실내공기질: 저방출 자재 사용, 입주 전 Bake-out·환기', '[준공] 표시 등급과 실제 성능 일치 여부 확인(층간소음 사후확인제 연계)'] },
+    { h: '개선방안', ul: ['설계도서 평가 위주 → 실측 기반 성능검증 강화', '표시 항목의 소비자 이해도 제고(점수·비교정보 공개)', '장수명주택 인증·층간소음 사후확인제와 연계 운영', '중소 단지(500세대 미만)로 자율 표시 확대'] }
+  ] }
 },
 216: {
   title: 'LCA, CO2발생량 분석기법',
@@ -142,7 +206,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '요람에서 무덤까지 탄소를 계량 — 설계단계에서 저탄소 대안 선택',
   mnemo: '목목영해 (목적·목록·영향·해석)',
   rel: ['LCC', 'EPD 환경성적표지', '녹색건축 인증제', 'Zero Emission', 'ZEB'],
-  src: '근거: 합격답안 디테일용어300 201-300 p054(253 LCA: 정의, 전과정평가 3단계+결과해석, CO2 저감방안) / 마법지 절약설계(Life Cycle Assessment) / 도표 88 LCA 전과정 평가 / ISO 14040·14044'
+  src: '근거: 합격답안 디테일용어300 201-300 p054(253 LCA: 정의, 전과정평가 3단계+결과해석, CO2 저감방안) / 마법지 절약설계(Life Cycle Assessment) / 도표 88 LCA 전과정 평가 / ISO 14040·14044',
+  det: { secs: [
+    { h: '정의', def: '건축물의 [[전 생애주기]](원료채취–자재생산–운송–시공–운영–해체·폐기) 동안 투입되는 자원·에너지와 배출되는 [[CO2]] 등 환경부하를 [[목록분석(LCI)·영향평가(LCIA)·결과해석]]으로 정량 평가하는 기법(ISO 14040·14044) — Cradle to Grave' },
+    { h: 'LCA 전과정 범위 및 평가 Process', fig: 'MAIN', flow: ['1단계 목적·범위(시스템 경계·기능단위) 설정', '2단계 목록분석(LCI): 투입량 × 배출계수', '3단계 영향평가(LCIA): 지구온난화 등 분류·특성화', '4단계 결과해석·민감도 분석', '저감대안 Feedback'] },
+    { h: '생애단계 모듈 및 탄소 구분', fig: { svg: '<svg viewBox="0 0 640 210" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="60" width="110" height="40" class="bx2"/><text x="75" y="77" text-anchor="middle" class="b">A1~A3</text><text x="75" y="93" text-anchor="middle" class="s">제품 생산</text><rect x="140" y="60" width="100" height="40" class="bx"/><text x="190" y="77" text-anchor="middle" class="b">A4~A5</text><text x="190" y="93" text-anchor="middle" class="s">운송·시공</text><rect x="250" y="60" width="150" height="40" class="bx3"/><text x="325" y="77" text-anchor="middle" class="b">B1~B7</text><text x="325" y="93" text-anchor="middle" class="s">사용·운영·유지</text><rect x="410" y="60" width="100" height="40" class="bx"/><text x="460" y="77" text-anchor="middle" class="b">C1~C4</text><text x="460" y="93" text-anchor="middle" class="s">해체·폐기</text><rect x="520" y="60" width="100" height="40" class="bx2"/><text x="570" y="77" text-anchor="middle" class="b">D</text><text x="570" y="93" text-anchor="middle" class="s">재사용·재활용</text><polyline points="20,46 20,40 240,40 240,46" class="ln2"/><text x="130" y="34" text-anchor="middle" class="s">내재탄소(Embodied, 선행)</text><polyline points="250,46 250,40 400,40 400,46" class="ln2"/><text x="325" y="34" text-anchor="middle" class="r">운영탄소(Operational)</text><line x1="515" y1="50" x2="515" y2="110" class="rd dash"/><line x1="75" y1="100" x2="60" y2="130" class="ld"/><circle cx="60" cy="130" r="2" class="dotf"/><text x="65" y="134" class="s">시멘트·철강 생산 → 내재탄소 최대</text><line x1="325" y1="100" x2="300" y2="160" class="ld"/><circle cx="300" cy="160" r="2" class="dotf"/><text x="305" y="164" class="s">B6 운영에너지 → 전과정 CO2 최대 비중</text><line x1="460" y1="100" x2="440" y2="130" class="ld"/><circle cx="440" cy="130" r="2" class="dotf"/><text x="445" y="134" class="s">해체·운반·매립</text><line x1="570" y1="100" x2="590" y2="160" class="ld"/><circle cx="590" cy="160" r="2" class="dotf"/><text x="585" y="164" text-anchor="end" class="s">경계 밖 편익</text><text x="20" y="196" class="s">※ 전과정 = A~C (Cradle to Grave) + D(참고) — EN 15978 / ISO 14040·14044</text></svg>', cap: '[상세] 건축물 생애단계 모듈(A~D)과 내재탄소·운영탄소' }, tbl: { head: ['단계', '내용', '주요 CO2 원인'], rows: [['A1~A3 생산', '원료채취·운송·자재 제조', '시멘트·철강 → [[내재탄소]]'], ['A4~A5 시공', '현장 운송·건설장비', '연료·전력'], ['B 사용', '운영에너지(냉난방·조명)·유지보수', '[[운영탄소]] — 최대 비중'], ['C 해체', '해체·운반·처리·매립', '장비·폐기물'], ['D 경계 밖', '재사용·재활용 편익', '순환골재·고철 회수']] } },
+    { h: '산정식 및 관련 기준', tbl: { head: ['항목', '내용', '근거'], rows: [['산정식', 'CO2 배출량 = Σ(자재·에너지 투입량 × [[배출계수]])', 'LCI DB(국가 LCI·EPD)'], ['평가절차', '목적·범위 → LCI → LCIA → 해석', 'ISO 14040·14044'], ['건물 적용', '생애단계 모듈 A~D', 'EN 15978'], ['인증 연계', '녹색건축 인증 재료·자원 분야 LCA 평가, 환경성적표지(EPD)', '녹색건축 인증기준']] } },
+    { h: '적용 시 유의사항', ul: ['[범위] [[시스템 경계]]·기능단위·평가기간(예: 40~60년) 명확화 → 대안 간 비교 가능성 확보', '[Data] 국내 LCI·[[배출계수 DB]] 신뢰성, 자재 EPD 우선 적용', '[해석] 운영단계 비중이 크므로 에너지 시뮬레이션과 병행, 민감도 분석 실시', '[설계] 설계 초기 적용 시 저감 효과 최대 → 계획설계 단계에서 수행'] },
+    { h: 'CO2 저감방안', ul: ['[생산] 고로슬래그·플라이애시 [[혼합시멘트]], 저탄소 콘크리트, 순환골재', '[시공] OSC·모듈러로 현장 장비·폐기물 감축', '[운영] ZEB·고효율 설비·신재생에너지', '[해체] 분리해체·재활용 설계(DfD), 장수명화'] }
+  ] }
 },
 217: {
   title: 'BIPV 시스템',
@@ -158,7 +230,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '외장재가 발전소가 된다 — 부지 없이 신재생에너지 생산',
   mnemo: '지벽창차 (지붕·벽면·창호·차양)',
   rel: ['Zero Energy Building', '이중외피(Double Skin)', '커튼월', '녹색건축 인증제', '신재생에너지'],
-  src: '근거: 합격답안 디테일용어300 201-300 p055(254 BIPV: 정의, 지붕·입면 설치유형, 특징, 설계·시공 고려사항) / 마법지 절약기술(BIPV) / 결정질 모듈 온도계수(약 -0.4%/℃)는 일반값 — 확인 필요'
+  src: '근거: 합격답안 디테일용어300 201-300 p055(254 BIPV: 정의, 지붕·입면 설치유형, 특징, 설계·시공 고려사항) / 마법지 절약기술(BIPV) / 결정질 모듈 온도계수(약 -0.4%/℃)는 일반값 — 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '[[태양광 모듈]]을 지붕·벽면·창호·차양 등 [[건축 외장재]]와 일체화하여 외피 기능(방수·차양·마감)과 [[전력 생산]]을 동시에 수행하는 건물일체형 태양광 발전시스템(Building Integrated Photovoltaic)' },
+    { h: 'BIPV 설치유형 및 전력 계통', fig: 'MAIN', flow: ['일사·음영 분석', '설치유형·모듈 선정', '구조·방수 상세 설계', '모듈 일체 시공·배선', '인버터(DC→AC)', '자가소비·계통연계'] },
+    { h: '설치유형 및 특징', tbl: { head: ['유형', '적용 부위', '특징'], rows: [['지붕형', '경사·평지붕, 천창', '발전효율 최대, 방수 상세 중요'], ['벽면형', '커튼월 Spandrel·외벽 마감', '설치면적 넓음, 수직면 효율 저하'], ['창호형', '투광형 모듈(유리 일체)', '채광·발전 병행, 투과율 조절'], ['차양형', '루버·캐노피', '냉방부하 저감 + 발전']] } },
+    { h: '설계·시공 관리기준', tbl: { head: ['항목', '기준', '비고'], rows: [['방위·경사', '남향, 위도 고려 최적 경사각', '설계 시뮬레이션'], ['온도', '모듈 온도 상승 시 효율 저하(결정질 약 -0.4%/℃)', '배면 통기층 확보 — 확인 필요'], ['외장재 성능', '풍압·수밀·기밀·내화 성능 = 커튼월 기준 충족', '외피 성능시험'], ['전기', '인버터 용량·접지·계통연계 기준', '전기설비기술기준']] } },
+    { h: '시공 시 유의사항', ul: ['[전] 주변 건물·자체 돌출부 [[음영]] 분석, 모듈 배열·String 구성 검토', '[중] 모듈 고정부 [[방수·실링]], 열팽창 Joint 확보, 배선 관통부 방수', '[중] 배면 [[통기층]] 확보 → 온도상승·효율저하 방지', '[중] 하중(풍압·적설)·유리 파손 시 낙하 방지 상세', '[후] 오염 세척·점검 동선(곤돌라) 확보, 발전량 Monitoring'] },
+    { h: '개선방안', ul: ['컬러·투광형·박막형 모듈로 디자인 다양화', 'ZEB 인증·녹색건축 인증 가점 연계 확대', '외장재 대체비용 반영한 LCC 평가로 경제성 확보', 'BIPV 모듈 KS·외장재 성능 통합 인증 체계'] }
+  ] }
 },
 218: {
   title: '탄소섬유 Sheet 보강법',
@@ -174,7 +254,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '가볍게 감싸 강하게 — 고정하중 증가 없이 휨·전단·구속 내력 증진',
   mnemo: '표프퍼 함시함 코 (표면처리·프라이머·퍼티·함침·Sheet·함침·코팅)',
   rel: ['보수·보강', '균열 보수(주입법)', '강판 접착공법', '단면증대 공법', '내진보강'],
-  src: '근거: 합격답안 디테일용어300 201-300 p058(257 탄소섬유 Sheet: 정의, 강재 대비 인장강도 7~10배, 부재별 역할, 박리·인장파괴 대책) / 마법지 균열의 평가 보강(탄소섬유시트) / 겹침이음 200mm 이상은 제조사 시방 일반값 — 확인 필요'
+  src: '근거: 합격답안 디테일용어300 201-300 p058(257 탄소섬유 Sheet: 정의, 강재 대비 인장강도 7~10배, 부재별 역할, 박리·인장파괴 대책) / 마법지 균열의 평가 보강(탄소섬유시트) / 겹침이음 200mm 이상은 제조사 시방 일반값 — 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '성능이 저하되거나 하중조건이 변경된 콘크리트 부재 표면에 강재 대비 [[인장강도 7~10배]]인 [[고강도 탄소섬유 Sheet]]를 [[에폭시 함침수지]]로 접착시켜 휨·전단 내력과 기둥 [[횡구속(Confinement)]] 성능을 증진시키는 [[부착 보강공법]]' },
+    { h: '보강 원리 및 적층 시공순서', fig: 'MAIN', flow: ['바탕처리(그라인딩·면취)', '프라이머', '퍼티(단면 평활)', '1차 함침수지', 'Sheet 부착·탈포', '2차 함침수지', '양생', '보호·마감코팅'] },
+    { h: '부재별 보강 상세', fig: { svg: '<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="40" width="260" height="26" class="conc"/><rect x="130" y="66" width="80" height="110" class="conc"/><circle cx="150" cy="160" r="5" class="dotf"/><circle cx="170" cy="160" r="5" class="dotf"/><circle cx="190" cy="160" r="5" class="dotf"/><rect x="127" y="177" width="86" height="5" class="bx3"/><polyline points="127,92 127,180 213,180 213,92" class="rd"/><text x="170" y="128" text-anchor="middle" class="s">보(T형 단면)</text><line x1="170" y1="182" x2="60" y2="215" class="ld"/><circle cx="60" cy="215" r="2" class="dotf"/><text x="65" y="219" class="r">휨보강 Sheet(주근방향)</text><line x1="213" y1="120" x2="250" y2="118" class="ld"/><circle cx="250" cy="118" r="2" class="dotf"/><text x="255" y="122" class="s">U-Wrap(전단·단부 정착)</text><line x1="150" y1="160" x2="20" y2="192" class="ld"/><circle cx="20" cy="192" r="2" class="dotf"/><text x="25" y="196" class="s">인장철근 위치</text><line x1="213" y1="180" x2="250" y2="200" class="ld"/><circle cx="250" cy="200" r="2" class="dotf"/><text x="255" y="204" class="s">모서리 면취 → 응력집중 방지</text><line x1="127" y1="92" x2="20" y2="110" class="ld"/><circle cx="20" cy="110" r="2" class="dotf"/><text x="25" y="114" class="s">Slab 하면 정착</text><rect x="440" y="80" width="90" height="90" class="conc"/><rect x="434" y="74" width="102" height="102" fill="none" class="rd"/><line x1="400" y1="125" x2="432" y2="125" class="ar"/><line x1="570" y1="125" x2="538" y2="125" class="ar"/><line x1="485" y1="40" x2="485" y2="72" class="ar"/><line x1="485" y1="210" x2="485" y2="178" class="ar"/><text x="485" y="129" text-anchor="middle" class="b">기둥</text><line x1="536" y1="90" x2="560" y2="60" class="ld"/><circle cx="560" cy="60" r="2" class="dotf"/><text x="565" y="64" class="r">감싸기 Sheet</text><line x1="400" y1="125" x2="380" y2="150" class="ld"/><circle cx="380" cy="150" r="2" class="dotf"/><text x="375" y="154" text-anchor="end" class="s">횡구속력</text><line x1="485" y1="210" x2="520" y2="230" class="ld"/><circle cx="520" cy="230" r="2" class="dotf"/><text x="525" y="234" class="s">압축강도·연성 증진</text><text x="20" y="244" class="s">[휨] 하면 주근방향 부착 · [전단] U-Wrap/전면감기 · [압축] 기둥 원주방향 감기</text></svg>', cap: '[상세] 보 휨·전단(U-Wrap) 보강과 기둥 감싸기 횡구속' }, tbl: { head: ['부재', '부착 방향', '보강 효과'], rows: [['보·Slab 하면', '주근 방향', '[[휨]] 내력 증진'], ['보 측면', '[[U-Wrap]]·전면감기(스터럽 방향)', '[[전단]] 내력·단부 정착'], ['기둥', '원주 방향 감싸기', '[[횡구속]] → 압축강도·연성 증진']] } },
+    { h: '특징 및 관리기준', tbl: { head: ['항목', '내용', '근거'], rows: [['강도', '인장강도 강재의 7~10배, 중량 약 1/4', '합격답안 p058'], ['장점', '경량·고정하중 증가 없음, 시공 간편, 내식성', ''], ['단점', '내화·자외선 취약, 취성 파단, 바탕 품질 의존', ''], ['겹침이음', '섬유방향 {{200mm 이상}}', '제조사 시방 — 확인 필요'], ['시공환경', '바탕 건조·결로 없음, 저온·고습 시 함침수지 경화 불량 주의', '제조사 시방'], ['품질확인', '두드림·부착강도(Pull-off) 시험', '보수·보강 지침 — 기준값 확인 필요']] } },
+    { h: '시공 시 유의사항', ul: ['[전] 열화부 제거·단면 복구, 균열 주입 선행 후 [[바탕 평활]] 확보', '[전] 모서리 [[면취]](R 가공) → Sheet 응력집중·파단 방지', '[중] 함침수지 가사시간 내 시공, Roller로 [[함침·탈포]] → 들뜸(공극) 방지', '[중] 섬유방향 정렬, 겹침이음 길이 확보', '[후] 양생 중 진동·충격·우수 차단, 내화·자외선 [[보호코팅]]'] },
+    { h: '파괴유형 및 방지대책', tbl: { head: ['파괴유형', '원인', '대책'], rows: [['단부 박리', '정착길이 부족, 응력집중', '정착길이 확보, [[U-Wrap]] 단부 정착'], ['중간 균열 유발 박리', '휨균열부 부착응력 집중', '바탕 평활·프라이머 품질'], ['Sheet 인장파단', '설계 초과 하중', '보강량 검토·안전율'], ['피복 탈락', '콘크리트 열화·저강도', '단면 복구 후 보강']] } }
+  ] }
 },
 219: {
   title: '건축물관리법상 해체계획서',
@@ -190,7 +278,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '해체도 설계한다 — 계획서·허가·감리로 붕괴사고 차단',
   mnemo: '개사작안환 (개요·사전조사·작업순서·안전·환경)',
   rel: ['석면조사 및 해체·제거', '해체공사감리', '안전관리계획서', '비산먼지 방지', '건설폐기물 재활용'],
-  src: '근거: 합격답안 디테일용어300 201-300 p059(258 해체계획서: 정의, 해체공사 Process, 작성항목 6개, 해체공법) / 건축물관리법 제30조(해체 허가·신고: 연면적 500㎡ 미만·높이 12m 미만·지상+지하 3개층 이하 신고)·제32조(감리)·제33조(완료신고 30일) — 조문 번호 확인 필요'
+  src: '근거: 합격답안 디테일용어300 201-300 p059(258 해체계획서: 정의, 해체공사 Process, 작성항목 6개, 해체공법) / 건축물관리법 제30조(해체 허가·신고: 연면적 500㎡ 미만·높이 12m 미만·지상+지하 3개층 이하 등은 신고)·제31조(해체공사감리자 지정)·제32조(감리업무)·제33조(해체공사 완료신고 30일 이내) — 조문 번호·2022 개정 세부요건 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '건축물을 해체하려는 경우 [[건축물관리법]]에 따라 대상 건축물의 형태·구조·주변 환경을 사전조사하고 [[해체공법·작업순서·구조안전·안전·환경관리]] 대책을 수립하여 해체 [[허가·신고]] 시 제출하는 계획서 — 해체공사의 안전한 수행 기준' },
+    { h: '해체공사 Process 및 해체 원리', fig: 'MAIN', flow: ['사전조사·해체계획서 작성', '허가(신고)·해체공사감리자 지정', '사전작업: 설비·석면 제거, 비계·방진막·잭서포트', '해체공사: 상부 → 하부(Slab → 보 → 기둥·벽)', '부재 정리·폐기물 성상별 분리', '완료신고(30일 이내)·멸실신고'] },
+    { h: '허가·신고 기준', tbl: { head: ['구분', '대상', '근거'], rows: [['신고', '연면적 {{500㎡ 미만}} + 높이 {{12m 미만}} + 지상·지하 {{3개층 이하}} 등', '건축물관리법 제30조·시행령'], ['허가', '신고대상 외 건축물(주요구조부 해체 포함)', '건축물관리법 제30조'], ['감리', '허가대상 등 해체공사감리자 지정·상주 점검', '제31조·제32조'], ['완료신고', '해체공사 완료 후 {{30일 이내}}', '제33조 — 조문 확인 필요']] } },
+    { h: '해체계획서 작성항목', tbl: { head: ['항목', '주요 내용'], rows: [['해체공사 개요', '공사개요, 관리조직도, 예정공정표'], ['사전준비 관계', '주변조사, 지하매설물 조사, 해체대상 건축물 조사'], ['설비 이동·철거·보호', '장비 이동계획, 가시설물 설치'], ['작업순서·공법·[[구조안전계획]]', '작업순서·해체공법, 구조보강(잭서포트) 계획'], ['안전관리 대책', '작업자·인접 건축물 안전관리, 주변 통행·보행자 보호'], ['환경관리 계획', '소음·진동·분진 관리, 해체물 처리 계획']] } },
+    { h: '해체 시 유의사항', ul: ['[전] 구조도면·현황조사로 하중경로 파악, [[석면]]·설비 선제 제거', '[중] [[상부 → 하부]] 순서 준수, 해체장비 탑재층 하부 [[잭서포트]] 보강', '[중] 해체 잔재물 [[과적재 금지]](Slab 위 적치 제한) → 붕괴 방지', '[중] 감리자 상주·단계별 확인, 방진막·살수로 분진 억제', '[후] 폐기물 성상별 분리배출, 완료신고·멸실신고'] },
+    { h: '해체공법 및 개선방안', ul: ['공법: 압쇄기·브레이커(기계식), 와이어쏘·다이아몬드 절단(저진동), 발파·팽창제', '저소음·저진동 압쇄·절단공법 확대', 'CCTV·기울기 계측 실시간 모니터링, 해체계획서 전문가 검토 강화', '해체계획서 이행 여부 점검 및 위반 시 처벌 실효성 확보'] }
+  ] }
 },
 220: {
   title: '석면조사 대상 및 해체·제거 작업 시 준수사항',
@@ -206,7 +302,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '조사하고, 가두고(음압), 적시고(습식), 밀봉한다 — 석면 비산 Zero',
   mnemo: '조신음습밀측 (조사·신고·음압·습식·밀봉·측정)',
   rel: ['석면건축물 위해성 평가', '석면해체 사전 허가제도', '건축물관리법상 해체계획서', '지정폐기물', '비산먼지'],
-  src: '근거: 합격답안 디테일용어300 201-300 p061(260 석면조사 대상·준수사항: 음압 -0.508mmH2O, 위생설비 도해) / 마법지 석면건축물(50㎡, 6종, 작업절차) / 산업안전보건법 시행령 제89조(조사대상: 50㎡·주택 200㎡·보온재 15㎡·배관 80m) / 석면안전관리법(잔재 0.01개/cc) — 수치 조문 확인 필요'
+  src: '근거: 합격답안 디테일용어300 201-300 p061(260 석면조사 대상·준수사항: 2009년 이전 건축물, 50㎡, 음압 -0.508mmH2O, 위생설비 도해) / 산업안전보건법 제119조·시행령 제89조(일반석면조사: 연면적 50㎡·주택 200㎡·보온재 등 15㎡(1㎥)·파이프 보온재 80m)·제122조·시행령 제94조(석면해체·제거업자 의무) / 산업안전보건법 제124조(해체 완료 후 공기 중 석면농도 0.01개/㎤ 이하) / 석면안전관리법(석면건축물 50㎡) / 마법지 석면건축물 — 음압값은 석면해체 기술지침 수치',
+  det: { secs: [
+    { h: '정의', def: '[[1급 발암물질]]인 석면의 비산에 의한 인체피해(석면폐·악성중피종·폐암)를 방지하기 위해 [[산업안전보건법]]·[[석면안전관리법]]에 따라 해체·개보수 전 [[석면조사]]를 실시하고, 해체·제거 시 [[밀폐·음압·습식·밀봉]] 기준을 준수하도록 한 제도' },
+    { h: '작업장 구성(위생설비·음압) 및 작업절차', fig: 'MAIN', flow: ['석면조사(일반·기관)', '해체·제거 작업계획서 수립·신고', '작업장 밀폐·비닐 보양·음압기 가동', '습식 제거', '진공청소·폐기물 2중 밀봉', '공기 중 농도 측정', '지정폐기물 처리'] },
+    { h: '석면조사 대상(일반석면조사)', tbl: { head: ['대상', '기준', '근거'], rows: [['건축물(주택 외)', '연면적 {{50㎡ 이상}} + 해체 부분 50㎡ 이상', '산안법 시행령 제89조'], ['주택', '연면적 {{200㎡ 이상}} + 해체 부분 200㎡ 이상', '산안법 시행령 제89조'], ['설비', '단열·보온·분무·내화피복재 등 {{15㎡ 이상}} 또는 1㎥ 이상', '산안법 시행령 제89조'], ['파이프', '보온재 길이 합 {{80m 이상}}', '산안법 시행령 제89조'], ['실무', '2009년 이전 착공 건축물(석면 사용 가능)', '합격답안 p061']] } },
+    { h: '해체·제거 작업기준', tbl: { head: ['항목', '기준', '근거'], rows: [['작업자', '[[석면해체·제거업자]] 시공(석면 함유 50㎡ 이상 등)', '산안법 제122조·시행령 제94조'], ['음압', '작업장 내부 {{-0.508mmH2O}} 이상 음압 유지, HEPA 필터 배기', '석면해체 기술지침'], ['습식', '분무로 젖은 상태 유지 후 제거', '산안법 안전보건규칙'], ['위생설비', '오염 탈의실 → 샤워실 → 청결 탈의실', '합격답안 p061'], ['완료 기준', '공기 중 석면농도 {{0.01개/㎤ 이하}}', '산안법 제124조'], ['폐기물', '2중 밀봉·표지 부착 → 지정폐기물 처리', '폐기물관리법']] } },
+    { h: '작업 시 유의사항', ul: ['[전] 작업계획서 신고(작업 7일 전), 작업장 출입통제·경고표지', '[전] 바닥 2겹·벽 1겹 이상 비닐 [[밀폐보양]], 음압기·[[HEPA 필터]] 성능 확인', '[중] [[습식작업]], 절단·파쇄 최소화(원형 그대로 탈거)', '[중] 전동식 호흡보호구·전신 보호복 착용, 위생설비 경유 출입', '[후] 잔재물 진공청소 → 공기 중 농도 측정 후 보양 해체'] },
+    { h: '문제점 및 개선방안', ul: ['부실 조사·무자격 제거 → 감리인 지정·현장 점검 강화', '학교·노후주택 석면 잔재 → 해체 완료 후 잔재물 조사 의무화', '폐기물 운반 중 비산 → 밀봉 운반·이력관리(올바로 시스템)', '석면지도 작성·위해성 평가로 사전관리'] }
+  ] }
 },
 221: {
   title: '주계약자형 공동도급',
@@ -222,7 +326,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '하도급을 공동계약으로 — 전문업체가 발주자와 직접 계약·직접 시공',
   mnemo: '주계관조 부분시 (주계약자 관리·조정, 부계약자 분담시공)',
   rel: ['공동도급(공동이행·분담이행)', 'Joint Venture', '하도급 관리', 'CM', 'Partnering'],
-  src: '근거: 합격답안 디테일용어300 201-300 p064(263 주계약자형 공동도급: 정의, 구성·책임 표, 도입목적, 실적 50% 인정, 추정가격 2~100억 공사) / 지방자치단체 입찰 및 계약집행기준(주계약자 공동도급) — 적용금액 범위·실적 인정비율 확인 필요'
+  src: '근거: 합격답안 디테일용어300 201-300 p064(263 주계약자형 공동도급: 정의, 구성·책임 표, 도입목적, 실적 50% 인정, 추정가격 2~100억 공사) / 지방자치단체 입찰 및 계약집행기준(주계약자 공동도급) — 적용금액 범위·실적 인정비율 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '공동수급체 구성원 중 [[주계약자]](종합건설업자)가 전체 공사의 [[계획·관리·조정]]을 총괄하고 [[부계약자]](전문건설업자)는 분담공사를 직접 시공하며, 각 구성원이 [[발주자와 직접 계약]]하는 공동계약 방식 — 주계약자는 전체 PJ의 계약이행 [[연대책임]]' },
+    { h: '계약관계 및 기존 원·하도급 비교', fig: 'MAIN', flow: ['공동수급체 구성(종합 + 전문)', '공동수급협정서·분담내용 확정', '입찰·발주자와 직접 계약', '주계약자 계획·관리·조정', '부계약자 분담공사 직접시공', '부계약자 대가 직접 수령'] },
+    { h: '구성원별 역할·책임', tbl: { head: ['구분', '역할', '책임'], rows: [['[[주계약자]]', '전체 공사 계획·관리·조정', '전체 PJ [[연대책임]]'], ['[[부계약자]]', '전문공사 분담, 직접시공', '분담 부분 책임'], ['기존 하도급과 차이', '부계약자가 발주자와 [[직접 계약]]', '중간 Margin 배제']] } },
+    { h: '공동도급 유형 비교', tbl: { head: ['구분', '공동이행방식', '분담이행방식', '주계약자관리방식'], rows: [['구성', '출자비율로 공동 시공', '공종별 분담 시공', '종합 주계약자 + 전문 부계약자'], ['책임', '연대책임', '분담 부분 책임', '주계약자 연대 / 부계약자 분담'], ['적용', '일반 공동도급', '공종 분리 가능 공사', '지자체 2억~100억 종합공사 등 — 확인 필요']] } },
+    { h: '도입목적 및 특징', ul: ['[[불공정 거래 방지]]: 수평적 계약관계로 하도급 부조리 해결', '[[적정 공사비]] 확보: 중간 Margin 없는 대가 직접 수령', '품질 향상: 전문업체 직접시공', '중소기업 육성: 전문건설업체 기술력 강화·기회 확대', '주계약자 실적 산정 시 부계약자 실적의 {{50%}} 추가 인정(합격답안 p064)'] },
+    { h: '문제점 및 개선방안', ul: ['주계약자 관리부담 증가·책임소재 분쟁 → 공동수급협정서에 관리범위·책임 명확화', '주계약자 관리·조정 권한 약화 → 공정·안전 지시권 계약 명시', '부계약자 부도 시 대체시공 절차 사전 규정', '적용대상 확대 및 실적 인정 기준 합리화'] }
+  ] }
 },
 222: {
   title: 'Fast Track Method(조기착공계약)',
@@ -238,7 +350,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '설계를 기다리지 않는다 — 겹쳐서 진행해 공기를 단축',
   mnemo: '설시병 단분발 (설계·시공 병행, 단계별 분리발주)',
   rel: ['CM at Risk', 'Phased Construction', 'IPD', 'Design Build', 'GMP 계약'],
-  src: '근거: 합격답안 디테일용어300 201-300 p065(264 Fast Track: 정의, 특징, 적용대상·계약유형 표, 유의사항) / 마법지 공정운영방식(고속궤도방식 Fast Track)·공기단축(관리: Fast Track)'
+  src: '근거: 합격답안 디테일용어300 201-300 p065(264 Fast Track: 정의, 특징, 적용대상·계약유형 표, 유의사항) / 마법지 공정운영방식(고속궤도방식 Fast Track)·공기단축(관리: Fast Track)',
+  det: { secs: [
+    { h: '정의', def: '설계도서가 완성되기 전에 확정된 [[선행공사]](토공·기초)부터 [[단계별로 분리 발주·착공]]하여 [[설계와 시공을 병행(Overlapping)]]함으로써 전체 [[공기를 단축]]하는 조기착공 계약·공사관리 방식' },
+    { h: '전통방식 대비 공기단축 원리', fig: 'MAIN', flow: ['기본설계·사업범위 확정', '선행공종(토공·기초) 실시설계·발주', '조기 착공', '후속공종(골조·마감) 설계·발주 순차 반복', '통합 공정·설계변경 관리', '조기 준공'] },
+    { h: '전통방식 vs Fast Track', tbl: { head: ['구분', '전통방식(DBB)', 'Fast Track'], rows: [['진행', '설계 → 입찰 → 시공 순차(Sequential)', '설계·시공 [[병행(Overlap)]]'], ['발주', '일괄 발주', '[[단계별 분리발주]]'], ['공기', '장기', '[[단축]]'], ['공사비', '착공 전 총액 확정', '착공 시 미확정 → 변경 Risk'], ['관리', '단순', 'CM 등 고도 관리능력 필요']] } },
+    { h: '적용대상 및 계약유형', tbl: { head: ['구분', '내용'], rows: [['적용대상', '공기단축이 필요한 대형·긴급 Project, 조기 가동이 수익인 공장·상업시설'], ['계약유형', '분리발주, [[개산계약]](실비정산), [[CM at Risk]](GMP)'], ['선행조건', '기본설계·사업범위 확정, 발주자 의사결정 신속성']] } },
+    { h: '유의사항', ul: ['설계 미완성 → [[설계변경·Claim]] 증가: 변경관리 절차·단가 기준 사전 합의', '분리발주 공종 간 [[공사범위·책임]] 명확화(Interface 관리)', '선후행 공종 간섭·재시공 방지 → 통합 공정표·설계 동결시점 관리', '총공사비 불확실 → 목표비용·예비비 설정'] },
+    { h: '개선방안', ul: ['[[CM at Risk]]·GMP 계약으로 원가 상한 관리', 'BIM·IPD 협업으로 설계 오류·간섭 사전 제거', '시공자 설계단계 참여(Pre-con)로 시공성 반영', 'Phased Construction과 연계한 단계별 준공·사용'] }
+  ] }
 },
 223: {
   title: 'BTO(Build Transfer Operate)',
@@ -254,7 +374,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '짓고(B) 넘기고(T) 운영해 사용료로 회수(O) — 수요위험은 민간',
   mnemo: 'B-T-O 짓넘운 (사용료)',
   rel: ['BTL', 'BOT·BOO', '민간투자사업(PPP)', 'MRG(최소운영수입보장)', 'Project Financing'],
-  src: '근거: 사회기반시설에 대한 민간투자법 제4조(추진방식) / 마법지 계약방식(공사의 업무범위: SOC 사업) / BTO-rs·BTO-a(2015 도입)는 일반 지식 — 확인 필요'
+  src: '근거: 사회기반시설에 대한 민간투자법 제4조(추진방식) / 마법지 계약방식(공사의 업무범위: SOC 사업) / BTO-rs·BTO-a(2015 도입)는 일반 지식 — 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '민간사업자가 [[사회기반시설]]을 건설(Build)하여 [[준공과 동시에 소유권을 국가·지자체에 이전]](Transfer)하고, 일정기간 [[관리운영권]]을 인정받아 [[이용자 사용료]]로 투자비를 회수(Operate)하는 [[수익형 민간투자방식]](민간투자법 제4조)' },
+    { h: 'BTO 사업구조 및 기간별 흐름', fig: 'MAIN', flow: ['사업제안·적격성 조사', '사업자 선정·실시협약', 'SPC 설립·PF 자금조달', '건설(B)', '준공 시 소유권 이전(T)', '관리운영권 설정·운영(O)', '사용료로 투자비 회수·운영기간 종료'] },
+    { h: '민간투자 방식 비교', fig: { svg: '<svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg"><text x="20" y="57" class="b">BTO</text><rect x="80" y="40" width="110" height="24" class="bx2"/><text x="135" y="56" text-anchor="middle" class="s">건설(B)</text><rect x="190" y="40" width="400" height="24" class="bx3"/><text x="390" y="56" text-anchor="middle" class="s">운영(O): 이용자 사용료로 회수</text><text x="20" y="102" class="b">BTL</text><rect x="80" y="85" width="110" height="24" class="bx2"/><text x="135" y="101" text-anchor="middle" class="s">건설(B)</text><rect x="190" y="85" width="400" height="24" class="bx"/><text x="390" y="101" text-anchor="middle" class="s">임대(L): 정부 임대료 지급</text><text x="20" y="147" class="b">BOT</text><rect x="80" y="130" width="110" height="24" class="bx2"/><text x="135" y="146" text-anchor="middle" class="s">건설(B)</text><rect x="190" y="130" width="400" height="24" class="bx3"/><text x="390" y="146" text-anchor="middle" class="s">운영(O): 사용료 회수 후 이전(T)</text><text x="20" y="192" class="b">BOO</text><rect x="80" y="175" width="110" height="24" class="bx2"/><text x="135" y="191" text-anchor="middle" class="s">건설(B)</text><rect x="190" y="175" width="400" height="24" class="bx"/><text x="390" y="191" text-anchor="middle" class="s">소유·운영(O·O) 지속</text><line x1="190" y1="30" x2="190" y2="210" class="rd"/><line x1="590" y1="130" x2="590" y2="160" class="ln"/><line x1="190" y1="30" x2="230" y2="18" class="ld"/><circle cx="230" cy="18" r="2" class="dotf"/><text x="235" y="22" class="r">준공 = 소유권 이전(BTO·BTL)</text><line x1="590" y1="142" x2="610" y2="220" class="ld"/><circle cx="610" cy="220" r="2" class="dotf"/><text x="605" y="224" text-anchor="end" class="s">종료 시 이전</text><line x1="390" y1="64" x2="410" y2="76" class="ld"/><circle cx="410" cy="76" r="2" class="dotf"/><text x="415" y="80" class="s">수요위험: 민간</text><line x1="390" y1="109" x2="410" y2="121" class="ld"/><circle cx="410" cy="121" r="2" class="dotf"/><text x="415" y="125" class="s">수요위험: 정부</text><text x="20" y="232" class="s">※ 민간투자법 제4조 추진방식 — BTO·BTL이 국내 주류, BOT·BOO는 예외적</text></svg>', cap: '[상세] BTO·BTL·BOT·BOO 소유권 이전 시점과 투자비 회수 방식' }, tbl: { head: ['구분', 'BTO', 'BTL', 'BOT', 'BOO'], rows: [['소유권 이전', '준공 시', '준공 시', '운영 종료 시', '이전 없음'], ['투자비 회수', '[[이용자 사용료]]', '정부 임대료', '사용료', '사용료'], ['수요위험', '[[민간]]', '정부', '민간', '민간'], ['대상시설', '도로·철도·항만', '학교·군숙소·하수관거', '예외적 적용', '예외적 적용']] } },
+    { h: '위험분담형 BTO (2015 도입)', tbl: { head: ['구분', 'BTO-rs(위험분담형)', 'BTO-a(손익공유형)'], rows: [['위험분담', '정부·민간 투자위험 분담(약 50:50)', '민간 손실 일정비율(약 30%)까지 부담 후 정부 보전'], ['이익', '분담비율로 공유', '초과이익 정부·민간 공유(약 7:3)'], ['적용', '철도·경전철 등', '환경시설(하수·폐기물) 등'], ['비고', '수익률↓ 사용료↓', '비율은 사업별 협약 — 확인 필요']] } },
+    { h: '문제점 및 유의사항', ul: ['[[수요예측 과다]] → 운영수입 부족: 과거 [[MRG]](최소운영수입보장) 재정부담 (정부고시 2009·민간제안 2006 폐지)', '이용자 [[사용료 부담]] 과다 → 요금 인상 분쟁', '재정지원·해지시지급금 분쟁, 재협상 반복', '실시협약 시 수요위험·요금조정·운영성과 기준 명확화'] },
+    { h: '개선방안', ul: ['BTO-rs·BTO-a 등 [[위험분담형]] 확대', '수요예측 검증(재검증 기관) 강화, 성과 연동 지급', '혼합형(BTO + BTL) 등 시설 특성별 방식 다양화', '자금재조달 이익 공유 및 운영 투명성 확보'] }
+  ] }
 },
 224: {
   title: 'BTL(Build Transfer Lease)',
@@ -270,7 +398,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '민간이 짓고 정부가 빌려 쓴다 — 사용료 대신 정부 임대료로 회수',
   mnemo: 'B-T-L 짓넘빌 (임대료)',
   rel: ['BTO', 'BOT·BOO', '민간투자사업(PPP)', '혼합형 민자사업', 'Project Financing'],
-  src: '근거: 사회기반시설에 대한 민간투자법 제4조(추진방식) / 마법지 계약방식(SOC 사업) / 임대기간 통상 20년은 일반 사례값 — 확인 필요'
+  src: '근거: 사회기반시설에 대한 민간투자법 제4조(추진방식) / 마법지 계약방식(SOC 사업) / 임대기간 통상 20년은 일반 사례값 — 확인 필요',
+  det: { secs: [
+    { h: '정의', def: '민간이 [[학교·군숙소·하수관거]] 등 사회기반시설을 건설(Build)하여 [[소유권을 정부에 이전]](Transfer)하고, 정부가 이를 [[임차(Lease)]]하여 [[시설임대료와 운영비]]를 지급함으로써 투자비를 회수하는 [[임대형 민간투자방식]](민간투자법 제4조, 2005 도입)' },
+    { h: 'BTL 사업구조 및 임대료 지급 흐름', fig: 'MAIN', flow: ['정부 사업계획·한도액 국회 의결', '사업 고시·사업자(SPC) 선정', '실시협약·자금조달', '건설(B)', '준공 시 소유권 이전(T)', '정부 임차·운영(L)', '임대료+운영비 분할지급·임대기간 종료'] },
+    { h: 'BTO vs BTL 비교', tbl: { head: ['구분', 'BTO', 'BTL'], rows: [['대상시설', '수익형(도로·철도·항만)', '[[비수익형]](학교·군숙소·하수관거·문화시설)'], ['투자비 회수', '이용자 사용료', '[[정부 임대료]](시설임대료 + 운영비)'], ['수요위험', '민간 부담', '[[정부 부담]](민간은 건설·운영위험)'], ['수익률', '상대적 고위험·고수익', '국채 수익률 + 가산율(저위험)'], ['사업 제안', '민간제안 가능', '정부고시 중심']] } },
+    { h: '임대료 구성 및 기준', tbl: { head: ['항목', '내용', '비고'], rows: [['시설임대료', '총민간투자비 + 수익률 → 임대기간 균등 분할', '건설 원리금 상환'], ['운영비', '유지관리·운영 비용', '성과평가 연동 지급'], ['임대기간', '통상 20년 내외(협약)', '사례값 — 확인 필요'], ['근거', '사회기반시설에 대한 민간투자법 제4조 제2호', '']] } },
+    { h: '문제점 및 유의사항', ul: ['정부 [[재정부담 이연]] → 미래 세대 부담, 임대료 총액 한도 관리', '운영성과 평가 미흡 → 품질 저하 시에도 임대료 지급', '사업규모 소형화·[[경쟁 저조]], 대형사 위주 구조', '설계·시공 단계 시설 품질(학교 등) 확보 위한 감독 강화'] },
+    { h: '개선방안', ul: ['[[성과연동]] 임대료·운영비 지급(KPI 평가)', '혼합형(BTO + BTL) 활용으로 재정부담 완화', '중소업체 참여 확대 위한 사업 번들링 조정', '장기 유지관리 LCC 고려한 설계 의무화'] }
+  ] }
 },
 225: {
   title: 'IPD(Integrated Project Delivery)',
@@ -286,7 +422,15 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '처음부터 한 팀으로 — 초기 집중 설계로 변경비용은 낮추고 가치는 높인다',
   mnemo: '초통리공 (초기·통합팀·Risk·공유)',
   rel: ['BIM', 'Partnering', 'Fast Track', 'CM at Risk', 'Lean Construction'],
-  src: '근거: 합격답안 디테일용어300 201-300 p066(265 IPD: 정의, MacLeamy 곡선 ①비용절감 ②변경비용 ③전통설계 ④IPD설계, 특징, 문제점) / 마법지 VE 그래프(초기 개선노력)'
+  src: '근거: 합격답안 디테일용어300 201-300 p066(265 IPD: 정의, MacLeamy 곡선 ①비용절감 ②변경비용 ③전통설계 ④IPD설계, 특징, 문제점) / 마법지 VE 그래프(초기 개선노력)',
+  det: { secs: [
+    { h: '정의', def: '건설사업 [[초기 단계]]부터 발주자·설계자·시공자 등 핵심 참여자가 [[다자간 단일계약]]으로 [[하나의 통합팀]]을 구성하여 [[Risk와 성과를 공유]]하고, [[BIM]] 기반 협업으로 낭비를 최소화하고 프로젝트 가치를 극대화하는 통합 발주방식' },
+    { h: 'IPD 개념(MacLeamy Curve) 및 통합팀', fig: 'MAIN', flow: ['통합팀 구성·다자간 계약 체결', '공동 목표·목표비용·성과보상 설정', 'BIM 기반 초기 공동설계(Front-loading)', '시공성·원가 검토 반영', '시공·Lean 공정관리', '성과 평가·이익 공유'] },
+    { h: '전통방식(DBB) vs IPD', tbl: { head: ['구분', '전통방식(DBB)', 'IPD'], rows: [['계약', '발주자–설계자, 발주자–시공자 개별계약', '[[다자간 단일계약]]'], ['참여시기', '시공자 설계 완료 후 참여', '전원 [[사업 초기]] 참여'], ['Risk', '개별 전가', '[[공동 부담·성과 공유]]'], ['정보', '2D 도면·순차 전달', 'BIM 공유·실시간 협업'], ['설계노력', '실시설계 후반 집중', '초기 집중(전방배치)']] } },
+    { h: 'MacLeamy Curve 해석', tbl: { head: ['곡선', '의미'], rows: [['① 영향력(원가절감 가능성)', '초기일수록 큼, 후반 급감'], ['② 설계변경 비용', '후반일수록 급증'], ['③ 전통 설계노력', '실시설계·시공 단계 집중 → 변경비용↑'], ['④ IPD 설계노력', '기획·기본설계 단계 집중 → 변경비용↓ 가치↑']] } },
+    { h: '문제점 및 유의사항', ul: ['참여자 [[전문성·신뢰]] 확보가 전제 — 초기 팀 구성 역량 평가', '공동 책임으로 [[책임소재 불명확]] → 면책·분쟁해결 조항 정비', '설계자 자율성 제약, 성과보상 산정 기준 분쟁', '국내 국가계약법상 다자간 계약 근거 부족'] },
+    { h: '개선방안', ul: ['BIM·Big Room(공동사무실) 협업 체계 구축', '표준 다자간 계약서·법제 정비(공공 시범사업)', 'Lean Construction·Target Value Design 병행', 'Pre-con·CM at Risk 등 유사 협업방식 단계적 확대'] }
+  ] }
 },
 226: {
   title: '물가변동에 의한 계약금액조정',
@@ -302,6 +446,14 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '90일 지나고 3% 넘으면 조정 — 물가위험을 계약당사자가 공평 분담',
   mnemo: '구공삼 품지 단15 (90일·3%·품목/지수·단품15%)',
   rel: ['설계변경에 의한 계약금액 조정', '단품 슬라이딩', '건설공사비 지수', '공사계약기간 연장', '실적공사비'],
-  src: '근거: 국가를 당사자로 하는 계약에 관한 법률 시행령 제64조(90일 이상 경과 + 품목·지수조정률 3% 이상, 단품 15% 이상, 원자재 급등 시 90일 이내 조정)·시행규칙 제74조 / 합격답안 디테일용어300 201-300 p067(266 총액ES·단품ES 그래프) / 마법지 계약변경(물가변동)'
+  src: '근거: 국가를 당사자로 하는 계약에 관한 법률 시행령 제64조(90일 이상 경과 + 품목·지수조정률 3% 이상, 단품 15% 이상, 원자재 급등 시 90일 이내 조정)·시행규칙 제74조 / 합격답안 디테일용어300 201-300 p067(266 총액ES·단품ES 그래프) / 마법지 계약변경(물가변동)',
+  det: { secs: [
+    { h: '정의', def: '계약체결 후 물가변동으로 계약금액 구성 비목의 가격이 변동된 경우 [[90일 이상 경과]]하고 입찰일 기준 [[품목조정률·지수조정률]]이 [[3% 이상]] 증감한 때 계약금액을 조정하는 제도(총액 ES, 국가계약법 시행령 제64조) — 특정 자재는 입찰일 대비 {{15% 이상}} 증감 시 해당 자재만 조정(단품 ES)' },
+    { h: '조정요건(총액 ES·단품 ES)', fig: 'MAIN', flow: ['요건 확인(90일 경과 + 3% 이상 / 단품 15%)', '조정기준일 설정', '조정률 산정(품목 또는 지수)', '물가변동 적용대가 산정(기성분·선금 공제)', '계약상대자 청구', '계약금액 조정(증액·감액)'] },
+    { h: '조정요건', tbl: { head: ['구분', '요건', '근거'], rows: [['총액 ES', '계약 후 {{90일 이상 경과}} + 조정률 {{3% 이상}} 증감', '시행령 제64조 ①'], ['재조정', '직전 조정기준일부터 90일 이상 경과', '시행령 제64조'], ['예외', '천재지변·원자재 가격 급등 시 90일 이내 조정 가능', '시행령 제64조'], ['단품 ES', '특정 자재 가격 입찰일 대비 {{15% 이상}} 증감(기간요건 없음)', '시행령 제64조 ⑥'], ['방법 선택', '품목조정률 또는 지수조정률 중 계약서에 명시', '시행령 제64조']] } },
+    { h: '조정방법 및 산식', tbl: { head: ['구분', '품목조정률', '지수조정률'], rows: [['산정', '각 품목·비목별 가격 등락 직접 계산', '비목군별 지수(생산자물가·노임 등) × 가중치'], ['장단점', '정확·계산 복잡', '간편·실제와 차이 가능'], ['적용', '소규모·단기·품목 적은 공사', '대규모·장기·복합 공사'], ['조정금액', '물가변동 적용대가 × 조정률', '선금 지급분은 공제(조정금액 × 선금률)']] } },
+    { h: '적용 시 유의사항', ul: ['[[조정기준일]] 이후 기성분은 적용대가에서 제외 — 공정 진도 확인', '계약자 [[귀책 지연]]분은 지연 전 공정 기준으로 적용', '이미 지급된 [[선금]] 해당액은 조정금액에서 공제', '청구 기한·증빙(가격 자료) 준비, 감액 조정도 동일 적용', '하도급 계약에도 조정 비율 반영(하도급대금 조정의무)'] },
+    { h: '개선방안', ul: ['원자재 급등기 90일 이내 조정 적극 활용, 단품 ES 기준 합리화', '민간공사 계약서에 [[ES 특약]] 명시(민간건설공사 표준도급계약서)', '하도급 [[납품대금 연동제]](주요 원재료 비용이 하도급대금 10% 이상, 약정 변동률 초과 시 연동) 정착', '건설공사비 지수 고도화로 지수조정 정확성 향상'] }
+  ] }
 }
 });
