@@ -225,6 +225,101 @@
   window.addEventListener('beforeprint', () => document.querySelectorAll('.ansz').forEach(z => z.style.zoom = 1));
   window.addEventListener('afterprint', zoomAns);
   let ansHide = LS.get('amg_anshide', false);
+  // ---------- 그림 확대 보기 (탭하면 전체 화면, ＋/－·두 손가락 확대) ----------
+  function openViewer(svg, title) {
+    const ov = document.createElement('div'); ov.className = 'viewer';
+    ov.innerHTML = '<div class="vbar"><b>' + esc(title || '그림 확대') + '</b><span style="flex:1"></span><button class="btn" data-vz="-">－ 축소</button><button class="btn" data-vz="+">＋ 확대</button><button class="btn p" data-vz="x">✕ 닫기</button></div><div class="vbody"><div class="vin"></div></div>';
+    const vin = ov.querySelector('.vin'); vin.appendChild(svg.cloneNode(true));
+    let w = Math.max(innerWidth - 32, 720); const apply = () => { vin.style.width = w + 'px'; }; apply();
+    ov.addEventListener('click', e => { const z = e.target.dataset && e.target.dataset.vz; if (!z) return; e.stopPropagation(); if (z === 'x') ov.remove(); else { w = Math.max(360, Math.min(4200, w * (z === '+' ? 1.35 : 1 / 1.35))); apply(); } });
+    document.body.appendChild(ov);
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { const v = document.querySelector('.viewer'); if (v) v.remove(); } });
+
+  // ---------- ✍ 필기 연습 (펜 = 쓰기, 손가락 = 스크롤, 펜 지우개 버튼 = 지우기, 자동 저장) ----------
+  const PEN = { color: '#111111', size: LS.get('amg_pensize', 1), tool: 'pen', bg: LS.get('amg_penbg', 'sheet'), over: false };
+  const PEN_W = [1.3, 2.0, 3.0];
+  const idb = (() => {
+    let db = null;
+    const op = () => db ? Promise.resolve(db) : new Promise((res, rej) => { const r = indexedDB.open('amg_pen', 1); r.onupgradeneeded = () => r.result.createObjectStore('ink'); r.onsuccess = () => res(db = r.result); r.onerror = () => rej(r.error); });
+    return {
+      get: k => op().then(d => new Promise(res => { const q = d.transaction('ink').objectStore('ink').get(k); q.onsuccess = () => res(q.result || null); q.onerror = () => res(null); })).catch(() => null),
+      set: (k, v) => op().then(d => new Promise(res => { const tx = d.transaction('ink', 'readwrite'); tx.objectStore('ink').put(v, k); tx.oncomplete = res; tx.onerror = res; })).catch(() => {})
+    };
+  })();
+  function emptySheet(x) {
+    let h = '<div class="ansz penz"><div class="penpage' + (PEN.bg === 'blank' && !PEN.over ? ' blank' : '') + (PEN.over ? ' over' : '') + '">';
+    if (PEN.over) h += ansSheet(x, false).replace(/^<div class="ansz">/, '').replace(/<\/div>$/, '');
+    else if (PEN.bg === 'sheet') h += '<article class="asheet"><div class="ahd"><span>필기 연습 · 답안지 1면 22행</span><span>No.' + x.no + '</span></div><div class="rule"><div class="al q" style="--n:1"><div class="an"></div><div class="ab"><b>문제 ' + x.no + '. ' + esc(x.title) + '</b></div></div>' +
+      '<div class="al" style="--n:1"><div class="an"></div><div class="ab"></div></div>'.repeat(21) + '</div></article>';
+    return h + '<canvas id="penc"></canvas></div></div>';
+  }
+  function penBtn(k, label) { return '<button class="btn" data-pen="' + k + '">' + label + '</button>'; }
+  function penView() {
+    const x = cur(); if (!x) return;
+    main.innerHTML = '<div class="cz-bar penbar"><b>✍ 필기</b>' +
+      penBtn('k', '● 검정') + penBtn('r', '<span style="color:#c0392b">●</span> 빨강') + penBtn('b', '<span style="color:#1f5fa8">●</span> 파랑') +
+      penBtn('w', '굵기') + penBtn('e', '⌫ 지우개') + penBtn('u', '↶ 되돌리기') + penBtn('c', '🗑 전체 지우기') +
+      penBtn('o', '모범답안 겹쳐보기') + penBtn('g', PEN.bg === 'sheet' ? '배경: 답안지' : '배경: 백지') +
+      '<span class="kbd-hint">펜으로 쓰기 · 손가락으로 스크롤 · 펜 지우개 지원 · 자동 저장</span></div>' + emptySheet(x) + navBtns();
+    fitAns(main); zoomAns(); refreshPenBar(); setupPen(x);
+  }
+  let penStrokes = [], penRedraw = null;
+  async function setupPen(x) {
+    const cv = $('#penc'); if (!cv) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1), W = Math.round(794 * dpr), H = Math.round(1123 * dpr); // A4 @96dpi
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext('2d', { desynchronized: true }) || cv.getContext('2d'); // 저지연 캔버스
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    const key = SET + ':' + x.no;
+    const seg = (a, b, st) => {
+      ctx.globalCompositeOperation = st.er ? 'destination-out' : 'source-over';
+      ctx.strokeStyle = st.c; ctx.lineWidth = st.er ? 18 * dpr : PEN_W[st.s] * dpr * (0.6 + (b[2] || 0.5) * 0.9); // 필압 반영
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+    };
+    const redraw = () => { ctx.clearRect(0, 0, W, H); for (const st of penStrokes) { const p = st.p; if (p.length === 1) seg(p[0], p[0], st); for (let i = 1; i < p.length; i++) seg(p[i - 1], p[i], st); } };
+    let saveT = null;
+    const save = () => { clearTimeout(saveT); saveT = setTimeout(() => idb.set(key, JSON.stringify(penStrokes)), 600); };
+    penRedraw = () => { redraw(); save(); };
+    penStrokes = [];
+    try { const v = await idb.get(key); if (v) penStrokes = JSON.parse(v); } catch (e) { penStrokes = []; }
+    redraw();
+    const pt = e => { const r = cv.getBoundingClientRect(); return [Math.round((e.clientX - r.left) * W / r.width * 10) / 10, Math.round((e.clientY - r.top) * H / r.height * 10) / 10, Math.round((e.pressure || 0.5) * 100) / 100]; };
+    let cur0 = null, penDown = false, fy = null;
+    cv.addEventListener('pointerdown', e => {
+      if (e.pointerType === 'touch') { if (!penDown) fy = e.clientY; return; } // 손가락 = 스크롤, 펜 쓰는 중 손바닥은 무시
+      e.preventDefault(); penDown = true; try { cv.setPointerCapture(e.pointerId); } catch (er) {}
+      const er = PEN.tool === 'erase' || e.button === 5 || (e.buttons & 32) === 32;
+      cur0 = { c: PEN.color, s: PEN.size, er, p: [pt(e)] }; penStrokes.push(cur0); seg(cur0.p[0], cur0.p[0], cur0);
+    });
+    cv.addEventListener('pointermove', e => {
+      if (e.pointerType === 'touch') { if (fy !== null && !penDown) { window.scrollBy(0, fy - e.clientY); fy = e.clientY; } return; }
+      if (!cur0) return; e.preventDefault();
+      const evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [];
+      for (const ev of (evs.length ? evs : [e])) { const q = pt(ev), p = cur0.p[cur0.p.length - 1]; if (Math.abs(q[0] - p[0]) + Math.abs(q[1] - p[1]) < 0.8) continue; cur0.p.push(q); seg(p, q, cur0); }
+    });
+    const end = e => { if (e.pointerType === 'touch') { fy = null; return; } if (cur0) { cur0 = null; save(); } penDown = false; };
+    cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+    cv.addEventListener('contextmenu', e => e.preventDefault());
+  }
+  function penAction(a) {
+    if (a === 'k' || a === 'r' || a === 'b') { PEN.tool = 'pen'; PEN.color = { k: '#111111', r: '#c0392b', b: '#1f5fa8' }[a]; }
+    else if (a === 'e') PEN.tool = PEN.tool === 'erase' ? 'pen' : 'erase';
+    else if (a === 'w') { PEN.size = (PEN.size + 1) % 3; LS.set('amg_pensize', PEN.size); }
+    else if (a === 'u') { penStrokes.pop(); if (penRedraw) penRedraw(); }
+    else if (a === 'c') {
+      const b = document.querySelector('[data-pen="c"]');
+      if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = '⚠ 한 번 더 누르면 모두 지움'; setTimeout(() => { if (b.isConnected) { delete b.dataset.armed; b.textContent = '🗑 전체 지우기'; } }, 3000); return; }
+      penStrokes = []; if (penRedraw) penRedraw(); delete b.dataset.armed; b.textContent = '🗑 전체 지우기';
+    }
+    else if (a === 'o') { PEN.over = !PEN.over; return penView(); }
+    else if (a === 'g') { PEN.bg = PEN.bg === 'sheet' ? 'blank' : 'sheet'; LS.set('amg_penbg', PEN.bg); return penView(); }
+    refreshPenBar();
+  }
+  function refreshPenBar() { // 캔버스는 그대로, 버튼 상태만 갱신
+    const map = { k: PEN.tool === 'pen' && PEN.color === '#111111', r: PEN.tool === 'pen' && PEN.color === '#c0392b', b: PEN.tool === 'pen' && PEN.color === '#1f5fa8', e: PEN.tool === 'erase', o: PEN.over };
+    document.querySelectorAll('[data-pen]').forEach(b => { const k = b.dataset.pen; if (k in map) b.classList.toggle('p', map[k]); if (k === 'w') b.textContent = '굵기: ' + ['가늘게', '보통', '굵게'][PEN.size]; });
+  }
   function ansView() {
     const x = cur(); if (!x) return;
     main.innerHTML = `<div class="cz-bar"><b>답안지 요약</b>
@@ -274,6 +369,7 @@
     },
     d1() { d1View(); },
     ans() { ansView(); },
+    pen() { penView(); },
     card() { cardView(); },
     exam() { examView(); },
     stat() { statView(); },
@@ -403,10 +499,19 @@
     document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
     (views[tab] || views.read)(); window.scrollTo(0, 0);
   }
-  function open(no) { state.cur = +no; LS.set('amg_cur', state.cur); renderList(); $('#side').classList.remove('show'); show(['cloze', 'read', 'd1', 'ans'].includes(state.tab) ? state.tab : 'read'); }
+  let lastOpenT = 0;
+  function open(no) { const now = Date.now(); if (now - lastOpenT < 220) return; lastOpenT = now; state.cur = +no; LS.set('amg_cur', state.cur); renderList(); $('#side').classList.remove('show'); show(['cloze', 'read', 'd1', 'ans', 'pen'].includes(state.tab) ? state.tab : 'read'); }
 
+  let lastTapEl = null, lastTapT = 0;
   document.addEventListener('click', e => {
     const t = e.target;
+    // 터치 안정화: 같은 버튼을 0.35초 안에 다시 누르면 무시 (e-ink 더블탭·떨림 방지)
+    const tapEl = t.closest('button,.li,[data-go],[data-open],a');
+    if (tapEl) { const now = Date.now(); if (tapEl === lastTapEl && now - lastTapT < 350) { e.preventDefault(); return; } lastTapEl = tapEl; lastTapT = now; }
+    if (t.closest('.viewer')) return;
+    if (t.dataset && t.dataset.pen) return penAction(t.dataset.pen);
+    const fsv = t.closest('figure svg, .svgw svg, .asheet .sv svg, .sumv svg');
+    if (fsv && !t.closest('.hide') && !t.closest('.penpage')) { const fg = t.closest('figure'); const cap = fg && fg.querySelector('figcaption'); return openViewer(fsv, cap ? cap.textContent : ((document.querySelector('.d1 .figt, .al.h b') || {}).textContent || '')); }
     const tb = t.closest('#tabs button'); if (tb) return show(tb.dataset.tab);
     const li = t.closest('.li'); if (li) return open(li.dataset.no);
     const ch = t.closest('#catChips button'); if (ch) { state.cat = ch.dataset.c; renderChips(); renderList(); return; }
@@ -446,7 +551,7 @@
   document.addEventListener('keydown', e => {
     if (e.target.matches && e.target.matches('input,textarea,select')) return;
     if (state.tab === 'card') { if (e.code === 'Space') { e.preventDefault(); if (!cardFlip) { cardFlip = true; cardView(); } } if (cardFlip && ['1', '2', '3'].includes(e.key)) rate(+e.key); }
-    if (['read', 'cloze', 'd1', 'ans'].includes(state.tab) && !printMode) {
+    if (['read', 'cloze', 'd1', 'ans', 'pen'].includes(state.tab) && !printMode) {
       const list = filtered(), i = list.findIndex(x => x.no === state.cur);
       // Space = 다음 문항, Shift+Space = 이전 문항 (빠른 넘김)
       if (e.code === 'Space' && !e.ctrlKey && !e.altKey && !e.metaKey) {
@@ -460,11 +565,11 @@
     }
   });
   let tx0 = null, ty0 = 0;
-  main.addEventListener('touchstart', e => { const t = e.touches[0]; tx0 = t.clientX; ty0 = t.clientY; }, { passive: true });
+  main.addEventListener('touchstart', e => { const t = e.touches[0]; if (e.touches.length > 1 || t.touchType === 'stylus' || e.target.closest('.penpage,.viewer,table,.vbody')) { tx0 = null; return; } tx0 = t.clientX; ty0 = t.clientY; }, { passive: true });
   main.addEventListener('touchend', e => {
     if (tx0 === null || !['read', 'cloze', 'd1', 'ans'].includes(state.tab) || printMode) return;
     const t = e.changedTouches[0], dx = t.clientX - tx0, dy = t.clientY - ty0; tx0 = null;
-    if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 2) return;
+    if (Math.abs(dx) < 110 || Math.abs(dx) < Math.abs(dy) * 2.5) return; // 스와이프는 크게·수평으로만 (오작동 방지)
     for (let el = e.target; el && el !== main; el = el.parentElement) if (el.scrollWidth > el.clientWidth + 2 && getComputedStyle(el).overflowX !== 'visible') return;
     const list = filtered(), i = list.findIndex(x => x.no === state.cur), n = list[i + (dx < 0 ? 1 : -1)];
     if (n) open(n.no);

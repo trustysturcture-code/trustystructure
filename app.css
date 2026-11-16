@@ -350,3 +350,29 @@ html.eink .cz{background:#000}
 #einkBtn.on{background:#000;color:#fff;border-color:#000}
 #einkBtn{font-weight:900}
 .upd{position:sticky;top:0;z-index:60;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:8px max(16px,env(safe-area-inset-left,0px));background:var(--amber-bg);border-bottom:1px solid var(--amber);font-size:14px;font-weight:700}
+
+/* ===== 그림 시인성: 좁은 화면은 가로 스크롤로 글자 크기 유지, 탭하면 확대 보기 ===== */
+figure svg,.d1 .svgw svg,.asheet .sv svg,.sumv svg{cursor:zoom-in}
+@media (max-width:860px){
+  figure{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  figure svg{max-width:none!important;min-width:600px}
+  .d1 .svgw{overflow-x:auto}
+  .d1 .svgw svg{min-width:600px}
+}
+html.eink svg text{font-weight:600}
+html.eink svg .ld{stroke-width:1.3}
+html.eink svg .ln2{stroke-width:1.3}
+html.eink svg .ln{stroke-width:2.1}
+.viewer{position:fixed;inset:0;z-index:100;background:var(--card);display:flex;flex-direction:column}
+.vbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:calc(8px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+.vbody{flex:1;overflow:auto;touch-action:pan-x pan-y pinch-zoom;padding:12px max(16px,env(safe-area-inset-left,0px))}
+.vin svg{width:100%;height:auto;display:block}
+/* ===== ✍ 필기 ===== */
+.penbar{position:sticky;top:0;z-index:20}
+.penpage{position:relative;width:210mm;height:297mm;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+  --card:#fff;--paper:#fff;--ink:#1b2433;--ink2:#4a566b;--mute:#8a93a3;--line:#ddd6c6;--line2:#ece6d8;--hl:#fff1a8;
+  --svg-ink:#1b2433;--svg-fill:#eef3fa;--svg-fill2:#fdf0e1;--svg-fill3:#e7f4ec;--svg-soil:#e9dcc3;--svg-conc:#dcdcdc;color:#1b2433}
+.penpage .asheet{border:none;box-shadow:none;margin:0}
+.penpage.over .asheet{opacity:.32}
+.penpage.blank{background:#fff}
+#penc{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;-webkit-user-select:none;user-select:none}
