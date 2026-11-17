@@ -403,6 +403,7 @@
       '<p class="one">' + fmt(one, 'read') + '</p>' +
       (wwh ? '<div class="spwwh">' + ['What', 'Why', 'How'].map((t, i) => '<div class="w' + i + '"><b>' + t + '</b><span>' + fmt(wwh[i] || '', 'read') + '</span></div>').join('') + '</div>' : '') +
       (svg ? '<div class="spfig">' + svg + '</div>' : '') +
+      (sp && sp.read ? '<p class="spread">👁 ' + fmt(sp.read, 'read') + '</p>' : '') +
       (flow && flow.length ? '<div class="spflow">' + flow.map(f => '<span>' + fmt(f, 'read') + '</span>').join('<i>→</i>') + '</div>' : '') +
       '<div class="spheads">' + heads.map((u, i) => '<div class="k' + (i + 3) + '"><b>' + (i + 3) + '. ' + esc(u.h) + '</b><ul>' + arr(u.k).map(k => '<li>' + fmt(k, 'read') + '</li>').join('') + '</ul></div>').join('') + '</div>' +
       (code ? '<div class="spcode">💡 ' + fmt(code, 'read') + '</div>' : '') +

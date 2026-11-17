@@ -14,13 +14,15 @@ Object.assign(window.SP.w, {
     '<line x1="185" y1="238" x2="185" y2="262" class="ld"/><text x="192" y="268" class="r">대지경계선 = 지적도</text>' +
     '<line x1="410" y1="148" x2="410" y2="118" class="ld"/><text x="410" y="110" text-anchor="middle" class="bl">B.M ▲ 2개소↑</text>' +
     '<text x="410" y="224" text-anchor="middle" class="s2">부동점·영향권 밖</text>' +
+    '<text x="18" y="57" class="n">①</text><text x="165" y="269" class="n">②</text><text x="432" y="166" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '설치기준', k: ['[[부동점]]', '{{2개소↑}} 상호검측', 'GL+{{0.5~1.0m}}'] },
     { h: '유의사항', k: ['말뚝 보호·사진', '인접대지주 입회', '[[수시 검측]]'] },
     { h: '개선방안', k: ['GPS·TS 좌표', '드론·BIM 기록'] }
   ],
-  code: '경·지·말 / B.M = 2개·부동·수시 → “둘 부수”'
+  code: '경·지·말 / B.M = 2개·부동·수시 → “둘 부수”',
+  read: '①지적측량으로 경계말뚝 복원 → ②말뚝을 이은 대지경계선 확정 → ③영향권 밖 부동점에 B.M 2개소'
 }
 });
 Object.assign(window.SP.d, {
@@ -33,17 +35,19 @@ Object.assign(window.SP.d, {
     '<rect x="40" y="80" width="200" height="96" class="soil"/><text x="140" y="134" text-anchor="middle" class="t">점토 (포화)</text>' +
     '<rect x="40" y="176" width="200" height="26" class="bx2"/><text x="140" y="194" text-anchor="middle" class="s2">모래 (배수층)</text>' +
     '<line x1="90" y1="112" x2="90" y2="84" class="ar"/><line x1="190" y1="148" x2="190" y2="172" class="ar"/>' +
-    '<text x="40" y="236" class="bl">↑↓ 간극수가 위·아래 모래층으로 빠짐</text>' +
+    '<text x="40" y="236" class="bl">간극수 ↑↓ 모래층 배출</text>' +
     '<line x1="290" y1="56" x2="465" y2="56" class="ln"/><line x1="290" y1="56" x2="290" y2="230" class="ln"/>' +
     '<path d="M290,56 C320,150 370,196 460,206" class="bl"/>' +
     '<text x="462" y="48" text-anchor="end" class="s2">시간 t →</text><text x="298" y="248" class="s2">침하량 S ↓</text>' +
     '<text x="350" y="118" class="r">t ∝ H²</text>' +
+    '<text x="20" y="40" class="n">①</text><text x="16" y="237" class="n">②</text><text x="412" y="119" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '원리', k: ['[[과잉간극수압]] 소산', '1차(배수)·2차(Creep)', 'H 클수록 오래'] },
     { h: '문제점', k: ['[[부등침하]]·균열', '말뚝 [[부마찰력]]', '인접 구조물 침하'] },
     { h: '대책', k: ['[[선행재하]](Preloading)', 'PBD·Sand Drain', 'SCP 치환'] }
   ],
-  code: '물 빠져야 끝난다 → “선·드·치” (선행재하·드레인·치환)'
+  code: '물 빠져야 끝난다 → “선·드·치” (선행재하·드레인·치환)',
+  read: '①하중 ΔP가 포화 점토를 누르면 → ②간극수가 위·아래 모래층으로 빠지며 → ③오랜 시간 침하 (t ∝ H²)'
 }
 });

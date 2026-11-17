@@ -16,13 +16,15 @@ Object.assign(window.SP.w, {
     '<line x1="135" y1="210" x2="330" y2="210" class="ar"/><text x="232" y="200" text-anchor="middle" class="bl">보정신호 (실시간)</text>' +
     '<text x="110" y="262" text-anchor="middle">기준국</text><text x="360" y="262" text-anchor="middle">이동국</text>' +
     '<text x="470" y="228" text-anchor="end" class="r">cm급 정밀도</text>' +
+    '<text x="84" y="57" class="n">①</text><text x="150" y="121" class="n">②</text><text x="128" y="198" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '측량원리', k: ['위성 [[4개↑]] 동시수신', '거리 = 속도 × ΔT', '[[RTK]] 실시간 보정'] },
     { h: '유의사항', k: ['상공 시야 확보', '[[다중경로 오차]]', 'DOP 불량시간 회피'] },
     { h: '개선방안', k: ['MG·MC 장비 연계', 'TS 병행 음영보완'] }
   ],
-  code: '위성 4개·ΔT·RTK 보정 → “사·티·보” / 활용 “경·파·토”'
+  code: '위성 4개·ΔT·RTK 보정 → “사·티·보” / 활용 “경·파·토”',
+  read: '①위성 4개↑ 전파 수신 → ②도달시간으로 거리 계산 → ③기준국 보정신호로 이동국 cm급 좌표'
 },
 111: {
   one: '[[자본회수비]](↓)와 [[운영·유지비]](↑)를 이자로 환산한 [[연간 등가비용]]이 {{최소}}가 되는 사용기간',
@@ -39,37 +41,41 @@ Object.assign(window.SP.w, {
     '<circle cx="261" cy="143" r="5" class="rf"/><line x1="261" y1="148" x2="261" y2="240" class="ln2 dash"/>' +
     '<text x="272" y="128" class="r">최소점</text>' +
     '<text x="261" y="262" text-anchor="middle" class="r">경제수명</text>' +
+    '<text x="447" y="201" class="n">①</text><text x="450" y="131" class="n">②</text><text x="240" y="128" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '수명 구분', k: ['물리적·기술적', '[[경제적]] = 교체기준', '법정(내용연수)'] },
     { h: '유의사항', k: ['정비이력 기록', '대체분석 후 교체', '가혹작업 → 단축'] },
     { h: '개선방안', k: ['[[예방정비]]', 'IoT 고장 예지', 'Fleet 관리'] }
   ],
-  code: '“자운최” 자본회수↓ + 운영유지↑ = 최소점 → 교체'
+  code: '“자운최” 자본회수↓ + 운영유지↑ = 최소점 → 교체',
+  read: '①자본회수비는 해마다 감소 + ②운영유지비는 증가 → ③합계가 최소인 점 = 경제수명'
 },
 112: {
   one: '[[Telescoping Cage]]의 [[유압 Cylinder]]로 상부를 들어 생긴 {{Mast 1단}} 공간에 Mast를 끼워 크레인 상승',
   flow: ['Mast 운반', '균형 확인', 'Cage 상승', 'Mast 삽입', '핀 체결'],
   svg: '<svg viewBox="0 0 480 280">' +
-    '<line x1="70" y1="62" x2="440" y2="62" class="ln"/><rect x="80" y="62" width="30" height="20" class="bx3"/>' +
-    '<text x="440" y="50" text-anchor="end" class="bl">균형 유지</text>' +
-    '<rect x="200" y="70" width="40" height="40" class="bx"/>' +
-    '<rect x="200" y="110" width="40" height="40" fill="none" class="rd dash"/>' +
-    '<rect x="200" y="150" width="40" height="110" class="bx"/>' +
-    '<rect x="186" y="66" width="68" height="94" fill="none" class="ln2"/>' +
-    '<rect x="282" y="112" width="40" height="36" class="bx2"/><line x1="280" y1="130" x2="246" y2="130" class="ar"/>' +
-    '<text x="330" y="136" class="r">Mast 삽입</text>' +
-    '<line x1="176" y1="150" x2="176" y2="112" class="ar"/><text x="170" y="136" text-anchor="end" class="bl">유압 상승</text>' +
-    '<text x="258" y="182" class="b">Telescoping Cage</text>' +
-    '<line x1="60" y1="260" x2="420" y2="260" class="ln"/>' +
-    '<text x="300" y="236" class="r">풍속 10m/s↑ 중지</text>' +
+    '<text x="125" y="30" text-anchor="middle" class="b">유압 상승</text><text x="365" y="30" text-anchor="middle" class="b">Mast 삽입</text>' +
+    '<line x1="240" y1="44" x2="240" y2="262" class="ln2 dash"/>' +
+    '<line x1="30" y1="260" x2="220" y2="260" class="ln"/><line x1="40" y1="70" x2="210" y2="70" class="ln"/>' +
+    '<rect x="100" y="70" width="50" height="30" class="bx2"/><rect x="105" y="150" width="40" height="110" class="bx"/>' +
+    '<rect x="105" y="100" width="40" height="50" fill="none" class="rd dash"/><text x="100" y="130" text-anchor="end" class="r">1단 공간</text>' +
+    '<rect x="95" y="95" width="60" height="110" fill="none" class="ln2"/><text x="160" y="200" class="s2">Cage</text>' +
+    '<line x1="172" y1="150" x2="172" y2="104" class="ar"/>' +
+    '<line x1="260" y1="260" x2="460" y2="260" class="ln"/><line x1="280" y1="70" x2="450" y2="70" class="ln"/>' +
+    '<rect x="340" y="70" width="50" height="30" class="bx2"/><rect x="345" y="150" width="40" height="110" class="bx"/>' +
+    '<rect x="345" y="100" width="40" height="50" class="bx3"/><rect x="335" y="95" width="60" height="110" fill="none" class="ln2"/>' +
+    '<line x1="455" y1="125" x2="392" y2="125" class="ar"/><text x="400" y="114" class="r">Mast 끼움</text><text x="400" y="146" class="s2">핀 체결</text>' +
+    '<text x="470" y="277" text-anchor="end" class="r">풍속 10m/s↑ 중지</text>' +
+    '<text x="70" y="31" class="n">①</text><text x="60" y="160" class="n">②</text><text x="300" y="31" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '준비작업', k: ['Jib 방향 [[균형]]', '유압·오일 점검', '신호·출입통제'] },
     { h: '유의사항', k: ['풍속 {{10m/s↑}} 중지', '[[선회 금지]]·트롤리 금지', '핀·볼트 체결 확인'] },
     { h: '개선방안', k: ['실시간 모니터링', 'Self-Telescoping', 'BIM 양중계획'] }
   ],
-  code: '“인·상·삽” 인양 → 상승 → 삽입 / 금지 “풍(10)·선·핀”'
+  code: '“인·상·삽” 인양 → 상승 → 삽입 / 금지 “풍(10)·선·핀”',
+  read: '①유압 Cylinder로 상부를 밀어 올림 → ②Mast 1단 공간 생김 → ③새 Mast 끼우고 핀 체결'
 },
 113: {
   one: '달기 와이어는 [[이음매]]·소선 {{10%}} 단선·지름 {{7%}} 감소 없이 [[안전계수 10↑]], 별도 [[구명줄]]에 안전대',
@@ -85,35 +91,39 @@ Object.assign(window.SP.w, {
     '<text x="270" y="250" class="s2">안전대 체결</text>' +
     '<text x="175" y="272" class="r">구명줄 별도</text>' +
     '<text x="300" y="160" class="r">소선 10%↑ 단선 X</text><text x="300" y="182" class="r">지름 7% 초과감소 X</text>' +
+    '<text x="240" y="79" class="n">①</text><text x="272" y="161" class="n">②</text><text x="262" y="273" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '사용금지 기준', k: ['[[이음매]]·꼬임·부식', '소선 {{10%↑}} 단선', '지름 {{7%}} 초과 감소'] },
     { h: '유의사항', k: ['[[구명줄]] 고정점 분리', '모서리 보호대', '강풍 {{10m/s↑}} 중지'] },
     { h: '개선방안', k: ['MFL 비파괴 검사', '하중·풍속 센서', '특별안전교육'] }
   ],
-  code: '사용금지 “이·10·7·꼬·변·부” / 안전계수 10 / 구명줄 별도'
+  code: '사용금지 “이·10·7·꼬·변·부” / 안전계수 10 / 구명줄 별도',
+  read: '①주 와이어 안전계수 10↑ → ②소선 10% 단선·지름 7% 감소 시 교체 → ③구명줄 별도+안전대'
 },
 114: {
   one: '[[표준관입시험]]에서 {{63.5kg}} 해머를 {{76cm}} 낙하시켜 샘플러를 [[30cm 관입]]시키는 [[타격횟수]]',
   flow: ['시추', 'Sampler 설치', '예비 15cm', '본타격 30cm', 'N치 기록'],
   svg: '<svg viewBox="0 0 480 280">' +
+    '<rect x="40" y="90" width="260" height="170" class="soil"/><line x1="40" y1="90" x2="300" y2="90" class="ln"/>' +
+    '<text x="46" y="84" class="s2">GL</text>' +
     '<rect x="148" y="10" width="44" height="26" class="bx3"/><text x="200" y="28" class="b">63.5kg 해머</text>' +
     '<line x1="136" y1="38" x2="136" y2="62" class="ar"/><text x="200" y="56" class="r">76cm 낙하</text>' +
     '<rect x="160" y="62" width="20" height="8" class="bx"/><line x1="170" y1="70" x2="170" y2="180" class="ln"/>' +
-    '<rect x="40" y="90" width="260" height="170" class="soil"/><line x1="40" y1="90" x2="300" y2="90" class="ln"/>' +
-    '<text x="46" y="84" class="s2">GL</text>' +
     '<rect x="162" y="180" width="16" height="70" class="bx"/><line x1="154" y1="200" x2="186" y2="200" class="rd"/>' +
     '<text x="150" y="196" text-anchor="end" class="s2">예비 15cm</text>' +
     '<text x="190" y="230" class="r">본타격 30cm</text>' +
     '<text x="315" y="110" class="bl">N = 30cm 타격횟수</text>' +
     '<text x="315" y="140" class="s2">50회 초과: 50/관입량</text>' +
+    '<text x="120" y="29" class="n">①</text><text x="60" y="197" class="n">②</text><text x="190" y="254" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '판정 활용', k: ['사질토 [[상대밀도]]', '점성토 연경도', '지지층 판단'] },
     { h: '유의사항', k: ['예비 15cm 제외', '{{50회}} 초과 50/관입량', '슬라임 제거·자유낙하'] },
     { h: '개선방안', k: ['Auto-trip 해머', 'CPT 병행', '지반정보 DB'] }
   ],
-  code: '“육삼오·칠육·삼십” (63.5kg·76cm·30cm) / 예비 15 제외 / 상한 50'
+  code: '“육삼오·칠육·삼십” (63.5kg·76cm·30cm) / 예비 15 제외 / 상한 50',
+  read: '①63.5kg 해머를 76cm 낙하 → ②처음 15cm는 예비타격 → ③다음 30cm 타격횟수 = N값'
 },
 115: {
   one: '[[Boring]]·[[SPT]] 결과로 [[지층 구성]]·[[지하수위]]·N값·시료상태를 깊이별로 그린 지반조사 도서',
@@ -129,13 +139,15 @@ Object.assign(window.SP.w, {
     '<text x="355" y="30" text-anchor="middle" class="s2">N값 0 → 50</text>' +
     '<polyline points="268,60 275,100 280,140 320,170 380,210 440,240" fill="none" class="rd"/>' +
     '<text x="290" y="264" class="r">지지층 (N≥50)</text>' +
+    '<text x="55" y="61" class="n">①</text><text x="235" y="95" class="n">②</text><text x="268" y="265" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '확인항목', k: ['[[지층 구성]]·지지층', '[[지하수위]]·부력', 'N값·지지력'] },
     { h: '유의사항', k: ['시추공 사이는 추정', '우기 수위 재측정', '지지층 이하 시추'] },
     { h: '개선방안', k: ['물리탐사 병행', '3D 지반모델', '굴착 중 대조'] }
   ],
-  code: '주상도 4확인 “층·수·N·시” (지층·지하수위·N값·시료)'
+  code: '주상도 4확인 “층·수·N·시” (지층·지하수위·N값·시료)',
+  read: '①깊이별 지층 구성 → ②지하수위 위치 → ③N값이 커져 N≥50 되는 층 = 지지층'
 },
 116: {
   one: '시추 코어 중 {{10cm 이상}} 조각 길이 합을 [[총 시추길이]]로 나눈 [[백분율]] — 절리 정도로 [[암반 분류]]',
@@ -150,13 +162,15 @@ Object.assign(window.SP.w, {
     '<text x="300" y="200" text-anchor="middle">총 시추길이 L</text>' +
     '<text x="240" y="232" text-anchor="middle" class="r">RQD = Σ(10cm↑) / L × 100</text>' +
     '<text x="240" y="262" text-anchor="middle" class="s2">75~90 양호 · 90↑ 매우양호</text>' +
+    '<text x="140" y="77" class="n">①</text><text x="70" y="161" class="n">②</text><text x="115" y="233" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '등급(Deere)', k: ['{{25·50·75·90}} 경계', '90↑ 매우 양호', '25↓ 매우 불량'] },
     { h: '유의사항', k: ['[[이중관]] NX 코어', '기계적 파손 포함', '연약 코어 제외'] },
     { h: '개선방안', k: ['BIPS 영상촬영', 'RMR·Q-system'] }
   ],
-  code: 'RQD = 10cm↑ 합 / 총길이 · 등급 “이오·오공·칠오·구공”'
+  code: 'RQD = 10cm↑ 합 / 총길이 · 등급 “이오·오공·칠오·구공”',
+  read: '①10cm↑ 코어 조각만 합산 → ②짧은 조각은 제외 → ③총 시추길이로 나눠 % = RQD'
 },
 117: {
   one: '점성토가 [[함수비]]에 따라 고체 → 반고체 → 소성 → 액성으로 변하는 성질, 경계가 [[Atterberg 한계]]',
@@ -169,13 +183,15 @@ Object.assign(window.SP.w, {
     '<text x="305" y="40" text-anchor="middle">소성</text><text x="410" y="40" text-anchor="middle">액성</text>' +
     '<text x="150" y="250" text-anchor="middle" class="r">SL</text><text x="250" y="250" text-anchor="middle" class="r">PL</text><text x="360" y="250" text-anchor="middle" class="r">LL</text>' +
     '<text x="305" y="272" text-anchor="middle" class="r">PI = LL − PL</text>' +
+    '<text x="430" y="62" class="n">①</text><text x="380" y="252" class="n">②</text><text x="236" y="273" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '연경도 지수', k: ['[[PI = LL − PL]]', 'SI = PL − SL', 'LI = (w−PL)/PI'] },
     { h: '유의사항', k: ['대표시료·교란 주의', 'PI 大 성토재 제한', 'LI≈1 예민 주의'] },
     { h: '개선방안', k: ['Fall Cone 병행', '소성도 USCS 분류', '압밀·전단 종합평가'] }
   ],
-  code: '고·반·소·액 ↔ SL·PL·LL / “PI = 엘엘 − 피엘”'
+  code: '고·반·소·액 ↔ SL·PL·LL / “PI = 엘엘 − 피엘”',
+  read: '①함수비가 늘면 → ②SL·PL·LL 경계를 넘어 고체→액성으로 변함 → ③소성범위 PI = LL − PL'
 },
 118: {
   one: '흙이 [[전단파괴]]될 때의 최대 저항 = [[점착력(c)]] + 내부마찰(φ), [[Mohr-Coulomb]] {{τ = c + σ′tanφ}}',
@@ -191,13 +207,15 @@ Object.assign(window.SP.w, {
     '<text x="250" y="225" text-anchor="middle" class="s2">Mohr 원 (파괴 시)</text>' +
     '<text x="300" y="40" class="r">τ = c + σ′tanφ</text>' +
     '<text x="330" y="118" class="s2">파괴포락선</text>' +
+    '<text x="20" y="171" class="n">①</text><text x="180" y="170" class="n">②</text><text x="310" y="119" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '흙 종류별', k: ['사질토 c = 0', '포화점토 φ = 0', '일반흙 c + φ'] },
     { h: '유의사항', k: ['수위↑ [[유효응력]]↓', '과재하·진동 금지', '교란 시 강도저하'] },
     { h: '개선방안', k: ['지반개량 c·φ↑', '간극수압·경사계', '사면안정 해석'] }
   ],
-  code: '“타우 = 씨 + 시그마 탄파이” / 모래 c=0, 포화점토 φ=0'
+  code: '“타우 = 씨 + 시그마 탄파이” / 모래 c=0, 포화점토 φ=0',
+  read: '①c = 절편(점착력) → ②φ = 기울기(마찰각) → ③Mohr 원이 포락선에 닿으면 전단파괴'
 },
 119: {
   one: '흙 간극으로 물이 흐르는 정도, [[Darcy 법칙]] {{v = k·i}}의 비례상수 [[투수계수(k)]]로 표시',
@@ -212,13 +230,15 @@ Object.assign(window.SP.w, {
     '<line x1="70" y1="165" x2="160" y2="165" class="ar"/><text x="70" y="215" class="bl">흐름 v</text>' +
     '<text x="240" y="222" text-anchor="middle" class="s2">시료 길이 L</text>' +
     '<text x="240" y="262" text-anchor="middle" class="r">v = k·i ,  i = Δh / L</text>' +
+    '<text x="430" y="87" class="n">①</text><text x="44" y="171" class="n">②</text><text x="145" y="263" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '영향요소', k: ['입경·간극비↑ → k↑', '점성↓(온도↑) → k↑', '수평 k > 연직 k'] },
     { h: '유의사항', k: ['현장 양수시험 보정', 'Boiling·Piping 검토', '과다양수 → 침하'] },
     { h: '개선방안', k: ['지하수 수치해석', 'Lugeon 재측정', '수위 실시간 계측'] }
   ],
-  code: '“다르시 v = k·i” / k↑ = 입·간·포·밀↑, 점성↓ / 정수위 = 모래'
+  code: '“다르시 v = k·i” / k↑ = 입·간·포·밀↑, 점성↓ / 정수위 = 모래',
+  read: '①양쪽 수위차 Δh가 → ②물을 흙 시료(길이 L)로 밀어 흐름 → ③v = k·i, 비례상수 k'
 },
 120: {
   one: '[[연약지반]]을 깊이 파낸 [[배토중량]]과 [[건물 하중]]을 평형시켜 [[순하중]]을 줄이는 보상기초 ({{q = γ·Df}})',
@@ -234,13 +254,15 @@ Object.assign(window.SP.w, {
     '<text x="315" y="198" class="s2">강성 Mat</text>' +
     '<text x="240" y="232" text-anchor="middle" class="r">q = γ·Df → 순하중 0</text>' +
     '<text x="440" y="250" text-anchor="end" class="s2">연약지반</text>' +
+    '<text x="18" y="51" class="n">①</text><text x="18" y="131" class="n">②</text><text x="145" y="233" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '종류', k: ['완전보상 q = γDf', '부분보상 q > γDf', '뗏목(Raft)기초'] },
     { h: '유의사항', k: ['단위중량·수위 정확히', '하중·도심 일치', 'Heaving·부력 검토'] },
     { h: '개선방안', k: ['Piled Raft 병용', '단계별 계측', 'Rock Anchor 부력대응'] }
   ],
-  code: '“배토 = 건물 → 뜬다” / q_net = q − γDf / 완전·부분·뗏목'
+  code: '“배토 = 건물 → 뜬다” / q_net = q − γDf / 완전·부분·뗏목',
+  read: '①건물 하중 q만큼 → ②흙을 파내 배토중량 γ·Df 제거 → ③둘이 같아 순하중 ≈ 0'
 },
 121: {
   one: '거푸집·동바리에 작용하는 [[연직하중]](고정+작업 {{5.0kN/㎡↑}}), [[수평하중]], 콘크리트 [[측압]](W·H)',
@@ -258,13 +280,15 @@ Object.assign(window.SP.w, {
     '<path d="M420,60 L470,240 L420,240 z" class="bx2"/>' +
     '<text x="470" y="48" text-anchor="end" class="r">측압 p = W·H</text>' +
     '<text x="400" y="262" text-anchor="middle" class="s2">벽 거푸집</text>' +
+    '<text x="14" y="31" class="n">①</text><text x="24" y="200" class="n">②</text><text x="350" y="49" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '하중 기준', k: ['고정 RC {{24kN/㎥}}', '작업 {{2.5kN/㎡}}↑', '측압 p = W·H'] },
     { h: '유의사항', k: ['편심·몰림 타설 금지', '수평연결재·가새', '5m↑ 구조검토'] },
     { h: '개선방안', k: ['System Support', 'BIM 가설구조', '타설 중 변위계측'] }
   ],
-  code: '고(24·0.4)+작(2.5)=연직 5.0 / 측압 WH → “부슬타다 습기 응수철”'
+  code: '고(24·0.4)+작(2.5)=연직 5.0 / 측압 WH → “부슬타다 습기 응수철”',
+  read: '①슬래브 위 연직하중(고정+작업) → ②동바리에 수평하중 → ③벽 거푸집엔 깊이 비례 측압 W·H'
 },
 122: {
   one: '보·Slab의 [[처짐]]을 예상해 미리 위로 치켜올리는 [[상향 솟음]], 크기는 Span의 {{l/300~l/500}}',
@@ -279,13 +303,15 @@ Object.assign(window.SP.w, {
     '<text x="420" y="212" text-anchor="end" class="s2">타설 후 = 설계 Level</text>' +
     '<text x="240" y="234" text-anchor="middle" class="s2">Span l</text>' +
     '<text x="240" y="262" text-anchor="middle" class="r">Camber = l/300 ~ l/500</text>' +
+    '<text x="155" y="47" class="n">①</text><text x="290" y="170" class="n">②</text><text x="268" y="213" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '제작방법', k: ['강재 [[냉간가공]]', '강재 열간가공', 'RC Support 높이조절'] },
     { h: '유의사항', k: ['Creep 장기처짐', '이음위치 고려', '과다 시 두께부족'] },
     { h: '개선방안', k: ['BIM 처짐 예측', '공장 가공 검측', 'Level 계측 피드백'] }
   ],
-  code: '처짐 반대로 “솟음” / l/300~500 / 냉·열·서(Support)'
+  code: '처짐 반대로 “솟음” / l/300~500 / 냉·열·서(Support)',
+  read: '①자중·타설하중으로 처질 것을 예상 → ②미리 위로 솟음 → ③타설 후 처져 설계 Level'
 },
 123: {
   one: '콘크리트가 소요강도에 이를 때까지 거푸집을 두는 기간 — [[측면]] {{5MPa}}↑, [[밑면]] 2/3 fck·{{14MPa}}↑',
@@ -299,13 +325,15 @@ Object.assign(window.SP.w, {
     '<text x="450" y="194" text-anchor="end" class="r">측면 5MPa</text>' +
     '<text x="450" y="130" text-anchor="end" class="r">밑면 2/3 fck (14MPa↑)</text>' +
     '<text x="150" y="262" text-anchor="middle" class="bl">측면 → 밑면 → 동바리</text>' +
+    '<text x="95" y="226" class="n">①</text><text x="196" y="135" class="n">②</text><text x="50" y="263" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '해체 기준', k: ['측면 {{5MPa↑}}', '밑면 {{2/3 fck}}', '최소 {{14MPa}}'] },
     { h: '유의사항', k: ['[[설치 역순]] 해체', '진동·충격 금지', '직상층 과적재 금지'] },
     { h: '개선방안', k: ['Maturity 강도추정', 'Drop Head 조기전용', '조강·고온 양생'] }
   ],
-  code: '“부재측면 5MPa, 밑면은 2/3 다만 14”'
+  code: '“부재측면 5MPa, 밑면은 2/3 다만 14”',
+  read: '①측면 5MPa 도달 시 측면 해체 → ②밑면은 2/3 fck·14MPa↑ → ③측면 → 밑면 → 동바리 순'
 },
 124: {
   one: '[[Filler 처리]]는 동바리를 남기고 판넬만 해체, [[Reshoring]]은 해체 후 재설치 — 원칙 금지·감독자 승인',
@@ -323,13 +351,15 @@ Object.assign(window.SP.w, {
     '<line x1="20" y1="215" x2="460" y2="215" class="ln"/>' +
     '<text x="125" y="240" text-anchor="middle" class="s2">판넬만 해체</text><text x="125" y="262" text-anchor="middle" class="s2">조기 전용·안전</text>' +
     '<text x="355" y="240" text-anchor="middle" class="s2">해체 → 재설치 · 동일위치</text><text x="355" y="262" text-anchor="middle" class="s2">3개층↑ 지지</text>' +
+    '<text x="28" y="41" class="n">①</text><text x="252" y="41" class="n">②</text><text x="285" y="263" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '바꾸어 세우기 기준', k: ['강도 {{2/3 fck}}↑ 후', '받침판 {{300mm↑}}', '큰 보 금지'] },
     { h: '유의사항', k: ['[[최소 3개층]] 지지', '상·하층 동일위치', '순차 해체'] },
     { h: '개선방안', k: ['Drop Head System', 'Filler 처리 우선'] }
   ],
-  code: 'Reshoring “원칙X·승인·큰보X·300·3개층·동일” / Filler = 남기고 판넬만'
+  code: 'Reshoring “원칙X·승인·큰보X·300·3개층·동일” / Filler = 남기고 판넬만',
+  read: '①Filler는 동바리 남기고 판넬만 해체 → ②Reshoring은 해체 후 재설치(원칙 금지) → ③3개층↑ 지지'
 },
 125: {
   one: '[[건조수축]]·[[온도변화]] 균열을 분산하려고 [[1방향 슬래브]]의 [[주근 직각방향]]으로 넣는 보조철근',
@@ -342,13 +372,15 @@ Object.assign(window.SP.w, {
     '<line x1="65" y1="90" x2="415" y2="90" class="bl"/><line x1="65" y1="140" x2="415" y2="140" class="bl"/><line x1="65" y1="190" x2="415" y2="190" class="bl"/>' +
     '<text x="60" y="255" class="r">ρ ≥ 0.0020</text><text x="420" y="255" text-anchor="end" class="r">간격 5h · 450mm 이하</text>' +
     '<text x="240" y="272" text-anchor="middle" class="s2">1방향 슬래브</text>' +
+    '<text x="36" y="35" class="n">①</text><text x="280" y="35" class="n">②</text><text x="245" y="256" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '배근기준', k: ['철근비 {{0.0020}}↑', '간격 {{5h·450mm}}↓', '상한 1,800㎟/m'] },
     { h: '유의사항', k: ['간격·피복 유지', '이음 엇갈림', '습윤양생'] },
     { h: '개선방안', k: ['균열유발줄눈', '섬유보강', '저수축 배합'] }
   ],
-  code: '수·온 = 주근 ⊥ / 0.0020 / 5h·450 / 1,800㎟'
+  code: '수·온 = 주근 ⊥ / 0.0020 / 5h·450 / 1,800㎟',
+  read: '①주근은 단변방향 → ②직각으로 수축·온도철근 배근 → ③ρ 0.0020↑·간격 5h·450 이하'
 },
 126: {
   one: 'Mat기초 [[시공이음]]에 묻는 [[원형강봉]] — 한쪽 고정·한쪽 [[부착방지 도포]]로 신축 허용, [[전단력 전달]]',
@@ -364,36 +396,39 @@ Object.assign(window.SP.w, {
     '<text x="380" y="214" text-anchor="middle" class="s2">Dowel bar (원형강봉)</text>' +
     '<text x="40" y="252" class="g">수평·직각 고정</text>' +
     '<text x="235" y="222" text-anchor="middle" class="r">시공이음</text>' +
+    '<text x="56" y="61" class="n">①</text><text x="352" y="119" class="n">②</text><text x="180" y="223" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '역할', k: ['[[전단력 전달]]', '지압파괴 방지', '[[부등침하 단차]] 방지'] },
     { h: '유의사항', k: ['수평·직각 고정', '관통부 막음', '도포 상태 검사'] },
     { h: '개선방안', k: ['Dowel Basket', '에폭시·스테인리스', 'Template 위치고정'] }
   ],
-  code: '“고정·막음·도포·수평” — 한쪽 고정, 한쪽 미끄럼(도포+Cap)'
+  code: '“고정·막음·도포·수평” — 한쪽 고정, 한쪽 미끄럼(도포+Cap)',
+  read: '①1차 쪽은 강봉 고정 → ②2차 쪽은 Grease 도포+Cap으로 미끄럼 → ③이음부 전단 전달·신축 허용'
 },
 127: {
   one: '[[탄산화]]·[[염화물]]로 [[부동태막]]이 깨져 녹이 생기고 약 {{2.5배}} 팽창 → 균열·박리, [[가벼운 녹]]만 허용',
   flow: ['CO₂·Cl⁻ 침투', '부동태막 파괴', '녹 생성', '체적팽창', '균열·박리'],
   svg: '<svg viewBox="0 0 480 280">' +
-    '<text x="140" y="22" text-anchor="middle" class="bl">CO₂ · Cl⁻ 침투</text>' +
-    '<line x1="110" y1="30" x2="110" y2="90" class="ar"/><line x1="170" y1="30" x2="170" y2="90" class="ar"/>' +
-    '<rect x="40" y="60" width="400" height="160" class="conc"/>' +
-    '<circle cx="150" cy="110" r="14" class="bf"/>' +
-    '<line x1="200" y1="62" x2="200" y2="94" class="ar"/><text x="208" y="84" class="s2">피복두께</text>' +
-    '<text x="150" y="150" text-anchor="middle" class="bl">부동태막 파괴</text>' +
-    '<circle cx="330" cy="110" r="18" class="rf"/><polyline points="330,92 322,76 334,60" fill="none" class="rd"/>' +
-    '<text x="370" y="44" class="r">균열·박리</text>' +
-    '<text x="330" y="160" text-anchor="middle" class="r">녹 체적팽창 2.5배</text>' +
-    '<text x="240" y="250" text-anchor="middle" class="r">염화물 0.30kg/㎥ 이하</text>' +
-    '<text x="240" y="272" text-anchor="middle" class="g">가벼운 녹 O · 들뜬 녹 X</text>' +
+    '<rect x="40" y="70" width="400" height="140" class="conc"/>' +
+    '<text x="140" y="24" text-anchor="middle" class="bl">CO₂ · Cl⁻ 침투</text>' +
+    '<line x1="90" y1="34" x2="90" y2="128" class="ar"/><line x1="130" y1="34" x2="130" y2="128" class="ar"/>' +
+    '<circle cx="110" cy="150" r="14" class="bf"/><text x="110" y="194" text-anchor="middle" class="bl">부동태막 파괴</text>' +
+    '<line x1="170" y1="150" x2="290" y2="150" class="ar"/><text x="230" y="140" text-anchor="middle" class="s2">녹 발생</text>' +
+    '<circle cx="330" cy="150" r="22" class="rf"/><polyline points="330,128 322,100 334,70" fill="none" class="rd"/>' +
+    '<text x="350" y="58" class="r">균열·박리</text>' +
+    '<text x="330" y="196" text-anchor="middle" class="r">체적 2.5배 팽창</text>' +
+    '<text x="240" y="240" text-anchor="middle" class="r">염화물 0.30kg/㎥ 이하</text>' +
+    '<text x="240" y="266" text-anchor="middle" class="g">가벼운 녹 O · 들뜬 녹 X</text>' +
+    '<text x="62" y="25" class="n">①</text><text x="150" y="131" class="n">②</text><text x="280" y="59" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '허용치', k: ['[[가벼운 녹]] O', '[[들뜬 녹]] X·제거', '염화물 {{0.30kg/㎥}}↓'] },
     { h: '방지대책', k: ['[[피복두께]] 확보', 'W/B↓ 밀실다짐', '보관 고임재·덮개'] },
     { h: '유지관리', k: ['탄산화 깊이 측정', '염해환경 피복상향', 'FRP·스테인리스근'] }
   ],
-  code: '허용 “가벼운 녹 O · 들뜬 녹 X” / 염 0.30 / 대책 “설·시·방”'
+  code: '허용 “가벼운 녹 O · 들뜬 녹 X” / 염 0.30 / 대책 “설·시·방”',
+  read: '①CO₂·Cl⁻가 피복을 뚫고 침투 → ②철근 부동태막 파괴 → ③녹이 2.5배 팽창해 균열·박리'
 },
 128: {
   one: '철근과 콘크리트 경계에서 [[미끄러짐]]에 저항해 일체로 거동하게 하는 성능 — [[교착]]·[[마찰]]·[[맞물림]]',
@@ -408,13 +443,15 @@ Object.assign(window.SP.w, {
     '<text x="225" y="196" text-anchor="middle" class="s2">정착길이</text>' +
     '<text x="210" y="240" text-anchor="middle" class="bl">교착 → 마찰 → 맞물림</text>' +
     '<text x="210" y="266" text-anchor="middle" class="g">피복두께↑ · fck↑</text>' +
+    '<text x="385" y="127" class="n">①</text><text x="272" y="104" class="n">②</text><text x="108" y="241" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '영향요인', k: ['fck↑·W/B↓', '[[이형철근]]·가벼운 녹', '피복·순간격 확보'] },
     { h: '유의사항', k: ['들뜬녹·기름 제거', '진동다짐 철저', '블리딩 저감'] },
     { h: '개선방안', k: ['에폭시철근 정착할증', 'Head bar 기계정착'] }
   ],
-  code: '“교·마·기” / 재료 “강·표·경” · 시공 “피·정·다”'
+  code: '“교·마·기” / 재료 “강·표·경” · 시공 “피·정·다”',
+  read: '①철근을 인발 P로 당기면 → ②이형 마디가 콘크리트에 걸려 저항 → ③교착→마찰→맞물림 순 부착'
 },
 129: {
   one: '[[최외측 철근]](늑근) 표면에서 콘크리트 표면까지의 최단거리 — [[부착]]·[[내구성]]·[[내화성]] 확보',
@@ -430,13 +467,15 @@ Object.assign(window.SP.w, {
     '<line x1="355" y1="210" x2="355" y2="240" class="rd"/><text x="366" y="230" class="r">피복두께</text>' +
     '<line x1="170" y1="140" x2="120" y2="140" class="ld"/><text x="115" y="145" text-anchor="end" class="bl">늑근 기준</text>' +
     '<text x="40" y="264" class="s2">수중 100 · 흙 75</text><text x="440" y="264" text-anchor="end" class="s2">실내 슬래브 20</text>' +
+    '<text x="20" y="146" class="n">①</text><text x="432" y="231" class="n">②</text><text x="150" y="27" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '최소 피복(mm)', k: ['수중 {{100}}·흙 {{75}}', '노출 D19↑ 50·D16↓ 40', '실내 슬래브 {{20}}'] },
     { h: '유의사항', k: ['간격재(Spacer) 규격품', '최외측 철근 기준', '허용오차 ±10·±13mm'] },
     { h: '개선방안', k: ['노출등급 피복할증', '철근탐사기 검측', 'BIM 배근상세'] }
   ],
-  code: '수중100·흙지75 / “노출 19세↑50·16세↓40” / 실내 20'
+  code: '수중100·흙지75 / “노출 19세↑50·16세↓40” / 실내 20',
+  read: '①늑근(최외측 철근) 표면부터 → ②콘크리트 표면까지 최단거리 = 피복두께 → ③부착·내구·내화'
 },
 130: {
   one: '시멘트 입자의 고운 정도를 [[비표면적]](cm²/g)으로 표시 — 클수록 [[조기강도]]↑, [[수화열]]·[[건조수축]]↑',
@@ -451,13 +490,15 @@ Object.assign(window.SP.w, {
     '<text x="290" y="60" class="t">비표면적 cm²/g</text>' +
     '<text x="290" y="100" class="g">분말도↑ → 수화열·수축↑</text>' +
     '<text x="240" y="262" text-anchor="middle" class="r">보통 2,800↑ · 조강 3,300↑</text>' +
+    '<text x="30" y="51" class="n">①</text><text x="256" y="136" class="n">②</text><text x="266" y="61" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '분말도 大', k: ['[[조기강도]]↑', '수화열·건조수축↑', '[[풍화]] 쉬움'] },
     { h: '품질관리', k: ['방습저장 {{13포대}}↓', '3개월↑ 재시험', '매스콘 중용열 선정'] },
     { h: '개선방안', k: ['분급기 입도관리', 'FA·슬래그 치환', '레이저 입도분석'] }
   ],
-  code: '분大 → 수·조·열·축·풍↑ “수조 열축풍” / 보통 2800 · 조강 3300'
+  code: '분大 → 수·조·열·축·풍↑ “수조 열축풍” / 보통 2800 · 조강 3300',
+  read: '①셀에 시멘트 시료 → ②공기를 투과시켜 액면 하강시간 T 측정 → ③비표면적 클수록 수화열↑'
 },
 131: {
   one: '시멘트를 {{975±25℃}}로 [[15분 강열]]해 [[항량]]일 때 줄어든 질량 % — [[풍화]] 정도 판단 지표',
@@ -475,13 +516,15 @@ Object.assign(window.SP.w, {
     '<text x="245" y="210" text-anchor="middle" class="s2">데시케이터 냉각</text>' +
     '<text x="390" y="210" text-anchor="middle" class="s2">질량 측정</text>' +
     '<text x="240" y="262" text-anchor="middle" class="r">(W1 − W2) / W1 × 100 [%]</text>' +
+    '<text x="26" y="211" class="n">①</text><text x="237" y="150" class="n">②</text><text x="382" y="178" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '기준', k: ['포틀랜드 {{5.0%↓}}', '고로슬래그 3%↓', '플라이애시 3·5%↓'] },
     { h: '유의사항', k: ['0.1mg 정확 칭량', '[[데시케이터]] 냉각', '초과 시 사용금지'] },
     { h: '개선방안', k: ['Silo 밀폐 저장', 'Lot별 성적서', '장기저장 정기시험'] }
   ],
-  code: '구·칠·오(975) 십오분 반복 → 항량 / 포틀랜드 5%↓'
+  code: '구·칠·오(975) 십오분 반복 → 항량 / 포틀랜드 5%↓',
+  read: '①975±25℃로 15분 강열 → ②데시케이터에서 냉각 → ③질량 측정, 항량까지 반복해 감량 %'
 },
 132: {
   one: '구조설계 [[fck]] → 내구성 비교 [[fcq]] → 기온보정 더한 주문강도 [[fcn]] → 편차 할증한 목표 [[fcr]]',
@@ -495,12 +538,14 @@ Object.assign(window.SP.w, {
     '<text x="395" y="70" text-anchor="middle" class="r">+ 1.34s / 2.33s</text>' +
     '<text x="95" y="262" text-anchor="middle" class="s2">설계 fck</text><text x="195" y="262" text-anchor="middle" class="s2">품질 fcq</text>' +
     '<text x="295" y="262" text-anchor="middle" class="s2">호칭 fcn</text><text x="395" y="262" text-anchor="middle" class="s2">배합 fcr</text>' +
+    '<text x="188" y="210" class="n">①</text><text x="288" y="195" class="n">②</text><text x="388" y="170" class="n">③</text>' +
     '</svg>',
   heads: [
     { h: '산정식', k: ['fcq = max(fck,fcd)', 'fcn = fcq + Tn', 'fcr = fcn + {{1.34s}}'] },
     { h: '관리기준', k: ['재령 {{28일}} 표준양생', '{{120m³}}마다 1회', '3개 평균 판정'] },
     { h: '유의·개선', k: ['동절기 Tn 반영', '표준편차 실적관리', '적산온도 강도예측'] }
   ],
-  code: '설(fck)·내(fcd) → 품(fcq) → 호(+Tn) → 배(+1.34s/2.33s) “설내품호배”'
+  code: '설(fck)·내(fcd) → 품(fcq) → 호(+Tn) → 배(+1.34s/2.33s) “설내품호배”',
+  read: '①fck·fcd 중 큰 값 = fcq → ②기온보정 Tn 더해 fcn → ③편차 1.34s·2.33s 할증해 fcr'
 }
 });

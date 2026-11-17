@@ -439,3 +439,7 @@ svg [class="dash"]{fill:none;stroke:var(--svg-ink);stroke-width:1.2}
   .pensplit{grid-template-columns:1fr}
   .penref{top:0;max-height:42vh;z-index:6;background:var(--bg);border-bottom:2px solid var(--line);padding-bottom:6px}
 }
+/* 그림 읽는 순서 + 그림 속 ①②③ 번호 */
+.spread{margin:6px 2px 0;font-size:15px;font-weight:700;color:var(--ink2);line-height:1.55}
+svg text.n{font-size:17px;font-weight:900;fill:var(--red)}
+.spv svg text.n{font-size:19px}

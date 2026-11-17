@@ -20,37 +20,26 @@ Object.assign(window.SP.d, {
     '<line x1="215" y1="150" x2="270" y2="175" class="ld"/><text x="275" y="180">가새재</text>' +
     '<line x1="252" y1="236" x2="270" y2="236" class="ld"/><text x="275" y="241">Jack Base (겹침 1/3↑)</text>' +
     '<text x="140" y="270" text-anchor="middle" class="t">System 비계</text>' +
-    '</svg>',
+    '<text x="60" y="262" class="n">①</text><text x="210" y="124" class="n">②</text><text x="14" y="72" class="n">③</text></svg>',
   heads: [
     { h: '구성·특징', k: ['[[규격화]] 부재', '[[쐐기]] 연결 일체형', '발판·난간 동시'] },
     { h: '유의사항', k: ['지반다짐·깔판', '받침 겹침 {{1/3↑}}', '벽이음 간격'] },
     { h: '개선방안', k: ['안전인증 제품', '해체는 상부부터'] }
   ],
-  code: '수·수·가 쐐기로 / 발판 40 난간 90 / 받침 1/3'
+  code: '수·수·가 쐐기로 / 발판 40 난간 90 / 받침 1/3',
+  read: '①Jack Base·깔판 위에 → ②수직·수평재를 쐐기로 연결 → ③발판 40cm↑·난간 90cm↑'
 },
 3: {
   one: '자재 [[낙하·비래]] 방지를 위해 [[10m 이내]]마다 [[내민길이 2m↑]], {{20~30°}}로 설치하는 안전망',
   flow: ['Bracket 설치', '망 펼침·결속', '로프 긴결', '점검·해체'],
-  svg: '<svg viewBox="0 0 480 280">' +
-    '<rect x="40" y="20" width="70" height="245" class="conc"/>' +
-    '<line x1="110" y1="110" x2="260" y2="70" class="bl dash"/><line x1="110" y1="110" x2="260" y2="70" class="ln2"/>' +
-    '<line x1="110" y1="230" x2="260" y2="190" class="bl dash"/>' +
-    '<line x1="110" y1="140" x2="200" y2="86" class="ln"/><line x1="110" y1="260" x2="200" y2="206" class="ln"/>' +
-    '<line x1="290" y1="70" x2="290" y2="190" class="ln2"/><line x1="282" y1="70" x2="298" y2="70" class="ln2"/><line x1="282" y1="190" x2="298" y2="190" class="ln2"/>' +
-    '<line x1="110" y1="44" x2="260" y2="44" class="ln2"/>' +
-    '<text x="75" y="150" text-anchor="middle" class="t">구조체</text>' +
-    '<text x="185" y="36" text-anchor="middle" class="r">내민 2m↑</text>' +
-    '<text x="270" y="60">낙하물 방지망</text>' +
-    '<text x="170" y="128" class="r">20~30°</text>' +
-    '<text x="300" y="135" class="r">10m 이내</text>' +
-    '<text x="300" y="250" class="s2">그물코 20mm↓</text>' +
-    '</svg>',
+  svg: '<svg viewBox="0 0 480 280"><rect x="40" y="20" width="60" height="245" class="conc"/><line x1="100" y1="44" x2="250" y2="44" class="ln2"/><line x1="250" y1="36" x2="250" y2="52" class="ln2"/><line x1="100" y1="110" x2="250" y2="110" class="ln2 dash"/><line x1="100" y1="110" x2="250" y2="70" class="bl"/><line x1="100" y1="150" x2="190" y2="86" class="ln"/><line x1="100" y1="230" x2="250" y2="190" class="bl"/><line x1="100" y1="262" x2="190" y2="206" class="ln"/><line x1="300" y1="110" x2="300" y2="230" class="ln2"/><line x1="292" y1="110" x2="308" y2="110" class="ln2"/><line x1="292" y1="230" x2="308" y2="230" class="ln2"/><text x="70" y="150" text-anchor="middle" class="t">구조체</text><text x="175" y="36" text-anchor="middle" class="r">내민 2m↑</text><text x="262" y="66">낙하물 방지망</text><text x="258" y="102" class="r">20~30°</text><text x="310" y="178" class="r">10m 이내</text><text x="310" y="258" class="s2">그물코 20mm↓</text><text x="116" y="36" class="n">①</text><text x="322" y="104" class="n">②</text><text x="310" y="152" class="n">③</text></svg>',
   heads: [
     { h: '설치기준', k: ['높이 {{10m}} 이내', '내민 {{2m}} 이상', '수평 {{20~30°}}'] },
     { h: '유의사항', k: ['그물코 {{20mm}}↓', '이음·결속 철저', '낙하물 수시 제거'] },
     { h: '개선방안', k: ['수직보호망 병행', '일체형 Bracket'] }
   ],
-  code: '10·2·20~30 (십이 이삼) + 그물 20'
+  code: '10·2·20~30 (십이 이삼) + 그물 20',
+  read: '①벽에서 2m↑ 내밀고 → ②수평에서 20~30° 위로 → ③높이 10m 이내마다 설치'
 },
 4: {
   one: '굴착 중 [[Post Pile]] 위에 [[주형]]·[[복공판]]을 깔아 장비·자재 동선을 확보하는 가설구조물',
@@ -65,16 +54,17 @@ Object.assign(window.SP.d, {
     '<text x="20" y="30" class="r">활하중 20kN/m²</text>' +
     '<text x="280" y="34" class="bl">장비 500kN↑</text>' +
     '<text x="425" y="44" class="s2">복공판</text>' +
-    '<text x="240" y="150" text-anchor="middle" class="t">굴착</text>' +
+    '<text x="240" y="215" text-anchor="middle" class="t">굴착</text>' +
     '<text x="340" y="215">Post Pile</text>' +
     '<text x="240" y="276" text-anchor="middle" class="r">풍화암 정착</text>' +
-    '</svg>',
+    '<text x="400" y="44" class="n">①</text><text x="340" y="190" class="n">②</text><text x="176" y="277" class="n">③</text></svg>',
   heads: [
     { h: '구조검토', k: ['활하중 {{20kN/m²}}', '장비 {{500kN}}↑', '[[풍화암 정착]]'] },
     { h: '유의사항', k: ['진입로 {{1/6}}↓', '단차 {{10mm}} 이내', '가새·좌굴 방지'] },
     { h: '개선방안', k: ['하중표지·과적통제', '정기 점검'] }
   ],
-  code: '20kN·500kN·1/6·10mm (이오육십)'
+  code: '20kN·500kN·1/6·10mm (이오육십)',
+  read: '①장비 하중이 복공판·주형에 → ②Post Pile로 전달 → ③풍화암에 정착해 지지'
 },
 13: {
   one: '[[느슨한 포화 사질토]]가 진동으로 [[과잉간극수압]]이 생겨 [[유효응력]] 0, 액체처럼 거동',
@@ -93,13 +83,14 @@ Object.assign(window.SP.d, {
     '<text x="365" y="200" text-anchor="middle" class="s2">진동 후: 입자 부유</text>' +
     '<text x="240" y="240" text-anchor="middle" class="r">σ′ = σ − u → 0</text>' +
     '<text x="365" y="268" text-anchor="middle" class="s2">Sand Boil·침하</text>' +
-    '</svg>',
+    '<text x="230" y="140" class="n">①</text><text x="456" y="70" class="n">②</text><text x="160" y="242" class="n">③</text></svg>',
   heads: [
     { h: '발생조건', k: ['포화 [[느슨한 사질토]]', 'N값 {{20}} 이하', '깊이 {{20m}} 이내'] },
     { h: '문제점', k: ['[[부등침하]]·전도', '매설관 부상', 'Sand Boil'] },
     { h: '방지대책', k: ['SCP·다짐(밀도)', '지하수위 저하', 'Gravel Drain'] }
   ],
-  code: '느·포·사 + 진동 = 물처럼 / 대책 밀·배·고'
+  code: '느·포·사 + 진동 = 물처럼 / 대책 밀·배·고',
+  read: '①진동으로 → ②과잉간극수압이 입자를 띄워 → ③유효응력 σ′ = 0, 액체처럼 거동'
 },
 14: {
   one: '[[벤토나이트]] 현탁액이 [[Filter Cake]]와 [[액압]]으로 [[공벽 붕괴]]를 막음 (비중 {{1.04~1.2}})',
@@ -116,13 +107,14 @@ Object.assign(window.SP.d, {
     '<line x1="252" y1="115" x2="350" y2="115" class="ld"/><text x="355" y="120" class="r">Filter Cake</text>' +
     '<text x="355" y="165" class="bl">액압 > 토압+수압</text>' +
     '<text x="190" y="272" text-anchor="middle" class="r">비중 1.04~1.2</text>' +
-    '</svg>',
+    '<text x="446" y="70" class="n">①</text><text x="262" y="140" class="n">②</text><text x="182" y="196" class="n">③</text></svg>',
   heads: [
     { h: '관리기준', k: ['비중 {{1.04~1.2}}', '점성 {{22~40초}}', '사분율 {{15%}}↓'] },
     { h: '유의사항', k: ['지하수위+{{1.5m}}↑', '일수·공벽 감시', 'Slime 사분 {{5%}}↓'] },
     { h: '개선방안', k: ['Desander 재사용', '폐액 적법 처리'] }
   ],
-  code: '비 1.04~1.2 / 점 22~40 / 사 15'
+  code: '비 1.04~1.2 / 점 22~40 / 사 15',
+  read: '①안정액 수위를 지하수위보다 1.5m↑ → ②벽면에 Filter Cake 형성 → ③액압이 토압+수압을 이겨 공벽 유지'
 },
 15: {
   one: '굴착 공 내 [[초음파]] 반사로 [[벽두께]]·[[수직도]]·깊이·공벽 형상을 측정하는 시험',
@@ -139,13 +131,14 @@ Object.assign(window.SP.d, {
     '<text x="240" y="185" text-anchor="middle" class="bl">초음파 송·수신</text>' +
     '<text x="340" y="205" class="s2">Panel당 3개소↑</text>' +
     '<text x="240" y="272" text-anchor="middle" class="s2">굴착 깊이</text>' +
-    '</svg>',
+    '<text x="248" y="60" class="n">①</text><text x="286" y="132" class="n">②</text><text x="440" y="106" class="n">③</text></svg>',
   heads: [
     { h: '측정항목', k: ['깊이·공벽 형상', '수직도 {{1/300}}', '붕괴·과굴착'] },
     { h: '유의사항', k: ['Panel당 {{3개소}}↑', '중심선 기준', 'Data 기록·보관'] },
     { h: '결과활용', k: ['안정액 피드백', '타설량 관리'] }
   ],
-  code: '중·센·초·기·판 / 1/300·3개소'
+  code: '중·센·초·기·판 / 1/300·3개소',
+  read: '①Sensor를 공 중심에 내려 → ②초음파 반사 송·수신 → ③공벽 형상·수직도 1/300 판정'
 },
 16: {
   one: '버팀보를 줄이고 [[IPS 띠장]]의 [[PS강선]]을 긴장해 [[Prestress]]로 토압을 지지하는 공법',
@@ -163,13 +156,14 @@ Object.assign(window.SP.d, {
     '<line x1="100" y1="118" x2="70" y2="185" class="ld"/><text x="20" y="200" class="r">PS강선 긴장</text>' +
     '<text x="300" y="200" class="bl">재긴장 → 변위 조절</text>' +
     '<text x="260" y="240">버팀보 최소화</text>' +
-    '</svg>',
+    '<text x="414" y="40" class="n">①</text><text x="20" y="178" class="n">②</text><text x="276" y="200" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['강재량 감소', '작업공간 확보', '[[재긴장]] 변위조절'] },
     { h: '유의사항', k: ['단계별 긴장 관리', '여굴 금지', '하중계·변위 계측'] },
     { h: '개선방안', k: ['자동 긴장·IoT', '단계별 재긴장'] }
   ],
-  code: 'IPS = 띠·받·강 (띠장·받침대·강선 긴장)'
+  code: 'IPS = 띠·받·강 (띠장·받침대·강선 긴장)',
+  read: '①토압이 띠장을 밀면 → ②PS강선 긴장력이 반대로 지지 → ③재긴장으로 변위 조절'
 },
 17: {
   one: '배면 천공 후 [[PC강연선]]을 넣고 [[Grouting]]해 앵커체를 만든 뒤 [[긴장·정착]]해 흙막이 지지',
@@ -185,13 +179,14 @@ Object.assign(window.SP.d, {
     '<text x="150" y="80">자유장 4.0m↑</text>' +
     '<text x="125" y="140" class="s2">설치각 10~45°</text>' +
     '<text x="300" y="230" class="r">정착장 3~10m</text>' +
-    '</svg>',
+    '<text x="430" y="214" class="n">①</text><text x="258" y="80" class="n">②</text><text x="30" y="100" class="n">③</text></svg>',
   heads: [
     { h: '설치기준', k: ['자유장 {{4.0m}}↑', '정착장 {{3~10m}}', '설치각 {{10~45°}}'] },
     { h: '유의사항', k: ['인접대지 승낙', '천공 깊이·각도', 'Grout 연속 주입'] },
     { h: '개선방안', k: ['[[제거식 앵커]]', 'Load Cell 계측'] }
   ],
-  code: '자4·정3~10·각10~45 / 천·그·띠·긴·시'
+  code: '자4·정3~10·각10~45 / 천·그·띠·긴·시',
+  read: '①깊은 곳 정착장(3~10m)을 Grout로 고정 → ②자유장(4.0m↑) 강선을 → ③벽면에서 긴장·정착'
 },
 18: {
   one: '현장타설말뚝 선단 [[Slime]]에 의한 [[선단지지력]] 저하를 막기 위해 [[Cement Milk]] 주입',
@@ -208,13 +203,14 @@ Object.assign(window.SP.d, {
     '<line x1="302" y1="216" x2="335" y2="210" class="ld"/><text x="340" y="210" class="r">Slime</text>' +
     '<text x="340" y="250" class="g">선단지지력 ↑</text>' +
     '<text x="240" y="276" text-anchor="middle" class="r">Cement Milk 주입</text>' +
-    '</svg>',
+    '<text x="286" y="40" class="n">①</text><text x="392" y="212" class="n">②</text><text x="150" y="276" class="n">③</text></svg>',
   heads: [
     { h: '관리사항', k: ['주입관 {{2개}}↑', '{{10일}}↑ 양생', '수세 → Slime 제거'] },
     { h: '유의사항', k: ['주입압·주입량', '1차·2차 단계주입'] },
     { h: '개선방안', k: ['재하시험 확인', '굴착 시 Slime 처리'] }
   ],
-  code: '부·타·천·수·주 (부착·타설·천공·수세·주입)'
+  code: '부·타·천·수·주 (부착·타설·천공·수세·주입)',
+  read: '①말뚝에 주입관 2개↑ 매립 → ②선단 Slime을 수세 → ③Cement Milk 주입으로 선단지지력↑'
 },
 19: {
   one: '[[철골 기둥·보]]를 선시공해 굴토 중 [[버팀대]], 완성 후 [[본구조물]]로 쓰는 Top Down',
@@ -224,21 +220,22 @@ Object.assign(window.SP.d, {
     '<rect x="40" y="60" width="12" height="200" class="conc"/><rect x="428" y="60" width="12" height="200" class="conc"/>' +
     '<line x1="160" y1="40" x2="160" y2="260" class="ln"/><line x1="320" y1="40" x2="320" y2="260" class="ln"/>' +
     '<line x1="52" y1="130" x2="428" y2="130" class="ln"/><line x1="52" y1="200" x2="428" y2="200" class="ln"/>' +
-    '<line x1="240" y1="52" x2="240" y2="15" class="ar"/><line x1="240" y1="210" x2="240" y2="252" class="ar"/>' +
+    '<line x1="240" y1="52" x2="240" y2="15" class="ar"/><line x1="200" y1="210" x2="200" y2="252" class="ar"/>' +
     '<text x="40" y="30" class="t">SPS</text>' +
     '<text x="60" y="54" class="s2">1층 선시공</text>' +
     '<text x="260" y="34" class="g">지상 Up</text>' +
     '<text x="170" y="100">철골 기둥</text>' +
     '<text x="330" y="124" class="bl">보 = 버팀대</text>' +
     '<text x="58" y="160" class="s2">흙막이벽</text>' +
-    '<text x="170" y="245" class="r">지하 Down</text>' +
-    '</svg>',
+    '<text x="212" y="242" class="r">지하 Down</text>' +
+    '<text x="170" y="80" class="n">①</text><text x="404" y="100" class="n">②</text><text x="324" y="34" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['Strut 해체 불필요', '지하·지상 동시', '공기단축·안전'] },
     { h: '유의사항', k: ['기둥 [[수직도]]', '1층 작업하중', 'Perimeter Beam'] },
     { h: '개선방안', k: ['BIM 접합 검토', '변위·응력 계측'] }
   ],
-  code: '흙·기·선·다·업 (흙막이·기둥·선시공·Down·Up)'
+  code: '흙·기·선·다·업 (흙막이·기둥·선시공·Down·Up)',
+  read: '①철골 기둥을 먼저 세우고 → ②1층 보가 버팀대 역할 → ③지하 Down·지상 Up 동시 시공'
 },
 20: {
   one: '[[Double Rod]] 노즐로 [[Cement Milk]]를 초고압 {{20MPa}} 분사·회전해 [[원주형 고결체]] 형성',
@@ -254,13 +251,14 @@ Object.assign(window.SP.d, {
     '<text x="280" y="145" class="r">초고압 20MPa</text>' +
     '<text x="280" y="210" class="b">원주형 고결체</text>' +
     '<text x="200" y="272" text-anchor="middle" class="g">차수·지반개량</text>' +
-    '</svg>',
+    '<text x="172" y="60" class="n">①</text><text x="258" y="128" class="n">②</text><text x="112" y="110" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['[[차수]]·지반개량', '협소·경사 시공', '균질 고결체'] },
     { h: '유의사항', k: ['Slime 다량', '지반 융기·변형', '분사압 {{20MPa}}'] },
     { h: '개선방안', k: ['시험시공 개량경', '인접구조물 계측'] }
   ],
-  code: 'J·S·P = Jet·Slime·Pressure(20MPa)'
+  code: 'J·S·P = Jet·Slime·Pressure(20MPa)',
+  read: '①Double Rod 천공 후 → ②Cement Milk 20MPa 초고압 분사 → ③회전·인발하며 원주형 고결체 형성'
 },
 21: {
   one: '이중관 선단 [[Rocket]]으로 [[유도공간]]을 만들고 순결·완결 약액을 [[저압]] 복합주입',
@@ -276,15 +274,16 @@ Object.assign(window.SP.d, {
     '<text x="215" y="105" class="r">A액+B액 복합주입</text>' +
     '<text x="120" y="160" class="s2">Rocket</text>' +
     '<text x="310" y="195" class="bl">유도공간</text>' +
-    '<text x="20" y="225" class="g">균등 침투</text>' +
+    '' +
     '<text x="200" y="250" text-anchor="middle" class="r">저압 0.3~0.5MPa</text>' +
-    '</svg>',
+    '<text x="100" y="160" class="n">①</text><text x="376" y="196" class="n">②</text><text x="215" y="130" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['유도공간 [[균등 침투]]', '저압 → 교란 적음', '순결·완결 복합'] },
     { h: '유의사항', k: ['주입압 {{0.3~0.5MPa}}', 'Gel Time 관리', '용탈·지하수 오염'] },
     { h: '개선방안', k: ['주입이력 자동기록', '융기 계측'] }
   ],
-  code: 'S·G·R = 공간(Space)·주입(Grouting)·선단(Rocket)'
+  code: 'S·G·R = 공간(Space)·주입(Grouting)·선단(Rocket)',
+  read: '①이중관 선단 Rocket으로 → ②유도공간을 만들고 → ③A·B액을 저압(0.3~0.5MPa) 복합주입'
 },
 22: {
   one: '[[물유리]]+[[시멘트 현탁액]]을 [[Manchette Tube]]·Double Packer로 [[저압]] 주입해 공극 충전',
@@ -300,15 +299,16 @@ Object.assign(window.SP.d, {
     '<text x="240" y="75">Manchette Tube</text>' +
     '<text x="20" y="100" class="s2">Seal재 (24h 양생)</text>' +
     '<text x="310" y="130" class="r">저압 주입</text>' +
-    '<text x="20" y="215" class="g">공극 충전·차수</text>' +
+    '' +
     '<line x1="205" y1="215" x2="230" y2="250" class="ld"/><text x="235" y="262" class="s2">Double Packer</text>' +
-    '</svg>',
+    '<text x="160" y="75" class="n">①</text><text x="208" y="268" class="n">②</text><text x="286" y="130" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['물유리+시멘트', 'Manchette 재주입', '시공 간편'] },
     { h: '유의사항', k: ['Seal재 {{24시간}} 양생', '용탈·지하수 오염', '단계별 압력·량'] },
     { h: '품질확인', k: ['{{28일}} 압축강도', '현장투수시험'] }
   ],
-  code: 'L.W = 물유리 + 시멘트 / 천·맨·실·양·패'
+  code: 'L.W = 물유리 + 시멘트 / 천·맨·실·양·패',
+  read: '①Manchette Tube를 Seal재로 고정 → ②Double Packer로 구간 막고 → ③물유리+시멘트 저압 주입'
 },
 23: {
   one: '흙이 벽에 미치는 [[수평방향 압력]]으로 [[벽체 변위]]에 따라 [[정지]]·[[주동]]·[[수동]]토압',
@@ -324,13 +324,14 @@ Object.assign(window.SP.d, {
     '<text x="250" y="175">정지 Po</text>' +
     '<text x="440" y="82" text-anchor="end" class="r">수동 Pp</text>' +
     '<text x="240" y="252" text-anchor="middle" class="s2">변위 0</text>' +
-    '</svg>',
+    '<text x="214" y="140" class="n">①</text><text x="36" y="182" class="n">②</text><text x="444" y="82" class="n">③</text></svg>',
   heads: [
     { h: '토압 종류', k: ['정지 K0=1-sinφ', '주동 Ka', 'Pp > Po > Pa'] },
     { h: '영향요인', k: ['상재하중·수압', '벽체 변위', '뒤채움·배수 불량'] },
     { h: '대책', k: ['토압계·경사계', '배수·수위 저하'] }
   ],
-  code: '수 > 정 > 주 (수정주) / K0 = 1-sinφ'
+  code: '수 > 정 > 주 (수정주) / K0 = 1-sinφ',
+  read: '①벽이 안 움직이면 정지 Po → ②흙에서 멀어지면 주동 Pa(최소) → ③흙 쪽으로 밀리면 수동 Pp(최대)'
 },
 24: {
   one: '[[전자기파]]를 쏘아 [[유전율 차]] 경계의 반사파로 지하 단면을 영상화하는 [[비파괴 탐사]]',
@@ -340,21 +341,22 @@ Object.assign(window.SP.d, {
     '<rect x="180" y="42" width="80" height="26" class="bx2"/>' +
     '<line x1="205" y1="70" x2="205" y2="150" class="ar"/><line x1="235" y1="150" x2="235" y2="74" class="ar"/>' +
     '<circle cx="220" cy="170" r="16" class="ln"/>' +
-    '<rect x="330" y="100" width="130" height="110" class="bx"/>' +
-    '<path d="M340,200 Q395,100 450,200" class="rd"/>' +
+    '<rect x="350" y="100" width="115" height="110" class="bx"/>' +
+    '<path d="M358,200 Q407,100 457,200" class="rd"/>' +
     '<text x="180" y="30">GPR 안테나</text>' +
     '<text x="90" y="120" class="bl">전자기파</text>' +
     '<text x="245" y="125" class="s2">유전율 차 반사</text>' +
     '<text x="130" y="212">매설관·공동</text>' +
-    '<text x="395" y="240" text-anchor="middle" class="r">쌍곡선 = 대상물</text>' +
+    '<text x="407" y="240" text-anchor="middle" class="r">쌍곡선 = 대상물</text>' +
     '<text x="40" y="265" class="g">비파괴 탐사</text>' +
-    '</svg>',
+    '<text x="176" y="100" class="n">①</text><text x="244" y="170" class="n">②</text><text x="330" y="240" class="n">③</text></svg>',
   heads: [
     { h: '원리·특징', k: ['비파괴·연속', '[[유전율 차]] 반사', '고주파=고해상'] },
     { h: '유의사항', k: ['점토·지하수 [[감쇠]]', '전파 간섭', '주파수 선정'] },
     { h: '적용방안', k: ['3D 차량형 GPR', '지하안전지도 연계'] }
   ],
-  code: 'G·P·R = 땅(Ground)·뚫고(Penetrating)·전파(Radar)'
+  code: 'G·P·R = 땅(Ground)·뚫고(Penetrating)·전파(Radar)',
+  read: '①안테나가 전자기파 송신 → ②유전율이 다른 경계(관·공동)에서 반사 → ③쌍곡선 영상 = 대상물 위치'
 },
 26: {
   one: '[[연약 점토층]]이 [[압밀침하]]해 말뚝보다 더 내려갈 때 [[중립점]] 위 주면에 아래로 작용하는 마찰력',
@@ -373,13 +375,14 @@ Object.assign(window.SP.d, {
     '<text x="360" y="145" class="r">중립점</text>' +
     '<text x="280" y="215" class="g">정마찰력 ↑</text>' +
     '<text x="60" y="230" class="s2">지지층</text>' +
-    '</svg>',
+    '<text x="60" y="128" class="n">①</text><text x="390" y="100" class="n">②</text><text x="366" y="215" class="n">③</text></svg>',
   heads: [
     { h: '발생원인', k: ['[[압밀침하]] > 말뚝', '[[중립점]] 상부', '성토·수위저하'] },
     { h: '피해', k: ['[[지지력 감소]]·파손', '[[부등침하]]·균열'] },
     { h: '대책', k: ['[[SL Pile]] 역청', '이중관·Preloading'] }
   ],
-  code: '압중성 지파부 SL이중'
+  code: '압중성 지파부 SL이중',
+  read: '①점토가 압밀침하해 말뚝보다 더 내려가면 → ②중립점 위는 부마찰력 Pn↓ → ③아래는 정마찰력↑'
 },
 27: {
   one: '[[팽이형]] 콘크리트 말뚝을 깔고 [[쇄석]] 충전·[[연결철근]]으로 일체화해 하중 분산하는 얕은기초 보강',
@@ -396,13 +399,14 @@ Object.assign(window.SP.d, {
     '<text x="365" y="160">쇄석 충전</text>' +
     '<text x="200" y="240" text-anchor="middle" class="r">응력분산 45°</text>' +
     '<text x="365" y="240" class="g">부등침하 저감</text>' +
-    '</svg>',
+    '<text x="226" y="36" class="n">①</text><text x="440" y="130" class="n">②</text><text x="130" y="240" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['팽이형 기성품', '[[응력분산]]·지지력', '부등침하 저감'] },
     { h: '유의사항', k: ['[[쇄석 채움]]·다짐', '연결철근 Level'] },
     { h: '개선방안', k: ['얕은기초 대안', '공기단축·경제성'] }
   ],
-  code: '팽응부 쇄연 얕공'
+  code: '팽응부 쇄연 얕공',
+  read: '①기초 하중을 → ②팽이형 Top base·쇄석이 받아 → ③45°로 넓게 분산해 부등침하 저감'
 },
 28: {
   one: '내측 Auger와 외측 [[Casing]]을 [[역방향 회전]]해 동시 천공, [[근고정액]] 주입 후 말뚝 삽입·[[경타]]',
@@ -419,13 +423,14 @@ Object.assign(window.SP.d, {
     '<text x="290" y="130">내측 Auger</text>' +
     '<text x="290" y="200" class="r">근고정액 주입</text>' +
     '<text x="60" y="245" class="s2">지지층</text>' +
-    '</svg>',
+    '<text x="176" y="80" class="n">①</text><text x="392" y="200" class="n">②</text><text x="180" y="246" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['내·외 [[역회전]]', 'Casing 붕괴방지', '수직도·저소음'] },
     { h: '유의사항', k: ['[[근고정액]] 주입량', '최종 [[경타]] 확인'] },
     { h: '개선방안', k: ['천공 자동기록', '[[PDA]] 동재하'] }
   ],
-  code: '역케수 근경 자PDA'
+  code: '역케수 근경 자PDA',
+  read: '①외측 Casing·내측 Auger 역회전 동시 천공 → ②근고정액 주입 → ③말뚝 삽입·경타로 안착'
 },
 29: {
   one: '본공사 전 [[시항타]]로 [[EOID]]·[[Restrike]] 지지력 확인, [[말뚝길이]]·관입량 기준 결정',
@@ -440,13 +445,14 @@ Object.assign(window.SP.d, {
     '<text x="265" y="170">말뚝길이 결정</text>' +
     '<text x="50" y="205" class="s2">1,500m² 2본</text>' +
     '<text x="50" y="228" class="s2">3,000m² 3본</text>' +
-    '</svg>',
+    '<text x="176" y="40" class="n">①</text><text x="384" y="110" class="n">②</text><text x="366" y="170" class="n">③</text></svg>',
   heads: [
     { h: '목적·기준', k: ['본공사 전 [[시항타]]', '길이·[[관입량]] 결정', 'Hammer 적정성'] },
     { h: '유의사항', k: ['대표 위치 선정', '연속 타격'] },
     { h: '개선방안', k: ['[[동재하시험]] 병행', '최종 관입량 확정'] }
   ],
-  code: '시관장 대연 동최'
+  code: '시관장 대연 동최',
+  read: '①Hammer로 연속 타격 → ②관입량·Rebound 측정 → ③EOID·Restrike 지지력으로 길이 결정'
 },
 30: {
   one: '최종 타격 시 말뚝 용지에 궤적을 그려 [[관입량 S]]·[[Rebound K]] 측정, [[Hiley 공식]]으로 지지력 확인',
@@ -462,13 +468,14 @@ Object.assign(window.SP.d, {
     '<text x="285" y="170" class="bl">K = Rebound</text>' +
     '<text x="100" y="210" class="s2">용지</text>' +
     '<text x="240" y="260" text-anchor="middle" class="b">Hiley 공식 → 지지력</text>' +
-    '</svg>',
+    '<text x="266" y="30" class="n">①</text><text x="160" y="100" class="n">②</text><text x="140" y="261" class="n">③</text></svg>',
   heads: [
     { h: '측정항목', k: ['최종 관입량 S', 'Rebound량 K', 'Hiley 지지력'] },
     { h: '유의사항', k: ['기준대 고정', '타격 {{10회}} 평균'] },
     { h: '개선방안', k: ['[[PDA]] 병행', '디지털 계측'] }
   ],
-  code: '관리하 고평 PD디'
+  code: '관리하 고평 PD디',
+  read: '①말뚝에 용지, 기준대 고정 → ②타격 시 연필 궤적 기록 → ③S·K 값으로 Hiley 지지력 산정'
 },
 31: {
   one: '공내수위를 지하수위보다 {{2m↑}} 높여 [[정수압]]으로 공벽 보호, [[역순환]]으로 배토하는 대구경 말뚝',
@@ -487,13 +494,14 @@ Object.assign(window.SP.d, {
     '<text x="300" y="160" class="bl">역순환 배토 ↑</text>' +
     '<text x="20" y="170">정수압 공벽보호</text>' +
     '<text x="300" y="235" class="s2">회전 Bit</text>' +
-    '</svg>',
+    '<text x="392" y="55" class="n">①</text><text x="390" y="92" class="n">②</text><text x="406" y="160" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['[[정수압]] 공벽보호', '[[역순환]] 배토', '대구경·대심도'] },
     { h: '유의사항', k: ['수위 유지·수직도', 'Slime·Koden'] },
     { h: '개선방안', k: ['Tremie {{2m}}↑ 매입', '[[건전도 시험]]'] }
   ],
-  code: '정역대 수슬 트건'
+  code: '정역대 수슬 트건',
+  read: '①Stand Pipe 설치 → ②공내수위를 지하수위보다 2m↑ 높여 정수압으로 공벽 보호 → ③역순환 배토'
 },
 32: {
   one: 'Casing 안 [[DTH Hammer]]로 [[타격+회전]] 굴착하며 [[강관]]을 [[암반]]까지 동시 근입하는 매입말뚝',
@@ -510,13 +518,14 @@ Object.assign(window.SP.d, {
     '<text x="275" y="70">강관 Casing</text>' +
     '<text x="275" y="215" class="r">DTH Hammer (타격+회전)</text>' +
     '<text x="275" y="250" class="b">Rock Socket 근입</text>' +
-    '</svg>',
+    '<text x="176" y="226" class="n">①</text><text x="140" y="30" class="n">②</text><text x="412" y="250" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['[[DTH Hammer]] 타격', '강관 동시 관입', '경암 근입 확실'] },
     { h: '유의사항', k: ['Slime·Cutting 배출', '수직도·이음 용접'] },
     { h: '개선방안', k: ['방음 Cover', 'Rock Socket 확인'] }
   ],
-  code: 'DT강암 슬수 방락'
+  code: 'DT강암 슬수 방락',
+  read: '①DTH Hammer가 타격+회전 굴착 → ②압축공기로 굴착토 배출 → ③강관을 암반까지 Rock Socket 근입'
 },
 33: {
   one: '{{Ø300mm 이하}}로 천공해 [[강봉·강관]]을 넣고 [[가압 Grouting]], [[주면마찰]]로 지지하는 소구경 말뚝',
@@ -532,13 +541,14 @@ Object.assign(window.SP.d, {
     '<text x="360" y="205" class="g">주면마찰 지지</text>' +
     '<text x="20" y="215" class="s2">소구경 말뚝</text>' +
     '<text x="240" y="272" text-anchor="middle" class="bl">Underpinning·부력</text>' +
-    '</svg>',
+    '<text x="338" y="125" class="n">①</text><text x="106" y="150" class="n">②</text><text x="440" y="182" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['{{Ø300mm}}↓ 소구경', '[[주면마찰]] 지지', '협소·저공고'] },
     { h: '유의사항', k: ['가압·충전 확인', '강재 [[부식]] 방지'] },
     { h: '개선방안', k: ['Underpinning·부력', '[[재하시험]] 확인'] }
   ],
-  code: '소주협 가부 언재'
+  code: '소주협 가부 언재',
+  read: '①Ø300mm 이하로 천공 → ②강봉 넣고 가압 Grouting → ③주면마찰로 기존 기초 하중 지지'
 },
 34: {
   one: '[[검측관]] 사이 초음파 [[전파속도 V=S/T]] 감소율로 말뚝 내부 결함을 판정하는 [[CSL]] 시험',
@@ -550,18 +560,19 @@ Object.assign(window.SP.d, {
     '<line x1="178" y1="148" x2="300" y2="148" class="ar"/>' +
     '<ellipse cx="240" cy="210" rx="30" ry="12" class="rd dash"/>' +
     '<line x1="312" y1="45" x2="345" y2="45" class="ld"/><text x="350" y="50" class="s2">검측관</text>' +
-    '<text x="100" y="152" class="s2">송신</text>' +
-    '<text x="350" y="152" class="s2">수신</text>' +
+    '' +
+    '<text x="240" y="174" text-anchor="middle" class="s2">송신 → 수신</text>' +
     '<text x="240" y="130" text-anchor="middle" class="r">V = S / T</text>' +
     '<text x="350" y="215" class="r">결함 → 속도 감소</text>' +
     '<text x="240" y="272" text-anchor="middle" class="g">A등급: 감소 10% 이내</text>' +
-    '</svg>',
+    '<text x="394" y="50" class="n">①</text><text x="180" y="130" class="n">②</text><text x="186" y="216" class="n">③</text></svg>',
   heads: [
     { h: '원리·판정', k: ['[[CSL]] 공대공', '속도 [[V=S/T]]', '[[A~D 등급]]'] },
     { h: '유의사항', k: ['검측관 수직·수밀', '관내 물 채움'] },
     { h: '결함 대책', k: ['Core·보강 Grout', '저변형률 PIT'] }
   ],
-  code: '공속등 수물 코핏'
+  code: '공속등 수물 코핏',
+  read: '①검측관 2개에 물 채움 → ②송신→수신 초음파 속도 V=S/T 측정 → ③결함부는 속도 감소'
 },
 35: {
   one: '말뚝 [[평형점]]의 [[O-Cell]]을 가압해 상향 [[주면마찰력]]과 하향 [[선단지지력]]을 서로 반력으로 측정',
@@ -576,13 +587,14 @@ Object.assign(window.SP.d, {
     '<text x="120" y="185" class="s2">평형점</text>' +
     '<text x="300" y="185" class="r">O-Cell (Jack)</text>' +
     '<text x="300" y="245" class="bl">하향 선단지지력</text>' +
-    '</svg>',
+    '<text x="402" y="185" class="n">①</text><text x="416" y="100" class="n">②</text><text x="416" y="245" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['선단부 [[O-Cell]]', '[[양방향 재하]]', '반력장치 불필요'] },
     { h: '유의사항', k: ['[[평형점]] 설계', '유압관·Telltale'] },
     { h: '개선방안', k: ['등가 하중-침하곡선', '대구경·고하중'] }
   ],
-  code: 'O양반 평보 등대'
+  code: 'O양반 평보 등대',
+  read: '①평형점의 O-Cell(Jack) 가압 → ②위로 주면마찰력 → ③아래로 선단지지력을 서로 반력으로 측정'
 },
 36: {
   one: '[[부력]] {{B=γw·V}}, 기초 저면 [[양압력]] {{U=γw·h}} — 자중보다 크면 [[부상]] 발생',
@@ -598,13 +610,14 @@ Object.assign(window.SP.d, {
     '<text x="20" y="150" class="r">부력 B = γw·V</text>' +
     '<text x="350" y="175" class="s2">피압수·우기</text>' +
     '<text x="240" y="272" text-anchor="middle" class="r">양압력 U = γw·h</text>' +
-    '</svg>',
+    '<text x="436" y="52" class="n">①</text><text x="60" y="178" class="n">②</text><text x="442" y="125" class="n">③</text></svg>',
   heads: [
     { h: '검토기준', k: ['부력 B=γw·V', '양압력 U=γw·h', '[[W ≥ 1.25B]]'] },
     { h: '문제점', k: ['피압수·수위상승', 'Slab 균열·누수'] },
     { h: '대책', k: ['순응: [[영구배수]]', '대응: [[Rock Anchor]]'] }
   ],
-  code: 'BUW 피균 순대'
+  code: 'BUW 피균 순대',
+  read: '①지하수위 아래 기초에 → ②부력 B·양압력 U가 위로 작용 → ③자중 W ≥ 1.25B 확보해야 안전'
 },
 37: {
   one: '[[영구배수]]로 수압을 낮추는 [[순응공법]]과 [[Rock Anchor]]·자중증대로 버티는 [[대응공법]]',
@@ -616,19 +629,20 @@ Object.assign(window.SP.d, {
     '<line x1="160" y1="220" x2="160" y2="170" class="ar"/><line x1="210" y1="220" x2="210" y2="170" class="ar"/>' +
     '<line x1="290" y1="150" x2="290" y2="250" class="rd"/><line x1="370" y1="150" x2="370" y2="250" class="rd"/>' +
     '<rect x="284" y="210" width="12" height="40" class="bx3"/><rect x="364" y="210" width="12" height="40" class="bx3"/>' +
-    '<text x="240" y="25" text-anchor="middle" class="r">W ≥ 1.25B</text>' +
+    '' +
     '<text x="150" y="95" text-anchor="middle" class="t">순응공법</text>' +
     '<text x="330" y="95" text-anchor="middle" class="t">대응공법</text>' +
     '<text x="330" y="125" text-anchor="middle" class="s2">자중증대</text>' +
     '<text x="40" y="242" class="bl">영구배수·집수정</text>' +
     '<text x="330" y="272" text-anchor="middle" class="r">Rock Anchor</text>' +
-    '</svg>',
+    '<text x="170" y="242" class="n">①</text><text x="384" y="272" class="n">②</text><text x="280" y="126" class="n">③</text></svg>',
   heads: [
     { h: '공법 분류', k: ['순응: 영구배수', '대응: Rock Anchor', '대응: 자중·Bracket'] },
     { h: '유의사항', k: ['[[설계지하수위]]', '강제배수 유지'] },
     { h: '개선방안', k: ['수위 [[계측관리]]', '복합공법 비교'] }
   ],
-  code: '브라자는 인접건물 지하 M마트 맹자'
+  code: '브라자는 인접건물 지하 M마트 맹자',
+  read: '①순응: 영구배수로 수압 자체를 낮춤 / 대응: ②Rock Anchor로 붙잡기·③자중 늘리기'
 },
 38: {
   one: '[[암반]]까지 천공해 [[PS Strand]] 정착장을 Grouting 후 긴장·정착, 인장저항으로 [[부력]]에 대응',
@@ -647,13 +661,14 @@ Object.assign(window.SP.d, {
     '<text x="255" y="130">자유장</text>' +
     '<text x="255" y="215" class="r">정착장 (Grout)</text>' +
     '<text x="70" y="245" class="s2">암반</text>' +
-    '</svg>',
+    '<text x="366" y="215" class="n">①</text><text x="310" y="130" class="n">②</text><text x="138" y="26" class="n">③</text></svg>',
   heads: [
     { h: '특징', k: ['[[자유장]]+[[정착장]]', 'Strand 인장 저항', '[[부력]] 대응'] },
     { h: '유의사항', k: ['두부 [[방수]] 상세', 'Strand [[부식]] 방지'] },
     { h: '개선방안', k: ['[[인장시험]] 확인', 'Load Cell 계측'] }
   ],
-  code: '자정부 방부 인로'
+  code: '자정부 방부 인로',
+  read: '①암반 속 정착장을 Grout로 고정 → ②자유장 Strand를 → ③두부에서 긴장·정착해 부력 저항'
 },
 39: {
   one: '기초 하부 [[Drain Mat]]·[[Trench]]로 지하수를 [[집수정]]에 모아 Pump 배출, [[양압력]] 영구 저감',
@@ -671,13 +686,14 @@ Object.assign(window.SP.d, {
     '<text x="395" y="170" class="s2">집수정</text>' +
     '<text x="120" y="240" class="bl">지하수 유입 ↑</text>' +
     '<text x="280" y="268" class="s2">Clogging 방지</text>' +
-    '</svg>',
+    '<text x="96" y="240" class="n">①</text><text x="184" y="140" class="n">②</text><text x="306" y="30" class="n">③</text></svg>',
   heads: [
     { h: '구성·특징', k: ['Drain Mat·Trench', '집수정·Pump', '기초두께 절감'] },
     { h: '유의사항', k: ['[[Clogging]] 방지', 'Pump 고장 대비'] },
     { h: '개선방안', k: ['[[상수위 조절]]', '수위 Sensor'] }
   ],
-  code: '드집절 클펌 상센'
+  code: '드집절 클펌 상센',
+  read: '①기초 아래 지하수 유입 → ②Drain Mat·Trench로 집수정에 모아 → ③Pump 배출 → 양압력 저감'
 },
 40: {
   one: '기존 건물 기초가 불안정할 때 [[바로받이]]·[[보받이]]·[[약액주입]] 등으로 하중을 새 지지층에 전달',
@@ -695,12 +711,13 @@ Object.assign(window.SP.d, {
     '<text x="255" y="125">신설 터파기</text>' +
     '<text x="255" y="240" class="g">새 지지층</text>' +
     '<text x="240" y="275" text-anchor="middle" class="s2">보받이·바닥판받이·약액주입</text>' +
-    '</svg>',
+    '<text x="342" y="125" class="n">①</text><text x="206" y="210" class="n">②</text><text x="326" y="240" class="n">③</text></svg>',
   heads: [
     { h: '종류', k: ['[[가받이]] → 본받이', '바로받이·보받이', '바닥판·[[약액주입]]'] },
     { h: '유의사항', k: ['기존건물 [[계측]]', '구간 분할 시공'] },
     { h: '개선방안', k: ['[[Micro Pile]] 보강', 'JSP·LW 주입'] }
   ],
-  code: '사준가본 철복 / 바보는 바닥에서 약을 먹는다'
+  code: '사준가본 철복 / 바보는 바닥에서 약을 먹는다',
+  read: '①옆 신설 터파기로 기존 기초 불안정 → ②바로받이 등으로 하중을 받아 → ③새 지지층에 전달'
 }
 });
