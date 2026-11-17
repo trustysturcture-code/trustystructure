@@ -420,3 +420,22 @@ html.eink svg .ln{stroke-width:2.1}
 @media (max-width:860px){.spheads{grid-template-columns:1fr}.sphead h2{font-size:19px}.spv{padding:14px}}
 /* 점선(dash)만 지정된 도형도 선으로 보이게 */
 svg [class="dash"]{fill:none;stroke:var(--svg-ink);stroke-width:1.2}
+
+/* ===== 요약 카드 What·Why·How ===== */
+.spwwh{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 10px}
+.spwwh>div{border:1px solid var(--line);border-radius:10px;padding:6px 10px;display:flex;flex-direction:column;gap:2px}
+.spwwh b{font-size:12px;letter-spacing:1px}
+.spwwh span{font-size:15px;font-weight:700;line-height:1.45}
+.spwwh .w0 b{color:var(--blue)} .spwwh .w1 b{color:var(--red)} .spwwh .w2 b{color:var(--green)}
+@media (max-width:860px){.spwwh{grid-template-columns:1fr}.spwwh>div{flex-direction:row;gap:8px;align-items:baseline}.spwwh b{flex:0 0 42px}}
+/* ===== ✍ 보며 쓰기: 가로 화면 = 왼쪽 요약·오른쪽 답안지 / 세로 화면 = 위 요약(스크롤)·아래 답안지 ===== */
+.pensplit{display:grid;grid-template-columns:minmax(0,44%) minmax(0,56%);gap:12px;align-items:start}
+.penref{position:sticky;top:8px;max-height:calc(100dvh - 24px);overflow:auto;-webkit-overflow-scrolling:touch}
+.penref .spv{margin:0;box-shadow:none}
+.penref .spmore{display:none}
+.penrefbar{display:flex;gap:6px;margin-bottom:6px;position:sticky;top:0;z-index:2;background:var(--bg);padding:2px 0}
+.penarea{min-width:0}
+@media (max-width:1100px),(orientation:portrait){
+  .pensplit{grid-template-columns:1fr}
+  .penref{top:0;max-height:42vh;z-index:6;background:var(--bg);border-bottom:2px solid var(--line);padding-bottom:6px}
+}

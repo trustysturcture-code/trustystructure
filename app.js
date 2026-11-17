@@ -110,6 +110,14 @@
     return Q.filter(x => (state.cat === '전체' || x.cat === state.cat) &&
       (!q || (x.no + ' ' + x.title + ' ' + arr(x.key).join(' ')).toLowerCase().includes(q)));
   }
+  function markList() {
+    const on = document.querySelector('#list .li.on'); if (on) on.classList.remove('on');
+    const li = document.querySelector('#list .li[data-no="' + state.cur + '"]');
+    if (!li) return renderList();
+    li.classList.add('on');
+    const r = li.getBoundingClientRect(), p = $('#list').getBoundingClientRect();
+    if (r.top < p.top || r.bottom > p.bottom) li.scrollIntoView({ block: 'nearest' });
+  }
   function renderList() {
     let html = '', last = '';
     filtered().forEach(x => {
@@ -237,7 +245,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { const v = document.querySelector('.viewer'); if (v) v.remove(); } });
 
   // ---------- ✍ 필기 연습 (펜 = 쓰기, 손가락 = 스크롤, 펜 지우개 버튼 = 지우기, 자동 저장) ----------
-  const PEN = { color: '#111111', size: LS.get('amg_pensize', 1), tool: 'pen', bg: LS.get('amg_penbg', 'sheet'), over: false };
+  const PEN = { color: '#111111', size: LS.get('amg_pensize', 1), tool: 'pen', bg: LS.get('amg_penbg', 'sheet'), over: false, split: LS.get('amg_pensplit', true), ref: LS.get('amg_penref', 'sum') };
   const PEN_W = [1.3, 2.0, 3.0];
   const idb = (() => {
     let db = null;
@@ -260,10 +268,11 @@
     main.innerHTML = '<div class="cz-bar penbar"><b>✍ 필기</b>' +
       penBtn('k', '● 검정') + penBtn('r', '<span style="color:#c0392b">●</span> 빨강') + penBtn('b', '<span style="color:#1f5fa8">●</span> 파랑') +
       penBtn('w', '굵기') + penBtn('e', '⌫ 지우개') + penBtn('u', '↶ 되돌리기') + penBtn('c', '🗑 전체 지우기') +
-      penBtn('o', '모범답안 겹쳐보기') + penBtn('g', PEN.bg === 'sheet' ? '배경: 답안지' : '배경: 백지') +
+      penBtn('v', PEN.split ? '👀 보며 쓰기 ON' : '👀 보며 쓰기') + penBtn('o', '모범답안 겹쳐보기') + penBtn('g', PEN.bg === 'sheet' ? '배경: 답안지' : '배경: 백지') +
       penBtn('t', penTimer ? '⏹ 시험 종료' : '⏱ 10분 실전') + penBtn('s', '✅ 채점') +
       '<span class="pentime" id="penTime">' + (penTimer ? '' : '') + '</span>' +
-      '<span class="kbd-hint">펜으로 쓰기 · 손가락으로 스크롤 · 펜 지우개 지원 · 자동 저장</span></div><div id="penGrade"></div>' + emptySheet(x) + navBtns();
+      '<span class="kbd-hint">펜으로 쓰기 · 손가락으로 스크롤 · 펜 지우개 지원 · 자동 저장</span></div><div id="penGrade"></div>' +
+      (PEN.split && !penTimer ? '<div class="pensplit"><div class="penref"><div class="penrefbar"><button class="btn ' + (PEN.ref === 'sum' ? 'p' : '') + '" data-pen="rs">📄 요약</button><button class="btn ' + (PEN.ref === 'det' ? 'p' : '') + '" data-pen="rd">📚 디테일</button></div>' + (PEN.ref === 'det' ? sheet(x, 'read') : simpleCard(x)) + '</div><div class="penarea">' + emptySheet(x) + '</div></div>' : emptySheet(x)) + navBtns();
     fitAns(main); zoomAns(); refreshPenBar(); setupPen(x);
   }
   let penStrokes = [], penRedraw = null;
@@ -345,6 +354,8 @@
       penStrokes = []; if (penRedraw) penRedraw(); delete b.dataset.armed; b.textContent = '🗑 전체 지우기';
     }
     else if (a === 'o') { PEN.over = !PEN.over; return penView(); }
+    else if (a === 'v') { PEN.split = !PEN.split; LS.set('amg_pensplit', PEN.split); return penView(); }
+    else if (a === 'rs' || a === 'rd') { PEN.ref = a === 'rs' ? 'sum' : 'det'; LS.set('amg_penref', PEN.ref); const r = document.querySelector('.penref'); if (r) { const x = cur(); r.innerHTML = '<div class="penrefbar"><button class="btn ' + (PEN.ref === 'sum' ? 'p' : '') + '" data-pen="rs">📄 요약</button><button class="btn ' + (PEN.ref === 'det' ? 'p' : '') + '" data-pen="rd">📚 디테일</button></div>' + (PEN.ref === 'det' ? sheet(x, 'read') : simpleCard(x)); } return; }
     else if (a === 'g') { PEN.bg = PEN.bg === 'sheet' ? 'blank' : 'sheet'; LS.set('amg_penbg', PEN.bg); return penView(); }
     refreshPenBar();
   }
@@ -386,9 +397,11 @@
     const flow = sp ? sp.flow : ((arr(x.secs).find(u => u.flow) || {}).flow || []);
     const heads = sp ? sp.heads : arr(d.subs).map(u => ({ h: u.h, k: arr(u.pts).slice(0, 3) }));
     const code = sp ? sp.code : x.mnemo;
+    const wwh = (sp && sp.wwh) || d.wwh || (x.www ? [x.www.what, x.www.why, x.www.how] : null);
     return '<article class="spv' + (sp ? '' : ' auto') + '">' +
       '<div class="sphead"><span class="spno">' + x.no + '</span><h2>' + esc(x.title) + '</h2></div>' +
       '<p class="one">' + fmt(one, 'read') + '</p>' +
+      (wwh ? '<div class="spwwh">' + ['What', 'Why', 'How'].map((t, i) => '<div class="w' + i + '"><b>' + t + '</b><span>' + fmt(wwh[i] || '', 'read') + '</span></div>').join('') + '</div>' : '') +
       (svg ? '<div class="spfig">' + svg + '</div>' : '') +
       (flow && flow.length ? '<div class="spflow">' + flow.map(f => '<span>' + fmt(f, 'read') + '</span>').join('<i>→</i>') + '</div>' : '') +
       '<div class="spheads">' + heads.map((u, i) => '<div class="k' + (i + 3) + '"><b>' + (i + 3) + '. ' + esc(u.h) + '</b><ul>' + arr(u.k).map(k => '<li>' + fmt(k, 'read') + '</li>').join('') + '</ul></div>').join('') + '</div>' +
@@ -588,7 +601,7 @@
     (views[tab] || views.read)(); window.scrollTo(0, 0);
   }
   let lastOpenT = 0;
-  function open(no) { const now = Date.now(); if (now - lastOpenT < 220) return; lastOpenT = now; state.cur = +no; LS.set('amg_cur', state.cur); renderList(); $('#side').classList.remove('show'); show(['cloze', 'read', 'd1', 'ans', 'pen', 'simple'].includes(state.tab) ? state.tab : 'read'); }
+  function open(no) { const now = Date.now(); if (now - lastOpenT < 220) return; lastOpenT = now; state.cur = +no; LS.set('amg_cur', state.cur); markList(); $('#side').classList.remove('show'); show(['cloze', 'read', 'd1', 'ans', 'pen', 'simple'].includes(state.tab) ? state.tab : 'read'); }
 
   let lastTapEl = null, lastTapT = 0;
   document.addEventListener('click', e => {
