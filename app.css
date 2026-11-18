@@ -443,3 +443,20 @@ svg [class="dash"]{fill:none;stroke:var(--svg-ink);stroke-width:1.2}
 .spread{margin:6px 2px 0;font-size:15px;font-weight:700;color:var(--ink2);line-height:1.55}
 svg text.n{font-size:17px;font-weight:900;fill:var(--red)}
 .spv svg text.n{font-size:19px}
+
+/* ===== 요약 카드: 합격답안 대제목 목록 ===== */
+.spah{margin-top:12px;border:2px solid var(--ink);border-radius:12px;padding:10px 14px}
+.spahT{font-weight:900;font-size:14px;margin-bottom:6px;letter-spacing:.5px}
+.spah ol{margin:0;padding-left:24px;display:grid;gap:6px}
+.spah li{font-size:15.5px;line-height:1.5}
+.spah li::marker{font-weight:900}
+.spah li b{font-weight:900;margin-right:8px}
+.spah li span{color:var(--ink2);font-size:14.5px}
+@media (min-width:861px){.spah li{display:list-item}}
+
+/* 요약 카드: 핵심키워드·연관용어 */
+.spkey,.sprel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
+.spkey b,.sprel b{font-size:13px;font-weight:900;margin-right:2px}
+.spkey span{background:var(--hl);border:1px solid var(--line);border-radius:6px;padding:2px 9px;font-weight:800;font-size:14px}
+.sprel span{border:1px dashed var(--ink2);border-radius:999px;padding:2px 10px;font-size:14px;font-weight:700}
+html.eink .spkey span{background:#fff;border:2px solid #000}

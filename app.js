@@ -390,6 +390,28 @@
     if (SET === 'dw') return (x.ref && S.w && S.w[x.ref]) || (S.d && S.d[x.no]) || null;
     return (S.w && S.w[x.no]) || null;
   }
+  // 합격답안 섹션에서 대제목과 핵심단어([[ ]])·수치({{ }})를 뽑는다
+  function ansHeads(x) {
+    const txt = u => {
+      const out = [];
+      ['def', 'p'].forEach(k => u[k] && out.push(u[k]));
+      [].concat(u.flow || [], u.ul || [], u.ul2 || []).forEach(t => out.push(t));
+      arr(u.tbl).forEach(t => { (t.head || []).forEach(c => out.push(c)); (t.rows || []).forEach(r => r.forEach(c => out.push(c))); });
+      return out.map(String);
+    };
+    const clean = h => String(h || '').replace(/^\s*\d+[.)]\s*/, '').trim();
+    return arr(x.secs).filter(u => u.h).map(u => {
+      const t = txt(u), k = [], seen = new Set();
+      const add = v => { v = v.trim(); if (v && !seen.has(v) && v.length <= 22) { seen.add(v); k.push(v); } };
+      t.forEach(line => { for (const m of line.matchAll(/\[\[(.+?)\]\]/g)) add('[[' + m[1] + ']]'); });
+      t.forEach(line => { for (const m of line.matchAll(/\{\{(.+?)\}\}/g)) add('{{' + m[1] + '}}'); });
+      if (k.length < 2) {
+        [].concat(u.ul || [], u.flow || []).forEach(li => { const p = plain(li).split(/[:：(—–\-→,·]/)[0].trim(); if (p.length >= 2 && p.length <= 16) add(p); });
+        arr(u.tbl).forEach(tb => (tb.rows || []).forEach(r => { const c = plain(r[0] || '').trim(); if (c.length >= 2 && c.length <= 12) add(c); }));
+      }
+      return { h: clean(u.h), k: k.slice(0, 4) };
+    });
+  }
   function simpleCard(x) {
     const sp = spOf(x), d = (window.D1 || {})[x.no] || {};
     const one = sp ? sp.one : (d.def || (arr(x.secs).find(u => u.def) || {}).def || '');
@@ -398,14 +420,18 @@
     const heads = sp ? sp.heads : arr(d.subs).map(u => ({ h: u.h, k: arr(u.pts).slice(0, 3) }));
     const code = sp ? sp.code : x.mnemo;
     const wwh = (sp && sp.wwh) || d.wwh || (x.www ? [x.www.what, x.www.why, x.www.how] : null);
+    const ah = ansHeads(x);
     return '<article class="spv' + (sp ? '' : ' auto') + '">' +
       '<div class="sphead"><span class="spno">' + x.no + '</span><h2>' + esc(x.title) + '</h2></div>' +
+      (arr(x.key).length ? '<div class="spkey"><b>핵심키워드</b>' + arr(x.key).map(k => '<span>' + esc(plain(k)) + '</span>').join('') + '</div>' : '') +
       '<p class="one">' + fmt(one, 'read') + '</p>' +
       (wwh ? '<div class="spwwh">' + ['What', 'Why', 'How'].map((t, i) => '<div class="w' + i + '"><b>' + t + '</b><span>' + fmt(wwh[i] || '', 'read') + '</span></div>').join('') + '</div>' : '') +
       (svg ? '<div class="spfig">' + svg + '</div>' : '') +
       (sp && sp.read ? '<p class="spread">👁 ' + fmt(sp.read, 'read') + '</p>' : '') +
       (flow && flow.length ? '<div class="spflow">' + flow.map(f => '<span>' + fmt(f, 'read') + '</span>').join('<i>→</i>') + '</div>' : '') +
-      '<div class="spheads">' + heads.map((u, i) => '<div class="k' + (i + 3) + '"><b>' + (i + 3) + '. ' + esc(u.h) + '</b><ul>' + arr(u.k).map(k => '<li>' + fmt(k, 'read') + '</li>').join('') + '</ul></div>').join('') + '</div>' +
+      (ah.length ? '<div class="spah"><div class="spahT">📋 합격답안 대제목</div><ol>' + ah.map(u => '<li><b>' + esc(u.h) + '</b>' + (u.k.length ? '<span>' + u.k.map(k => fmt(k, 'read')).join(' · ') + '</span>' : '') + '</li>').join('') + '</ol></div>'
+        : '<div class="spheads">' + heads.map((u, i) => '<div class="k' + (i + 3) + '"><b>' + (i + 3) + '. ' + esc(u.h) + '</b><ul>' + arr(u.k).map(k => '<li>' + fmt(k, 'read') + '</li>').join('') + '</ul></div>').join('') + '</div>') +
+      (arr(d.rel).length ? '<div class="sprel"><b>🔗 연관용어</b> ' + arr(d.rel).map(r => '<span>' + esc(plain(r)) + '</span>').join('') + '</div>' : '') +
       (code ? '<div class="spcode">💡 ' + fmt(code, 'read') + '</div>' : '') +
       '<div class="spmore"><button class="btn" data-gotab="read">📚 디테일 답안 보기</button><button class="btn" data-gotab="pen">✍ 이 문항 써보기</button></div>' +
       '</article>';
