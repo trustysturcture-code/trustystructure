@@ -711,7 +711,14 @@
     sn.outerHTML = `<select id="setSel" aria-label="문항 세트">${Object.keys(SETS).filter(k => k === 'week' || window.DW).map(k => `<option value="${k}" ${k === SET ? 'selected' : ''}>${SETS[k]} (${k === SET ? Q.length : k === 'dw' ? Object.keys(window.DW).length : WEEK.length})</option>`).join('')}</select>`;
     $('#setSel').addEventListener('change', e => { try { localStorage.setItem('amg_set', e.target.value); } catch (er) {} location.hash = ''; location.reload(); });
   }
-  $('#menuBtn').addEventListener('click', () => $('#side').classList.toggle('show'));
+  // ☰ 목록: 넓은 화면은 숨기기/펼치기(기억), 좁은 화면은 서랍처럼 열기
+  const wide = () => matchMedia('(min-width:861px)').matches;
+  if (LS.get('amg_sidehide', false)) document.body.classList.add('noside');
+  $('#menuBtn').title = '목록 숨기기/펼치기';
+  $('#menuBtn').addEventListener('click', () => {
+    if (wide()) { const on = document.body.classList.toggle('noside'); LS.set('amg_sidehide', on); if (document.querySelector('.ansz')) zoomAns(); }
+    else $('#side').classList.toggle('show');
+  });
   const th = LS.get('amg_theme', null); if (th) document.documentElement.dataset.theme = th;
   // e-ink 모드 (오닉스 북스 등 전자잉크 기기): 흑백 고대비·애니메이션/그림자 제거·큰 글씨
   const einkBtn = document.createElement('button');
