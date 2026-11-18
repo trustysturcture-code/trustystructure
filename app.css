@@ -465,3 +465,8 @@ html.eink .spkey span{background:#fff;border:2px solid #000}
 #menuBtn{display:block}
 body.noside aside{display:none}
 body.noside main{max-width:1000px;margin:0 auto}
+
+/* 세트 전환 버튼 (목록 맨 위) */
+.setseg{display:grid;grid-template-columns:1.4fr 1fr;gap:4px;margin-bottom:8px;padding:3px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.setseg button{border:0;border-radius:8px;padding:7px 6px;font:inherit;font-size:13px;font-weight:800;background:transparent;color:var(--ink2)}
+.setseg button.on{background:var(--ink);color:var(--paper)}

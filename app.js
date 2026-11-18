@@ -5,8 +5,8 @@
 (function () {
   'use strict';
   // ---------- 문항 세트: week(이번주 109–180) / dw(디테일원 용어250) ----------
-  const SETS = { week: '이번주 용어 109–180', dw: '디테일원 용어 250' };
-  let SET = 'week'; try { SET = localStorage.getItem('amg_set') || 'week'; } catch (e) {}
+  const SETS = { dw: '디테일원 용어 250 (순서대로)', week: '이번주 용어 109–180' };
+  let SET = 'dw'; try { SET = localStorage.getItem('amg_set') || 'dw'; } catch (e) {} // 기본 = 디테일원 순서 전체
   try { const qs = new URLSearchParams(location.search).get('set'); if (qs) SET = qs; } catch (e) {}
   if (!SETS[SET] || (SET === 'dw' && !window.DW)) SET = 'week';
   const WEEK = (window.Q || []).slice();
@@ -710,6 +710,9 @@
   if (sn) {
     sn.outerHTML = `<select id="setSel" aria-label="문항 세트">${Object.keys(SETS).filter(k => k === 'week' || window.DW).map(k => `<option value="${k}" ${k === SET ? 'selected' : ''}>${SETS[k]} (${k === SET ? Q.length : k === 'dw' ? Object.keys(window.DW).length : WEEK.length})</option>`).join('')}</select>`;
     $('#setSel').addEventListener('change', e => { try { localStorage.setItem('amg_set', e.target.value); } catch (er) {} location.hash = ''; location.reload(); });
+    // 목록 맨 위에도 세트 전환 버튼 (눈에 잘 띄게)
+    if (window.DW) $('#side').insertAdjacentHTML('afterbegin', '<div class="setseg">' + [['dw', '디테일원 250 · 순서대로'], ['week', '이번주 72']].map(([k, t]) => '<button class="' + (k === SET ? 'on' : '') + '" data-set="' + k + '">' + t + '</button>').join('') + '</div>');
+    document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => { if (b.dataset.set === SET) return; try { localStorage.setItem('amg_set', b.dataset.set); } catch (er) {} location.hash = ''; location.reload(); }));
   }
   // ☰ 목록: 넓은 화면은 숨기기/펼치기(기억), 좁은 화면은 서랍처럼 열기
   const wide = () => matchMedia('(min-width:861px)').matches;
