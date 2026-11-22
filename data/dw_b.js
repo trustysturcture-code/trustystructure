@@ -4,16 +4,20 @@ window.DW = Object.assign(window.DW || {}, {
   title: '말뚝기초의 부마찰력(Negative Friction)',
   cat: '기초',
   key: ['부마찰력', '중립점', '압밀침하', '연약 점토층', '상재하중(성토)', '지하수위 저하', 'SL Pile', '이중관(Sleeve)'],
-  www: { what: '연약층의 [[압밀침하]]가 말뚝 침하보다 커서 [[중립점]] 상부 말뚝 주면에 하향으로 작용하는 [[부마찰력]]', why: '말뚝 축력 증가로 [[지지력 감소]]·말뚝 파손 및 구조물 [[부등침하]]·균열 발생', how: '성토·지하수위 저하 → 연약층 압밀 → 지반침하 > 말뚝침하 → 하향 마찰(Pn) → [[SL Pile]]·이중관·Preloading 으로 저감' },
+  www: {
+    what: '연약층의 [[압밀침하]]가 말뚝 침하보다 커서 [[중립점]] 상부 말뚝 주면에 하향으로 작용하는 [[부마찰력]]',
+    why: '말뚝 축력 증가로 [[지지력 감소]]·말뚝 파손 및 구조물 [[부등침하]]·균열 발생',
+    how: '성토·지하수위 저하 → 연약층 압밀 → 지반침하 > 말뚝침하 → 하향 마찰(Pn) → [[SL Pile]]·이중관·Preloading 으로 저감'
+  },
   tag: '현상·원인·대책',
   def: '말뚝 주변 [[연약 점토층]]이 성토·지하수위 저하로 [[압밀침하]]하여 지반이 말뚝보다 더 침하할 때, [[중립점]] 상부 말뚝 주면에 아래로 작용하는 마찰력({{중립점 깊이 약 0.8~1.0H}})',
   wwh: ['하향 주면마찰', '지지력 감소 방지', '역청 Slip Layer'],
   figT: '부마찰력의 발생원리(중립점) 및 대책',
   svg: '<svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg"><line x1="40" y1="24" x2="40" y2="50" class="ar"/><line x1="70" y1="24" x2="70" y2="50" class="ar"/><line x1="100" y1="24" x2="100" y2="50" class="ar"/><text x="110" y="40" class="s">성토하중</text><rect x="20" y="52" width="400" height="26" class="soil"/><text x="26" y="70" class="s">성토층</text><rect x="20" y="78" width="400" height="132" class="soil"/><text x="26" y="100" class="s">연약 점토층</text><text x="26" y="116" class="s">(압밀 진행)</text><rect x="20" y="210" width="400" height="80" class="bx2"/><text x="26" y="240" class="s">지지층</text><rect x="150" y="40" width="20" height="210" class="conc"/><line x1="140" y1="90" x2="140" y2="110" class="ar"/><line x1="140" y1="120" x2="140" y2="140" class="ar"/><line x1="140" y1="146" x2="140" y2="166" class="ar"/><line x1="180" y1="90" x2="180" y2="110" class="ar"/><line x1="180" y1="120" x2="180" y2="140" class="ar"/><line x1="180" y1="146" x2="180" y2="166" class="ar"/><text x="188" y="124" class="r">부마찰력</text><text x="188" y="140" class="s">(하향 Pn)</text><line x1="20" y1="173" x2="400" y2="173" class="rd dash"/><text x="188" y="168" class="r">중립점</text><line x1="140" y1="200" x2="140" y2="184" class="ar"/><line x1="140" y1="240" x2="140" y2="224" class="ar"/><line x1="180" y1="200" x2="180" y2="184" class="ar"/><line x1="180" y1="240" x2="180" y2="224" class="ar"/><text x="188" y="222" class="bl">정마찰력</text><line x1="160" y1="280" x2="160" y2="254" class="ar"/><text x="170" y="282" class="s">선단지지력</text><line x1="250" y1="80" x2="250" y2="255" class="ln2"/><line x1="250" y1="80" x2="405" y2="80" class="ln2"/><text x="330" y="96" class="s">침하량</text><line x1="390" y1="80" x2="280" y2="250" class="bl"/><line x1="330" y1="80" x2="330" y2="250" class="rd"/><circle cx="330" cy="173" r="4" class="rf"/><text x="262" y="268" class="s">지반침하</text><text x="326" y="268" class="s">말뚝침하</text><line x1="160" y1="40" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">하향력 Pn → 축력 증가</text><line x1="330" y1="173" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="r">중립점 0.8H~1.0H</text><line x1="306" y1="210" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">지반침하 > 말뚝침하</text><line x1="140" y1="100" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="k3">③ 연약층 압밀침하 > 말뚝침하</text><line x1="160" y1="173" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="k3">③ 중립점 상부 하향 마찰</text><line x1="70" y1="50" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="k3">③ 성토·지하수위 저하</text><line x1="160" y1="250" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="k4">④ 말뚝 지지력 감소·파손</text><line x1="100" y1="210" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="k4">④ 부등침하·구조물 균열</text><line x1="150" y1="130" x2="438" y2="202" class="ld"/><circle cx="438" cy="202" r="2" class="dotf"/><text x="444" y="206" class="k5">⑤ SL Pile 역청 Coating</text><line x1="170" y1="70" x2="438" y2="224" class="ld"/><circle cx="438" cy="224" r="2" class="dotf"/><text x="444" y="228" class="k5">⑤ 이중관(Sleeve)·Preloading</text></svg>',
   subs: [
-    { h: '발생원인·특징', pts: ['연약층 [[압밀침하]] > 말뚝침하', '[[중립점]] 상부 하향 마찰', '성토·[[지하수위 저하]]'] },
-    { h: '피해·시공 시 유의사항', pts: ['말뚝 [[지지력 감소]]·파손', '[[부등침하]]·구조물 균열'] },
-    { h: '대책', pts: ['[[SL Pile]] 역청 Coating', '이중관(Sleeve)·Preloading'] }
+    { h: '발생원인·Mechanism', pts: ['연약층 [[압밀침하]] > 말뚝침하', '[[중립점]] 상부 하향 마찰', '성토·[[지하수위 저하]]'] },
+    { h: '문제점·피해', pts: ['말뚝 [[지지력 감소]]·파손', '[[부등침하]]·구조물 균열'] },
+    { h: '방지대책', pts: ['[[SL Pile]] 역청 Coating', '이중관(Sleeve)·Preloading'] }
   ],
   msg: '지반이 말뚝보다 더 가라앉으면 마찰은 하중이 된다 — 중립점 상부를 미끄럽게(SL)',
   mnemo: '압중성 지파부 SL이중 (압밀·중립점·성토 / 지지력·파손·부등침하 / SL·이중관)',
@@ -21,36 +25,43 @@ window.DW = Object.assign(window.DW || {}, {
   src: '근거: 디테일용어300 코어 No.37(p048: 정의·정/부마찰력 개념·Qu = Qp + Qfs − Qnf·발생원인·방지대책) / 마법지 3기초 기초의 분류-기능(부마찰력) / 건축기초 구조설계기준(KDS 41 19) 부마찰력 / 합격답안 3.기초공사 PDF p13~17(부동침하 원인) / 중립점 0.8~1.0H 는 통상 교재값(확인 필요)',
   det: {
     secs: [
+      { h: '정의', def: '말뚝 주변 [[연약 점토층]]이 성토·지하수위 저하로 [[압밀침하]]하여 지반침하가 말뚝침하보다 클 때, [[중립점]] 상부 말뚝 주면에 [[하향]]으로 작용하는 마찰력으로, 말뚝 [[축력 증가]]·[[순지지력 감소]]를 일으키므로 SL Pile 등으로 저감한다.' },
       {
-        h: '정의',
-        def: '연약지반에서 말뚝 주변 지반이 [[압밀침하]]하여 말뚝보다 더 침하할 때 말뚝 주면에 [[하향]]으로 작용하는 전단응력(마찰력)으로, 지표면 부근에서 가장 크고 선단으로 갈수록 작아져 [[중립점]]에서 0이 되며 말뚝 [[축력 증가]]·[[순지지력 감소]]를 유발한다.'
-      },
-      {
-        h: '원리 및 도해 — 발생 Mechanism',
-        fig: 'MAIN',
-        flow: ['성토·지하수위 저하', '연약 점토층 압밀', '지반침하 > 말뚝침하', '중립점 상부 하향 마찰(Qnf)', '축력 증가·지지력 감소', '부등침하·말뚝 파손'],
-        ul: ['정마찰력: 말뚝침하 > 지반침하 → 상향 저항력', '부마찰력: 지반침하 > 말뚝침하 → 하향 하중', '{{Qu = Qp + Qfs − Qnf}} (Qp 선단저항, Qfs 정마찰력, Qnf 부마찰력)']
-      },
-      {
-        h: '정·부마찰력 비교 및 발생 원인',
-        tbl: [
+        h: 'Mechanism (발생원리·영향인자)',
+        fig: [
+          'MAIN',
           {
-            head: ['구분', '정마찰력', '부마찰력'],
-            rows: [
-              ['상대변위', '말뚝침하 > 지반침하', '지반침하 > 말뚝침하'],
-              ['작용방향', '상향(저항력)', '하향(하중)'],
-              ['지지력식', 'Qu = Qp + Qf', 'Qu = Qp + Qfs − Qnf'],
-              ['영향', '지지력에 기여', '마찰력 역전 → 순지지력 감소·축력 증가']
-            ]
-          },
-          {
-            head: ['구분', '발생 원인'],
-            rows: [
-              ['지반·수리적 요인', '연약 점성토의 자중 압밀 / 과도한 배수 및 지하수위 저하'],
-              ['시공적 요인', '성토 등 상재하중 작용 / 사질토의 동적다짐(진동)']
-            ]
+            svg: '<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="50" width="140" height="190" class="soil"/><rect x="64" y="50" width="6" height="100" class="bx2"/><rect x="96" y="50" width="6" height="100" class="bx2"/><rect x="70" y="40" width="26" height="200" class="conc"/><line x1="83" y1="14" x2="83" y2="36" class="ar"/><text x="92" y="28" class="b">P</text><line x1="20" y1="150" x2="410" y2="150" class="rd dash"/><text x="108" y="144" class="r">중립점</text><line x1="220" y1="40" x2="220" y2="240" class="ln"/><line x1="220" y1="40" x2="410" y2="40" class="ln"/><text x="226" y="56" class="s">축력 N</text><text x="226" y="256" class="s">깊이 z</text><polyline points="270,40 380,150 320,235" fill="none" class="rd"/><polyline points="270,40 250,235" fill="none" class="bl dash"/><circle cx="380" cy="150" r="4" class="rf"/><text x="20" y="262" class="r">Qu = Qp + Qfs − Qnf</text><line x1="83" y1="40" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">말뚝머리 하중 P</text><line x1="67" y1="100" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="bl">SL층: 중립점 상부 역청 도포</text><line x1="380" y1="150" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">중립점 = 축력 최대 위치</text><line x1="330" y1="100" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">Pmax = P + Pn(부마찰력)</text><line x1="258" y1="160" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="s">청 점선: 부마찰 없을 때 축력</text><line x1="40" y1="200" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="s">중립점 하부: 정마찰력(상향)</text><line x1="83" y1="238" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="b">선단지지력 Qp</text><line x1="150" y1="258" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="r">Qnf 발생 → 순지지력 감소</text></svg>',
+            cap: '[상세] 중립점에서 축력 최대(P + Pn) — 중립점 상부만 역청 SL층 도포'
           }
-        ]
+        ],
+        flow: ['성토·지하수위 저하', '연약 점토층 압밀', '지반침하 > 말뚝침하', '중립점 상부 하향 마찰(Qnf)', '축력 증가·지지력 감소', '부등침하·말뚝 파손'],
+        ul: ['정마찰력: 말뚝침하 > 지반침하 → 상향 저항력', '부마찰력: 지반침하 > 말뚝침하 → 하향 하중', '{{Qu = Qp + Qfs − Qnf}} (Qp 선단저항, Qfs 정마찰력, Qnf 부마찰력)'],
+        tbl: {
+          head: ['구분', '정마찰력', '부마찰력'],
+          rows: [
+            ['상대변위', '말뚝침하 > 지반침하', '지반침하 > 말뚝침하'],
+            ['작용방향', '상향(저항력)', '하향(하중)'],
+            ['지지력식', 'Qu = Qp + Qf', 'Qu = Qp + Qfs − Qnf'],
+            ['영향', '지지력에 기여', '마찰력 역전 → 순지지력 감소·축력 증가']
+          ]
+        }
+      },
+      { h: '문제점·피해 (영향)', ul: ['말뚝 [[축력 증가]] → 중립점에서 축력 최대(P + Pn) → 말뚝 압축파괴·이음부 파손', '[[순지지력 감소]] (Qu = Qp + Qfs − Qnf) → 지지력 부족', '말뚝 침하 증가 → 구조물 [[부등침하]]·균열·누수', '군말뚝·단지 성토 구간에서 피해 확대'] },
+      {
+        h: '발생원인 (시기·과정)',
+        tbl: {
+          head: ['구분', '발생 원인'],
+          rows: [
+            ['지반·수리적 요인', '연약 점성토의 자중 압밀 / 과도한 배수 및 지하수위 저하'],
+            ['시공적 요인', '성토 등 상재하중 작용 / 사질토의 동적다짐(진동)']
+          ]
+        },
+        ul: ['[시공 중] 단지 성토·배수 공사 → 상재하중·수위 저하', '[시공 후] 연약층 잔류 압밀 진행, 인접 굴착 Dewatering']
+      },
+      {
+        h: '방지대책·조치사항',
+        ul: ['지지력 증대: 선단 확대·지지층 근입 증가, 말뚝 본수 증가', '부주면마찰력 감소: [[SL Pile]](역청 Slip Layer)·[[이중관(Sleeve)]]·Bentonite 주입', '지반 개량: Preloading·Sand Drain 으로 사전 압밀', '설계 변경: 부마찰력을 하중으로 고려, 말뚝 단면·구조 보강', '중립점 상부 말뚝 표면적 축소(소구경·Taper)·군말뚝 효과 활용', '[전] 지반조사로 연약층 두께·잔류 압밀량·지하수위 변동 확인 → 부마찰력 설계 반영', '[전] 성토·지하수위 저하 계획 검토, 가능하면 [[Preloading]]으로 압밀 완료 후 말뚝 시공', '[중] SL Pile 역청재 도포 범위(중립점 상부)·두께 확인, 운반·항타 중 역청층 박리·손상 방지', '[중] 말뚝 주변 추가 성토·진동다짐 최소화, 군말뚝 간격 확보', '[후] 지반침하·말뚝 침하 계측, 지하수위 관리 → 부등침하 조기 발견']
       },
       {
         h: '관리기준 (설계·검토)',
@@ -62,21 +73,6 @@ window.DW = Object.assign(window.DW || {}, {
             ['부마찰력 검토', '말뚝 구조 내력·침하 검토에 반영', 'KDS 41 19 00 — 확인 필요']
           ]
         }
-      },
-      {
-        h: '상세도 — 축력 분포 및 SL Pile',
-        fig: {
-          svg: '<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="50" width="140" height="190" class="soil"/><rect x="64" y="50" width="6" height="100" class="bx2"/><rect x="96" y="50" width="6" height="100" class="bx2"/><rect x="70" y="40" width="26" height="200" class="conc"/><line x1="83" y1="14" x2="83" y2="36" class="ar"/><text x="92" y="28" class="b">P</text><line x1="20" y1="150" x2="410" y2="150" class="rd dash"/><text x="108" y="144" class="r">중립점</text><line x1="220" y1="40" x2="220" y2="240" class="ln"/><line x1="220" y1="40" x2="410" y2="40" class="ln"/><text x="226" y="56" class="s">축력 N</text><text x="226" y="256" class="s">깊이 z</text><polyline points="270,40 380,150 320,235" fill="none" class="rd"/><polyline points="270,40 250,235" fill="none" class="bl dash"/><circle cx="380" cy="150" r="4" class="rf"/><text x="20" y="262" class="r">Qu = Qp + Qfs − Qnf</text><line x1="83" y1="40" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">말뚝머리 하중 P</text><line x1="67" y1="100" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="bl">SL층: 중립점 상부 역청 도포</text><line x1="380" y1="150" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">중립점 = 축력 최대 위치</text><line x1="330" y1="100" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">Pmax = P + Pn(부마찰력)</text><line x1="258" y1="160" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="s">청 점선: 부마찰 없을 때 축력</text><line x1="40" y1="200" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="s">중립점 하부: 정마찰력(상향)</text><line x1="83" y1="238" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="b">선단지지력 Qp</text><line x1="150" y1="258" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="r">Qnf 발생 → 순지지력 감소</text></svg>',
-          cap: '[상세] 중립점에서 축력 최대(P + Pn) — 중립점 상부만 역청 SL층 도포'
-        }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반조사로 연약층 두께·잔류 압밀량·지하수위 변동 확인 → 부마찰력 설계 반영', '[전] 성토·지하수위 저하 계획 검토, 가능하면 [[Preloading]]으로 압밀 완료 후 말뚝 시공', '[중] SL Pile 역청재 도포 범위(중립점 상부)·두께 확인, 운반·항타 중 역청층 박리·손상 방지', '[중] 말뚝 주변 추가 성토·진동다짐 최소화, 군말뚝 간격 확보', '[후] 지반침하·말뚝 침하 계측, 지하수위 관리 → 부등침하 조기 발견']
-      },
-      {
-        h: '방지대책 / 개선방안',
-        ul: ['지지력 증대: 선단 확대·지지층 근입 증가, 말뚝 본수 증가', '부주면마찰력 감소: [[SL Pile]](역청 Slip Layer)·[[이중관(Sleeve)]]·Bentonite 주입', '지반 개량: Preloading·Sand Drain 으로 사전 압밀', '설계 변경: 부마찰력을 하중으로 고려, 말뚝 단면·구조 보강', '중립점 상부 말뚝 표면적 축소(소구경·Taper)·군말뚝 효과 활용']
       }
     ]
   }
@@ -85,7 +81,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: 'Top base Pile 공법',
   cat: '기초',
   key: ['팽이기초(Top base)', '연약지반', '응력분산', '쇄석 채움', '연결철근', '지지력 증대', '부등침하 저감', '무진동·무소음'],
-  www: { what: '연약지반 위에 [[팽이형 콘크리트 블록(Top base)]]을 격자로 배열하고 [[쇄석 채움]]·연결철근으로 일체화한 얕은 기초 보강공법', why: '하중 [[응력분산]]으로 [[지지력 증대]]·[[부등침하 저감]], 말뚝 대비 무진동·공기단축', how: '지반 고르기 → 위치 측량 → [[Top base]] 안착 → [[쇄석 충전]]·다짐 → 연결철근 결속 → 기초 Con\'c 타설' },
+  www: {
+    what: '연약지반 위에 [[팽이형 콘크리트 블록(Top base)]]을 격자로 배열하고 [[쇄석 채움]]·연결철근으로 일체화한 얕은 기초 보강공법',
+    why: '하중 [[응력분산]]으로 [[지지력 증대]]·[[부등침하 저감]], 말뚝 대비 무진동·공기단축',
+    how: '지반 고르기 → 위치 측량 → [[Top base]] 안착 → [[쇄석 충전]]·다짐 → 연결철근 결속 → 기초 Con’c 타설'
+  },
   tag: '공법·지반·기초',
   def: '[[팽이 모양]]의 콘크리트 말뚝(Top base)을 연약지반 위에 연속 설치하고 사이를 [[쇄석]]으로 채운 뒤 [[연결철근]]을 결속·타설하여 일체화하고, 원추부 {{45°}} 경사면으로 하중을 분산시키는 [[얕은기초 보강공법]]',
   wwh: ['팽이형 블록 배열', '응력분산·침하저감', '쇄석+연결철근'],
@@ -99,29 +99,47 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '팽이가 하중을 넓게 펴 준다 — 쇄석 채움과 연결철근이 일체성의 핵심',
   mnemo: '팽응부 쇄연 얕공 (팽이·응력분산·부등침하 / 쇄석·연결철근 / 얕은기초·공기)',
   rel: ['지반개량', '얕은기초', '부등침하', 'Floating Foundation', '말뚝기초'],
-  src: '근거: 디테일용어300 코어 No.38(p049: 정의·원추부 45° 응력분산·기성재형/현장타설형 Process·관리사항) / 마법지 3기초 기초의 분류-형상(Top Base) / 블록 규격·지지력 증대율은 제조사별 상이(확인 필요)',
+  src: '근거: 디테일용어300 코어 No.38(p049: 정의·원추부 45° 응력분산·기성재형/현장타설형 Process·관리사항) / 마법지 3기초 기초의 분류-형상(Top Base) / 블록 규격·지지력 증대율은 제조사별 상이(확인 필요) / 스터디: (장성영) 용어300 (1).pdf p5(정의·45° 응력분산·기성재형/현장타설형 Process·중점관리 4단계)',
   det: {
     secs: [
+      { h: '정의', def: '연약지반 위에 [[팽이 모양]] 콘크리트 말뚝을 연속 설치하고 말뚝 사이를 [[쇄석]]으로 채운 뒤 상부 [[연결철근]]을 결속·Concrete 타설하여 일체화하는 [[얕은기초 보강공법]]으로, 원추부 {{45°}} 경사면의 [[응력분산]]으로 지지력을 높이고 침하를 줄인다.' },
       {
-        h: '정의',
-        def: '연약지반 위에 [[팽이 모양]] 콘크리트 말뚝(Top base)을 연속 설치하고 말뚝 간 공간을 [[쇄석]]으로 채운 뒤 상부 [[연결철근]]을 결속하고 Concrete를 부어 넣어 기초를 형성하는 [[얕은기초 보강공법]]으로, 원추부 {{45°}} 경사면이 연직하중을 수평·수직 분력으로 분산시켜 [[침하량]]을 저감한다.'
-      },
-      {
-        h: '원리 및 도해 — 지지력 증대 원리',
-        fig: 'MAIN',
-        flow: ['연직하중 작용', '원추부 45° 경사면', '수평·수직 분력 분산', '쇄석 구속·전단저항 증대', '지지력 증대', '침하 억제'],
+        h: '기능·원리 (지지력 증대 원리)',
+        fig: [
+          'MAIN',
+          {
+            svg: '<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="76" width="400" height="174" class="soil"/><rect x="40" y="30" width="360" height="22" class="conc"/><text x="80" y="46" class="s">기초 Slab</text><rect x="50" y="52" width="100" height="24" class="bx"/><polygon points="50,76 150,76 100,126" class="bx"/><rect x="92" y="126" width="16" height="40" class="bx"/><rect x="170" y="52" width="100" height="24" class="bx"/><polygon points="170,76 270,76 220,126" class="bx"/><rect x="212" y="126" width="16" height="40" class="bx"/><rect x="290" y="52" width="100" height="24" class="bx"/><polygon points="290,76 390,76 340,126" class="bx"/><rect x="332" y="126" width="16" height="40" class="bx"/><circle cx="132" cy="92" r="3" class="bx2"/><circle cx="150" cy="100" r="3" class="bx2"/><circle cx="168" cy="92" r="3" class="bx2"/><circle cx="158" cy="116" r="3" class="bx2"/><circle cx="142" cy="112" r="3" class="bx2"/><circle cx="252" cy="92" r="3" class="bx2"/><circle cx="270" cy="100" r="3" class="bx2"/><circle cx="288" cy="92" r="3" class="bx2"/><circle cx="278" cy="116" r="3" class="bx2"/><circle cx="262" cy="112" r="3" class="bx2"/><line x1="50" y1="64" x2="390" y2="64" class="rd"/><line x1="120" y1="6" x2="120" y2="26" class="ar"/><line x1="220" y1="6" x2="220" y2="26" class="ar"/><line x1="320" y1="6" x2="320" y2="26" class="ar"/><text x="334" y="20" class="s">연직하중</text><line x1="245" y1="101" x2="272" y2="128" class="ar"/><line x1="245" y1="101" x2="245" y2="132" class="ar"/><line x1="245" y1="101" x2="268" y2="101" class="ar"/><text x="284" y="112" class="r">45°</text><polyline points="212,166 172,236" fill="none" class="ln2 dash"/><polyline points="228,166 268,236" fill="none" class="ln2 dash"/><text x="220" y="248" text-anchor="middle" class="s">응력 분산</text><line x1="200" y1="64" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="bl">연결철근: 상부 결속·일체화</text><line x1="262" y1="84" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">원추부(팽이부) 45° 경사면</text><line x1="272" y1="128" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">연직하중 → 수평·수직 분력</text><line x1="220" y1="150" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="b">다리부(말뚝부): 지반 관입</text><line x1="158" y1="116" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="b">쇄석 충전·진동다짐(구속)</text><line x1="250" y1="220" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="r">응력 분산 → 침하량 억제</text><line x1="300" y1="41" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="s">기초 Slab Con’c 일체 타설</text><line x1="30" y1="230" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="s">연약지반(점토·매립층)</text></svg>',
+            cap: '[상세] 45° 경사면 분력 + 쇄석 구속 → 하중 분산·침하 억제'
+          }
+        ],
+        flow: ['연직하중 작용', '원추부 45° 경사면', '수평·수직 분력 분산', '접지면적 증대·쇄석 구속', '지지력 증대', '침하 억제'],
         ul: ['팽이부(원추부) + 말뚝부(다리부) 구성, 쇄석이 다리부 사이를 구속', '기초 평면 규격 Bk × Lk (Breadth·Length of Foundation) 에 맞추어 배열']
       },
       {
-        h: '시공 Process 및 특징',
+        h: '특징·종류 (적용범위)',
         tbl: {
           head: ['구분', '기성재형', '현장타설형'],
           rows: [
-            ['Process', '지반 고르기 → 위치 측량 → 말뚝 안착 → 쇄석 충전 → 연결철근 결속', '몰드(거푸집) 설치 → 상부 연결철근 → Con\'c 타설 → 쇄석 포설'],
             ['특징', '품질 균일·공기 단축', '현장 여건 대응·운반 불필요'],
             ['공통', '무진동·무소음, 연약지반 얕은기초 대안', '응력분산으로 부등침하 저감']
           ]
+        },
+        ul2: ['적용: 연약층이 얕은 지반의 얕은기초·옹벽·창고 기초', '무진동·무소음 → 도심·인접 건물 근접 시공']
+      },
+      {
+        h: '시공 Process',
+        flow: ['지반 하부층 정리', '위치 측량', '팽이말뚝 안착', '쇄석 충전·다짐', '연결철근 결속', '기초 Concrete 타설'],
+        tbl: {
+          head: ['구분', 'Process'],
+          rows: [
+            ['기성재형', '지반 고르기 → 위치 측량 → 말뚝 안착 → 쇄석 충전 → 연결철근 결속'],
+            ['현장타설형', '몰드(거푸집) 설치 → 상부 연결철근 → Con’c 타설 → 쇄석 포설']
+          ]
         }
+      },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 지반조사로 연약층 두께·지내력 확인, 얕은 연약층 적용성 검토', '[전] 지반 하부층 정리 → 평탄성 확보·지지력 확인', '[중] 정위치 배열·수직도 관리, 블록 간격 균일', '[중] 쇄석 밀실 충전·충분한 진동다짐 (공극 시 구속·분산 효과 저하)', '[중] 연결철근 결속·Level 관리, 피복 확보', '[후] 기초 Con’c 양생 관리, 침하 계측', '[개선] 연약층이 깊으면 Preloading·말뚝기초 병용 검토', '[개선] 현장타설형 몰드 표준화 → 품질 균일', '[개선] 평판재하시험으로 지지력 증대 효과 확인', '[개선] 재생 쇄석 활용 → 경제성·친환경']
       },
       {
         h: '관리기준 (시공관리 사항)',
@@ -134,20 +152,9 @@ window.DW = Object.assign(window.DW || {}, {
             ['시공 높이·마감', '시공 Level 관리', '디테일용어 No.38'],
             ['블록 규격·지지력 증대율', '제조사·설계도서 따름', '확인 필요']
           ]
-        }
-      },
-      {
-        h: '상세도 — 원추부 응력분산',
-        fig: {
-          svg: '<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="76" width="400" height="174" class="soil"/><rect x="40" y="30" width="360" height="22" class="conc"/><text x="80" y="46" class="s">기초 Slab</text><rect x="50" y="52" width="100" height="24" class="bx"/><polygon points="50,76 150,76 100,126" class="bx"/><rect x="92" y="126" width="16" height="40" class="bx"/><rect x="170" y="52" width="100" height="24" class="bx"/><polygon points="170,76 270,76 220,126" class="bx"/><rect x="212" y="126" width="16" height="40" class="bx"/><rect x="290" y="52" width="100" height="24" class="bx"/><polygon points="290,76 390,76 340,126" class="bx"/><rect x="332" y="126" width="16" height="40" class="bx"/><circle cx="132" cy="92" r="3" class="bx2"/><circle cx="150" cy="100" r="3" class="bx2"/><circle cx="168" cy="92" r="3" class="bx2"/><circle cx="158" cy="116" r="3" class="bx2"/><circle cx="142" cy="112" r="3" class="bx2"/><circle cx="252" cy="92" r="3" class="bx2"/><circle cx="270" cy="100" r="3" class="bx2"/><circle cx="288" cy="92" r="3" class="bx2"/><circle cx="278" cy="116" r="3" class="bx2"/><circle cx="262" cy="112" r="3" class="bx2"/><line x1="50" y1="64" x2="390" y2="64" class="rd"/><line x1="120" y1="6" x2="120" y2="26" class="ar"/><line x1="220" y1="6" x2="220" y2="26" class="ar"/><line x1="320" y1="6" x2="320" y2="26" class="ar"/><text x="334" y="20" class="s">연직하중</text><line x1="245" y1="101" x2="272" y2="128" class="ar"/><line x1="245" y1="101" x2="245" y2="132" class="ar"/><line x1="245" y1="101" x2="268" y2="101" class="ar"/><text x="284" y="112" class="r">45°</text><polyline points="212,166 172,236" fill="none" class="ln2 dash"/><polyline points="228,166 268,236" fill="none" class="ln2 dash"/><text x="220" y="248" text-anchor="middle" class="s">응력 분산</text><line x1="200" y1="64" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="bl">연결철근: 상부 결속·일체화</text><line x1="262" y1="84" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">원추부(팽이부) 45° 경사면</text><line x1="272" y1="128" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">연직하중 → 수평·수직 분력</text><line x1="220" y1="150" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="b">다리부(말뚝부): 지반 관입</text><line x1="158" y1="116" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="b">쇄석 충전·진동다짐(구속)</text><line x1="250" y1="220" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="r">응력 분산 → 침하량 억제</text><line x1="300" y1="41" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="s">기초 Slab Con\'c 일체 타설</text><line x1="30" y1="230" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="s">연약지반(점토·매립층)</text></svg>',
-          cap: '[상세] 45° 경사면 분력 + 쇄석 구속 → 하중 분산·침하 억제'
-        }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반조사로 연약층 두께·지내력 확인, 얕은 연약층 적용성 검토', '[전] 지반 하부층 정리 → 평탄성 확보·지지력 확인', '[중] 정위치 배열·수직도 관리, 블록 간격 균일', '[중] 쇄석 밀실 충전·충분한 진동다짐 (공극 시 구속·분산 효과 저하)', '[중] 연결철근 결속·Level 관리, 피복 확보', '[후] 기초 Con\'c 양생 관리, 침하 계측']
-      },
-      { h: '개선방안', ul: ['연약층이 깊으면 Preloading·말뚝기초 병용 검토', '현장타설형 몰드 표준화 → 품질 균일', '평판재하시험으로 지지력 증대 효과 확인', '재생 쇄석 활용 → 경제성·친환경'] }
+        },
+        ul2: ['중점관리 흐름: 지반 하부층 정리 → 파일 배치·수직도 → 쇄석 다짐·채움 → 시공 높이·마감관리']
+      }
     ]
   }
 },
@@ -155,7 +162,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: 'DRA(Double Rod Auger) SIP+Casing',
   cat: '기초',
   key: ['DRA', 'Double Rod Auger', '역회전', 'Casing', 'SIP', '공벽붕괴 방지', '근고정액', '경타', '저소음·저진동'],
-  www: { what: '[[내측 Auger]]와 [[외측 Casing]]을 서로 [[역회전]]시키며 동시 천공하는 매입말뚝(SIP+Casing) 공법', why: '자갈·매립층 [[공벽붕괴]] 방지, 수직도 확보, 타격공법 대비 소음·진동 저감', how: '말뚝 중심측량 → DRA 동시 천공(지지층) → 근고정액(시멘트 페이스트) 주입 → 말뚝 삽입·Casing 인발 → 안착·[[경타]] → 두부정리' },
+  www: {
+    what: '[[내측 Auger]]와 [[외측 Casing]]을 서로 [[역회전]]시키며 동시 천공하는 매입말뚝(SIP+Casing) 공법',
+    why: '자갈·매립층 [[공벽붕괴]] 방지, 수직도 확보, 타격공법 대비 소음·진동 저감',
+    how: '말뚝 중심측량 → DRA 동시 천공(지지층) → 근고정액(시멘트 페이스트) 주입 → 말뚝 삽입·Casing 인발 → 안착·[[경타]] → 두부정리'
+  },
   tag: '공법·장비·매입말뚝',
   def: '내측 Screw Auger와 외측 [[Casing Screw]]를 각각 독립된 두 Rod로 [[역방향 회전]]시켜 동시 천공 후 [[근고정액]]을 주입하고 기성말뚝을 삽입·[[경타]]하는 SIP 계열 [[매입말뚝 공법]]',
   wwh: ['2중 Rod 역회전', '공벽붕괴 방지', 'Casing 동시천공'],
@@ -172,18 +183,10 @@ window.DW = Object.assign(window.DW || {}, {
   src: '근거: 디테일용어300 코어 No.39(p050: 정의·Process·적용대상·N값 50/7 근입·시멘트 페이스트 W/C 83%·Wire Rope 수직도) / 마법지 3기초 기성P Preboring(SIP, DRA) / KCS 11 50 15 기성말뚝 / 합격답안 3.기초공사 PDF p41~44',
   det: {
     secs: [
+      { h: '정의', def: '내측 [[Screw Auger]]와 외측 [[Casing]]을 서로 [[역회전]]시켜 동시 천공한 뒤 [[시멘트 페이스트]](근고정액)를 주입하고 기성말뚝을 삽입·[[경타]]하는 SIP + Casing 매입말뚝 공법으로, Casing이 자갈·전석층의 [[공벽붕괴]]를 막아 지지층까지 수직으로 설치한다.' },
+      { h: '기능·원리 (역회전 동시천공)', fig: 'MAIN', ul: ['내측 Auger 배토 + 외측 Casing 공벽보호 → 자갈·전석층에서도 수직도 확보', '역회전 → 반력 상쇄로 Rod 비틀림·편심 감소', 'Casing 인발 후 근고정액이 말뚝 주변 충전 → 주면마찰·선단지지 확보'] },
       {
-        h: '정의',
-        def: '내부 [[Screw Auger]]와 외부 [[Casing]]이 서로 [[역회전]]하며 천공·배토하고 [[시멘트 페이스트]](근고정액) 주입 후 기성말뚝을 삽입·[[경타]]하는 SIP + Casing 공법으로, Casing이 연약층·자갈층 [[공벽붕괴]]를 막아 지지층까지 안전하게 말뚝을 설치한다.'
-      },
-      {
-        h: '원리 및 도해 — 시공 Process',
-        fig: 'MAIN',
-        flow: ['말뚝 중심 측량', 'DRA 동시 천공(지지층)', '시멘트 페이스트 주입', '말뚝 삽입·Casing 인발', '안착·경타', '두부정리·PDA'],
-        ul: ['내측 Auger 배토 + 외측 Casing 공벽보호 → 자갈·전석층에서도 수직도 확보']
-      },
-      {
-        h: '특징 및 적용대상',
+        h: '특징·종류 (적용범위)',
         tbl: {
           head: ['구분', 'SIP(단일 Auger)', 'DRA(SIP + Casing)'],
           rows: [
@@ -194,6 +197,11 @@ window.DW = Object.assign(window.DW || {}, {
           ]
         },
         ul2: ['적용: 항타 소음·진동 민원 우려 지역', '적용: 설계심도까지 직타로 {{4m 이상}} 관입이 어려운 경우', '적용: 지층 중간 자갈·전석층으로 직타공법이 불가한 경우']
+      },
+      { h: '시공 Process', flow: ['말뚝 중심 측량', 'DRA 동시 천공(지지층)', '시멘트 페이스트 주입', '말뚝 삽입·Casing 인발', '안착·경타', '두부정리·PDA'] },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 시항타 결과·재하시험 확인 후 본항타, 자갈·전석층 위치 확인', '[전] 장비 거치 지반 지지력 확보 → 장비 전도 방지', '[중] Wire Rope 고정지지로 수직도 확보, 천공 깊이·N값 50/7 지지층 도달 확인', '[중] 시멘트 페이스트 배합·주입량 관리, Casing 인발 속도 관리 → 공벽 교란 방지', '[중] 최종 경타 낙하고 관리 → 두부파손 방지', '[후] 두부정리, 동재하시험(PDA)으로 지지력 확인', '[개선] 천공 깊이·전류값·주입량 자동기록(디지털 천공관리)', '[개선] PDA·정재하시험 병행 지지력 검증', '[개선] 저소음 장비·방음 Cover']
       },
       {
         h: '관리기준',
@@ -207,12 +215,7 @@ window.DW = Object.assign(window.DW || {}, {
             ['위치·경사 허용오차', 'KCS 11 50 15 기성말뚝', '수치 확인 필요']
           ]
         }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 시항타 결과·재하시험 확인 후 본항타, 자갈·전석층 위치 확인', '[전] 장비 거치 지반 지지력 확보 → 장비 전도 방지', '[중] Wire Rope 고정지지로 수직도 확보, 천공 깊이·N값 50/7 지지층 도달 확인', '[중] 시멘트 페이스트 배합·주입량 관리, Casing 인발 속도 관리 → 공벽 교란 방지', '[중] 최종 경타 낙하고 관리 → 두부파손 방지', '[후] 두부정리, 동재하시험(PDA)으로 지지력 확인']
-      },
-      { h: '개선방안', ul: ['천공 깊이·전류값·주입량 자동기록(디지털 천공관리)', 'PDA·정재하시험 병행 지지력 검증', '저소음 장비·방음 Cover'] }
+      }
     ]
   }
 },
@@ -220,35 +223,32 @@ window.DW = Object.assign(window.DW || {}, {
   title: '시험말뚝박기(Pile Driving Test)',
   cat: '기초',
   key: ['시험말뚝', '시항타', '관입량', '최종 타격기준', '말뚝길이 결정', '장비 적정성', '동재하시험(PDA)', 'Rebound Check'],
-  www: { what: '본 말뚝 시공 전 대표 위치에서 실제 장비로 박아 [[말뚝길이]]·[[관입량]]·[[최종 타격기준]]을 정하는 시험시공', why: '지반조건·장비·Hammer 적정성 확인으로 말뚝 파손·지지력 부족·길이 과부족 방지', how: '위치 선정(대표 지반) → 시항타 연속 타격 → 관입량·Rebound 측정 → [[동재하시험(PDA)]] → 시공기준 결정' },
+  www: {
+    what: '본 말뚝 시공 전 대표 위치에서 실제 장비로 박아 [[말뚝길이]]·[[관입량]]·[[최종 타격기준]]을 정하는 시험시공',
+    why: '지반조건·장비·Hammer 적정성 확인으로 말뚝 파손·지지력 부족·길이 과부족 방지',
+    how: '위치 선정(대표 지반) → 시항타 연속 타격 → 관입량·Rebound 측정 → [[동재하시험(PDA)]] → 시공기준 결정'
+  },
   tag: '시험·기준·관리',
   def: '본 공사 전 지반을 대표하는 위치에서 본 말뚝과 같은 장비·말뚝으로 [[시항타]]하여 [[EOID]]·[[Restrike]]로 지지력을 확인하고 [[말뚝길이]]·[[관입량]]·Hammer 낙하고 등 [[최종 타격기준]]을 결정하는 시험({{기초면적 1,500m² 2본, 3,000m² 3본}})',
   wwh: ['본공사 전 시항타', '타격기준 결정', '관입량·PDA 측정'],
   figT: '시험말뚝박기의 위치·측정항목 및 판정',
   svg: '<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg"><rect x="130" y="20" width="60" height="34" class="bx2"/><text x="160" y="41" text-anchor="middle" class="s">Hammer</text><line x1="160" y1="54" x2="160" y2="66" class="ar"/><rect x="20" y="90" width="400" height="120" class="soil"/><rect x="20" y="210" width="400" height="50" class="bx2"/><line x1="20" y1="90" x2="420" y2="90" class="ln"/><text x="26" y="106" class="s">연약·중간층</text><text x="26" y="228" class="s">지지층</text><rect x="152" y="68" width="16" height="162" class="conc"/><rect x="146" y="80" width="28" height="8" class="bx"/><line x1="176" y1="112" x2="196" y2="112" class="rd"/><text x="200" y="116" class="s">PDA 센서</text><rect x="124" y="76" width="10" height="14" class="bx"/><text x="56" y="84" class="s">Rebound 용지</text><rect x="260" y="70" width="160" height="18" class="bx2"/><text x="340" y="83" text-anchor="middle" class="s">기초면적</text><rect x="260" y="88" width="80" height="18" class="bx"/><rect x="340" y="88" width="80" height="18" class="bx"/><text x="300" y="101" text-anchor="middle" class="s">1,500m² 이하</text><text x="380" y="101" text-anchor="middle" class="r">2본</text><rect x="260" y="106" width="80" height="18" class="bx"/><rect x="340" y="106" width="80" height="18" class="bx"/><text x="300" y="119" text-anchor="middle" class="s">3,000m² 이하</text><text x="380" y="119" text-anchor="middle" class="r">3본</text><rect x="260" y="140" width="150" height="50" class="bx"/><text x="268" y="158" class="s">결정: 말뚝길이·낙하고</text><text x="268" y="176" class="s">타격횟수·최종관입량</text><text x="26" y="290" class="s">시항타 → 관입량 → PDA → 시공기준 확정</text><line x1="160" y1="30" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">Hammer 중량·낙하고 확인</text><line x1="196" y1="112" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="r">동재하시험 지지력 확인</text><line x1="160" y1="226" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">지지층 관입깊이 확인</text><line x1="150" y1="72" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="k3">③ 본공사 전 시항타</text><line x1="410" y1="165" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="k3">③ 말뚝길이·관입량 결정</text><line x1="140" y1="40" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="k3">③ 장비·Hammer 적정성</text><line x1="60" y1="210" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="k4">④ 지반 대표 위치 선정</text><line x1="168" y1="160" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="k4">④ 연속 타격(중단 금지)</text><line x1="184" y1="112" x2="438" y2="202" class="ld"/><circle cx="438" cy="202" r="2" class="dotf"/><text x="444" y="206" class="k5">⑤ 동재하시험 병행</text><line x1="129" y1="82" x2="438" y2="224" class="ld"/><circle cx="438" cy="224" r="2" class="dotf"/><text x="444" y="228" class="k5">⑤ 최종 관입량 기준 확정</text></svg>',
   subs: [
-    { h: '목적·기준', pts: ['본공사 전 [[시항타]]', '말뚝길이·[[관입량]] 결정', '장비·Hammer 적정성'] },
-    { h: '시공 시 유의사항', pts: ['지반 대표 위치 선정', '연속 타격(중단 금지)'] },
+    { h: '시험 목적·결정사항', pts: ['본공사 전 [[시항타]]', '말뚝길이·[[관입량]] 결정', '장비·Hammer 적정성'] },
+    { h: '시험 시 유의사항', pts: ['지반 대표 위치 선정', '연속 타격(중단 금지)'] },
     { h: '개선방안', pts: ['[[동재하시험]] 병행', '[[최종 관입량]] 기준 확정'] }
   ],
   msg: '본말뚝은 시험말뚝이 정한 기준으로 박는다 — 길이·낙하고·관입량을 먼저 확정',
   mnemo: '시관장 대연 동최 (시항타·관입량·장비 / 대표위치·연속타격 / 동재하·최종관입량)',
   rel: ['Rebound Check', '동재하시험(PDA)', '정재하시험', '말뚝 두부파손', '최종 관입량'],
-  src: '근거: 디테일용어300 코어 No.40(p051: EOID·Restrike, 결정사항, 타입/매입 유의사항) / 합격답안 3.기초공사 PDF p3(시항타 수: 기초면적 1,500m² 2본·3,000m² 3본, 연속항타, 경사 1/100 이하) / KCS 11 50 15 기성말뚝(시험말뚝)',
+  src: '근거: 디테일용어300 코어 No.40(p051: EOID·Restrike, 결정사항, 타입/매입 유의사항) / 합격답안 3.기초공사 PDF p3(시항타 수: 기초면적 1,500m² 2본·3,000m² 3본, 연속항타, 경사 1/100 이하) / KCS 11 50 15 기성말뚝(시험말뚝) / 스터디: 2C-3W.용어형(파일의 시간경과 효과 등 10개)-이이섭.pdf p2(목적 6항목·본항타와 동일 Pile·Hammer·중단 없이 타격·수평 허용오차 100mm 이하)',
   det: {
     secs: [
+      { h: '정의', def: '본항타 전 지반을 대표하는 위치에서 본 말뚝과 [[동일한 말뚝·Hammer]]로 시험 시공하여 [[EOID]]·[[Restrike]]로 지지력을 확인하고 [[말뚝길이]]·[[최종 관입량]]·Ram 중량·낙하고 등 [[시공기준]]을 결정하는 시험이다.' },
       {
-        h: '정의',
-        def: '본항타 전에 실제 지반상태에서 말뚝 [[지지력]]을 확인하기 위해 시험적으로 시공하는 말뚝으로, [[EOID]](초기 항타) 시험으로 선단지지력을, 양생 후 [[Restrike]](재항타)로 최종 지지력을 확인하여 말뚝길이·[[최종 관입량]]·Ram 중량·낙하고 등 시공기준을 결정한다.'
-      },
-      {
-        h: '원리 및 도해 — 시험 Process',
+        h: '시험방법·원리 (측정기준)',
         fig: 'MAIN',
-        flow: ['대표 위치 선정', '시항타(연속 타격)', '관입량·Rebound 측정', 'EOID 동재하시험', '양생 후 Restrike', '시공기준 확정'],
-        ul: ['EOID 초기 선단지지력 → 약 일주일 후 Restrike 최종지지력(선단 + 마찰력)', '결정 사항: 본말뚝 길이·심도, 지지력, 최종 관입량 / 설계 심도 조율·시멘트 밀크 배합비 / Ram 중량·낙하고 관리기준']
-      },
-      {
-        h: '공법별 시험 방법',
+        ul: ['EOID 초기 선단지지력 → 약 일주일 후 Restrike 최종지지력(선단 + 마찰력)', '시항타 배치: 기초 평면의 대표 위치(모서리·중앙)에 분산 배치, 본말뚝으로 활용'],
         tbl: {
           head: ['구분', '타입말뚝', '매입말뚝'],
           rows: [
@@ -259,7 +259,22 @@ window.DW = Object.assign(window.DW || {}, {
         }
       },
       {
-        h: '관리기준',
+        h: '시험항목·Process',
+        flow: ['대표 위치 선정', '시항타(연속 타격)', '관입량·Rebound 측정', 'EOID 동재하시험', '양생 후 Restrike', '시공기준 확정'],
+        tbl: {
+          head: ['시험 목적(결정 항목)', '내용'],
+          rows: [
+            ['허용지지력 측정', 'EOID·Restrike 동재하시험'],
+            ['말뚝길이 검증', '설계 심도·지지층 확인'],
+            ['이음방법 결정', '길이 부족 시 이음 위치·방법'],
+            ['항타장비 선정·Hammer 용량', 'Ram 중량·낙하고 결정'],
+            ['말뚝 관입량 확인', '최종 관입량·Rebound check']
+          ]
+        },
+        ul2: ['결정 사항: 본말뚝 길이·심도, 지지력, 최종 관입량 / 설계 심도 조율·시멘트 밀크 배합비 / Ram 중량·낙하고 관리기준']
+      },
+      {
+        h: '판정기준 (관리기준)',
         tbl: {
           head: ['항목', '기준', '근거'],
           rows: [
@@ -267,15 +282,15 @@ window.DW = Object.assign(window.DW || {}, {
             ['시항타 방법', '약 15m 간격 배치, 중단 없이 연속 항타', '3.기초공사 p3'],
             ['수직도', '경사 {{1/100}} 이하 (Hammer 편타 방지)', '3.기초공사 p3 (KCS 값 확인 필요)'],
             ['지지력 확인', 'EOID ↔ Restrike 값 비교', '디테일용어 No.40'],
-            ['위치·본수 상세', '설계도서·KCS 11 50 15', '확인 필요']
+            ['위치·본수 상세', '설계도서·KCS 11 50 15', '확인 필요'],
+            ['위치 허용오차', '수평 {{100mm}} 이하', '스터디 2C-3W p2 (KCS 11 50 15 확인 필요)']
           ]
         }
       },
       {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반조사 결과로 대표 위치 선정, 본공사와 동일 장비·말뚝 사용', '[전] Hammer 중량·낙하고·Cushion 재질 확인', '[중] 중단 없이 연속 항타(중단 시 주면마찰 회복으로 관입저항 증가), 타격횟수·관입량 기록', '[중] 경타 1회 후 Hammer와 두부 수직도 확인', '[후] EOID·Restrike 결과 비교 → 본말뚝 시공기준서 작성·감리 승인']
-      },
-      { h: '개선방안', ul: ['동재하시험(PDA) 병행으로 지지력 정량 평가', '자동 항타관리 System(PDAM)으로 관입량 기록', '시항타 결과 DB화 → 유사 지반 설계 반영'] }
+        h: '시험 시 유의사항·불합격 조치',
+        ul: ['[전] 지반조사 결과로 대표 위치 선정, 본공사와 동일 장비·말뚝 사용', '[전] Hammer 중량·낙하고·Cushion 재질 확인', '[중] 중단 없이 연속 항타(중단 시 주면마찰 회복으로 관입저항 증가), 타격횟수·관입량 기록', '[중] 경타 1회 후 Hammer와 두부 수직도 확인', '[후] EOID·Restrike 결과 비교 → 본말뚝 시공기준서 작성·감리 승인', '[조치] 지지력 부족 → 말뚝길이 증가·이음·본수 증가 등 설계 변경 협의', '[조치] 두부 파손·편타 → Cushion·낙하고 조정 후 재시험', '[개선] 동재하시험(PDA) 병행으로 지지력 정량 평가', '[개선] 자동 항타관리 System(PDAM)으로 관입량 기록', '[개선] 시항타 결과 DB화 → 유사 지반 설계 반영']
+      }
     ]
   }
 },
@@ -283,7 +298,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: 'Rebound check',
   cat: '기초',
   key: ['Rebound Check', '최종 관입량(S)', 'Rebound량(K)', 'Hiley 공식', '동역학적 지지력', '타격 10회 평균', '기준대 고정', 'PDA'],
-  www: { what: '최종 타격 시 말뚝머리에 용지를 붙여 [[최종 관입량(S)]]과 [[Rebound량(K)]]을 기록하는 지지력 확인 방법', why: '[[Hiley 공식]] 등 동역학적 공식으로 지지력을 산정하여 과항타·지지력 부족 방지', how: '용지 부착 → 기준대(각재) 고정 → 연필 수평 이동 + 타격 → 관입량·Rebound 측정 → Hiley 공식 지지력 산정' },
+  www: {
+    what: '최종 타격 시 말뚝머리에 용지를 붙여 [[최종 관입량(S)]]과 [[Rebound량(K)]]을 기록하는 지지력 확인 방법',
+    why: '[[Hiley 공식]] 등 동역학적 공식으로 지지력을 산정하여 과항타·지지력 부족 방지',
+    how: '용지 부착 → 기준대(각재) 고정 → 연필 수평 이동 + 타격 → 관입량·Rebound 측정 → Hiley 공식 지지력 산정'
+  },
   tag: '시험·측정·지지력',
   def: '기성말뚝 최종 타격 시 말뚝 머리에 부착한 용지에 고정 기준대로 궤적을 그어 [[최종 관입량(S)]]과 탄성 [[Rebound량(K)]]을 측정하고 [[Hiley 공식]]으로 [[동역학적 지지력]]을 확인하는 방법',
   wwh: ['S·K 궤적 측정', '지지력 확인', 'Hiley 공식 산정'],
@@ -300,13 +319,11 @@ window.DW = Object.assign(window.DW || {}, {
   src: '근거: 디테일용어300 코어 No.41(p052: 정의·S = 총관입량/N·최종 침하량 5~10mm 이하 정지·PDAM·유의사항) / 합격답안 3.기초공사 PDF p44(Rebound Check 실시) / Hiley 공식(안전율 3)은 일반 교재 기준(확인 필요)',
   det: {
     secs: [
+      { h: '정의', def: '기성말뚝 최종 타격 시 말뚝머리에 붙인 용지에 기준대를 따라 펜으로 궤적을 그어 [[최종 관입량(S)]]과 [[Rebound량(K)]]을 측정하고, [[Hiley 공식]] 등 동역학적 지지력 공식으로 [[지지력]]을 판정하는 방법이다.' },
+      { h: '측정방법·원리 (측정기준)', fig: 'MAIN', ul: ['궤적 상의 하강량 = 관입량(S, 소성변형), 반발 상승량 = Rebound량(K, 탄성변형)', 'S 가 작고 K 가 적정 → 지지층 도달 / K 과대 → 말뚝·Cushion 탄성 과다'] },
       {
-        h: '정의',
-        def: '기성 Concrete 말뚝 1회 타격 시 반동에 의해 튀어 오르는 정도를 확인하여 말뚝과 지반의 [[탄성변형량]](Rebound량 K)과 [[최종 관입량]](S)을 측정하는 방법으로, 말뚝마다 최종 관입예정 위치에서 매회 확인하여 [[Hiley 공식]] 등으로 지지력을 판정한다.'
-      },
-      { h: '원리 및 도해 — 측정 방법', fig: 'MAIN', flow: ['용지(Graph지) 부착', '기준대 고정', '펜 수평 이동 + 타격', '궤적에서 S·K 판독', 'S = 총관입량 / 타격횟수', '지지력 판정·항타 정지'] },
-      {
-        h: '측정 사항',
+        h: '측정항목·Process',
+        flow: ['용지(Graph지) 부착', '기준대 고정', '펜 수평 이동 + 타격', '궤적에서 S·K 판독', 'S = 총관입량 / 타격횟수', '지지력 판정·항타 정지'],
         tbl: {
           head: ['측정 항목', '내용', '목적'],
           rows: [
@@ -317,7 +334,7 @@ window.DW = Object.assign(window.DW || {}, {
         }
       },
       {
-        h: '관리기준',
+        h: '판정기준 (관리기준)',
         tbl: {
           head: ['항목', '기준', '근거'],
           rows: [
@@ -328,10 +345,9 @@ window.DW = Object.assign(window.DW || {}, {
         }
       },
       {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 항타장비·Hammer 용량·이음부·말뚝 치수 사전 검토', '[전] 기준대(각재)를 말뚝 영향 밖에 견고히 고정, 말뚝과 기준대 수평 유지', '[중] 측정용 펜과 말뚝 수직도 준수, 펜 이동 속도 일정', '[중] 최종 관입예정 위치에서 매회 확인, 요구 깊이 관입 여부 확인 후 지지력 판정', '[후] 기록지는 공사 완료 시까지 보관, 기준 미달 시 추가 타격·PDA 확인']
-      },
-      { h: '개선방안', ul: ['자동 항타관리 System(PDAM)으로 관입량·Rebound 자동 계측', 'PDA 동재하시험 병행', '디지털 기록·이력 관리'] }
+        h: '측정 시 유의사항·불합격 조치',
+        ul: ['[전] 항타장비·Hammer 용량·이음부·말뚝 치수 사전 검토', '[전] 기준대(각재)를 말뚝 영향 밖에 견고히 고정, 말뚝과 기준대 수평 유지', '[중] 측정용 펜과 말뚝 수직도 준수, 펜 이동 속도 일정', '[중] 최종 관입예정 위치에서 매회 확인, 요구 깊이 관입 여부 확인 후 지지력 판정', '[후] 기록지는 공사 완료 시까지 보관, 기준 미달 시 추가 타격·PDA 확인', '[개선] 자동 항타관리 System(PDAM)으로 관입량·Rebound 자동 계측', '[개선] PDA 동재하시험 병행', '[개선] 디지털 기록·이력 관리']
+      }
     ]
   }
 },
@@ -339,7 +355,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: 'RCD공법(역순환 공법) Reverse Circulation Drill',
   cat: '기초',
   key: ['RCD', '역순환', '정수압', 'Stand Pipe', 'Drill Pipe', 'Suction·Air Lift', 'Slime 제거', 'Tremie', '대구경'],
-  www: { what: '공내에 물을 채워 [[정수압]]으로 공벽을 보호하며 회전 Bit로 굴착하고 굴착토를 [[Drill Pipe]] 내부로 [[역순환]] 배출하는 대구경 현장타설말뚝', why: '대구경·대심도 굴착, 공벽붕괴 방지, 저소음·저진동으로 도심 고하중 기초에 적용', how: 'Stand Pipe 설치 → 회전굴착 + 역순환 배토 → Slime 제거 → 철근망 건입 → [[Tremie]] 콘크리트 타설' },
+  www: {
+    what: '공내에 물을 채워 [[정수압]]으로 공벽을 보호하며 회전 Bit로 굴착하고 굴착토를 [[Drill Pipe]] 내부로 [[역순환]] 배출하는 대구경 현장타설말뚝',
+    why: '대구경·대심도 굴착, 공벽붕괴 방지, 저소음·저진동으로 도심 고하중 기초에 적용',
+    how: 'Stand Pipe 설치 → 회전굴착 + 역순환 배토 → Slime 제거 → 철근망 건입 → [[Tremie]] 콘크리트 타설'
+  },
   tag: '공법·현장타설·말뚝',
   def: 'Stand Pipe 이하 공내수위를 지하수위보다 {{2m 이상}} 높게 유지한 [[정수압]]으로 공벽을 보호하고, 회전 Bit 굴착토를 [[Drill Pipe]] 내부로 흡입([[Suction·Air Lift]])하는 [[역순환]] 방식의 대구경 현장타설 말뚝',
   wwh: ['정수압·역순환', '대구경 공벽보호', '회전굴착·흡입배토'],
@@ -353,18 +373,11 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '물이 벽을 지키고, 흙은 Pipe 속으로 거꾸로 올라온다',
   mnemo: '정역대 수슬 트건 (정수압·역순환·대구경 / 수위·Slime / Tremie·건전도)',
   rel: ['Earth Drill 공법', 'PRD 공법', 'Barrette', 'Slime 처리', '건전도 시험(CSL)', 'Koden Test'],
-  src: '근거: 디테일용어300 코어 No.42(p053: 정수압 0.02MPa 이상·공내수위 지하수위+2m 이상·Slime 10cm 이하·장단점) / 마법지 3기초 현장P(RCD·Koden Test) / KCS 11 50 20 현장타설말뚝(트레미 2m 이상 매입, 확인 필요) / 핵심마법지 굴착 수직도 1/300',
+  src: '근거: 디테일용어300 코어 No.42(p053: 정수압 0.02MPa 이상·공내수위 지하수위+2m 이상·Slime 10cm 이하·장단점) / 마법지 3기초 현장P(RCD·Koden Test) / KCS 11 50 20 현장타설말뚝(트레미 2m 이상 매입, 확인 필요) / 핵심마법지 굴착 수직도 1/300 / 스터디: (박동수) 용어300_2주차.pdf p2(정의 2문장·시공순서 4단계·장단점·정수압 0.02MPa/공내수위 +2m/Slime 10cm)',
   det: {
     secs: [
-      {
-        h: '정의',
-        def: 'Reverse Circulation Drill로 굴착하며 공내수의 [[정수압]]({{0.02MPa 이상}})으로 공벽을 보호하고, Drill Rod 끝에서 물을 빨아올려 굴착토를 [[Drill Pipe]] 내부로 지상에 [[역순환]] 배출한 뒤 철근망 삽입·[[Tremie]] 콘크리트를 타설하는 대구경 현장타설 말뚝이다.'
-      },
-      {
-        h: '원리 및 도해 — 역순환 원리',
-        fig: 'MAIN',
-        flow: ['Stand Pipe 설치', '회전굴착·역순환 배토', 'Slime 처리', '철근망 삽입·Tremie 설치', 'Con\'c 타설', '양생·Stand Pipe 인발']
-      },
+      { h: '정의', def: 'Reverse Circulation Drill 로 굴착하며 공내수의 [[정수압]]({{0.02MPa 이상}})으로 공벽을 보호하고, Drill Rod 끝에서 물과 굴착토를 빨아올려 [[Drill Pipe]] 내부로 지상에 [[역순환]] 배출한 뒤 철근망·[[Tremie]] 콘크리트를 타설하는 대구경 현장타설 말뚝이다.' },
+      { h: '기능·원리 (역순환 원리)', fig: 'MAIN', ul: ['굴착토가 굴착 선단에서 Drill Pipe 내부를 통해 지상으로 순환 → 역순환 공법', '공내수위를 지하수위보다 2m 이상 높게 유지 → 정수압으로 공벽 안정'] },
       {
         h: '특징 (장·단점)',
         tbl: {
@@ -377,31 +390,31 @@ window.DW = Object.assign(window.DW || {}, {
         }
       },
       {
+        h: '시공 Process',
+        fig: {
+          svg: '<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="60" width="420" height="160" class="soil"/><line x1="10" y1="60" x2="430" y2="60" class="ln"/><line x1="10" y1="80" x2="430" y2="80" class="bl dash"/><text x="12" y="54" class="s">GL</text><text x="12" y="94" class="s">GWL</text><rect x="44" y="40" width="6" height="50" class="bx2"/><rect x="70" y="40" width="6" height="50" class="bx2"/><rect x="50" y="60" width="20" height="30" class="bx3"/><rect x="144" y="40" width="6" height="50" class="bx2"/><rect x="180" y="40" width="6" height="50" class="bx2"/><rect x="150" y="60" width="30" height="145" class="bx3"/><rect x="162" y="26" width="6" height="172" class="conc"/><polygon points="152,198 178,198 165,212" class="bx2"/><polyline points="165,26 165,18 205,18" fill="none" class="ar"/><rect x="244" y="40" width="6" height="50" class="bx2"/><rect x="290" y="40" width="6" height="50" class="bx2"/><rect x="250" y="60" width="40" height="150" class="bx3"/><line x1="256" y1="68" x2="256" y2="205" class="rd"/><line x1="284" y1="68" x2="284" y2="205" class="rd"/><line x1="256" y1="90" x2="284" y2="90" class="rd"/><line x1="256" y1="120" x2="284" y2="120" class="rd"/><line x1="256" y1="150" x2="284" y2="150" class="rd"/><line x1="256" y1="180" x2="284" y2="180" class="rd"/><rect x="268" y="26" width="5" height="172" class="conc"/><rect x="355" y="60" width="40" height="150" class="conc"/><line x1="361" y1="68" x2="361" y2="205" class="rd"/><line x1="389" y1="68" x2="389" y2="205" class="rd"/><rect x="349" y="18" width="6" height="50" class="bx2"/><rect x="395" y="18" width="6" height="50" class="bx2"/><line x1="412" y1="50" x2="412" y2="16" class="ar"/><line x1="84" y1="135" x2="138" y2="135" class="ar"/><line x1="194" y1="135" x2="240" y2="135" class="ar"/><line x1="300" y1="135" x2="345" y2="135" class="ar"/><text x="60" y="238" text-anchor="middle" class="s">① Stand Pipe</text><text x="165" y="238" text-anchor="middle" class="s">② 굴착·역순환</text><text x="270" y="238" text-anchor="middle" class="s">③ 철근망·Tremie</text><text x="375" y="238" text-anchor="middle" class="s">④ 타설·인발</text><line x1="60" y1="70" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="r">공내수위 ≥ GWL + 2m</text><line x1="150" y1="100" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="r">정수압 0.02MPa 이상</text><line x1="176" y1="120" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="b">Koden Test 공벽 확인</text><line x1="165" y1="160" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">굴착 수직도 1/300</text><line x1="165" y1="206" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="r">Slime 10cm 이하(타설 직전)</text><line x1="284" y1="100" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="b">철근망 Spacer·공상 방지</text><line x1="270" y1="190" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="r">Tremie 2m 이상 매입</text><line x1="412" y1="30" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="b">Stand Pipe 인발·양생</text></svg>',
+          cap: '[상세] Stand Pipe → 굴착·역순환 → 철근망·Tremie → 타설·인발'
+        },
+        flow: ['Stand Pipe(Casing) 설치', '회전굴착·역순환 배토·Slime 처리', '철근망 삽입·Tremie 설치', 'Con’c 타설·양생', 'Stand Pipe 인발']
+      },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 지반조사로 피압수·자갈층 확인, Stand Pipe 근입 깊이 확보', '[중] 공내수위 GWL + 2m 이상 유지, 급격한 수위 저하 금지, 수직도 1/300 관리', '[중] Slime 1차(굴착 후)·2차(타설 직전) 처리 → 10cm 이하, Koden Test 로 공벽 확인', '[중] 철근망 Spacer·공상 방지, Tremie 2m 이상 매입 연속 타설', '[후] 두부 여분 타설·Laitance 제거, 건전도(CSL)·재하시험, 순환수·슬러지 처리', '[개선] Slime 자동 측정·초음파 공벽 측정', '[개선] 순환수 정화 설비 → 환경오염 방지', '[개선] CSL·양방향 재하시험 연계 품질 검증']
+      },
+      {
         h: '관리기준',
         tbl: {
           head: ['항목', '기준', '근거'],
           rows: [
             ['정수압', '{{0.02MPa}} 이상', '디테일용어 No.42'],
             ['공내수위', '지하수위보다 {{2m}} 이상', '디테일용어 No.42'],
-            ['Slime', 'Con\'c 타설 직전 {{10cm}} 이하', '디테일용어 No.42'],
+            ['Slime', 'Con’c 타설 직전 {{10cm}} 이하', '디테일용어 No.42'],
             ['굴착 수직도', '{{1/300}} 이내', '핵심마법지'],
-            ['Tremie 매입', 'Con\'c 속 {{2m}} 이상', 'KCS 11 50 20 — 확인 필요'],
+            ['Tremie 매입', 'Con’c 속 {{2m}} 이상', 'KCS 11 50 20 — 확인 필요'],
             ['공벽 확인', 'Koden Test(초음파 공벽측정)', '마법지 3기초']
           ]
         }
-      },
-      {
-        h: '상세도 — 시공순서',
-        fig: {
-          svg: '<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="60" width="420" height="160" class="soil"/><line x1="10" y1="60" x2="430" y2="60" class="ln"/><line x1="10" y1="80" x2="430" y2="80" class="bl dash"/><text x="12" y="54" class="s">GL</text><text x="12" y="94" class="s">GWL</text><rect x="44" y="40" width="6" height="50" class="bx2"/><rect x="70" y="40" width="6" height="50" class="bx2"/><rect x="50" y="60" width="20" height="30" class="bx3"/><rect x="144" y="40" width="6" height="50" class="bx2"/><rect x="180" y="40" width="6" height="50" class="bx2"/><rect x="150" y="60" width="30" height="145" class="bx3"/><rect x="162" y="26" width="6" height="172" class="conc"/><polygon points="152,198 178,198 165,212" class="bx2"/><polyline points="165,26 165,18 205,18" fill="none" class="ar"/><rect x="244" y="40" width="6" height="50" class="bx2"/><rect x="290" y="40" width="6" height="50" class="bx2"/><rect x="250" y="60" width="40" height="150" class="bx3"/><line x1="256" y1="68" x2="256" y2="205" class="rd"/><line x1="284" y1="68" x2="284" y2="205" class="rd"/><line x1="256" y1="90" x2="284" y2="90" class="rd"/><line x1="256" y1="120" x2="284" y2="120" class="rd"/><line x1="256" y1="150" x2="284" y2="150" class="rd"/><line x1="256" y1="180" x2="284" y2="180" class="rd"/><rect x="268" y="26" width="5" height="172" class="conc"/><rect x="355" y="60" width="40" height="150" class="conc"/><line x1="361" y1="68" x2="361" y2="205" class="rd"/><line x1="389" y1="68" x2="389" y2="205" class="rd"/><rect x="349" y="18" width="6" height="50" class="bx2"/><rect x="395" y="18" width="6" height="50" class="bx2"/><line x1="412" y1="50" x2="412" y2="16" class="ar"/><line x1="84" y1="135" x2="138" y2="135" class="ar"/><line x1="194" y1="135" x2="240" y2="135" class="ar"/><line x1="300" y1="135" x2="345" y2="135" class="ar"/><text x="60" y="238" text-anchor="middle" class="s">① Stand Pipe</text><text x="165" y="238" text-anchor="middle" class="s">② 굴착·역순환</text><text x="270" y="238" text-anchor="middle" class="s">③ 철근망·Tremie</text><text x="375" y="238" text-anchor="middle" class="s">④ 타설·인발</text><line x1="60" y1="70" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="r">공내수위 ≥ GWL + 2m</text><line x1="150" y1="100" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="r">정수압 0.02MPa 이상</text><line x1="176" y1="120" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="b">Koden Test 공벽 확인</text><line x1="165" y1="160" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">굴착 수직도 1/300</text><line x1="165" y1="206" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="r">Slime 10cm 이하(타설 직전)</text><line x1="284" y1="100" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="b">철근망 Spacer·공상 방지</text><line x1="270" y1="190" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="r">Tremie 2m 이상 매입</text><line x1="412" y1="30" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="b">Stand Pipe 인발·양생</text></svg>',
-          cap: '[상세] Stand Pipe → 굴착·역순환 → 철근망·Tremie → 타설·인발'
-        }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반조사로 피압수·자갈층 확인, Stand Pipe 근입 깊이 확보', '[중] 공내수위 GWL + 2m 이상 유지, 급격한 수위 저하 금지, 수직도 1/300 관리', '[중] Slime 1차(굴착 후)·2차(타설 직전) 처리 → 10cm 이하, Koden Test 로 공벽 확인', '[중] 철근망 Spacer·공상 방지, Tremie 2m 이상 매입 연속 타설', '[후] 두부 여분 타설·Laitance 제거, 건전도(CSL)·재하시험, 순환수·슬러지 처리']
-      },
-      { h: '개선방안', ul: ['Slime 자동 측정·초음파 공벽 측정', '순환수 정화 설비 → 환경오염 방지', 'CSL·양방향 재하시험 연계 품질 검증'] }
+      }
     ]
   }
 },
@@ -409,7 +422,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: 'PRD공법(Percussion Rotary Drill)',
   cat: '기초',
   key: ['PRD', 'DTH Hammer', '타격+회전', '강관 Casing', '암반 근입', 'Rock Socket', '압축공기 배토', '강관말뚝'],
-  www: { what: '[[DTH Hammer]]의 [[타격+회전]]으로 암반을 굴착하면서 [[강관 Casing]]을 동시에 관입·근입시키는 대구경 강관 매입말뚝 공법', why: '경암·전석층에도 [[암반 근입]]이 확실하여 고지지력 확보, 공벽붕괴 방지·저진동', how: '강관 세우기 → Hammer 타격·회전 굴착(압축공기 배토) → [[Rock Socket]] 근입 → Hammer 인양 → 콘크리트 충전' },
+  www: {
+    what: '[[DTH Hammer]]의 [[타격+회전]]으로 암반을 굴착하면서 [[강관 Casing]]을 동시에 관입·근입시키는 대구경 강관 매입말뚝 공법',
+    why: '경암·전석층에도 [[암반 근입]]이 확실하여 고지지력 확보, 공벽붕괴 방지·저진동',
+    how: '강관 세우기 → Hammer 타격·회전 굴착(압축공기 배토) → [[Rock Socket]] 근입 → Hammer 인양 → 콘크리트 충전'
+  },
   tag: '공법·장비·암반근입',
   def: 'Casing(강관) 내부의 [[DTH Hammer]] Bit를 압축공기로 [[타격]]하면서 [[회전]] 굴착하고, 내측 Shaft와 외측 Casing의 [[역회전]]으로 강관을 암반까지 동시 근입시키는 [[강관 매입말뚝]] 공법',
   wwh: ['타격+회전 굴착', '암반근입 고지지력', 'DTH·강관 동시관입'],
@@ -426,17 +443,10 @@ window.DW = Object.assign(window.DW || {}, {
   src: '근거: 디테일용어300 코어 No.43(p054: 해머비트 타격+회전·내측 Shaft/외측 Casing 역회전·특징·Slime 10cm 이하·Back Fill) / 마법지 3기초 현장P(PRD) / KCS 11 50 15·20 / 근입장은 설계도서(확인 필요)',
   det: {
     secs: [
+      { h: '정의', def: 'Casing(강관) 내부의 [[DTH Hammer]] Bit 를 압축공기로 [[타격]]하면서 [[회전]] 굴착하고, 내측 Shaft 와 외측 Casing 의 [[역회전]]으로 강관을 경암까지 [[암반 근입]]시키는 저소음 대구경 강관 매입말뚝 공법이다.' },
+      { h: '기능·원리 (타격 + 회전 천공)', fig: 'MAIN', ul: ['Hammer Bit 타격(압축공기) + 회전 → 경암 파쇄 천공', '내측 Shaft·외측 Casing 역회전 → 반력 상쇄·수직도 확보, Cutting 은 압축공기로 배출'] },
       {
-        h: '정의',
-        def: 'Casing 압입 후 [[Hammer Bit]]의 [[타격]]과 [[회전]]으로 지반을 천공하며, 내측 Shaft와 외측 Casing이 서로 [[역회전]]하여 경암층까지 굴착하고 강관을 [[암반 근입]]시키는 저소음 대구경 말뚝기초 공법이다.'
-      },
-      {
-        h: '원리 및 도해 — 시공 Process',
-        fig: 'MAIN',
-        flow: ['중심선 측량', 'Casing(강관) 설치', 'DTH Hammer 타격·회전 천공', '암반 근입(Rock Socket)', '철근망·철골 설치', 'Con\'c 타설']
-      },
-      {
-        h: '특징',
+        h: '특징 (적용범위)',
         tbl: {
           head: ['구분', '내용'],
           rows: [
@@ -447,23 +457,23 @@ window.DW = Object.assign(window.DW || {}, {
           ]
         }
       },
+      { h: '시공 Process', flow: ['중심선 측량', 'Casing(강관) 설치', 'DTH Hammer 타격·회전 천공', '암반 근입(Rock Socket)', '철근망·철골 설치', 'Con’c 타설'] },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 지반조사로 암반선 깊이·강도 확인, 강관 규격·이음 확인', '[전] Compressor 용량·방음 Cover·집진설비 준비', '[중] 연직도 수시 확인, 강관 이음 용접 품질(비파괴검사)', '[중] Cutting 배출로 지지층 확인, 근입장 확보, Slime 10cm 이하 처리', '[후] 양측 Back Fill 로 편심 방지, 재하시험으로 지지력 확인', '[개선] Rock Socket 지지력 양방향 재하시험 확인', '[개선] 분진 집진장치·방음 Cover', '[개선] 천공 Data 자동기록']
+      },
       {
         h: '관리기준',
         tbl: {
           head: ['항목', '기준', '근거'],
           rows: [
             ['연직도', '굴착 시 연직도 유지 확인', '디테일용어 No.43'],
-            ['Slime', 'Con\'c 타설 전 {{10cm}} 이하', '디테일용어 No.43'],
+            ['Slime', 'Con’c 타설 전 {{10cm}} 이하', '디테일용어 No.43'],
             ['편심 방지', '강재 편심 없게 양측 Back Fill', '디테일용어 No.43'],
             ['근입장', '설계도서 따름', '확인 필요']
           ]
         }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반조사로 암반선 깊이·강도 확인, 강관 규격·이음 확인', '[전] Compressor 용량·방음 Cover·집진설비 준비', '[중] 연직도 수시 확인, 강관 이음 용접 품질(비파괴검사)', '[중] Cutting 배출로 지지층 확인, 근입장 확보, Slime 10cm 이하 처리', '[후] 양측 Back Fill 로 편심 방지, 재하시험으로 지지력 확인']
-      },
-      { h: '개선방안', ul: ['Rock Socket 지지력 양방향 재하시험 확인', '분진 집진장치·방음 Cover', '천공 Data 자동기록'] }
+      }
     ]
   }
 },
@@ -471,7 +481,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: 'Micro Pile',
   cat: '기초',
   key: ['Micro Pile', '소구경 말뚝', 'Ø300mm 이하', '강봉·강관', '가압 Grouting', '주면마찰', 'Underpinning', '부력 저항'],
-  www: { what: '[[Ø300mm 이하]]로 천공 후 [[강봉·강관]]을 삽입하고 [[가압 Grouting]]하여 주면마찰로 지지하는 소구경 현장타설말뚝', why: '협소·저공고 공간 시공 가능, 기존 건물 [[Underpinning]]·증축·[[부력 저항]] 보강', how: '천공(Casing) → 강봉·강관 삽입 → 1차 Grouting → 가압 2차 Grouting → 두부정착(기초 연결)' },
+  www: {
+    what: '[[Ø300mm 이하]]로 천공 후 [[강봉·강관]]을 삽입하고 [[가압 Grouting]]하여 주면마찰로 지지하는 소구경 현장타설말뚝',
+    why: '협소·저공고 공간 시공 가능, 기존 건물 [[Underpinning]]·증축·[[부력 저항]] 보강',
+    how: '천공(Casing) → 강봉·강관 삽입 → 1차 Grouting → 가압 2차 Grouting → 두부정착(기초 연결)'
+  },
   tag: '공법·보강·소구경',
   def: '직경 {{300mm 이하}}로 천공한 공에 [[강봉·강관]]을 삽입하고 시멘트 [[가압 Grouting]]하여 주로 [[주면마찰]]로 압축·인장력을 지지하는 [[소구경 말뚝]]',
   wwh: ['Ø300↓ 소구경', '협소지 보강·부력', '천공→강재→Grout'],
@@ -485,16 +499,13 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '가늘지만 많이, 깊게 — 협소지·기존건물 보강의 해결사',
   mnemo: '소주협 가부 언재 (소구경·주면마찰·협소 / 가압·부식 / Underpinning·재하시험)',
   rel: ['Underpinning', '부력 대처방안', 'Rock Anchor', '약액주입', '강관 말뚝'],
-  src: '근거: 디테일용어300 코어 No.44(p055: Ø300mm 이하·저압 고강도 Mortar Grouting·1차/2차 재주입·Over Flow·이중 방식) / 합격답안 3.기초공사 PDF p78(Micro pile: Ø300 이하 소구경 강봉) / 마법지 3기초 부력(Micro Pile)',
+  src: '근거: 디테일용어300 코어 No.44(p055: Ø300mm 이하·저압 고강도 Mortar Grouting·1차/2차 재주입·Over Flow·이중 방식) / 합격답안 3.기초공사 PDF p78(Micro pile: Ø300 이하 소구경 강봉) / 마법지 3기초 부력(Micro Pile) / 스터디: (이이섭)용어300(1주차 19개).pdf p5(정의·비정착/정착 길이 도해·Process 4단계·특징 3·유의사항 4)',
   det: {
     secs: [
+      { h: '정의', def: '천공장비로 소요 깊이까지 천공한 공에 Pipe·[[이형 Bar]] 등을 삽입하고 [[저압]]으로 고강도 [[Mortar Grouting]]하는 직경 {{300mm 이하}}의 [[소구경 말뚝]]으로, 소형 장비로 지반조건에 구애받지 않고 높은 지지력을 발휘하여 신·증축 및 보수공사에 유리하다.' },
+      { h: '기능·원리 (주면마찰 지지)', fig: 'MAIN', ul: ['비정착 길이(연약층) + 정착 길이(암반·견고층) 구성 → 정착부 Grout 주면마찰로 하중 전달', '1차 저압 Grouting 후 필요 시 2차 고압 재주입 → 주면마찰력 극대화', '압축·인장 모두 저항 → Underpinning·부력 저항'] },
       {
-        h: '정의',
-        def: '천공장비로 소요 깊이까지 천공한 공에 Pipe 및 [[이형 Bar]] 등을 삽입 후 [[저압]]으로 고강도 [[Mortar Grouting]]하는 직경 {{300mm 이하}}의 [[소구경 말뚝]]으로, 소규모 장비로 지반조건에 구애받지 않고 높은 지지력을 발휘하여 신·증축 및 보수공사에 유리하다.'
-      },
-      { h: '원리 및 도해 — 시공 Process', fig: 'MAIN', flow: ['천공·Casing 설치', '이형 Bar(강봉) 삽입', '1차 Grouting(저압)', '2차 재주입(고압)', '두부정리(지압판)', '재하시험'] },
-      {
-        h: '특징',
+        h: '특징 (적용범위)',
         tbl: {
           head: ['구분', '내용'],
           rows: [
@@ -504,6 +515,11 @@ window.DW = Object.assign(window.DW || {}, {
             ['적용', 'Underpinning, 증축·리모델링, 부력 저항(인장)']
           ]
         }
+      },
+      { h: '시공 Process', flow: ['천공·Casing 설치', '이형 Bar(강봉) 삽입', 'Grouting(1차 저압·2차 고압)', '두부처리(지압판 설치)', '재하시험'] },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 기존 기초·매설물 조사, 천공 위치·각도 표시', '[중] 천공 수직 정밀도, 선단 지지력 저하 여부 확인', '[중] Grouting Over Flow 까지 시행, 필요 시 2차 고압 재주입', '[중] 강봉 Centralizer 로 피복 확보, 이중 방식 처리', '[후] 두부 지압판 정착·기초 연결, 재하시험으로 지지력 확인', '[개선] 고강도 무수축 Grout 사용', '[개선] Underpinning 시 기존 건물 계측 병행', '[개선] 부력 저항용 인장 Micro Pile 활용']
       },
       {
         h: '관리기준',
@@ -517,12 +533,7 @@ window.DW = Object.assign(window.DW || {}, {
             ['설계 지지력', '설계도서·재하시험', '확인 필요']
           ]
         }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 기존 기초·매설물 조사, 천공 위치·각도 표시', '[중] 천공 수직 정밀도, 선단 지지력 저하 여부 확인', '[중] Grouting Over Flow 까지 시행, 필요 시 2차 고압 재주입', '[중] 강봉 Centralizer 로 피복 확보, 이중 방식 처리', '[후] 두부 지압판 정착·기초 연결, 재하시험으로 지지력 확인']
-      },
-      { h: '개선방안', ul: ['고강도 무수축 Grout 사용', 'Underpinning 시 기존 건물 계측 병행', '부력 저항용 인장 Micro Pile 활용'] }
+      }
     ]
   }
 },
@@ -530,7 +541,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: '현장 타설 콘크리트 말뚝의 건전도 시험(Pile Integrity Test)',
   cat: '기초',
   key: ['건전도 시험', 'CSL(공대공 초음파)', '검측관', '전파속도 V=S/T', 'A~D 등급', '결함점수', '저변형률 PIT', 'Core 보링'],
-  www: { what: '현장타설말뚝 내부의 공극·Slime·단면결손 등 [[결함]] 유무를 [[초음파(CSL)]] 전파속도로 판정하는 비파괴시험', why: '말뚝 품질결함 조기 발견으로 지지력 부족·부등침하 방지, 보강 여부 판단', how: '철근망에 [[검측관]] 설치 → 물 채움 → 송·수신 Probe 동시 인상 → 전파시간 측정 → [[A~D 등급]] 판정' },
+  www: {
+    what: '현장타설말뚝 내부의 공극·Slime·단면결손 등 [[결함]] 유무를 [[초음파(CSL)]] 전파속도로 판정하는 비파괴시험',
+    why: '말뚝 품질결함 조기 발견으로 지지력 부족·부등침하 방지, 보강 여부 판단',
+    how: '철근망에 [[검측관]] 설치 → 물 채움 → 송·수신 Probe 동시 인상 → 전파시간 측정 → [[A~D 등급]] 판정'
+  },
   tag: '시험·품질·비파괴',
   def: '철근망에 설치한 [[검측관]] 사이로 초음파를 송·수신하여 [[전파속도(V=S/T)]] 감소율로 말뚝 내부 결함을 판정하는 [[공대공 초음파 검층(CSL)]] 등의 비파괴 [[건전도 시험]]({{속도 10% 이내 감소 = A 양호}})',
   wwh: ['내부결함 판정', '지지력 결함 예방', '초음파 V=S/T'],
@@ -539,25 +554,19 @@ window.DW = Object.assign(window.DW || {}, {
   subs: [
     { h: '시험 원리·판정', pts: ['[[CSL]] 공대공 초음파', '전파속도 [[V=S/T]]', '[[A~D 등급]] 판정'] },
     { h: '시험 시 유의사항', pts: ['검측관 수직·이음 수밀', '관내 물 채움·막힘 방지'] },
-    { h: '결함 시 대책', pts: ['[[Core]] 확인·보강 Grouting', '저변형률 PIT 병행'] }
+    { h: '불합격 시 조치', pts: ['[[Core]] 확인·보강 Grouting', '저변형률 PIT 병행'] }
   ],
   msg: '보이지 않는 말뚝 속을 소리로 본다 — 속도 감소율이 곧 결함의 크기',
   mnemo: '공속등 수물 코핏 (CSL·속도·등급 / 수직수밀·물 / Core·PIT)',
   rel: ['양방향 말뚝재하시험', 'RCD 공법', 'Slime 처리', 'Koden Test', '저변형률 충격반향 시험'],
-  src: '근거: 디테일용어300 코어 No.46(p057: Sonic Logging·A 10% 이내/B 10~20%/C 20% 이상·유의사항) / 핵심마법지 p018 건전도 결함판정(D 신호 미감지 100점, 결함점수) / 직경별 검측관 수·시험 빈도는 KCS 11 50 20·설계도서(확인 필요)',
+  src: '근거: 디테일용어300 코어 No.46(p057: Sonic Logging·A 10% 이내/B 10~20%/C 20% 이상·유의사항) / 핵심마법지 p018 건전도 결함판정(D 신호 미감지 100점, 결함점수) / 직경별 검측관 수·시험 빈도는 KCS 11 50 20·설계도서(확인 필요) / 스터디: 2C-3W.용어형-이이섭.pdf p3(시험시기 7~30일·결함점수·조치방법 3) / 3주차 과제_장성영_251207 p2·(장성영) 용어300 (1).pdf p6(정의·Process·유의사항 3)',
   det: {
     secs: [
+      { h: '정의', def: '현장타설 말뚝의 두부정리 전 [[검사용 Tube]]에 송·수신 Sensor 를 동일 속도로 삽입하여 Tube 간 [[Sonic Logging]]으로 [[초음파 도달시간]](전파속도 V = S/T)을 측정하고, 속도 감소율로 말뚝의 [[건전상태]]와 결함 유무를 확인하는 시험이다.' },
+      { h: '시험방법·원리 (측정기준)', fig: 'MAIN', ul: ['공대공 초음파 검층(CSL): 송신 Tube → Concrete → 수신 Tube 전파시간 측정', '결함(공극·Slime·재료분리) 구간 → 전파시간 증가·신호 감쇠 → 속도 감소', '검측관은 철근망 내측에 원형 배치, 측정 단면은 Tube 쌍마다 실시'] },
+      { h: '시험항목·Process', flow: ['철근망에 검측관 설치', 'Tube 상단까지 물 채움', '송·수신기 삽입', '동일 속도 인상 Logging', '전파시간·속도 분석', 'A~D 등급 판정'] },
       {
-        h: '정의',
-        def: '현장타설 말뚝의 두부정리 전 [[검사용 Tube]]에 송·수신 Sensor를 동일 속도로 삽입한 후 Pipe 간 [[Sonic Logging]]으로 [[초음파 도달시간]](전파속도 V = S/T)을 측정하여 말뚝의 [[건전상태]]와 결함 유무를 확인하는 시험이다.'
-      },
-      {
-        h: '원리 및 도해 — 시험 Process',
-        fig: 'MAIN',
-        flow: ['철근망에 검측관 설치', 'Tube 상단까지 물 채움', '송·수신기 삽입', '동일 속도 인상 Logging', '전파시간·속도 분석', 'A~D 등급 판정']
-      },
-      {
-        h: '내부결함 판정기준',
+        h: '판정기준 (내부결함)',
         tbl: {
           head: ['등급', '판정', '속도 감소율', '결함점수'],
           rows: [
@@ -570,23 +579,20 @@ window.DW = Object.assign(window.DW || {}, {
         ul2: ['판정 기준: 건전한 Concrete 의 초음파 전파속도 대비 감소율']
       },
       {
-        h: '관리기준',
+        h: '시험 시 유의사항·불합격 조치',
+        ul: ['[전] 검측관 수직 설치·이음부 수밀, 하단 Cap 막음, 철근망에 견고히 고정', '[중] 타설 중 검측관 변형·이탈 방지, Tube 상단까지 물 채움', '[중] 초음파 송·수신 케이블 길이 충분히 확보, 송·수신기 동일 속도 인상', '[후] 이상 부위는 초음파 송신과 동시에 기록', '[후] 판정 확정 시까지 Tube 뚜껑 덮어 이물질 유입 방지, 판정 후 Grouting 충전', '[조치] 결함 위치까지 Core Boring → 육안검사·강도시험', '[조치] 보링공 Grouting 보강 → 재하시험으로 지지력 확인', '[조치] 보수 Pile 위치·요구조건 명시, 기록관리', '[개선] 저변형률 충격반향시험(PIT) 병행', '[개선] Slime 처리·Tremie 관리 등 원인 개선']
+      },
+      {
+        h: '관리기준 (시험 빈도·시기)',
         tbl: {
           head: ['항목', '기준', '근거'],
           rows: [
             ['A·B·C 등급', '10% 이내 / 10~20% / 20% 이상 감소', '디테일용어 No.46'],
             ['D 등급·결함점수', '신호 미감지 100점 (A 0, B 30, C 50)', '핵심마법지 p018'],
+            ['시험 시기', '현장타설 후 {{7~30일}} 이내 (설계 요구조건)', '스터디 2C-3W p3'],
             ['검측관 수·시험 빈도', '말뚝 직경별 — KCS 11 50 20·설계도서', '확인 필요']
           ]
         }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 검측관 수직 설치·이음부 수밀, 하단 Cap 막음, 철근망에 견고히 고정', '[중] 타설 중 검측관 변형·이탈 방지, Tube 상단까지 물 채움', '[중] 초음파 송·수신 케이블 길이 충분히 확보, 송·수신기 동일 속도 인상', '[후] 이상 부위는 초음파 송신과 동시에 기록', '[후] 판정 확정 시까지 Tube 뚜껑 덮어 이물질 유입 방지, 판정 후 Grouting 충전']
-      },
-      {
-        h: '결함 시 대책 / 개선방안',
-        ul: ['B 등급 이상 결함 → Core Boring 으로 확인', '보강 Grouting 또는 보강 말뚝 추가', '저변형률 충격반향시험(PIT) 병행', 'Slime 처리·Tremie 관리 등 원인 개선']
       }
     ]
   }
@@ -595,7 +601,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: '양방향 말뚝재하시험(O-Cell 재하시험)',
   cat: '기초',
   key: ['양방향 재하시험', 'O-Cell', '유압 Jack 매설', '상향 주면마찰', '하향 선단지지', '평형점', '반력장치 불필요', '등가 하중-침하곡선'],
-  www: { what: '말뚝 선단 부근에 [[O-Cell(유압 Jack)]]을 매설하고 가압하여 상부 [[주면마찰력]]과 하부 [[선단지지력]]을 서로의 반력으로 동시에 측정하는 정재하시험', why: '대형 반력장치·사하중 없이 대구경 고하중 말뚝의 [[지지력]]을 분리·확인', how: '철근망에 O-Cell·Telltale 설치 → 콘크리트 타설·양생 → 단계 가압 → 상·하 변위 측정 → [[등가 하중-침하곡선]] 환산' },
+  www: {
+    what: '말뚝 선단 부근에 [[O-Cell(유압 Jack)]]을 매설하고 가압하여 상부 [[주면마찰력]]과 하부 [[선단지지력]]을 서로의 반력으로 동시에 측정하는 정재하시험',
+    why: '대형 반력장치·사하중 없이 대구경 고하중 말뚝의 [[지지력]]을 분리·확인',
+    how: '철근망에 O-Cell·Telltale 설치 → 콘크리트 타설·양생 → 단계 가압 → 상·하 변위 측정 → [[등가 하중-침하곡선]] 환산'
+  },
   tag: '시험·지지력·재하',
   def: '현장타설말뚝 하부의 [[평형점]]에 매설한 [[O-Cell]]을 가압하여 상부는 [[상향 주면마찰력]], 하부는 [[하향 선단지지력]]이 서로 반력이 되도록 하여 지지력을 측정하는 [[양방향 정재하시험]]',
   wwh: ['선단부 Jack 매설', '반력장치 불필요', '상·하 양방향 가압'],
@@ -612,18 +622,11 @@ window.DW = Object.assign(window.DW || {}, {
   src: '근거: 디테일용어300 코어 No.47(p058: 총 시험하중 설계지지력 200% 이상 8단계, 침하율 0.25mm 기준 12/24시간 유지, 변위 각 2개소 이상) / 마법지 3기초 현장P 시험(양방향 재하시험) / KCS 11 50 20 말뚝재하시험(확인 필요)',
   det: {
     secs: [
+      { h: '정의', def: '현장타설 말뚝 선단 또는 중간의 [[평형점]]에 [[유압 Jack(O-Cell)]]을 매설하고 가압하여 상부 [[주면마찰력]]과 하부 [[선단지지력]]이 서로 반력이 되게 하는 [[양방향 정재하시험]]으로, 반력 구조물 없이 고하중 지지력과 침하량을 측정한다.' },
       {
-        h: '정의',
-        def: '현장타설 말뚝 선단 또는 중간에 [[유압 Jack]](가압장치, O-Cell)을 설치하여 [[주면마찰력]]과 [[선단지지력]]을 동시에 측정하는 시험으로, 상부 재하식과 달리 [[반력 구조물]]이 필요 없고 고용량 하중 재하가 가능하여 지지력과 침하량을 정확하게 측정한다.'
-      },
-      {
-        h: '원리 및 도해 — 시험 Process',
+        h: '시험방법·원리 (측정기준)',
         fig: 'MAIN',
-        flow: ['선단부 유압 Jack 설치', 'Con\'c 타설·양생', '단계 재하(상·하향 동시 가력)', '변위 측정(상향·하향·두부)', '등가 하중-침하곡선 환산', '지지력 판정'],
-        ul: ['정재하: P = F + Q (두부 재하) / O-Cell: Q = (−)F (상·하 상호 반력)']
-      },
-      {
-        h: '정재하시험과 비교',
+        ul: ['정재하: P = F + Q (두부 재하) / O-Cell: Q = (−)F (상·하 상호 반력)'],
         tbl: {
           head: ['구분', '정재하시험(두부재하)', '양방향 재하시험(O-Cell)'],
           rows: [
@@ -635,8 +638,9 @@ window.DW = Object.assign(window.DW || {}, {
           ]
         }
       },
+      { h: '시험항목·Process', flow: ['선단부 유압 Jack 설치', 'Con’c 타설·양생', '단계 재하(상·하향 동시 가력)', '변위 측정(상향·하향·두부)', '등가 하중-침하곡선 환산', '지지력 판정'] },
       {
-        h: '관리기준 (재하 및 측정)',
+        h: '판정기준 (재하 및 측정)',
         tbl: {
           head: ['항목', '기준', '근거'],
           rows: [
@@ -645,13 +649,13 @@ window.DW = Object.assign(window.DW || {}, {
             ['변위 측정', '상향·하향·말뚝두부 각 {{2개소}} 이상', '디테일용어 No.47'],
             ['재하 기준 상세', 'KCS 11 50 20·설계도서', '확인 필요']
           ]
-        }
+        },
+        ul2: ['판정: 상·하향 하중-변위 곡선 → 등가 두부 하중-침하곡선 환산 → 항복·극한하중으로 허용지지력 결정']
       },
       {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] Jack 위치를 상·하 저항력 평형점으로 설계 (지반조사 기반)', '[전] O-Cell·유압관·Telltale 철근망 견고 고정, 유압관 누유 점검', '[중] 철근망 건입 시 Jack 손상·편심 방지, Jack 주변 Con\'c 밀실 충전', '[중] 단계별 재하·하중 유지시간 준수, 상·하 변위 동시 측정', '[후] Jack 공극 Grouting 충전, 등가 하중-침하곡선 작성·지지력 판정']
-      },
-      { h: '개선방안', ul: ['다단 O-Cell 배치로 구간별 주면마찰 분석', '대구경·고하중 말뚝·Barrette 적용 확대', '자동 Data Logger 계측'] }
+        h: '시험 시 유의사항·불합격 조치',
+        ul: ['[전] Jack 위치를 상·하 저항력 평형점으로 설계 (지반조사 기반)', '[전] O-Cell·유압관·Telltale 철근망 견고 고정, 유압관 누유 점검', '[중] 철근망 건입 시 Jack 손상·편심 방지, Jack 주변 Con’c 밀실 충전', '[중] 단계별 재하·하중 유지시간 준수, 상·하 변위 동시 측정', '[후] Jack 공극 Grouting 충전, 등가 하중-침하곡선 작성·지지력 판정', '[조치] 지지력 부족 → 근입 깊이·직경 증대, 추가 말뚝 등 설계 변경', '[개선] 다단 O-Cell 배치로 구간별 주면마찰 분석', '[개선] 대구경·고하중 말뚝·Barrette 적용 확대', '[개선] 자동 Data Logger 계측']
+      }
     ]
   }
 },
@@ -659,7 +663,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: '부력과 양압력(Buoyancy와 Uplift Pressure)',
   cat: '기초',
   key: ['부력', '양압력', 'B = γw·V', 'U = γw·h', '지하수위', '피압수', '부상', '자중 W ≥ 1.25B'],
-  www: { what: '지하수위 아래 구조물이 밀어낸 물의 무게만큼 받는 상향력 [[부력(B=γw·V)]]과 기초 저면에 작용하는 수압 [[양압력(U=γw·h)]]', why: '자중 < 부력 시 구조물 [[부상]]·바닥 균열·누수·부등침하 발생', how: '설계지하수위 산정 → 부력·양압력 계산 → [[W ≥ 1.25B]] 검토 → 순응(영구배수)·대응(Rock Anchor) 공법 선정' },
+  www: {
+    what: '지하수위 아래 구조물이 밀어낸 물의 무게만큼 받는 상향력 [[부력(B=γw·V)]]과 기초 저면에 작용하는 수압 [[양압력(U=γw·h)]]',
+    why: '자중 < 부력 시 구조물 [[부상]]·바닥 균열·누수·부등침하 발생',
+    how: '설계지하수위 산정 → 부력·양압력 계산 → [[W ≥ 1.25B]] 검토 → 순응(영구배수)·대응(Rock Anchor) 공법 선정'
+  },
   tag: '현상·원리·검토',
   def: '[[부력]]은 지하수위 아래 구조물이 배제한 물의 무게({{B = γw·V}})만큼 받는 상향력이고, [[양압력]]은 구조물 기초 저면에 작용하는 지하수압({{U = γw·h}})으로 구조물 자중보다 크면 [[부상]]이 발생',
   wwh: ['상향 수압·부력', '부상·누수 방지', 'W ≥ 1.25B 검토'],
@@ -667,22 +675,20 @@ window.DW = Object.assign(window.DW || {}, {
   svg: '<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="90" width="400" height="220" class="soil"/><line x1="20" y1="90" x2="420" y2="90" class="ln"/><text x="26" y="84" class="s">GL</text><line x1="20" y1="130" x2="420" y2="130" class="bl dash"/><text x="26" y="125" class="s">지하수위(GWL)</text><rect x="120" y="30" width="160" height="60" class="bx"/><rect x="120" y="90" width="160" height="130" class="conc"/><text x="150" y="60" text-anchor="middle" class="s">상부구조</text><rect x="120" y="130" width="160" height="90" class="bx3"/><text x="200" y="170" text-anchor="middle" class="s">수중 체적 V</text><line x1="200" y1="42" x2="200" y2="76" class="ar"/><text x="208" y="82" class="b">W(자중)</text><line x1="140" y1="270" x2="140" y2="226" class="ar"/><line x1="180" y1="270" x2="180" y2="226" class="ar"/><line x1="220" y1="270" x2="220" y2="226" class="ar"/><line x1="260" y1="270" x2="260" y2="226" class="ar"/><text x="200" y="290" text-anchor="middle" class="r">양압력 U = γw·h</text><line x1="300" y1="130" x2="300" y2="220" class="ln2"/><line x1="294" y1="130" x2="306" y2="130" class="ln2"/><line x1="294" y1="220" x2="306" y2="220" class="ln2"/><text x="310" y="180" class="r">h</text><text x="26" y="240" class="s">피압수</text><line x1="60" y1="270" x2="100" y2="230" class="ar"/><line x1="200" y1="170" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="r">부력 B = γw·V</text><line x1="210" y1="46" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">W: 구조물 자중+상재하중</text><line x1="300" y1="220" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">h: 기초저면~지하수위</text><line x1="150" y1="160" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="k3">③ 부력 B = γw·V</text><line x1="250" y1="270" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="k3">③ 양압력 U = γw·h</text><line x1="200" y1="76" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="k3">③ 자중 W ≥ 1.25B 안정</text><line x1="80" y1="250" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="k4">④ 피압수·우기 수위상승</text><line x1="270" y1="220" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="k4">④ 바닥 Slab 균열·누수</text><line x1="400" y1="300" x2="438" y2="202" class="ld"/><circle cx="438" cy="202" r="2" class="dotf"/><text x="444" y="206" class="k5">⑤ 순응: 영구배수 공법</text><line x1="120" y1="280" x2="438" y2="224" class="ld"/><circle cx="438" cy="224" r="2" class="dotf"/><text x="444" y="228" class="k5">⑤ 대응: Rock Anchor 공법</text></svg>',
   subs: [
     { h: '원리·검토기준', pts: ['부력 [[B = γw·V]]', '양압력 [[U = γw·h]]', '자중 [[W ≥ 1.25B]] 안정'] },
-    { h: '문제점(피해)', pts: ['[[피압수]]·우기 수위상승', '바닥 Slab 균열·누수'] },
-    { h: '대책', pts: ['순응: [[영구배수]] 공법', '대응: [[Rock Anchor]] 공법'] }
+    { h: '문제점·피해', pts: ['[[피압수]]·우기 수위상승', '바닥 Slab 균열·누수'] },
+    { h: '방지대책', pts: ['순응: [[영구배수]] 공법', '대응: [[Rock Anchor]] 공법'] }
   ],
   msg: '물이 밀어 올리는 힘보다 무거워야 뜨지 않는다 — W ≥ 1.25B',
   mnemo: 'BUW 피균 순대 (부력·양압력·자중 / 피압수·균열 / 순응·대응)',
   rel: ['부력 대처방안', '영구배수공법', 'Rock Anchor', 'Floating Foundation', '피압수'],
-  src: '근거: 디테일용어300 코어 No.48(p059: 부력 B = γw·V, 양압력 = D·γw, 원인·문제점·방지대책)·No.49(p060: W ≥ 1.25B) / 합격답안 3.기초공사 PDF p76·p78(W = 1.25P 이상)·p112 / 1.25 는 합격답안 값(KDS 기준 확인 필요)',
+  src: '근거: 디테일용어300 코어 No.48(p059: 부력 B = γw·V, 양압력 = D·γw, 원인·문제점·방지대책)·No.49(p060: W ≥ 1.25B) / 합격답안 3.기초공사 PDF p76·p78(W = 1.25P 이상)·p112 / 1.25 는 합격답안 값(KDS 기준 확인 필요) / 스터디: 2C-3W.용어형-이이섭.pdf p5(정의 2·부력 γw×V·양압력 정수압 D×γw/침투수압 h×γw·대응/감소 대책)',
   det: {
     secs: [
+      { h: '정의', def: '[[부력]]은 물에 잠긴 구조물이 배제한 물의 무게만큼 받는 상향 합력({{B = γw × V}})이고, [[양압력]]은 지하수위 아래 구조물 저면에 단위면적당 상향으로 작용하는 수압({{U = γw × h}})으로, 자중이 부력보다 작으면 구조물이 [[부상]]한다.' },
       {
-        h: '정의',
-        def: '[[부력]]은 물에 잠긴 물체의 표면에 상향으로 작용하는 물 전체의 압력({{B = γw × V}})이고, [[양압력]]은 구조물 저면에 단위면적당 상향으로 작용하는 물의 압력({{U = γw × h}})으로, 구조물 자중이 부력보다 작으면 [[부상]]이 발생한다.'
-      },
-      { h: '원리 및 도해 — Mechanism', fig: 'MAIN', flow: ['강우·지하수위 상승', '피압수 작용', '부력·양압력 증가', '자중 W < 부력 B', '구조물 부상·균열', '누수·부등침하'] },
-      {
-        h: '부력과 양압력 비교',
+        h: 'Mechanism (발생원리·영향인자)',
+        fig: 'MAIN',
+        flow: ['강우·지하수위 상승', '피압수 작용', '부력·양압력 증가', '자중 W < 부력 B', '구조물 부상·균열', '누수·부등침하'],
         tbl: {
           head: ['구분', '부력(Buoyancy)', '양압력(Uplift Pressure)'],
           rows: [
@@ -691,18 +697,21 @@ window.DW = Object.assign(window.DW || {}, {
             ['인자', 'γw 물 단위중량, V 수중 체적', 'h 지하수위~기초저면 깊이'],
             ['검토', '자중 W ≥ 1.25B', '저판 휨·균열·누수 검토']
           ]
-        }
+        },
+        ul2: ['양압력 ① 정수압 상태: 지하수위~기초저면 깊이 D → U = D × γw', '양압력 ② 침투수압 발생 시: 수두차 h 만큼 추가 → 침투수압 h × γw', '발생 조건: 지하수위가 높은 지역에서 구조물 완성 후 배수 중단 시 / 강우에 의한 지하수 상승 시']
       },
+      { h: '문제점·피해 (영향)', ul: ['구조물 부상', '구조물 균열·누수', '구조물 파손·부등침하', '기초 저판 휨 균열 → 지하수 유입·철근 부식', '시공 중 자중 부족 시점(골조 미완성)에 부상 위험 최대'] },
+      { h: '발생원인 (시기·과정)', ul: ['일시적 수량 증가(강우)', '지하수위 상승', '피압수 지반', '[시공 중] Dewatering 조기 중단, 자중 확보 전 배수 중지', '[사용 중] 영구배수 Pump 고장·Clogging, 우기 수위 상승'] },
       {
-        h: '발생 원인 및 문제점',
+        h: '방지대책·조치사항',
         tbl: {
-          head: ['발생 원인', '문제점'],
+          head: ['구분', '대응(저항) 공법', '감소(순응) 공법'],
           rows: [
-            ['일시적 수량 증가(강우)', '구조물 부상'],
-            ['지하수위 상승', '구조물 균열·누수'],
-            ['피압수 지반', '구조물 파손·부등침하']
+            ['원리', '부력에 저항하는 힘 증대', '부력·수압 자체를 저감'],
+            ['공법', 'Bracket(인접 건물 긴결)·Rock Anchor·자중증대·Micro Pile·마찰말뚝·지하수 유입', 'Dewatering(영구배수)·맹암거·자연배수·상수위 조절']
           ]
-        }
+        },
+        ul: ['[전] 지반조사·장기 수위관측으로 설계지하수위(우기 최고·피압) 산정', '[전] 시공 단계별 자중 vs 부력 검토 (골조 진행 중 자중 부족 시점 파악)', '[중] 자중 확보 전 Dewatering 중단 금지, 기초 저판 방수·이음부 지수판', '[후] 지하수위 계측, 바닥 균열·누수 점검', '내수압 Slab 설계로 부력·양압력 대응', '지하수위 계측 기반 유지관리']
       },
       {
         h: '관리기준 (안정 검토)',
@@ -715,14 +724,6 @@ window.DW = Object.assign(window.DW || {}, {
             ['설계지하수위', '우기 최고수위·피압 고려 산정', 'KDS 기준 확인 필요']
           ]
         }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반조사·장기 수위관측으로 설계지하수위(우기 최고·피압) 산정', '[전] 시공 단계별 자중 vs 부력 검토 (골조 진행 중 자중 부족 시점 파악)', '[중] 자중 확보 전 Dewatering 중단 금지, 기초 저판 방수·이음부 지수판', '[후] 지하수위 계측, 바닥 균열·누수 점검']
-      },
-      {
-        h: '방지대책',
-        ul: ['대응: [[Rock Anchor]]·자중증대·마찰말뚝·Micro Pile', '순응(감소): [[영구배수]]·[[상수위 제어]] System', '내수압 Slab 설계로 부력·양압력 대응', '지하수위 계측 기반 유지관리']
       }
     ]
   }
@@ -731,7 +732,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: '지하수에 의한 부력 대처 방안',
   cat: '기초',
   key: ['순응공법', '대응공법', '영구배수', '상수위 조절', 'Rock Anchor', '자중증대', 'Micro Pile', 'Bracket', '인접건물 긴결'],
-  www: { what: '지하수 부력에 대해 수압을 줄이는 [[순응공법]](영구배수·상수위 조절·외부배수)과 저항력을 키우는 [[대응공법]](Rock Anchor·자중증대·Micro Pile 등)', why: '구조물 [[부상]]·균열·누수 방지, 지하구조물 장기 안정성 확보', how: '지하수위 조사 → 부력 검토(W ≥ 1.25B) → 순응·대응 공법 비교 선정 → 시공 → [[지하수위 계측관리]]' },
+  www: {
+    what: '지하수 부력에 대해 수압을 줄이는 [[순응공법]](영구배수·상수위 조절·외부배수)과 저항력을 키우는 [[대응공법]](Rock Anchor·자중증대·Micro Pile 등)',
+    why: '구조물 [[부상]]·균열·누수 방지, 지하구조물 장기 안정성 확보',
+    how: '지하수위 조사 → 부력 검토(W ≥ 1.25B) → 순응·대응 공법 비교 선정 → 시공 → [[지하수위 계측관리]]'
+  },
   tag: '대책·공법·비교',
   def: '지하구조물에 작용하는 부력에 대하여 [[영구배수]]·[[상수위 조절]]로 수압을 저감하는 [[순응공법]]과 [[Rock Anchor]]·[[자중증대]]·Micro Pile·Bracket 등으로 저항하는 [[대응공법]]',
   wwh: ['순응·대응 공법', '부상·누수 방지', '수압저감·저항증대'],
@@ -745,20 +750,13 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '물을 빼거나(순응), 붙잡거나(대응) — 부력 = 자중 균형 유지',
   mnemo: '브라자는 인접건물 지하 M마트 맹자 (Bracket·Rock Anchor·자중·인접긴결·지하수유입·Micro·마찰말뚝·맹암거)',
   rel: ['부력과 양압력', '영구배수공법', 'Rock Anchor', 'Micro Pile', '상수위 조절', 'Dewatering'],
-  src: '근거: 디테일용어300 코어 No.49(p060: 대응공법 Rock Anchor·자중증대·지하수 유입 / 감소공법 Dewatering·맹암거·자연배수, W ≥ 1.25B) / 합격답안 3.기초공사 PDF p77~78(순응·대응, Bracket·인접건물 긴결·마찰말뚝) / 마법지 3기초 부력',
+  src: '근거: 디테일용어300 코어 No.49(p060: 대응공법 Rock Anchor·자중증대·지하수 유입 / 감소공법 Dewatering·맹암거·자연배수, W ≥ 1.25B) / 합격답안 3.기초공사 PDF p77~78(순응·대응, Bracket·인접건물 긴결·마찰말뚝) / 마법지 3기초 부력 / 스터디: 2C-3W.용어형-이이섭.pdf p5(3.부력대책: 대응 Bracket·Rock Anchor·자중증대·Micro Pile·마찰말뚝 / 감소 Dewatering·맹암거·자연배수)',
   det: {
     secs: [
+      { h: '정의', def: '지하구조물에 작용하는 [[부력]]에 대하여 [[영구배수]]·[[상수위 조절]]·맹암거 등으로 수압 자체를 낮추는 [[순응(감소)공법]]과 [[Rock Anchor]]·[[자중증대]]·Micro Pile·Bracket 등으로 저항력을 키우는 [[대응공법]]으로 구조물 [[부상]]을 방지하는 방안이다.' },
+      { h: '기능·원리 (부력 vs 저항력)', fig: 'MAIN', ul: ['안정 조건: 자중 W + 저항력 ≥ 1.25 × 부력 B', '순응: 부력 B(수압)를 줄인다 / 대응: W·Anchor·말뚝 인발저항을 늘린다'] },
       {
-        h: '정의',
-        def: '지하구조물은 지하수위에서 구조물 저면 깊이만큼 부력을 받아 자중이 부력보다 작으면 [[부상]]하므로, 부력에 저항하는 [[대응공법]](Rock Anchor·자중증대·지하수 유입 등)과 부력을 감소시키는 [[순응(감소)공법]](영구배수·Dewatering·맹암거·자연배수·상수위 조절)으로 대처하는 방안이다.'
-      },
-      {
-        h: '원리 및 도해 — 공법 선정 Process',
-        fig: 'MAIN',
-        flow: ['지하수위·피압 조사', '부력 검토 W ≥ 1.25B', '순응·대응 공법 비교', 'LCC·유지관리 검토', '공법 선정·시공', '지하수위 계측관리']
-      },
-      {
-        h: '순응공법과 대응공법 비교',
+        h: '종류·특징 (순응 vs 대응)',
         tbl: {
           head: ['구분', '순응(감소)공법', '대응공법'],
           rows: [
@@ -768,6 +766,11 @@ window.DW = Object.assign(window.DW || {}, {
             ['단점', 'Pump 유지비·Clogging', '공사비 증가, 관통부 방수 취약']
           ]
         }
+      },
+      { h: '공법 선정 Process', flow: ['지하수위·피압 조사', '부력 검토 W ≥ 1.25B', '순응·대응 공법 비교', 'LCC·유지관리 검토', '공법 선정·시공', '지하수위 계측관리'] },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 사전조사로 지하수위의 양과 범위·피압 조사', '[전] 인접 구조물·지하 매설물 등 현장 여건 파악', '[전] 유지관리비 포함 모든 상황 고려하여 공법 선정', '[중] 자중 확보 시점까지 강제배수 유지, Anchor·Pile 관통부 방수 상세', '[후] 지하수위 계측관리, Pump·배수로 정기 점검', '[개선] 순응 + 대응 복합공법(영구배수 + Rock Anchor)으로 경제성 확보', '[개선] 수위 Sensor·IoT 원격 계측', '[개선] 상수위 조절로 배수량·유지비 저감']
       },
       {
         h: '관리기준 (공법별 요점)',
@@ -780,12 +783,7 @@ window.DW = Object.assign(window.DW || {}, {
             ['Bracket', '상부 매립토 하중으로 저항', '3.기초공사 p78']
           ]
         }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 사전조사로 지하수위의 양과 범위·피압 조사', '[전] 인접 구조물·지하 매설물 등 현장 여건 파악', '[전] 유지관리비 포함 모든 상황 고려하여 공법 선정', '[중] 자중 확보 시점까지 강제배수 유지, Anchor·Pile 관통부 방수 상세', '[후] 지하수위 계측관리, Pump·배수로 정기 점검']
-      },
-      { h: '개선방안', ul: ['순응 + 대응 복합공법(영구배수 + Rock Anchor)으로 경제성 확보', '수위 Sensor·IoT 원격 계측', '상수위 조절로 배수량·유지비 저감'] }
+      }
     ]
   }
 },
@@ -793,7 +791,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: 'Rock Anchor공법',
   cat: '기초',
   key: ['Rock Anchor', '부력 저항', 'PS Strand', '자유장', '정착장', 'Grouting', '인장·정착', '방수·방식'],
-  www: { what: '기초 저면에서 암반까지 천공 후 [[PS Strand]]를 삽입·[[Grouting]]하고 긴장·정착하여 [[부력]]에 저항하는 대응공법', why: '지하수 부력에 의한 구조물 [[부상]]·균열 방지, 기초 두께·자중 증대 최소화', how: '암반 천공 → Strand 삽입 → [[정착장]] Grouting → 양생 → 인장·정착(Lock-off) → 두부 방수 처리' },
+  www: {
+    what: '기초 저면에서 암반까지 천공 후 [[PS Strand]]를 삽입·[[Grouting]]하고 긴장·정착하여 [[부력]]에 저항하는 대응공법',
+    why: '지하수 부력에 의한 구조물 [[부상]]·균열 방지, 기초 두께·자중 증대 최소화',
+    how: '암반 천공 → Strand 삽입 → [[정착장]] Grouting → 양생 → 인장·정착(Lock-off) → 두부 방수 처리'
+  },
   tag: '공법·부력·대응',
   def: '기초 하부 [[암반]]까지 천공하여 [[PS Strand]]를 삽입하고 [[정착장]]을 Grouting한 뒤 긴장·정착하여 그 인장저항으로 지하수 [[부력]]에 대응하는 영구 [[Anchor 공법]]',
   wwh: ['암반 정착 인장재', '부력 부상 방지', '천공→Grout→긴장'],
@@ -807,17 +809,20 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '암반을 손으로 잡아 구조물을 붙든다 — 정착장과 방수·방식이 성패',
   mnemo: '자정부 방부 인로 (자유장·정착장·부력 / 방수·부식 / 인장시험·Load Cell)',
   rel: ['Earth Anchor', '부력 대처방안', 'Micro Pile', '영구배수공법', '부력과 양압력'],
-  src: '근거: 디테일용어300 코어 No.50(p061: 천공 소요길이+0.5m 이상·7일 이상 양생 170kgf/cm²·소요 앵커력 20% 가산·장단점) / 합격답안 3.기초공사 PDF p77 / 마법지 3기초 부력(Rock Anchor) / 정착장·설계하중은 KDS·설계도서(확인 필요)',
+  src: '근거: 디테일용어300 코어 No.50(p061: 천공 소요길이+0.5m 이상·7일 이상 양생 170kgf/cm²·소요 앵커력 20% 가산·장단점) / 합격답안 3.기초공사 PDF p77 / 마법지 3기초 부력(Rock Anchor) / 정착장·설계하중은 KDS·설계도서(확인 필요) / 스터디: 2C-3W.용어형-이이섭.pdf p4(정의·개념도 자유장/정착장·Process·장단점·유의사항 3) / (박동수) 용어300_2주차.pdf p3(7일 양생 170kgf/cm²·20% 가산)',
   det: {
     secs: [
+      { h: '정의', def: '구조물에 작용하는 [[부력]]에 저항하기 위해 [[암반층]]까지 천공하여 [[Strand]]를 삽입·[[Grouting]]한 뒤 [[인장·정착]]하는 부상 방지 영구 Anchor 공법으로, 인장재와 Anchor 두부를 통해 구조물과 역학적으로 연결되어 부력에 대응한다.' },
       {
-        h: '정의',
-        def: '구조물에 작용하는 [[부력]]에 저항하기 위해 [[암반층]]까지 천공하여 [[Strand]] 삽입 후 [[Grouting]]하고 [[인장·정착]]하는 부상 방지 영구용 Anchor 공법으로, 인장재와 Anchor 두부를 통해 구조물과 역학적으로 연결된다.'
-      },
-      {
-        h: '원리 및 도해 — 시공 Process',
-        fig: 'MAIN',
-        flow: ['암반까지 천공', 'Anchor Body(Strand) 삽입', '1차 Grouting(정착장)', '양생 7일 이상', '인장·정착(Lock-off)', '2차 Grouting·두부 방수']
+        h: '기능·원리 (부력 대응 원리)',
+        fig: [
+          'MAIN',
+          {
+            svg: '<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="60" width="400" height="60" class="conc"/><text x="40" y="92" class="s">기초 Mat</text><rect x="20" y="120" width="400" height="5" class="bx2"/><rect x="20" y="125" width="400" height="8" class="bx"/><rect x="20" y="133" width="400" height="57" class="soil"/><text x="30" y="170" class="s">토사</text><rect x="20" y="190" width="400" height="70" class="bx2"/><text x="30" y="230" class="s">암반</text><rect x="212" y="60" width="16" height="190" class="ln2"/><rect x="210" y="190" width="20" height="60" class="conc"/><line x1="220" y1="40" x2="220" y2="250" class="rd"/><rect x="195" y="52" width="50" height="8" class="bx2"/><rect x="208" y="40" width="24" height="12" class="bx"/><polyline points="200,52 200,30 240,30 240,52" fill="none" class="ln"/><rect x="204" y="114" width="8" height="6" class="rf"/><rect x="228" y="114" width="8" height="6" class="rf"/><line x1="150" y1="133" x2="150" y2="190" class="ln2"/><line x1="144" y1="133" x2="156" y2="133" class="ln2"/><line x1="144" y1="190" x2="156" y2="190" class="ln2"/><text x="130" y="166" text-anchor="end" class="s">자유장</text><line x1="150" y1="192" x2="150" y2="250" class="ln2"/><line x1="144" y1="250" x2="156" y2="250" class="ln2"/><text x="130" y="226" text-anchor="end" class="s">정착장</text><line x1="220" y1="30" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">Protection Cap(방청 충전)</text><line x1="245" y1="56" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">지압판·정착구(Wedge)</text><line x1="232" y1="46" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">시험인장 = 소요 앵커력 × 1.2</text><line x1="300" y1="90" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">Grout 7일↑·17MPa 후 인장</text><line x1="236" y1="117" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="r">관통부 지수 Ring·Sealing</text><line x1="100" y1="122" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="b">기초 하부 방수층·버림</text><line x1="220" y1="160" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="b">자유장: Sheath + 2차 Grout</text><line x1="220" y1="220" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="b">정착장: 1차 Grout(암반)</text><line x1="228" y1="250" x2="438" y2="202" class="ld"/><circle cx="438" cy="202" r="2" class="dotf"/><text x="444" y="206" class="r">천공 = 소요길이 + 0.5m 이상</text></svg>',
+            cap: '[상세] 두부 Protection Cap·지수 Ring, 자유장(2차 Grout)·정착장(1차 Grout)'
+          }
+        ],
+        ul: ['정착장(1차 Grout) 주면마찰 → 암반에 인장력 전달, 자유장(Sheath) → 긴장력 도입 구간', '두부 지압판·Protection Cap → 기초판과 일체화, 부력 상향력을 Strand 인장으로 저항']
       },
       {
         h: '특징 (장·단점)',
@@ -830,6 +835,11 @@ window.DW = Object.assign(window.DW || {}, {
           ]
         }
       },
+      { h: '시공 Process', flow: ['암반까지 천공', 'Strand 삽입', '1차 Grouting(정착장)', '양생 7일 이상', '인장·정착(Lock-off)', '2차 Grouting', '지압판 고정·두부 방수'] },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 지반조사로 암반 깊이·절리 확인, 설계 Anchor력 검토, Strand·Sheath 방식 처리 확인', '[중] 천공 깊이 소요길이 + 0.5m 이상, 공내 세척', '[중] 1차(정착장)·2차(자유장) Grouting 밀실 충전, 7일 이상 양생 후 인장', '[중] 기초 관통부 지수 Ring·Sealing, Protection Cap 설치', '[후] 시험 인장(+20%) 확인, Load Cell 장기 계측', '[개선] 이중 방식(Double Corrosion Protection) Anchor 적용', '[개선] Load Cell 원격 계측으로 긴장력 손실 관리', '[개선] 영구배수와 복합 적용 경제성 검토']
+      },
       {
         h: '관리기준',
         tbl: {
@@ -838,22 +848,11 @@ window.DW = Object.assign(window.DW || {}, {
             ['천공 깊이', '소요 길이보다 {{0.5m}} 이상', '디테일용어 No.50'],
             ['Grout 양생', '{{7일}} 이상, 압축강도 {{17MPa}}(170kgf/cm²)', '디테일용어 No.50'],
             ['시험 인장', '소요 앵커력에 {{20%}} 가산', '디테일용어 No.50'],
+            ['자유장·정착장', '자유장 {{4m}} 이상, 정착장 {{3m}} 이상', '스터디 2C-3W p4 (KDS 11 60 00 확인 필요)'],
             ['정착장·설계하중', 'KDS·설계도서', '확인 필요']
           ]
         }
-      },
-      {
-        h: '상세도 — Anchor 두부·방수',
-        fig: {
-          svg: '<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="60" width="400" height="60" class="conc"/><text x="40" y="92" class="s">기초 Mat</text><rect x="20" y="120" width="400" height="5" class="bx2"/><rect x="20" y="125" width="400" height="8" class="bx"/><rect x="20" y="133" width="400" height="57" class="soil"/><text x="30" y="170" class="s">토사</text><rect x="20" y="190" width="400" height="70" class="bx2"/><text x="30" y="230" class="s">암반</text><rect x="212" y="60" width="16" height="190" class="ln2"/><rect x="210" y="190" width="20" height="60" class="conc"/><line x1="220" y1="40" x2="220" y2="250" class="rd"/><rect x="195" y="52" width="50" height="8" class="bx2"/><rect x="208" y="40" width="24" height="12" class="bx"/><polyline points="200,52 200,30 240,30 240,52" fill="none" class="ln"/><rect x="204" y="114" width="8" height="6" class="rf"/><rect x="228" y="114" width="8" height="6" class="rf"/><line x1="150" y1="133" x2="150" y2="190" class="ln2"/><line x1="144" y1="133" x2="156" y2="133" class="ln2"/><line x1="144" y1="190" x2="156" y2="190" class="ln2"/><text x="130" y="166" text-anchor="end" class="s">자유장</text><line x1="150" y1="192" x2="150" y2="250" class="ln2"/><line x1="144" y1="250" x2="156" y2="250" class="ln2"/><text x="130" y="226" text-anchor="end" class="s">정착장</text><line x1="220" y1="30" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">Protection Cap(방청 충전)</text><line x1="245" y1="56" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">지압판·정착구(Wedge)</text><line x1="232" y1="46" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="r">시험인장 = 소요 앵커력 × 1.2</text><line x1="300" y1="90" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">Grout 7일↑·17MPa 후 인장</text><line x1="236" y1="117" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="r">관통부 지수 Ring·Sealing</text><line x1="100" y1="122" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="b">기초 하부 방수층·버림</text><line x1="220" y1="160" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="b">자유장: Sheath + 2차 Grout</text><line x1="220" y1="220" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="b">정착장: 1차 Grout(암반)</text><line x1="228" y1="250" x2="438" y2="202" class="ld"/><circle cx="438" cy="202" r="2" class="dotf"/><text x="444" y="206" class="r">천공 = 소요길이 + 0.5m 이상</text></svg>',
-          cap: '[상세] 두부 Protection Cap·지수 Ring, 자유장(2차 Grout)·정착장(1차 Grout)'
-        }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반조사로 암반 깊이·절리 확인, 설계 Anchor력 검토, Strand·Sheath 방식 처리 확인', '[중] 천공 깊이 소요길이 + 0.5m 이상, 공내 세척', '[중] 1차(정착장)·2차(자유장) Grouting 밀실 충전, 7일 이상 양생 후 인장', '[중] 기초 관통부 지수 Ring·Sealing, Protection Cap 설치', '[후] 시험 인장(+20%) 확인, Load Cell 장기 계측']
-      },
-      { h: '개선방안', ul: ['이중 방식(Double Corrosion Protection) Anchor 적용', 'Load Cell 원격 계측으로 긴장력 손실 관리', '영구배수와 복합 적용 경제성 검토'] }
+      }
     ]
   }
 },
@@ -861,7 +860,11 @@ window.DW = Object.assign(window.DW || {}, {
   title: '영구배수공법(Dewatering)',
   cat: '기초',
   key: ['영구배수', 'Drain Mat(Board)', 'Trench·유공관', '집수정', 'Pump 배수', '양압력 저감', 'Clogging', '상수위 조절'],
-  www: { what: '기초 하부에 [[Drain Mat]]·[[Trench(유공관)]]를 설치하여 지하수를 [[집수정]]으로 모아 Pump로 영구 배수해 [[양압력]]을 저감하는 순응공법', why: '부력 저감으로 기초 두께·공사비 절감, 구조물 부상·누수 방지', how: '기초 바닥 정리 → 집수정 설치 → 유공관·Trench 설치 → Drain Mat 설치 → 버림·기초 Con c 타설 → Pump 설치' },
+  www: {
+    what: '기초 하부에 [[Drain Mat]]·[[Trench(유공관)]]를 설치하여 지하수를 [[집수정]]으로 모아 Pump로 영구 배수해 [[양압력]]을 저감하는 순응공법',
+    why: '부력 저감으로 기초 두께·공사비 절감, 구조물 부상·누수 방지',
+    how: '기초 바닥 정리 → 집수정 설치 → 유공관·Trench 설치 → Drain Mat 설치 → 버림·기초 Con c 타설 → Pump 설치'
+  },
   tag: '공법·배수·순응',
   def: '지하구조물 기초 하부에 [[Drain Mat]]·[[Trench(유공관)]] 등 배수층을 설치하여 유입 지하수를 [[집수정]]에 모아 Pump로 배출함으로써 기초 저면 [[양압력]]을 영구적으로 저감하는 공법',
   wwh: ['기초하부 영구배수', '양압력·부력 저감', 'Drain→집수정→Pump'],
@@ -875,20 +878,23 @@ window.DW = Object.assign(window.DW || {}, {
   msg: '양압력을 버티지 말고 빼낸다 — 막힘(Clogging)·Pump 관리가 생명',
   mnemo: '드집절 클펌 상센 (Drain·집수정·절감 / Clogging·Pump / 상수위·Sensor)',
   rel: ['부력과 양압력', '부력 대처방안', '상수위 조절공법', 'Rock Anchor', 'Deep Well'],
-  src: '근거: 디테일용어300 코어 No.51(p062: 토목섬유 피복·겹침 100mm 이상·주관 50m 이내 집수정 연결) / 합격답안 3.기초공사 PDF p101(시공순서·장단점 Clogging)·p77 / 마법지 2토공 배수-영구배수(Trench, Drain Mat, PDD, Dual Chamber, 상수위 조절)',
+  src: '근거: 디테일용어300 코어 No.51(p062: 토목섬유 피복·겹침 100mm 이상·주관 50m 이내 집수정 연결) / 합격답안 3.기초공사 PDF p101(시공순서·장단점 Clogging)·p77 / 마법지 2토공 배수-영구배수(Trench, Drain Mat, PDD, Dual Chamber, 상수위 조절) / 스터디(연관): 2C-3W.용어형-이이섭.pdf p6 상수위 조절배수(부력 안전수위 이상 상승 시 배수·High/Low Water Level 사전 체크)',
   det: {
     secs: [
+      { h: '정의', def: '기초 하부에 [[배수층]](Drain Mat·Trench 유공관)과 [[집수정]]을 설치하여 유입 지하수를 Pump 로 상시 배출함으로써 구조물에 작용하는 [[부력(양압력)]]을 영구적으로 저감하는 순응형 부력 대처 공법이다.' },
       {
-        h: '정의',
-        def: '지하수위를 강제로 저하시켜 구조물에 작용하는 [[부력(양압력)]]을 영구적으로 저감하는 공법으로, 기초 하부에 [[배수층]](Drain Mat·Trench)과 [[집수정]]을 설치하여 유입되는 지하수를 Pump로 상시 배출하는 방식이다.'
+        h: '기능·원리 (양압력 저감)',
+        fig: [
+          'MAIN',
+          {
+            svg: '<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="400" height="40" class="conc"/><text x="40" y="54" class="s">기초 Slab</text><rect x="20" y="70" width="400" height="10" class="bx"/><rect x="20" y="80" width="400" height="10" class="bx2"/><rect x="20" y="90" width="400" height="160" class="soil"/><polygon points="150,90 290,90 260,190 180,190" class="bx3"/><polyline points="150,90 180,190 260,190 290,90" fill="none" class="gr"/><circle cx="175" cy="104" r="4" class="bx2"/><circle cx="200" cy="112" r="4" class="bx2"/><circle cx="240" cy="104" r="4" class="bx2"/><circle cx="265" cy="110" r="4" class="bx2"/><circle cx="190" cy="130" r="4" class="bx2"/><circle cx="250" cy="130" r="4" class="bx2"/><circle cx="195" cy="176" r="4" class="bx2"/><circle cx="245" cy="176" r="4" class="bx2"/><circle cx="220" cy="160" r="20" class="bx2"/><circle cx="210" cy="150" r="2" class="dotf"/><circle cx="230" cy="150" r="2" class="dotf"/><circle cx="220" cy="145" r="2" class="dotf"/><circle cx="208" cy="165" r="2" class="dotf"/><circle cx="232" cy="165" r="2" class="dotf"/><line x1="60" y1="230" x2="140" y2="170" class="ar"/><line x1="380" y1="230" x2="300" y2="170" class="ar"/><line x1="60" y1="140" x2="60" y2="96" class="ar"/><line x1="380" y1="140" x2="380" y2="96" class="ar"/><line x1="100" y1="50" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="s">기초 Slab(부력 저감 → 두께 감소)</text><line x1="100" y1="75" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">버림 Con’c(Paste 유입 방지)</text><line x1="340" y1="85" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="b">Drain Board(시트형 배수판)</text><line x1="165" y1="140" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">토목섬유 피복·겹침 100mm↑</text><line x1="200" y1="112" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="b">쇄석(자갈) 필터층</text><line x1="220" y1="160" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="r">유공관: 50m 이내 집수정 연결</text><line x1="60" y1="200" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="bl">지하수 유입 → 양압력 저감</text><line x1="260" y1="190" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="s">Clogging 방지 → 배수성능 유지</text></svg>',
+            cap: '[상세] 유공관 + 쇄석 필터 + 토목섬유 피복 → Drain Board → 집수정'
+          }
+        ],
+        ul: ['기초 저면 수압 → 배수층으로 유도 → 집수정 → Pump 배출 → 양압력 감소', '부력 감소 → 기초 두께·Rock Anchor 생략 또는 축소']
       },
       {
-        h: '원리 및 도해 — 시공순서',
-        fig: 'MAIN',
-        flow: ['기초 바닥면 정리', '집수정 설치', '유공 배수관(Trench) 설치', '시트형 배수판 설치', '버림 Con\'c 타설', '기초 Con\'c 타설', '집수정 Pump 설치']
-      },
-      {
-        h: '특징 (장·단점)',
+        h: '특징·종류',
         tbl: {
           head: ['장점', '단점'],
           rows: [
@@ -896,7 +902,13 @@ window.DW = Object.assign(window.DW || {}, {
             ['부력 축소로 기초 두께 감소 → 공사비 절감', '배수판 막힘(Clogging) 시 구조체 부상 위험'],
             ['강제배수 대비 주변 침하 방지', '정전·Pump 고장 대비 필요']
           ]
-        }
+        },
+        ul2: ['종류: Trench(유공관) 방식 / Drain Mat(Board) 방식 / PDD / Dual Chamber / 상수위 조절 배수']
+      },
+      { h: '시공 Process', flow: ['기초 바닥면 정리', '집수정 설치', '유공 배수관(Trench) 설치', '시트형 배수판 설치', '버림 Con’c 타설', '기초 Con’c 타설', '집수정 Pump 설치'] },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 지반 투수계수·유입량 산정, 주변 지반침하 영향 검토', '[중] 배수관 전면 토목섬유 피복, 겹침 100mm 이상 → Clogging 방지', '[중] 주관 50m 이내마다 집수정 연결, 배수 구배 확보', '[중] 버림 Con’c 타설 시 배수판 손상·Paste 유입 방지', '[후] 예비 Pump·비상전원, 수위 Sensor 경보, 정기 준설·점검', '[개선] 상수위 조절 배수 → 배수량·유지비 저감', '[개선] 수위 Sensor·원격 경보 System', '[개선] Dual Chamber·PDD 등 Clogging 저감형 System', '[개선] 상수위 조절: 부력 안전수위 이상 상승 시에만 배수 → 저수위 이하에서는 배수 유지관리비 거의 없음']
       },
       {
         h: '관리기준',
@@ -909,19 +921,7 @@ window.DW = Object.assign(window.DW || {}, {
             ['배수 용량·Pump', '예상 유입량 산정, 예비 Pump·비상전원', '설계도서 — 확인 필요']
           ]
         }
-      },
-      {
-        h: '상세도 — Trench 배수 단면',
-        fig: {
-          svg: '<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="30" width="400" height="40" class="conc"/><text x="40" y="54" class="s">기초 Slab</text><rect x="20" y="70" width="400" height="10" class="bx"/><rect x="20" y="80" width="400" height="10" class="bx2"/><rect x="20" y="90" width="400" height="160" class="soil"/><polygon points="150,90 290,90 260,190 180,190" class="bx3"/><polyline points="150,90 180,190 260,190 290,90" fill="none" class="gr"/><circle cx="175" cy="104" r="4" class="bx2"/><circle cx="200" cy="112" r="4" class="bx2"/><circle cx="240" cy="104" r="4" class="bx2"/><circle cx="265" cy="110" r="4" class="bx2"/><circle cx="190" cy="130" r="4" class="bx2"/><circle cx="250" cy="130" r="4" class="bx2"/><circle cx="195" cy="176" r="4" class="bx2"/><circle cx="245" cy="176" r="4" class="bx2"/><circle cx="220" cy="160" r="20" class="bx2"/><circle cx="210" cy="150" r="2" class="dotf"/><circle cx="230" cy="150" r="2" class="dotf"/><circle cx="220" cy="145" r="2" class="dotf"/><circle cx="208" cy="165" r="2" class="dotf"/><circle cx="232" cy="165" r="2" class="dotf"/><line x1="60" y1="230" x2="140" y2="170" class="ar"/><line x1="380" y1="230" x2="300" y2="170" class="ar"/><line x1="60" y1="140" x2="60" y2="96" class="ar"/><line x1="380" y1="140" x2="380" y2="96" class="ar"/><line x1="100" y1="50" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="s">기초 Slab(부력 저감 → 두께 감소)</text><line x1="100" y1="75" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">버림 Con\'c(Paste 유입 방지)</text><line x1="340" y1="85" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="b">Drain Board(시트형 배수판)</text><line x1="165" y1="140" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">토목섬유 피복·겹침 100mm↑</text><line x1="200" y1="112" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="b">쇄석(자갈) 필터층</text><line x1="220" y1="160" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="r">유공관: 50m 이내 집수정 연결</text><line x1="60" y1="200" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="bl">지하수 유입 → 양압력 저감</text><line x1="260" y1="190" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="s">Clogging 방지 → 배수성능 유지</text></svg>',
-          cap: '[상세] 유공관 + 쇄석 필터 + 토목섬유 피복 → Drain Board → 집수정'
-        }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 지반 투수계수·유입량 산정, 주변 지반침하 영향 검토', '[중] 배수관 전면 토목섬유 피복, 겹침 100mm 이상 → Clogging 방지', '[중] 주관 50m 이내마다 집수정 연결, 배수 구배 확보', '[중] 버림 Con\'c 타설 시 배수판 손상·Paste 유입 방지', '[후] 예비 Pump·비상전원, 수위 Sensor 경보, 정기 준설·점검']
-      },
-      { h: '개선방안', ul: ['상수위 조절 배수 → 배수량·유지비 저감', '수위 Sensor·원격 경보 System', 'Dual Chamber·PDD 등 Clogging 저감형 System'] }
+      }
     ]
   }
 },
@@ -946,13 +946,20 @@ window.DW = Object.assign(window.DW || {}, {
   src: '근거: 디테일용어300 코어 No.53(p064: 가받이 경사지주·수직지주·Truss 지주법 / 본받이 바로받이·보받이·바닥받이 / 유의사항) / 마법지 3기초 Underpinning(사전조사>준비>가받이>본받이>철거·복구) / 합격답안 3.기초공사 PDF p13~17',
   det: {
     secs: [
+      { h: '정의', def: '인접 터파기·노후화·증축 등으로 기존 구조물 기초가 불안정할 때 기초 하부를 [[가받이]] 후 [[본받이]](바로받이·보받이·바닥판받이)·약액주입·Micro Pile 등으로 보강하여 하중을 새 지지층으로 옮겨 [[변형·침하]]를 방지하는 공법이다.' },
       {
-        h: '정의',
-        def: '기존 구조물의 기초를 보강하거나 새로운 기초를 설치하여 보강하는 공법으로, 기존 구조물의 [[노후화]], 흙막이 배면 지반 이완 등에 따른 인접 건물·도로·상하수도관 등의 [[변형·침하]]를 사전에 방지하기 위한 공법이다.'
+        h: '기능·원리 (하중 전이)',
+        fig: [
+          'MAIN',
+          {
+            svg: '<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg"><line x1="20" y1="200" x2="430" y2="200" class="ln"/><rect x="20" y="120" width="40" height="80" class="soil"/><rect x="60" y="30" width="20" height="150" class="bx"/><rect x="50" y="180" width="40" height="16" class="conc"/><line x1="80" y1="70" x2="130" y2="190" class="ln"/><rect x="122" y="190" width="20" height="10" class="bx2"/><polygon points="80,66 88,62 88,74" class="rf"/><rect x="190" y="30" width="20" height="120" class="bx"/><rect x="170" y="90" width="70" height="10" class="bx2"/><line x1="178" y1="100" x2="178" y2="200" class="ln"/><line x1="232" y1="100" x2="232" y2="200" class="ln"/><rect x="228" y="188" width="8" height="10" class="rf"/><rect x="174" y="188" width="8" height="10" class="rf"/><rect x="330" y="30" width="20" height="120" class="bx"/><polyline points="350,60 420,60 420,110 350,110 350,60 420,110" fill="none" class="ln2"/><polyline points="385,60 385,110 350,60" fill="none" class="ln2"/><line x1="420" y1="110" x2="420" y2="200" class="ln"/><text x="80" y="236" text-anchor="middle" class="s">① 경사지주법</text><text x="205" y="236" text-anchor="middle" class="s">② 수직지주법</text><text x="370" y="236" text-anchor="middle" class="s">③ Truss 지주법</text><line x1="70" y1="50" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">기존 건물 벽·기둥</text><line x1="105" y1="130" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">경사지주(빗버팀)+쐐기</text><line x1="205" y1="95" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="b">받침보(Needle Beam) 관통</text><line x1="232" y1="192" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">Jack 가압·쐐기 조정</text><line x1="400" y1="85" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="b">Truss로 하중 전달</text><line x1="70" y1="188" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="bl">본받이: 바로·보·바닥(판)받이</text><line x1="200" y1="150" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="r">전이 시 부동침하 허용값 이내</text><line x1="30" y1="150" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="s">구간 분할·교대 시공</text></svg>',
+            cap: '[상세] 경사지주·수직지주(Needle Beam)·Truss 지주 → 본받이로 하중 전이'
+          }
+        ],
+        ul: ['기존 하중 → 가받이(임시 지주·Needle Beam) → 본받이(신설 기초·말뚝) → 견고한 지지층', '구간 분할·교대 시공으로 한 번에 지지력을 상실하지 않게 전이']
       },
-      { h: '원리 및 도해 — 시공 Process', fig: 'MAIN', flow: ['사전조사(흙막이·주변, 하중 검토)', '준비공사', '가받이 공사', '본받이 공사', '철거·복구', '계측관리'] },
       {
-        h: '종류',
+        h: '종류·특징',
         tbl: {
           head: ['구분', '공법', '내용'],
           rows: [
@@ -961,6 +968,11 @@ window.DW = Object.assign(window.DW || {}, {
             ['지반보강', '약액주입(JSP·LW)·Micro Pile', '지반 강화·소구경 말뚝으로 하중 이전']
           ]
         }
+      },
+      { h: '시공 Process', flow: ['사전조사(흙막이·주변, 하중 검토)', '준비공사', '가받이 공사', '본받이 공사', '철거·복구', '계측관리'] },
+      {
+        h: '시공 시 유의사항 (중점관리)',
+        ul: ['[전] 흙막이 및 주변 상황 조사, 기존 건물 하중 검토, 균열 사진·기록', '[전] 기존 기초 형식에 맞는 동일 방식 공법 선정', '[중] 구간 분할·교대 시공 → 한 번에 지지력 상실 방지', '[중] 하중 전이 시 Jack 가압·쐐기 조정, 부동침하 허용값 이내', '[후] 철거·복구 후 계측 지속, 균열 보수', '[개선] Micro Pile·JSP 등 무진동 보강', '[개선] 경사계·균열계 자동화 계측 실시간 관리', '[개선] 인접 구조물 영향 수치해석 사전 검토']
       },
       {
         h: '관리기준',
@@ -973,19 +985,7 @@ window.DW = Object.assign(window.DW || {}, {
             ['허용 침하·기울기 수치', '설계도서·계측관리 기준', '확인 필요']
           ]
         }
-      },
-      {
-        h: '상세도 — 가받이 공법',
-        fig: {
-          svg: '<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg"><line x1="20" y1="200" x2="430" y2="200" class="ln"/><rect x="20" y="120" width="40" height="80" class="soil"/><rect x="60" y="30" width="20" height="150" class="bx"/><rect x="50" y="180" width="40" height="16" class="conc"/><line x1="80" y1="70" x2="130" y2="190" class="ln"/><rect x="122" y="190" width="20" height="10" class="bx2"/><polygon points="80,66 88,62 88,74" class="rf"/><rect x="190" y="30" width="20" height="120" class="bx"/><rect x="170" y="90" width="70" height="10" class="bx2"/><line x1="178" y1="100" x2="178" y2="200" class="ln"/><line x1="232" y1="100" x2="232" y2="200" class="ln"/><rect x="228" y="188" width="8" height="10" class="rf"/><rect x="174" y="188" width="8" height="10" class="rf"/><rect x="330" y="30" width="20" height="120" class="bx"/><polyline points="350,60 420,60 420,110 350,110 350,60 420,110" fill="none" class="ln2"/><polyline points="385,60 385,110 350,60" fill="none" class="ln2"/><line x1="420" y1="110" x2="420" y2="200" class="ln"/><text x="80" y="236" text-anchor="middle" class="s">① 경사지주법</text><text x="205" y="236" text-anchor="middle" class="s">② 수직지주법</text><text x="370" y="236" text-anchor="middle" class="s">③ Truss 지주법</text><line x1="70" y1="50" x2="438" y2="26" class="ld"/><circle cx="438" cy="26" r="2" class="dotf"/><text x="444" y="30" class="b">기존 건물 벽·기둥</text><line x1="105" y1="130" x2="438" y2="48" class="ld"/><circle cx="438" cy="48" r="2" class="dotf"/><text x="444" y="52" class="b">경사지주(빗버팀)+쐐기</text><line x1="205" y1="95" x2="438" y2="70" class="ld"/><circle cx="438" cy="70" r="2" class="dotf"/><text x="444" y="74" class="b">받침보(Needle Beam) 관통</text><line x1="232" y1="192" x2="438" y2="92" class="ld"/><circle cx="438" cy="92" r="2" class="dotf"/><text x="444" y="96" class="r">Jack 가압·쐐기 조정</text><line x1="400" y1="85" x2="438" y2="114" class="ld"/><circle cx="438" cy="114" r="2" class="dotf"/><text x="444" y="118" class="b">Truss로 하중 전달</text><line x1="70" y1="188" x2="438" y2="136" class="ld"/><circle cx="438" cy="136" r="2" class="dotf"/><text x="444" y="140" class="bl">본받이: 바로·보·바닥(판)받이</text><line x1="200" y1="150" x2="438" y2="158" class="ld"/><circle cx="438" cy="158" r="2" class="dotf"/><text x="444" y="162" class="r">전이 시 부동침하 허용값 이내</text><line x1="30" y1="150" x2="438" y2="180" class="ld"/><circle cx="438" cy="180" r="2" class="dotf"/><text x="444" y="184" class="s">구간 분할·교대 시공</text></svg>',
-          cap: '[상세] 경사지주·수직지주(Needle Beam)·Truss 지주 → 본받이로 하중 전이'
-        }
-      },
-      {
-        h: '시공 시 유의사항 (시공 전·중·후)',
-        ul: ['[전] 흙막이 및 주변 상황 조사, 기존 건물 하중 검토, 균열 사진·기록', '[전] 기존 기초 형식에 맞는 동일 방식 공법 선정', '[중] 구간 분할·교대 시공 → 한 번에 지지력 상실 방지', '[중] 하중 전이 시 Jack 가압·쐐기 조정, 부동침하 허용값 이내', '[후] 철거·복구 후 계측 지속, 균열 보수']
-      },
-      { h: '개선방안', ul: ['Micro Pile·JSP 등 무진동 보강', '경사계·균열계 자동화 계측 실시간 관리', '인접 구조물 영향 수치해석 사전 검토'] }
+      }
     ]
   }
 }
