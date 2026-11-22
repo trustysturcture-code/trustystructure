@@ -470,3 +470,15 @@ body.noside main{max-width:1000px;margin:0 auto}
 .setseg{display:grid;grid-template-columns:1.4fr 1fr;gap:4px;margin-bottom:8px;padding:3px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
 .setseg button{border:0;border-radius:8px;padding:7px 6px;font:inherit;font-size:13px;font-weight:800;background:transparent;color:var(--ink2)}
 .setseg button.on{background:var(--ink);color:var(--paper)}
+
+/* 서술: 핵아이템 · PART3 구분 */
+.spitems{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
+.spitems b{font-size:13px;font-weight:900}
+.spitems span{border:2px solid var(--blue);color:var(--blue);border-radius:8px;padding:2px 9px;font-weight:800;font-size:14px}
+.sppart3{margin-top:10px;border:2px dashed var(--ink2);border-radius:12px;padding:10px 12px}
+.sppart3 .p3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sppart3 .p3>div{border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+.sppart3 .p3 b{font-size:15px} .sppart3 .k3 b{color:var(--blue)} .sppart3 .k4 b{color:var(--red)} .sppart3 .k5 b{color:var(--green)}
+.sppart3 ul{margin:4px 0 0;padding-left:18px;font-size:14.5px;line-height:1.55}
+.setseg{grid-template-columns:repeat(3,1fr)!important}
+@media (max-width:860px){.sppart3 .p3{grid-template-columns:1fr}}

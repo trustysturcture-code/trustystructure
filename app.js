@@ -5,10 +5,24 @@
 (function () {
   'use strict';
   // ---------- 문항 세트: week(이번주 109–180) / dw(디테일원 용어250) ----------
-  const SETS = { dw: '디테일원 용어 250 (순서대로)', week: '이번주 용어 109–180' };
+  const SETS = { dw: '디테일원 용어 250 (순서대로)', ss: '디테일원 서술 100', week: '이번주 용어 109–180' };
   let SET = 'dw'; try { SET = localStorage.getItem('amg_set') || 'dw'; } catch (e) {} // 기본 = 디테일원 순서 전체
   try { const qs = new URLSearchParams(location.search).get('set'); if (qs) SET = qs; } catch (e) {}
-  if (!SETS[SET] || (SET === 'dw' && !window.DW)) SET = 'week';
+  if (!SETS[SET] || (SET === 'dw' && !window.DW) || (SET === 'ss' && !(window.SS && Object.keys(window.SS).length))) SET = window.DW ? 'dw' : 'week';
+  // ---------- 서술 100 (data/ss_*.js, 형식 data/SCHEMA_SS.md) ----------
+  function buildSS() {
+    const S = window.SS || {}, out = [], d1 = {};
+    Object.keys(S).map(Number).sort((a, b) => a - b).forEach(no => {
+      const w = S[no], wh = w.wwh || [];
+      out.push({ no, cat: w.cat || '서술', type: '서술 · ' + (w.type || ''), title: w.title, key: w.key || [],
+        www: { what: wh[0] || '', why: wh[1] || '', how: wh[2] || '' },
+        secs: (w.secs || []).map(u => u.fig ? Object.assign({}, u, { fig: (Array.isArray(u.fig) ? u.fig : [u.fig]).map(f => f === 'MAIN' ? { svg: w.svg, cap: '[도해] ' + (w.figT || '') } : f) }) : u),
+        effect: w.msg, mnemo: w.code, src: w.src, img: [] });
+      d1[no] = { tag: w.type, def: w.one, wwh: w.wwh, figT: w.figT, svg: w.svg, rel: w.rel, items: w.items, msg: w.msg,
+        subs: w.part3 ? (w.part3.cols || []).map(c => ({ h: c.h, pts: c.k })) : [] };
+    });
+    window.D1 = d1; return out;
+  }
   const WEEK = (window.Q || []).slice();
   WEEK.forEach(x => { if (!x.img || !x.img.length) x.img = (window.IMGS || {})[x.no] || []; });
   function buildDW() {
@@ -32,7 +46,7 @@
     });
     window.D1 = d1; return out;
   }
-  const Q = (SET === 'dw' ? buildDW() : WEEK).sort((a, b) => a.no - b.no);
+  const Q = (SET === 'dw' ? buildDW() : SET === 'ss' ? buildSS() : WEEK).sort((a, b) => a.no - b.no);
   const $ = (s, el = document) => el.querySelector(s);
   // 온라인(공유 링크) 모드: 인쇄창·확인창·로컬 PDF 링크가 막힌 환경 → 해당 기능 숨김
   const ONLINE = !!window.AMG_ONLINE;
@@ -387,6 +401,7 @@
   // ---------- 📄 요약 카드: 한 줄 정의 + 따라 그리기 쉬운 그림 + 흐름 + 대제목 3개 + 암기코드 ----------
   function spOf(x) {
     const S = window.SP || { w: {}, d: {} };
+    if (SET === 'ss') return (window.SS || {})[x.no] || null;
     if (SET === 'dw') return (x.ref && S.w && S.w[x.ref]) || (S.d && S.d[x.no]) || null;
     return (S.w && S.w[x.no]) || null;
   }
@@ -429,6 +444,8 @@
       (svg ? '<div class="spfig">' + svg + '</div>' : '') +
       (sp && sp.read ? '<p class="spread">👁 ' + fmt(sp.read, 'read') + '</p>' : '') +
       (flow && flow.length ? '<div class="spflow">' + flow.map(f => '<span>' + fmt(f, 'read') + '</span>').join('<i>→</i>') + '</div>' : '') +
+      (arr(d.items).length ? '<div class="spitems"><b>🎯 핵아이템</b>' + arr(d.items).map(k => '<span>' + fmt(k, 'read') + '</span>').join('') + '</div>' : '') +
+      (sp && sp.part3 ? '<div class="sppart3"><div class="spahT">▦ PART 3 구분 — ' + esc(sp.part3.by || '') + '</div><div class="p3">' + arr(sp.part3.cols).map((c, i) => '<div class="k' + (i + 3) + '"><b>' + esc(c.h) + '</b><ul>' + arr(c.k).map(k => '<li>' + fmt(k, 'read') + '</li>').join('') + '</ul></div>').join('') + '</div></div>' : '') +
       (ah.length ? '<div class="spah"><div class="spahT">📋 합격답안 대제목</div><ol>' + ah.map(u => '<li><b>' + esc(u.h) + '</b>' + (u.k.length ? '<span>' + u.k.map(k => fmt(k, 'read')).join(' · ') + '</span>' : '') + '</li>').join('') + '</ol></div>'
         : '<div class="spheads">' + heads.map((u, i) => '<div class="k' + (i + 3) + '"><b>' + (i + 3) + '. ' + esc(u.h) + '</b><ul>' + arr(u.k).map(k => '<li>' + fmt(k, 'read') + '</li>').join('') + '</ul></div>').join('') + '</div>') +
       (arr(d.rel).length ? '<div class="sprel"><b>🔗 연관용어</b> ' + arr(d.rel).map(r => '<span>' + esc(plain(r)) + '</span>').join('') + '</div>' : '') +
@@ -711,7 +728,7 @@
     sn.outerHTML = `<select id="setSel" aria-label="문항 세트">${Object.keys(SETS).filter(k => k === 'week' || window.DW).map(k => `<option value="${k}" ${k === SET ? 'selected' : ''}>${SETS[k]} (${k === SET ? Q.length : k === 'dw' ? Object.keys(window.DW).length : WEEK.length})</option>`).join('')}</select>`;
     $('#setSel').addEventListener('change', e => { try { localStorage.setItem('amg_set', e.target.value); } catch (er) {} location.hash = ''; location.reload(); });
     // 목록 맨 위에도 세트 전환 버튼 (눈에 잘 띄게)
-    if (window.DW) $('#side').insertAdjacentHTML('afterbegin', '<div class="setseg">' + [['dw', '디테일원 250 · 순서대로'], ['week', '이번주 72']].map(([k, t]) => '<button class="' + (k === SET ? 'on' : '') + '" data-set="' + k + '">' + t + '</button>').join('') + '</div>');
+    if (window.DW) $('#side').insertAdjacentHTML('afterbegin', '<div class="setseg">' + [['dw', '용어 250'], ['ss', '서술 100'], ['week', '이번주 72']].filter(([k]) => k !== 'ss' || (window.SS && Object.keys(window.SS).length)).map(([k, t]) => '<button class="' + (k === SET ? 'on' : '') + '" data-set="' + k + '">' + t + '</button>').join('') + '</div>');
     document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => { if (b.dataset.set === SET) return; try { localStorage.setItem('amg_set', b.dataset.set); } catch (er) {} location.hash = ''; location.reload(); }));
   }
   // ☰ 목록: 넓은 화면은 숨기기/펼치기(기억), 좁은 화면은 서랍처럼 열기
